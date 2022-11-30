@@ -5,54 +5,58 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory 
 {
-    [System.Serializable]
-    public class Slot
-    {
-        public CollectableType type;
-        public int count; //Items ahora mismo
-        public int max; //Num max de items permitidos
-        public Slot()
-        {
-            type = CollectableType.NONE;
-            count = 0;
-            max = 10; //EJEMPLO
-        }
-    }
-
+    public int count; //Items ahora mismo
+    public int maxSlots;
+    public int busySlots;
     public List<Slot> slots = new List<Slot>();
 
     //Inicializar
-    public Inventory(int numSlots)
+    public Inventory(int num)
     {
-        for(int i = 0; i < numSlots; i++)
+        count = 0;
+        busySlots = 0;
+        this.maxSlots = num;
+        for(int i = 0; i < num; i++)
         {
             Slot slot = new Slot();
             slots.Add(slot);
         }
     }
 
-    public void Add(CollectableType itemType)
+    //Se añade un item
+    public bool Add(CollectableType itemType)
     {
         foreach(Slot slot in slots)
         {
-            if(slot.type == itemType && max > count)
+            //Items ya existentes
+            if(slot.type == itemType)
             {
-                //Se añade el item
-                this.type = itemType;
-                count++;
-                return;
+                if(slot.max > slot.count)
+                {
+                    //Se añade el item
+                    slot.type = itemType;
+                    slot.count++;
+                    count++;
+                    return true;
+                }
+                else return false;
             }
+            
         }
 
         foreach(Slot slot in slots)
         {
-             if(slot.type == CollectableType.NONE)
+            //Items nuevos
+            if(slot.type == CollectableType.NONE)
             {
-                //Se añade el item
-                this.type = itemType;
+                slot.type = itemType;
+                slot.count++;
                 count++;
-                return;
+                busySlots++;
+                return true;
             }
         }
+
+        return false;
     }
 }
