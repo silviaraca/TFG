@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public bool allowMove;
    public float speed;
    public Animator animator;
 
    private Vector3 direction;
 
+    private void Strat(){
+        allowMove = true;
+    }
 
    private void Update()
    {
-    float horizontal = Input.GetAxisRaw("Horizontal");
-    float vertical = Input.GetAxisRaw("Vertical");
-    
-    direction = new Vector3(horizontal, vertical);
+    if(allowMove){
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        
+        direction = new Vector3(horizontal, vertical);
 
-    AnimateMovement(direction);
+        AnimateMovement(direction);
+    }
+    
    }
 
     private void FixedUpdate()
