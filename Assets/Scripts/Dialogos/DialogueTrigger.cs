@@ -7,16 +7,35 @@ using TMPro;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
     public Dialogue dialogue;
+    private bool cont;
 
-    public void TriggerDialogue(){
+    public int index;
+    public string sentence;
+//Se está intentando xd
+    public IEnumerator TriggerDialogue(){
         DialogueManager man = FindObjectOfType<DialogueManager>();
-        man.StartDialogue(dialogue);
+        nameText.text = dialogue.name;
+        dialogueText.text = "";
+        index = 0;
+        sentence = man.StartDialogue(dialogue);
+
+        foreach (char letter in sentence.ToCharArray()){
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(0.2f);
+        }
         while(!man.dialogueEnd){
             if(Input.GetKeyDown(KeyCode.E)){
-                man.DisplayNextSentence();
+                dialogueText.text = "";
+                sentence = man.DisplayNextSentence();
+                foreach (char letter in sentence){   
+                    dialogueText.text += letter;
+                    yield return new WaitForSeconds(0.2f);
+                }
             }
         }
-        return;
     }
 }
+

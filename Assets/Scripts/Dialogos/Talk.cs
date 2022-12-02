@@ -26,7 +26,7 @@ public class Talk : MonoBehaviour
             dialoguePanel.gameObject.SetActive(true);
             move.allowMove = false;
             trigger.TriggerDialogue();
-            dialoguePanel.gameObject.SetActive(false);
+            //dialoguePanel.gameObject.SetActive(false);
             move.allowMove = true;
         }                
     }

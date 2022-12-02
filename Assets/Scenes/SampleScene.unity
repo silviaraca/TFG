@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae34dc9b51eee846bc4650862f5d2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueText: {fileID: 955620496}
+  nameText: {fileID: 1080916390}
   dialogue:
     name: Paco
     sentences:
@@ -191,8 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56027474066d5ca48819ad44673705c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
   dialogueEnd: 0
 --- !u!4 &143564300
 Transform:
@@ -201,13 +201,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143564298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5100002, y: 3.9499998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 955620495}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &182215227
 PrefabInstance:
@@ -218,6 +218,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5208460827695033456, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
       propertyPath: E
+      value: 
+      objectReference: {fileID: 2113890305}
+    - target: {fileID: 5208460827695033456, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
+      propertyPath: textoE
       value: 
       objectReference: {fileID: 2113890305}
     - target: {fileID: 5208460827695033457, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
@@ -1060,6 +1064,10 @@ PrefabInstance:
       propertyPath: E
       value: 
       objectReference: {fileID: 2113890305}
+    - target: {fileID: 5208460827695033456, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
+      propertyPath: textoE
+      value: 
+      objectReference: {fileID: 2113890305}
     - target: {fileID: 5208460827695033457, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1356,7 +1364,7 @@ GameObject:
   - component: {fileID: 955620497}
   - component: {fileID: 955620496}
   m_Layer: 5
-  m_Name: nameText
+  m_Name: dialogueText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1373,13 +1381,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 143564300}
   m_Father: {fileID: 2123953107}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000500679, y: -0.3682}
+  m_AnchoredPosition: {x: 0.51, y: -0.37}
   m_SizeDelta: {x: 0.000099182, y: -0.7362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &955620496
@@ -1465,7 +1474,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 1.0923676, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1491,7 +1500,7 @@ GameObject:
   - component: {fileID: 1080916391}
   - component: {fileID: 1080916390}
   m_Layer: 5
-  m_Name: dialogueText
+  m_Name: nameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1514,7 +1523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.1149, y: 1.0339}
+  m_AnchoredPosition: {x: -4.64, y: 1.03}
   m_SizeDelta: {x: -10.2298, y: -2.0679002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1080916390
@@ -3909,7 +3918,7 @@ Transform:
   m_Children:
   - {fileID: 1819992163}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2051041788 stripped
 MonoBehaviour:
@@ -4146,6 +4155,10 @@ PrefabInstance:
       propertyPath: E
       value: 
       objectReference: {fileID: 2113890305}
+    - target: {fileID: 5208460827695033456, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
+      propertyPath: textoE
+      value: 
+      objectReference: {fileID: 2113890305}
     - target: {fileID: 5208460827695033457, guid: 1e255a43740a1074f8b1c05bc545cf25, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4272,6 +4285,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8903621261317984264, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8903621261317984265, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_RootOrder
       value: 4

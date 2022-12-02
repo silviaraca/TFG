@@ -2,44 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-
-    public Text nameText;
-    public Text dialogueText;
-    private Queue<string> sentences;
+    private Queue<string> frases;
     public bool dialogueEnd;
 
     // Start is called before the first frame update
     void Start()
     {
-        sentences = new Queue<string>();
+        frases = new Queue<string>();
         dialogueEnd = false;
     }
 
-    public void StartDialogue(Dialogue dialogue){
+    public string StartDialogue(Dialogue dialogue){
+        frases = new Queue<string>();
         dialogueEnd = false;
         Debug.Log("Starting conversation with " + dialogue.name);
 
-        sentences.Clear();
+        frases.Clear();
 
         foreach(string sentence in dialogue.sentences){
-            sentences.Enqueue(sentence);
+            frases.Enqueue(sentence);
         }
 
-        DisplayNextSentence();
+        return DisplayNextSentence();
     }
 
-    public void DisplayNextSentence(){
-        if(sentences.Count == 0){
+    public string DisplayNextSentence(){
+        if(frases.Count == 0){
             EndDialogue();
-            return;
+            return "";
         }
 
-        string sentence = sentences.Dequeue();
+        string sentence = frases.Dequeue();
         Debug.Log(sentence);
-        //dialogueText.text = sentence;
+        return sentence;
     }
 
     void EndDialogue(){

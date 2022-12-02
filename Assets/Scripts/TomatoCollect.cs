@@ -10,12 +10,12 @@ public enum CollectableType{NONE, TOMATO}
 public class TomatoCollect : MonoBehaviour
 {
    public CollectableType type;
-   public TextMeshProUGUI E;
+   public TextMeshProUGUI textoE;
    private bool recogible;
    private Player player;
 
    private void Start(){
-        E.gameObject.SetActive(false);
+        textoE.gameObject.SetActive(false);
         type = CollectableType.TOMATO;
    }
 
@@ -29,7 +29,7 @@ public class TomatoCollect : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
-            E.gameObject.SetActive(true);
+            textoE.gameObject.SetActive(true);
             recogible = true; 
         }                   
     }
@@ -38,7 +38,7 @@ public class TomatoCollect : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
-            E.gameObject.SetActive(false);
+            textoE.gameObject.SetActive(false);
             recogible = false;
         }            
     }
