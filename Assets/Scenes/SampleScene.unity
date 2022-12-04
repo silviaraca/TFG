@@ -128,7 +128,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8903621261317984266, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
   m_PrefabInstance: {fileID: 8903621261322490854}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &13059057
+--- !u!114 &13059053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,75 +140,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e0673abfacbc54cb4c5a5cfa328275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  E: {fileID: 2113890305}
-  trigger: {fileID: 13059058}
-  move: {fileID: 2051041788}
-  dialoguePanel: {fileID: 2123953108}
---- !u!114 &13059058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13059052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eae34dc9b51eee846bc4650862f5d2ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 955620496}
-  nameText: {fileID: 1080916390}
-  dialogue:
+  textoE: {fileID: 2113890305}
+  textoNombre: {fileID: 1080916390}
+  textoChat: {fileID: 955620496}
+  test: {fileID: 1733178393}
+  d:
     name: Paco
     sentences:
-    - Hola buenas soy Paco el pollo.
-    - "\xBFPor qu\xE9 cruz\xF3 el pollo la carrerera?"
-    - "\xA1\xA1Po \"Yo\" qu\xE9 s\xE9!! "
---- !u!1 &143564298
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 143564300}
-  - component: {fileID: 143564299}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &143564299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143564298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56027474066d5ca48819ad44673705c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueEnd: 0
---- !u!4 &143564300
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143564298}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5100002, y: 3.9499998, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 955620495}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+    - Hola buenas, soy Paco el pollo.
+    - "\xBFPara qu\xE9 cruz\xF3 el pollo la carretera?"
+    - "\xA1Po \"Yo\" qu\xE9 s\xE9!"
+  panel: {fileID: 2123953108}
+  move: {fileID: 1908499014}
 --- !u!1001 &182215227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,8 +1324,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 143564300}
+  m_Children: []
   m_Father: {fileID: 2123953107}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1635,6 +1577,8 @@ GameObject:
   - component: {fileID: 1733178391}
   - component: {fileID: 1733178390}
   - component: {fileID: 1733178389}
+  - component: {fileID: 1733178393}
+  - component: {fileID: 1733178392}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1725,6 +1669,31 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 10
   m_TargetDisplay: 0
+--- !u!114 &1733178392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733178387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85be475f2a496194a84776bda84d5646, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1733178393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733178387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83fd755d807e70b4890166586df0086c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typer: {fileID: 1733178392}
 --- !u!1 &1766745146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,6 +3818,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8541471537800874888, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
   m_PrefabInstance: {fileID: 8541471538236183485}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1908499014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8541471537800874889, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+  m_PrefabInstance: {fileID: 8541471538236183485}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343b46d37626d8749b2091aab7d4c699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1981850421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,17 +3900,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2051041788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8541471537800874889, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
-  m_PrefabInstance: {fileID: 8541471538236183485}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343b46d37626d8749b2091aab7d4c699, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2113890303
 GameObject:
   m_ObjectHideFlags: 0
