@@ -13,6 +13,7 @@ public class TomatoCollect : MonoBehaviour
    public TextMeshProUGUI textoE;
    private bool recogible;
    private Player player;
+   public Cargar cargar;
 
    private void Start(){
         textoE.gameObject.SetActive(false);
@@ -21,8 +22,7 @@ public class TomatoCollect : MonoBehaviour
 
    private void Update(){
         if(recogible && Input.GetKeyDown(KeyCode.E))
-            if(player.inventory.Add(type))
-                Destroy(this.gameObject);
+            cargar.load("OtraEscena");
    }
    
    private void OnTriggerEnter2D(Collider2D collision)
