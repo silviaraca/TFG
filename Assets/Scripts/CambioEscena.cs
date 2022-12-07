@@ -5,25 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum CollectableType{NONE, TOMATO}
-
-public class TomatoCollect : MonoBehaviour
+public class CambioEscena : MonoBehaviour
 {
-   public CollectableType type;
    public TextMeshProUGUI textoE;
-   private bool recogible;
+   private bool usable;
    private Player player;
    public Cargar cargar;
+   [SerializeField] private string escena;
 
    private void Start(){
         textoE.gameObject.SetActive(false);
-        type = CollectableType.TOMATO;
    }
 
    private void Update(){
-        if(recogible && Input.GetKeyDown(KeyCode.E))
-            if(player.inventory.Add(type))
-                Destroy(this.gameObject);
+        if(usable && Input.GetKeyDown(KeyCode.E))
+            cargar.load(escena);
    }
    
    private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +27,7 @@ public class TomatoCollect : MonoBehaviour
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
             textoE.gameObject.SetActive(true);
-            recogible = true; 
+            usable = true; 
         }                   
     }
 
@@ -40,9 +36,7 @@ public class TomatoCollect : MonoBehaviour
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
             textoE.gameObject.SetActive(false);
-            recogible = false;
+            usable = false;
         }            
     }
 }
-
- 
