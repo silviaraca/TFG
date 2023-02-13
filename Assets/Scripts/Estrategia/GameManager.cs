@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
   public List<Carta> deck = new List<Carta>();
   public Transform[] cardSlots;
+  public casilla[] casillas;
   public bool[] availableCardSlots;
 
   public void DrawCard(){
@@ -15,12 +16,23 @@ public class GameManager : MonoBehaviour
         for(int i = 0; i < availableCardSlots.Length; i++){
             if(availableCardSlots[i] == true){
                 randCard.gameObject.SetActive(true);
+                randCard.handIndex = i;
                 randCard.transform.position = cardSlots[i].position;
                 availableCardSlots[i] = false;
                 deck.Remove(randCard);
                 return;
             }
         }
+    }
+  }
+
+  public Vector3 selecCasilla(){
+    while(true){
+      for(int i = 0; i < casillas.Length; i++){
+        if(casillas[i].OnMouseDown()){
+          return casillas[i].transform.position;
+        }
+      }
     }
   }
 }

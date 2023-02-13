@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Carta : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool hasBeenPlayed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int handIndex;
+    public GameManager gm;
+
+    public void Start(){
+        gm = FindObjectOfType<GameManager>();
+    }
+    private void OnMouseDown(){
+        if(!hasBeenPlayed){
+            transform.position = gm.selecCasilla();
+            hasBeenPlayed = true;
+            gm.availableCardSlots[handIndex] = true;
+        }
     }
 }
