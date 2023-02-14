@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     }
   }
 
-  public Vector3 selecCasilla(){
+  /*public Vector3 selecCasilla(){
     while(true){
       for(int i = 0; i < casillas.Length; i++){
         if(casillas[i].OnMouseDown()){
@@ -34,5 +34,5 @@ public class GameManager : MonoBehaviour
         }
       }
     }
-  }
+  }*/
 }

@@ -7,16 +7,17 @@ public class Carta : MonoBehaviour
     public bool hasBeenPlayed;
 
     public int handIndex;
-    public GameManager gm;
+    
+    /*public GameManager gm;
 
     public void Start(){
         gm = FindObjectOfType<GameManager>();
     }
+    
     private void OnMouseDown(){
         if(!hasBeenPlayed){
-            transform.position = gm.selecCasilla();
             hasBeenPlayed = true;
             gm.availableCardSlots[handIndex] = true;
         }
-    }
+    }*/
 }
