@@ -22,7 +22,7 @@ public class DragDrop : MonoBehaviour
     void Update()
     {
         if(isDragging){
-            transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         }
     }
 

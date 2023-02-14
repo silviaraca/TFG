@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 967816648082412180}
   - component: {fileID: 2625985267617668317}
   - component: {fileID: 8349674739401074277}
+  - component: {fileID: 2837989887890160260}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -102,7 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
   handIndex: 0
-  gm: {fileID: 0}
 --- !u!61 &967816648082412180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08c4e86351f280459d249ec04bb4e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &2837989887890160260
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967816648082412179}
+  m_CullTransparentMesh: 1
