@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OtraEscena.unity
     guid: 18af616d93b8c374b837f12bd51f8dda
+  - enabled: 1
+    path: Assets/Scenes/CasaProta.unity
+    guid: c499fba16263b454faf5beebd7aca143
   m_configObjects: {}
