@@ -32,14 +32,18 @@ public class DragDrop : MonoBehaviour
         if(sobreCasilla){
             transform.position = cas.transform.position;
             int i = card.handIndex;
-            while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
-                gm.mano[i+1].transform.position = gm.espacioMano[i].position;
-                gm.mano[i] = gm.mano[i+1];
-                gm.mano[i].handIndex = i;
-                i++;
+            if(card.enMano){
+                while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
+                    gm.mano[i+1].transform.position = gm.espacioMano[i].position;
+                    gm.mano[i] = gm.mano[i+1];
+                    gm.mano[i].handIndex = i;
+                    i++;
+                }
+                card.enMano = false;
+                gm.espacioManoSinUsar[i] = true;
+                gm.mano.Remove(gm.mano[i]);//***
             }
-            gm.espacioManoSinUsar[i] = true;
-            gm.mano.Remove(gm.mano[i]);//Esto es mu cutre, mejoralo
+            
         }
         else{
             transform.position = posIni;
@@ -55,7 +59,8 @@ public class DragDrop : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         cas = collision.GetComponent<Casilla>();
-        if(collision.gameObject.name.Equals("Casilla")){
+        string nombreObjeto = collision.gameObject.name.Substring(0,7);
+        if(nombreObjeto.Equals("Casilla")){
             sobreCasilla = true;
         }
     }
@@ -63,7 +68,8 @@ public class DragDrop : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         cas = collision.GetComponent<Casilla>();
-        if(collision.gameObject.name.Equals("Casilla")){
+        string nombreObjeto = collision.gameObject.name.Substring(0,7);
+        if(nombreObjeto.Equals("Casilla")){
             sobreCasilla = false;
         }
     }

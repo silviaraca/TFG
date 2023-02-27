@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
             if(espacioManoSinUsar[i]){
                 randCard.gameObject.SetActive(true);
                 randCard.handIndex = i;
+                randCard.enMano = true;
                 mano.Add(randCard);
                 randCard.transform.position = espacioMano[i].position;
                 espacioManoSinUsar[i] = false;
