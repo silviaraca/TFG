@@ -12484,7 +12484,7 @@ PrefabInstance:
       objectReference: {fileID: 41688842}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: OtraEscena
+      value: Oficina
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE
