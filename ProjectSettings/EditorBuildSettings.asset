@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CasaProta.unity
     guid: c499fba16263b454faf5beebd7aca143
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Pueblo.unity
     guid: 01651fc151d9f54449906569987ebc61
   - enabled: 1
