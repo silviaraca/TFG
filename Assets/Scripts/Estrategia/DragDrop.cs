@@ -29,7 +29,7 @@ public class DragDrop : MonoBehaviour
     public void sueltaCarta(){
         enMovimiento = false;
         cerrojo = true;
-        if(sobreCasilla && cas.vacia){
+        if(sobreCasilla && (cas.vacia && card.enMano)){
             card.transform.position = cas.transform.position;
             cas.card = card;
             cas.vacia = false;
@@ -46,6 +46,12 @@ public class DragDrop : MonoBehaviour
                 gm.mano.Remove(gm.mano[i]);//***
             }
             
+        }
+        else if(sobreCasilla && (!cas.vacia && !card.enMano)){
+            //Hacer mazo de descarte para que al colocar una carta en el tablero vaya a este y luego manejar otros objetos en el tablero que
+            //se puedan elimininar directamente sin problema
+            card.transform.position = cas.transform.position;
+            cas.card = card;
         }
         else{
             card.transform.position = posIni;
