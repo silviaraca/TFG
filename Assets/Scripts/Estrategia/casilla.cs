@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Casilla : MonoBehaviour
 {
-    
+    public Carta card;
+    public bool vacia = true;
 }
