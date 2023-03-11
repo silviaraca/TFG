@@ -9,8 +9,8 @@ public class DragDrop : MonoBehaviour
     public bool sobreCasilla;
     public Carta card; //Esto no debería hacerlo public, mirar pa que pille su propia carta como hace el gm
     private bool cerrojo = true;
-
     private Casilla cas;
+    private bool nuevaCas = false;
 
     private GameManager gm;
 
@@ -27,10 +27,11 @@ public class DragDrop : MonoBehaviour
     }
 
     public void sueltaCarta(){
+        print(cas.gameObject.name); 
         enMovimiento = false;
         cerrojo = true;
-        if(sobreCasilla && (cas.vacia && card.enMano)){
-            card.transform.position = cas.transform.position;
+        if(sobreCasilla && (cas.vacia && card.enMano)){ 
+            card.transform.position = cas.transform.position; 
             cas.card = card;
             cas.vacia = false;
             int i = card.handIndex;
@@ -42,7 +43,8 @@ public class DragDrop : MonoBehaviour
                     i++;
                 }
                 card.enMano = false;
-                gm.espacioManoSinUsar[i] = true;
+                card.setCasAct(cas);
+                gm.espacioManoSinUsar[i] = true;                
                 gm.mano.Remove(gm.mano[i]);//***
             }
             
@@ -50,10 +52,18 @@ public class DragDrop : MonoBehaviour
         else if(sobreCasilla && (!cas.vacia && !card.enMano)){
             //Hacer mazo de descarte para que al colocar una carta en el tablero vaya a este y luego manejar otros objetos en el tablero que
             //se puedan elimininar directamente sin problema
+            Casilla casAct = card.getCasAct();
+            casAct.vacia = true;
+            Carta cardAct = cas.card;
+            gm.descarte.Add(cardAct);
+            cardAct.gameObject.SetActive(false);
+            casAct.card = null;
             card.transform.position = cas.transform.position;
             cas.card = card;
+            card.setCasAct(cas);
         }
         else{
+            
             card.transform.position = posIni;
         }
     }
@@ -68,17 +78,19 @@ public class DragDrop : MonoBehaviour
     {
         cas = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
-        if(nombreObjeto.Equals("Casilla")){
+        if(nombreObjeto.Equals("Casilla")){ 
+            if(sobreCasilla) nuevaCas = true;
+            print(cas.gameObject.name);
             sobreCasilla = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        cas = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){
-            sobreCasilla = false;
+            if(nuevaCas) nuevaCas = false;
+            else sobreCasilla = false;
         }
     }
 }
