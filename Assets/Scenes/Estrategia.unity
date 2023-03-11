@@ -3088,13 +3088,7 @@ MonoBehaviour:
   - {fileID: 720629989}
   - {fileID: 231710867}
   - {fileID: 37049193}
-  descarte:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  descarte: []
   espacioMano:
   - {fileID: 151856171}
   - {fileID: 575486925}
