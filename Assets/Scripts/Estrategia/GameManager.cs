@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
   public List<Carta> mazo = new List<Carta>();
+  public List<Carta> descarte = new List<Carta>();
   public Transform[] espacioMano;
   public Casilla[] casillas;
   public bool[] espacioManoSinUsar;
@@ -26,6 +27,13 @@ public class GameManager : MonoBehaviour
                 return;
             }
         }
+    }
+    else if (descarte.Count >= 1){
+      for(int i = 0; i < descarte.Count; i++){
+        mazo.Add(descarte[i]);
+      }
+      descarte.Clear();
+      DrawCard();
     }
   }
 }
