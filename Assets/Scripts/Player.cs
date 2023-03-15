@@ -5,6 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Inventory inventory;
+    public int numItem;
+
+    private void Awake()
+    {
+        inventory = new Inventory(10);
+    }
 
     public Player()
     {

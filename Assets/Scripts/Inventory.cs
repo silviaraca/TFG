@@ -5,10 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory 
 {
+    public List<Slot> slots = new List<Slot>();
     public int count; //Items ahora mismo
     public int maxSlots;
     public int busySlots;
-    public List<Slot> slots = new List<Slot>();
 
     //Inicializar
     public Inventory(int num)
@@ -22,21 +22,43 @@ public class Inventory
             slots.Add(slot);
         }
     }
+    [System.Serializable]
+    public class Slot 
+    {
+        public int count; //Items ahora mismo
+        public int max; //Num max de items permitidos
+        public CollectableType type;
+        public Sprite icon;
+        
+        public Slot()
+        {
+            type = CollectableType.NONE;
+            count = 0;
+            max = 4;
+        }
+
+        public void AddItem(Collectable item)
+        {
+            this.type = (CollectableType)item.type;
+            this.icon = item.icon;
+            count++;
+        }
+
+    }
+
 
     //Se añade un item
-    public bool Add(CollectableType itemType)
+    public bool Add(Collectable item)
     {
         foreach(Slot slot in slots)
         {
             //Items ya existentes
-            if(slot.type == itemType)
+            if(slot.type == (CollectableType)item.type)
             {
                 if(slot.max > slot.count)
                 {
                     //Se añade el item
-                    slot.type = itemType;
-                    slot.count++;
-                    count++;
+                    slot.AddItem(item);
                     return true;
                 }
                 else return false;
@@ -49,9 +71,7 @@ public class Inventory
             //Items nuevos
             if(slot.type == CollectableType.NONE)
             {
-                slot.type = itemType;
-                slot.count++;
-                count++;
+                slot.AddItem(item);
                 busySlots++;
                 return true;
             }

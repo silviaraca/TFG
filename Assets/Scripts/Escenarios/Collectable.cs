@@ -5,35 +5,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum CollectableType{NONE, TOMATO}
-
-public class TomatoCollect : MonoBehaviour
+public class Collectable : MonoBehaviour
 {
-   public TextMeshProUGUI textoE;
-   private bool recogible;
-   private Player player;
-   public Cargar cargar;
-   public CollectableType type;
+    public enum CollectableType{ NONE, CARD};
+    public TextMeshProUGUI textoE;
+    private bool recogible;
+    private Player player;
+    public CollectableType type;
+    public Sprite icon;
 
-   public Collectable col;
-
-   private void Start(){
+    private void Start(){
         textoE.gameObject.SetActive(false);
-        type = CollectableType.TOMATO;
+        type = CollectableType.CARD;
    }
 
    private void Update(){
         if(recogible && Input.GetKeyDown(KeyCode.E))
-            if(player.inventory.Add(col))
+            if(player.inventory.Add(this))
                 Destroy(this.gameObject);
    }
    
    private void OnTriggerEnter2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if(collision.gameObject.name.Equals("Player")){
+        if(player){
             textoE.gameObject.SetActive(true);
             recogible = true; 
+            player.inventory.Add(this);
         }                   
     }
 
@@ -47,4 +45,5 @@ public class TomatoCollect : MonoBehaviour
     }
 }
 
- 
+   
+
