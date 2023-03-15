@@ -31,7 +31,7 @@ public class Collectable : MonoBehaviour
         if(player){
             textoE.gameObject.SetActive(true);
             recogible = true; 
-            player.inventory.Add(this);
+           // player.inventory.Add(this);
         }                   
     }
 
