@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+public enum CollectableType{ NONE, CARD};
+
 public class Collectable : MonoBehaviour
 {
-    public enum CollectableType{ NONE, CARD};
+   
     public TextMeshProUGUI textoE;
     private bool recogible;
     private Player player;
@@ -31,7 +33,7 @@ public class Collectable : MonoBehaviour
         if(player){
             textoE.gameObject.SetActive(true);
             recogible = true; 
-           // player.inventory.Add(this);
+           //player.inventory.Add(this);
         }                   
     }
 

@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum CollectableType{NONE, TOMATO}
-
 public class TomatoCollect : MonoBehaviour
 {
    public TextMeshProUGUI textoE;
@@ -19,7 +17,7 @@ public class TomatoCollect : MonoBehaviour
 
    private void Start(){
         textoE.gameObject.SetActive(false);
-        type = CollectableType.TOMATO;
+        //type = CollectableType.CARD;
    }
 
    private void Update(){

@@ -37,8 +37,11 @@ public class Talk : MonoBehaviour
             textoNombre.text = d.name;
             if(Input.GetKeyDown(KeyCode.E)  && index <= d.sentences.Length){
                 if(index != d.sentences.Length)
-                    test.Run(d.sentences[index], textoChat);
-                index++;
+                {
+                    test.Run(d.sentences[index], textoChat); 
+                }
+                    index++;
+               
             }
             if (index > d.sentences.Length){
                 panel.gameObject.SetActive(false);

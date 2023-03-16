@@ -9,12 +9,12 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        inventory = new Inventory(25);
+        inventory = new Inventory(20);
     }
 
     public Player()
     {
-        inventory = new Inventory(25);
+        inventory = new Inventory(20);
     }
 
 }
