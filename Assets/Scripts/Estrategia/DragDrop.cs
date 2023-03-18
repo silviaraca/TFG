@@ -11,7 +11,7 @@ public class DragDrop : MonoBehaviour
     private bool cerrojo = true;
     private Casilla cas;
     private bool nuevaCas = false;
-
+    public GameObject personajePrefab;
     private GameManager gm;
 
     void Start()
@@ -31,7 +31,10 @@ public class DragDrop : MonoBehaviour
         enMovimiento = false;
         cerrojo = true;
         if(sobreCasilla && (cas.vacia && card.enMano)){ 
-            card.transform.position = cas.transform.position; 
+            GameObject a = Instantiate(personajePrefab);
+            a.transform.SetParent(gm.Canvas.transform, false);
+            a.transform.position = cas.transform.position; 
+            card.transform.position = gm.zonaDescarte.transform.position;
             cas.card = card;
             cas.vacia = false;
             int i = card.handIndex;

@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
   public List<Carta> mazo = new List<Carta>();
   public List<Carta> descarte = new List<Carta>();
+  public GameObject zonaDescarte;
+  public GameObject Canvas;
   public Transform[] espacioMano;
   public Casilla[] casillas;
   public bool[] espacioManoSinUsar;

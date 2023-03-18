@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3558499904251144605}
   - component: {fileID: -4289805521888180659}
   - component: {fileID: 374868016997734113}
+  - component: {fileID: -462967307239502017}
   m_Layer: 0
   m_Name: Card5
   m_TagString: Untagged
@@ -94,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
+  enMano: 0
   handIndex: 0
 --- !u!114 &3558499904251144606
 MonoBehaviour:
@@ -108,6 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sobreCasilla: 0
+  card: {fileID: 3558499904251144607}
+  personajePrefab: {fileID: 4787448300056204280, guid: 5dc136793eed3814bab108c4c6f1331c, type: 3}
 --- !u!114 &3558499904251144605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +141,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: -462967307239502017}
+          m_TargetAssemblyTypeName: Zoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 6
     callback:
       m_PersistentCalls:
@@ -144,6 +160,38 @@ MonoBehaviour:
         - m_Target: {fileID: 3558499904251144606}
           m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
           m_MethodName: sueltaCarta
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -462967307239502017}
+          m_TargetAssemblyTypeName: Zoom, Assembly-CSharp
+          m_MethodName: OnHoverEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -462967307239502017}
+          m_TargetAssemblyTypeName: Zoom, Assembly-CSharp
+          m_MethodName: OnHoverExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -200,3 +248,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-462967307239502017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558499904251144603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d66635cb6bf8534aa680eaed74e888f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gm: {fileID: 8626704393824186356, guid: 118150ca15bfa3044b00fd0f71fc6840, type: 3}
+  Carta: {fileID: 3558499904251144603}
