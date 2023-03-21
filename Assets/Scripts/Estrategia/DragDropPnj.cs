@@ -1,0 +1,127 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DragDropPnj : MonoBehaviour
+{
+    private bool enMovimiento = false;
+    private Vector2 posIni;
+    public bool sobreCasilla;
+    public Personaje pnj; 
+    private bool cerrojo = true;
+    private Casilla cas;
+    private bool nuevaCas = false;
+    private GameManager gm;
+
+    void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
+
+    public void cogePnj(){
+        enMovimiento = true;
+        if(cerrojo)
+            posIni = transform.position;
+        cerrojo = false;
+        movible();
+    }
+
+    public void sueltaPnj(){
+        enMovimiento = false;
+        cerrojo = true;
+        if(sobreCasilla && cas.vacia){ 
+
+        }
+        else if(sobreCasilla && !cas.vacia && cas.pnj.enemigo){ //Esto ya no es necesario en las cartas
+            Casilla casAct = pnj.getCasAct();
+            casAct.vacia = true;
+            Personaje pnjAct = cas.pnj;
+            if(pnjAct.danar(pnj.getAtaque())){
+                pnj.transform.position = cas.transform.position;
+                cas.pnj = pnj;
+                pnj.setCasAct(cas);
+            }
+        }
+        else{
+            pnj.transform.position = posIni;
+        }
+    }
+    void Update()
+    {
+        if(enMovimiento){
+            pnj.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+        }
+    }
+
+    public void movible(){
+        int posXAct = pnj.getCasAct().getPosX();
+        int posYAct = pnj.getCasAct().getPosY();
+        int posArr = posXAct+posYAct*4;
+        pintaCas(posArr, pnj.movAct);
+    }
+
+    private void pintaCas(int pos, int mov){
+        int posAux;
+        if(mov > 0){
+            if(((posAux = pos+1)%4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                //pinta
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
+                gm.tablero[posAux].pintada = true;
+                pintaCas(posAux,mov-1);
+            }
+            if((((posAux = pos-1)+1) %4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                //pinta
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
+                gm.tablero[posAux].pintada = true;
+                pintaCas(posAux,mov-1);
+            }
+            if((posAux = pos+4) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                //pinta
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
+                gm.tablero[posAux].pintada = true;
+                pintaCas(posAux,mov-1);
+            }
+            if((posAux = pos-4) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                //pinta
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
+                gm.tablero[posAux].pintada = true;
+                pintaCas(posAux,mov-1);
+            }
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        cas = collision.GetComponent<Casilla>();
+        string nombreObjeto = collision.gameObject.name.Substring(0,7);
+        if(nombreObjeto.Equals("Casilla")){ 
+            if(sobreCasilla) nuevaCas = true;
+            print(cas.gameObject.name);
+            sobreCasilla = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        string nombreObjeto = collision.gameObject.name.Substring(0,7);
+        if(nombreObjeto.Equals("Casilla")){
+            if(nuevaCas) nuevaCas = false;
+            else sobreCasilla = false;
+        }
+    }
+}
+
+
+/*
+        else if(sobreCasilla && (!cas.vacia && !card.enMano)){ //Esto ya no es necesario en las cartas
+            Casilla casAct = card.getCasAct();
+            casAct.vacia = true;
+            Personaje pnjAct = cas.pnj;
+            Destroy(pnjAct);
+            casAct.pnj = null;
+            pnj.transform.position = cas.transform.position;
+            cas.pnj = pnj;
+            pnj.setCasAct(cas);
+        }
+*/

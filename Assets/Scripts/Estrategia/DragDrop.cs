@@ -7,7 +7,7 @@ public class DragDrop : MonoBehaviour
     private bool enMovimiento = false;
     private Vector2 posIni;
     public bool sobreCasilla;
-    public Carta card; //Esto no debería hacerlo public, mirar pa que pille su propia carta como hace el gm
+    public Carta card; 
     private bool cerrojo = true;
     private Casilla cas;
     private bool nuevaCas = false;
@@ -34,8 +34,9 @@ public class DragDrop : MonoBehaviour
             GameObject a = Instantiate(personajePrefab);
             a.transform.SetParent(gm.Canvas.transform, false);
             a.transform.position = cas.transform.position; 
+            a.gameObject.GetComponent<Personaje>().setCasAct(cas);
             card.transform.position = gm.zonaDescarte.transform.position;
-            cas.card = card;
+            cas.pnj = a.GetComponent<Personaje>();
             cas.vacia = false;
             int i = card.handIndex;
             if(card.enMano){
@@ -51,19 +52,6 @@ public class DragDrop : MonoBehaviour
                 gm.mano.Remove(gm.mano[i]);//***
             }
             
-        }
-        else if(sobreCasilla && (!cas.vacia && !card.enMano)){
-            //Hacer mazo de descarte para que al colocar una carta en el tablero vaya a este y luego manejar otros objetos en el tablero que
-            //se puedan elimininar directamente sin problema
-            Casilla casAct = card.getCasAct();
-            casAct.vacia = true;
-            Carta cardAct = cas.card;
-            gm.descarte.Add(cardAct);
-            cardAct.gameObject.SetActive(false);
-            casAct.card = null;
-            card.transform.position = cas.transform.position;
-            cas.card = card;
-            card.setCasAct(cas);
         }
         else{
             
@@ -97,3 +85,17 @@ public class DragDrop : MonoBehaviour
         }
     }
 }
+
+
+/*
+        else if(sobreCasilla && (!cas.vacia && !card.enMano)){ //Esto ya no es necesario en las cartas
+            Casilla casAct = card.getCasAct();
+            casAct.vacia = true;
+            Personaje pnjAct = cas.pnj;
+            Destroy(pnjAct);
+            casAct.pnj = null;
+            pnj.transform.position = cas.transform.position;
+            cas.pnj = pnj;
+            pnj.setCasAct(cas);
+        }
+*/

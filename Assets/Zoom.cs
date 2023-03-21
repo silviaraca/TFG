@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Zoom : MonoBehaviour
 {
-    public GameManager gm;
+    //public GameManager gm;
     public GameObject Carta;
-
+    public GameObject canv;
     private GameObject carta;
     private Sprite zoom;
 
@@ -17,7 +17,7 @@ public class Zoom : MonoBehaviour
 
     public void OnHoverEnter(){
         carta = Instantiate(Carta);
-        carta.transform.SetParent(gm.Canvas.transform, true);
+        carta.transform.SetParent(canv.gameObject.transform, true);
         carta.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y + 150);
         carta.GetComponent<Image>().sprite = zoom;
 

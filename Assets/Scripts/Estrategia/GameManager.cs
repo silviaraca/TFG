@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
   public GameObject zonaDescarte;
   public GameObject Canvas;
   public Transform[] espacioMano;
-  public Casilla[] casillas;
+  public Casilla[] tablero;
+  public int tamTab;
   public bool[] espacioManoSinUsar;
-
   public List<Carta> mano = new List<Carta>();
 
   public void DrawCard(){
