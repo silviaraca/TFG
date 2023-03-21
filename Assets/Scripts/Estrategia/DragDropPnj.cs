@@ -34,6 +34,7 @@ public class DragDropPnj : MonoBehaviour
             Casilla casAct = pnj.getCasAct();
             casAct.vacia = true;
             pnj.transform.position = cas.transform.position;
+            pnj.setMov(pnj.getMovAct()-cas.getConsumeMov());
             cas.pnj = pnj;
             pnj.setCasAct(cas);
         }
@@ -73,24 +74,28 @@ public class DragDropPnj : MonoBehaviour
                 //pinta
                 gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
                 gm.tablero[posAux].pintada = true;
+                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
                 pintaCas(posAux,mov-1);
             }
             if((((posAux = pos-1)+1) %4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 //pinta
                 gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
                 gm.tablero[posAux].pintada = true;
+                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
                 pintaCas(posAux,mov-1);
             }
             if((posAux = pos+4) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 //pinta
                 gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
                 gm.tablero[posAux].pintada = true;
+                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
                 pintaCas(posAux,mov-1);
             }
             if((posAux = pos-4) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 //pinta
                 gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
                 gm.tablero[posAux].pintada = true;
+                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
                 pintaCas(posAux,mov-1);
             }
         }

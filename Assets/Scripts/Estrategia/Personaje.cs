@@ -29,6 +29,9 @@ public class Personaje : MonoBehaviour
     }
 
 
+    public int getMaxMov(){
+        return movMax;
+    }
     public int getMovAct(){
         return movAct;
     }

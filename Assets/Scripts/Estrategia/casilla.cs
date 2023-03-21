@@ -10,6 +10,8 @@ public class Casilla : MonoBehaviour
     private int posX, posY;
     public bool pintada = false;
 
+    private int consumeMov = 0;
+
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
@@ -27,5 +29,13 @@ public class Casilla : MonoBehaviour
 
     public int getPosY(){
         return posY;
+    }
+
+    public int getConsumeMov(){
+        return consumeMov;
+    }
+
+    public void setConsumeMov(int c){
+        consumeMov = c;
     }
 }
