@@ -30,10 +30,14 @@ public class DragDropPnj : MonoBehaviour
     public void sueltaPnj(){
         enMovimiento = false;
         cerrojo = true;
-        if(sobreCasilla && cas.vacia){ 
-
+        if(sobreCasilla && cas.pintada){ 
+            Casilla casAct = pnj.getCasAct();
+            casAct.vacia = true;
+            pnj.transform.position = cas.transform.position;
+            cas.pnj = pnj;
+            pnj.setCasAct(cas);
         }
-        else if(sobreCasilla && !cas.vacia && cas.pnj.enemigo){ //Esto ya no es necesario en las cartas
+        /*else if(sobreCasilla && cas.pintada){ 
             Casilla casAct = pnj.getCasAct();
             casAct.vacia = true;
             Personaje pnjAct = cas.pnj;
@@ -42,10 +46,11 @@ public class DragDropPnj : MonoBehaviour
                 cas.pnj = pnj;
                 pnj.setCasAct(cas);
             }
-        }
+        }*/
         else{
             pnj.transform.position = posIni;
         }
+        desPintaCas();
     }
     void Update()
     {
@@ -58,7 +63,7 @@ public class DragDropPnj : MonoBehaviour
         int posXAct = pnj.getCasAct().getPosX();
         int posYAct = pnj.getCasAct().getPosY();
         int posArr = posXAct+posYAct*4;
-        pintaCas(posArr, pnj.movAct);
+        pintaCas(posArr, pnj.getMovAct());
     }
 
     private void pintaCas(int pos, int mov){
@@ -88,6 +93,13 @@ public class DragDropPnj : MonoBehaviour
                 gm.tablero[posAux].pintada = true;
                 pintaCas(posAux,mov-1);
             }
+        }
+    }
+
+    private void desPintaCas(){
+        for(int i = 0; i < gm.tablero.Length;i++){
+            gm.tablero[i].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gm.tablero[i].pintada = false;
         }
     }
     

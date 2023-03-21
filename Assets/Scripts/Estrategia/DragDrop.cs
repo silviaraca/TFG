@@ -27,7 +27,6 @@ public class DragDrop : MonoBehaviour
     }
 
     public void sueltaCarta(){
-        print(cas.gameObject.name); 
         enMovimiento = false;
         cerrojo = true;
         if(sobreCasilla && (cas.vacia && card.enMano)){ 
@@ -71,7 +70,6 @@ public class DragDrop : MonoBehaviour
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){ 
             if(sobreCasilla) nuevaCas = true;
-            print(cas.gameObject.name);
             sobreCasilla = true;
         }
     }

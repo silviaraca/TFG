@@ -7,9 +7,9 @@ public class Personaje : MonoBehaviour
     private int vida = 2;
     private int ataque = 1;
 
-    private int movMax = 2;
+    private const int movMax = 2;
 
-    public int movAct = 2;
+    private int movAct = 2;
     public bool enemigo = false;
     private Casilla cas;
 
@@ -26,6 +26,14 @@ public class Personaje : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+
+    public int getMovAct(){
+        return movAct;
+    }
+    public void setMov(int m){
+        movAct = m;
     }   
 
     public Casilla getCasAct(){
