@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
+    //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
     private int vida = 2;
     private int ataque = 1;
-
     private const int movMax = 2;
-
     private int movAct = 2;
     public bool enemigo = false;
     private Casilla cas;

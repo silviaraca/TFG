@@ -31,6 +31,7 @@ public class DragDrop : MonoBehaviour
         cerrojo = true;
         if(sobreCasilla && (cas.vacia && card.enMano)){ 
             GameObject a = Instantiate(personajePrefab);
+            //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
             a.transform.SetParent(gm.Canvas.transform, false);
             a.transform.position = cas.transform.position; 
             a.gameObject.GetComponent<Personaje>().setCasAct(cas);

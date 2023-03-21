@@ -30,7 +30,7 @@ public class DragDropPnj : MonoBehaviour
     public void sueltaPnj(){
         enMovimiento = false;
         cerrojo = true;
-        if(sobreCasilla && cas.pintada){ 
+        if(sobreCasilla && cas.vacia && cas.pintada){ 
             Casilla casAct = pnj.getCasAct();
             casAct.vacia = true;
             pnj.transform.position = cas.transform.position;
@@ -38,7 +38,7 @@ public class DragDropPnj : MonoBehaviour
             cas.pnj = pnj;
             pnj.setCasAct(cas);
         }
-        /*else if(sobreCasilla && cas.pintada){ 
+        else if(sobreCasilla && !cas.vacia && cas.pintada){ 
             Casilla casAct = pnj.getCasAct();
             casAct.vacia = true;
             Personaje pnjAct = cas.pnj;
@@ -47,7 +47,7 @@ public class DragDropPnj : MonoBehaviour
                 cas.pnj = pnj;
                 pnj.setCasAct(cas);
             }
-        }*/
+        }
         else{
             pnj.transform.position = posIni;
         }
