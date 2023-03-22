@@ -38,14 +38,18 @@ public class DragDropPnj : MonoBehaviour
             cas.pnj = pnj;
             pnj.setCasAct(cas);
         }
-        else if(sobreCasilla && !cas.vacia && cas.pintada){ 
+        else if(sobreCasilla && !cas.vacia && cas.pintada){
             Casilla casAct = pnj.getCasAct();
             casAct.vacia = true;
             Personaje pnjAct = cas.pnj;
             if(pnjAct.danar(pnj.getAtaque())){
+                //Destroy(pnjAct.gameObject);
                 pnj.transform.position = cas.transform.position;
                 cas.pnj = pnj;
                 pnj.setCasAct(cas);
+            }
+            else{
+                pnj.transform.position = posIni;
             }
         }
         else{
@@ -70,34 +74,32 @@ public class DragDropPnj : MonoBehaviour
     private void pintaCas(int pos, int mov){
         int posAux;
         if(mov > 0){
-            if(((posAux = pos+1)%4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                //pinta
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
-                gm.tablero[posAux].pintada = true;
-                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
-                pintaCas(posAux,mov-1);
+            if(((posAux = pos+1)%4) != 0){
+                ejecutaPintado(posAux, mov);
             }
             if((((posAux = pos-1)+1) %4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                //pinta
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
-                gm.tablero[posAux].pintada = true;
-                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
-                pintaCas(posAux,mov-1);
+                ejecutaPintado(posAux, mov);
             }
             if((posAux = pos+4) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                //pinta
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
-                gm.tablero[posAux].pintada = true;
-                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
-                pintaCas(posAux,mov-1);
+                ejecutaPintado(posAux, mov);
             }
             if((posAux = pos-4) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                //pinta
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 100, 0, 100);
-                gm.tablero[posAux].pintada = true;
-                gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
-                pintaCas(posAux,mov-1);
+                ejecutaPintado(posAux, mov);
             }
+        }
+    }
+
+    private void ejecutaPintado(int posAux, int mov){
+        if(gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
+            gm.tablero[posAux].pintada = true;
+            gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
+            pintaCas(posAux,mov-1);
+        }
+        else if(!gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada && gm.tablero[posAux].pnj.enemigo){
+            gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(200, 0, 0, 100);
+            gm.tablero[posAux].pintada = true;
+            gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
         }
     }
 
@@ -114,7 +116,6 @@ public class DragDropPnj : MonoBehaviour
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){ 
             if(sobreCasilla) nuevaCas = true;
-            print(cas.gameObject.name);
             sobreCasilla = true;
         }
     }

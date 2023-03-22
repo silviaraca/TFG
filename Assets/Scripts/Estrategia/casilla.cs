@@ -16,11 +16,8 @@ public class Casilla : MonoBehaviour
     {
         gm = FindObjectOfType<GameManager>();
         string nombreObjeto = this.gameObject.name.Substring(8);
-        //print(nombreObjeto);
         posY = int.Parse(nombreObjeto.Substring(0,1));
         posX = int.Parse(nombreObjeto.Substring(1,1));
-        print(posX);
-        print(posY);
     }
 
     public int getPosX(){

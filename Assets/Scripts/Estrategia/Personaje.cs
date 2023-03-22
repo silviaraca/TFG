@@ -15,13 +15,14 @@ public class Personaje : MonoBehaviour
 
     public bool danar(int dano){
         vida -= dano;
+        print(vida); 
         return muerto();
     }
 
     private bool muerto(){
-        if(vida <= 0){            
-            cas.pnj = null;
-            Destroy(this);
+        if(vida <= 0){     
+            //cas.pnj = null;
+            Destroy(this.gameObject);
             return true;
         }
         return false;
