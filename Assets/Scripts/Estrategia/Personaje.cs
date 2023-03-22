@@ -10,8 +10,10 @@ public class Personaje : MonoBehaviour
     private const int movMax = 2;
     private int movAct = 2;
     private int numAtaques = 1;
-    public bool enemigo = false;
-    private Casilla cas;
+
+    private int rango = 1;
+    public bool enemigo, enRango;
+    public Casilla cas;
 
 
     public bool danar(int dano){
@@ -22,7 +24,8 @@ public class Personaje : MonoBehaviour
 
     private bool muerto(){
         if(vida <= 0){     
-            //cas.pnj = null;
+            cas.vacia = true;
+            cas.pnj = null;
             Destroy(this.gameObject);
             return true;
         }
@@ -38,21 +41,29 @@ public class Personaje : MonoBehaviour
     }
     public void setMov(int m){
         movAct = m;
-    }   
-
+    }
     public Casilla getCasAct(){
         return cas;
     }
-
     public void setCasAct(Casilla casAct){
         cas = casAct;
     }
-
     public void setAtaque(int at){
         ataque = at;
     }
-
     public int getAtaque(){
         return ataque;
     }
+    public int getRang(){
+        return rango;
+    }
+    public void setRang(int r){
+        rango = r;
+    } 
+    public int getNumAta(){
+        return numAtaques;
+    }
+    public void setNumAta(int a){
+        numAtaques = a;
+    } 
 }
