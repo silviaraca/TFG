@@ -17,45 +17,50 @@ public class DragDrop : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        posIni = transform.position;
     }
 
     public void cogeCarta(){
-        enMovimiento = true;
-        if(cerrojo)
-            posIni = transform.position;
-        cerrojo = false;
+        if(gm.getFase() == 2 || gm.getFase() == 4){
+            enMovimiento = true;
+            if(cerrojo)
+                posIni = transform.position;
+            cerrojo = false;
+        }
     }
 
     public void sueltaCarta(){
-        enMovimiento = false;
-        cerrojo = true;
-        if(sobreCasilla && (cas.vacia && card.enMano)){ 
-            GameObject a = Instantiate(personajePrefab);
-            //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
-            a.transform.SetParent(gm.Canvas.transform, false);
-            a.transform.position = cas.transform.position; 
-            a.gameObject.GetComponent<Personaje>().setCasAct(cas);
-            card.transform.position = gm.zonaDescarte.transform.position;
-            cas.pnj = a.GetComponent<Personaje>();
-            cas.vacia = false;
-            int i = card.handIndex;
-            if(card.enMano){
-                while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
-                    gm.mano[i+1].transform.position = gm.espacioMano[i].position;
-                    gm.mano[i] = gm.mano[i+1];
-                    gm.mano[i].handIndex = i;
-                    i++;
+        if(gm.getFase() == 2 || gm.getFase() == 4){
+            enMovimiento = false;
+            cerrojo = true;
+            if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
+                GameObject a = Instantiate(personajePrefab);
+                //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
+                a.transform.SetParent(gm.Canvas.transform, false);
+                a.transform.position = cas.transform.position; 
+                a.gameObject.GetComponent<Personaje>().setCasAct(cas);
+                card.transform.position = gm.zonaDescarte.transform.position;
+                cas.pnj = a.GetComponent<Personaje>();
+                gm.listaPnj.Add(cas.pnj);
+                cas.vacia = false;
+                int i = card.handIndex;
+                if(card.enMano){
+                    while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
+                        gm.mano[i+1].transform.position = gm.espacioMano[i].position;
+                        gm.mano[i] = gm.mano[i+1];
+                        gm.mano[i].handIndex = i;
+                        i++;
+                    }
+                    card.enMano = false;
+                    card.setCasAct(cas);
+                    gm.espacioManoSinUsar[i] = true;                
+                    gm.mano.Remove(gm.mano[i]);//***
                 }
-                card.enMano = false;
-                card.setCasAct(cas);
-                gm.espacioManoSinUsar[i] = true;                
-                gm.mano.Remove(gm.mano[i]);//***
+                gm.setCarJugadas(gm.getCarJugadas() + 1);
             }
-            
-        }
-        else{
-            
-            card.transform.position = posIni;
+            else{
+                card.transform.position = posIni;
+            }
         }
     }
     void Update()
@@ -84,17 +89,3 @@ public class DragDrop : MonoBehaviour
         }
     }
 }
-
-
-/*
-        else if(sobreCasilla && (!cas.vacia && !card.enMano)){ //Esto ya no es necesario en las cartas
-            Casilla casAct = card.getCasAct();
-            casAct.vacia = true;
-            Personaje pnjAct = cas.pnj;
-            Destroy(pnjAct);
-            casAct.pnj = null;
-            pnj.transform.position = cas.transform.position;
-            cas.pnj = pnj;
-            pnj.setCasAct(cas);
-        }
-*/

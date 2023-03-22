@@ -17,46 +17,54 @@ public class DragDropPnj : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+        posIni = transform.position;
     }
 
     public void cogePnj(){
-        enMovimiento = true;
-        if(cerrojo)
-            posIni = transform.position;
-        cerrojo = false;
-        movible();
+        if(gm.getFase() == 3 && !pnj.enemigo){
+            enMovimiento = true;
+            if(cerrojo)
+                posIni = transform.position;
+            cerrojo = false;
+            movible();
+        }
     }
 
     public void sueltaPnj(){
-        enMovimiento = false;
-        cerrojo = true;
-        if(sobreCasilla && cas.vacia && cas.pintada){ 
-            Casilla casAct = pnj.getCasAct();
-            casAct.vacia = true;
-            pnj.transform.position = cas.transform.position;
-            pnj.setMov(pnj.getMovAct()-cas.getConsumeMov());
-            cas.pnj = pnj;
-            pnj.setCasAct(cas);
-        }
-        else if(sobreCasilla && !cas.vacia && cas.pintada){
-            Casilla casAct = pnj.getCasAct();
-            //casAct.vacia = true;
-            Personaje pnjAct = cas.pnj;
-            if(pnjAct.danar(pnj.getAtaque())){
-                //Destroy(pnjAct.gameObject);
-                //pnj.transform.position = cas.transform.position;
-                //cas.pnj = pnj;
-                //pnj.setCasAct(cas);
-                pnj.transform.position = posIni;
+        if(gm.getFase() == 3 && !pnj.enemigo){
+            enMovimiento = false;
+            cerrojo = true;
+            if(sobreCasilla && cas.vacia && cas.pintada){ 
+                Casilla casAct = pnj.getCasAct();
+                casAct.vacia = true;
+                pnj.transform.position = cas.transform.position;
+                pnj.setMov(pnj.getMovAct()-cas.getConsumeMov());
+                cas.pnj = pnj;
+                cas.vacia = false;
+                pnj.setCasAct(cas);
+            }
+            else if(sobreCasilla && !cas.vacia && cas.pintada){
+                Casilla casAct = pnj.getCasAct();
+                Personaje pnjAct = cas.pnj;
+                if(pnjAct.danar(pnj.getAtaque())){
+                    //Aquí cosas que pasen si se muere el enemigo
+
+                    //casAct.vacia = true;
+                    //Destroy(pnjAct.gameObject);
+                    //pnj.transform.position = cas.transform.position;
+                    //cas.pnj = pnj;
+                    //pnj.setCasAct(cas);
+                    pnj.transform.position = posIni;
+                }
+                else{
+                    pnj.transform.position = posIni;
+                }
             }
             else{
                 pnj.transform.position = posIni;
             }
+            desPintaCas();
         }
-        else{
-            pnj.transform.position = posIni;
-        }
-        desPintaCas();
     }
     void Update()
     {
@@ -127,7 +135,7 @@ public class DragDropPnj : MonoBehaviour
 
     private void desPintaCas(){
         for(int i = 0; i < gm.tablero.Length;i++){
-            gm.tablero[i].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 100);
+            gm.tablero[i].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             gm.tablero[i].pintada = false;
         }
     }
@@ -151,17 +159,3 @@ public class DragDropPnj : MonoBehaviour
         }
     }
 }
-
-
-/*
-        else if(sobreCasilla && (!cas.vacia && !card.enMano)){ //Esto ya no es necesario en las cartas
-            Casilla casAct = card.getCasAct();
-            casAct.vacia = true;
-            Personaje pnjAct = cas.pnj;
-            Destroy(pnjAct);
-            casAct.pnj = null;
-            pnj.transform.position = cas.transform.position;
-            cas.pnj = pnj;
-            pnj.setCasAct(cas);
-        }
-*/
