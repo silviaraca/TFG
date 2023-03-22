@@ -9,6 +9,7 @@ public class Personaje : MonoBehaviour
     private int ataque = 1;
     private const int movMax = 2;
     private int movAct = 2;
+    private int numAtaques = 1;
     public bool enemigo = false;
     private Casilla cas;
 
