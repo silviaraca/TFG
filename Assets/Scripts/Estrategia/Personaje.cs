@@ -14,8 +14,13 @@ public class Personaje : MonoBehaviour
     private int rango = 1;
     public bool enemigo, enRango;
     public Casilla cas;
+    public GameObject hb;
 
 
+    void Start(){
+        HelthBar health = hb.gameObject.GetComponent<HelthBar>();
+        health.maxHealth = vida;
+    }
     public bool danar(int dano){
         vida -= dano;
         print(vida); 

@@ -94,6 +94,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigo: 0
+  enRango: 0
+  cas: {fileID: 0}
+  hb: {fileID: 2982324753067016198, guid: b9d61e6fea0d2ba4aac6c26954bc6d61, type: 3}
 --- !u!114 &5798020256109157267
 MonoBehaviour:
   m_ObjectHideFlags: 0
