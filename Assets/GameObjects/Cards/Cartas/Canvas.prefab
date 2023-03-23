@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
@@ -384,8 +384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1f95602807d8f46b85e02f43aad324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movAct: 2
   enemigo: 0
+  enRango: 0
+  cas: {fileID: 0}
 --- !u!224 &4616179166296931079 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4787448300056204281, guid: 5dc136793eed3814bab108c4c6f1331c, type: 3}
@@ -744,6 +745,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.49000043
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951738, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 4616179167096648278}
     - target: {fileID: 3558499904251144576, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -870,6 +875,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -3.06
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951738, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 4616179167096648278}
     - target: {fileID: 3558499904251144576, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1224,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.57
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951738, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 4616179167096648278}
     - target: {fileID: 3558499904251144576, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2604,6 +2617,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.95
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951738, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 4616179167096648278}
     - target: {fileID: 3558499904251144576, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2946,6 +2963,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951738, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 4616179167096648278}
     - target: {fileID: 3558499904251144576, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3270,6 +3291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951738, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: canv
+      value: 
+      objectReference: {fileID: 4616179167096648278}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
 --- !u!224 &4616179167567294770 stripped
