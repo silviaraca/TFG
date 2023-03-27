@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour
 {
@@ -75,6 +76,8 @@ public class DragDrop : MonoBehaviour
         cas = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){ 
+            if(cas.vacia)
+                cas.gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
             if(sobreCasilla) nuevaCas = true;
             sobreCasilla = true;
         }
@@ -82,8 +85,10 @@ public class DragDrop : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Casilla cas2 = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){
+            cas2.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             if(nuevaCas) nuevaCas = false;
             else sobreCasilla = false;
         }

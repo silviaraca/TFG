@@ -20,6 +20,7 @@ public class Personaje : MonoBehaviour
     }
     public bool danar(int dano){
         vida -= dano;
+        this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida);
         print(vida); 
         return muerto();
     }
@@ -68,4 +69,7 @@ public class Personaje : MonoBehaviour
     public void setNumAta(int a){
         numAtaques = a;
     } 
+    public int getVida(){
+        return vida;
+    }
 }
