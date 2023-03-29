@@ -38,7 +38,7 @@ public class Inventory_UI : MonoBehaviour
     {
         if(slots.Count == player.inventory.slots.Count)
         {
-              Debug.Log("pinga");
+            
             for(int i = 0; i < slots.Count; i++)
             {
                 
