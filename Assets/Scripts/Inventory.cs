@@ -42,6 +42,7 @@ public class Inventory
             this.type = (CollectableType)item.type;
             this.icon = item.icon;
             count++;
+             
         }
 
     }
@@ -68,6 +69,7 @@ public class Inventory
 
         foreach(Slot slot in slots)
         {
+           
             //Items nuevos
             if(slot.type == CollectableType.NONE)
             {

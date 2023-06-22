@@ -28,6 +28,12 @@ public class CambioEscena : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
+            
+            //Guardar el inventario
+            string inventoryData = JsonUtility.ToJson(player.inventory);
+            PlayerPrefs.SetString("InventoryData", inventoryData);
+            PlayerPrefs.Save();
+
             textoE.gameObject.SetActive(true);
             usable = true; 
             playerStorage.initialValue = playerPosition;

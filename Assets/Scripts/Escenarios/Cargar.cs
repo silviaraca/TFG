@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Cargar : MonoBehaviour
 {
+    public Player player;
+
     public void load(string escena){
         SceneManager.LoadScene(escena);
     }
