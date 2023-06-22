@@ -7,11 +7,13 @@ public class Movement : MonoBehaviour
     public bool allowMove;
    public float speed;
    public Animator animator;
-
    private Vector3 direction;
+   public VectorPosition startingPosition;
 
-    private void Strat(){
+    private void Start(){
         allowMove = true;
+        transform.position = startingPosition.initialValue;
+
     }
 
    private void Update()

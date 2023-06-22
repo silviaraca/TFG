@@ -11,6 +11,8 @@ public class CambioEscena : MonoBehaviour
    private bool usable;
    private Player player;
    public Cargar cargar;
+   public Vector2 playerPosition;
+   public VectorPosition playerStorage;
    [SerializeField] private string escena;
 
    private void Start(){
@@ -28,6 +30,7 @@ public class CambioEscena : MonoBehaviour
         if(collision.gameObject.name.Equals("Player")){
             textoE.gameObject.SetActive(true);
             usable = true; 
+            playerStorage.initialValue = playerPosition;
         }                   
     }
 
