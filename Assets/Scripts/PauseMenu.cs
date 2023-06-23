@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         ResumeGame();
+        //isPaused = true;
     }
 
     // Update is called once per frame

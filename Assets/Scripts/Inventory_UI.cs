@@ -24,7 +24,7 @@ public class Inventory_UI : MonoBehaviour
 
     public void ToggleInventory()
     {
-        if(!inventoryPanel.activeSelf)
+        if(!inventoryPanel.activeSelf && !PauseMenu.isPaused)
         {
             inventoryPanel.SetActive(true);
             Setup();
