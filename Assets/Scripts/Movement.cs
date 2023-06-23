@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
    public Animator animator;
    private Vector3 direction;
    public VectorPosition startingPosition;
+   //public GameObject pauseMenu;
 
     private void Start(){
         allowMove = true;
@@ -18,7 +19,7 @@ public class Movement : MonoBehaviour
 
    private void Update()
    {
-    if(allowMove){
+    if(allowMove && !PauseMenu.isPaused){
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         
