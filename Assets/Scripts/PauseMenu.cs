@@ -7,7 +7,6 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public static bool isPaused; //añadir en scripts para parar el juego
-    public Player player;
 
     void Start()
     {
