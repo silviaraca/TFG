@@ -7711,7 +7711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
   cargar: {fileID: 1797016858}
-  playerPosition: {x: 32.5, y: -11.3}
+  playerPosition: {x: -11.7, y: 5.69}
   playerStorage: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
   escena: Pasillo ofi
 --- !u!1001 &1828192175
