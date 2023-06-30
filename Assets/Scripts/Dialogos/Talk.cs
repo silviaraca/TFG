@@ -11,7 +11,7 @@ public class Talk : MonoBehaviour
    [SerializeField] private TextMeshProUGUI textoNombre;
    [SerializeField] private TextMeshProUGUI textoChat;
    [SerializeField] private TestChat test;
-   [SerializeField] private Dialogue d;
+   [SerializeField] private Dial d;
    [SerializeField] private Image panel;
    [SerializeField] private Movement move;
    private bool activeE;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5242960191743087205}
   - component: {fileID: 5082553019823724438}
   m_Layer: 0
-  m_Name: New Palette
+  m_Name: Ciudad Exterior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

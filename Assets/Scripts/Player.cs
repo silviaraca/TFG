@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public Inventory inventory;
     public int numItem;
+    public Vector2 playerPosition;
 
 
     private void Awake()
@@ -26,4 +27,8 @@ public class Player : MonoBehaviour
         inventory = new Inventory(24);
     }
 
+    void Update()
+    {
+        playerPosition = transform.position;
+    }
 }

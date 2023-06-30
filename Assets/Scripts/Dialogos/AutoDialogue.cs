@@ -5,9 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class AutoDialogue : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textoE;
     [SerializeField] private Image panel;
     [SerializeField] private Movement move;
     public TextMeshProUGUI textComponent;
@@ -32,9 +31,8 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeE && Input.GetKeyDown(KeyCode.E)){
+        if(activeE){
             gameObject.SetActive(true);
-            textoE.gameObject.SetActive(false);
             panel.gameObject.SetActive(true);
             move.allowMove = false;
             StartDialogue(); 
@@ -42,7 +40,7 @@ public class Dialogue : MonoBehaviour
             activeE = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
             {
                 if(textComponent.text == lines[index])
                 {
@@ -50,7 +48,6 @@ public class Dialogue : MonoBehaviour
                 }
                 else
                 {
-                    //textName.text = names[index];
                     StopAllCoroutines();
                     textComponent.text = lines[index];
                 }
@@ -83,7 +80,6 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            textoE.gameObject.SetActive(true);
             panel.gameObject.SetActive(false);
             move.allowMove = true;
             textComponent.text = string.Empty;
@@ -95,7 +91,6 @@ public class Dialogue : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
-            textoE.gameObject.SetActive(true);
             activeE = true; 
         }                   
     }
@@ -104,7 +99,6 @@ public class Dialogue : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
-            textoE.gameObject.SetActive(false);
             activeE = false;
         }            
     }
