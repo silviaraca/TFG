@@ -40,7 +40,7 @@ public class AutoDialogue : MonoBehaviour
             activeE = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
             {
                 if(textComponent.text == lines[index])
                 {

@@ -12,6 +12,7 @@ public class Letter : MonoBehaviour
     public TextMeshProUGUI textoE;
     private Player player;
     private bool isUIVisible; // Variable para controlar la visibilidad de la UI
+    private bool activeE;
 
     private void Start()
     {
@@ -22,42 +23,47 @@ public class Letter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        
+        if (isUIVisible)
         {
-            if (isUIVisible)
-            {
+            if (Input.GetKeyDown(KeyCode.E) && activeE || (Input.GetKeyDown(KeyCode.Return) && activeE))
+            {       
                 // Ocultar la UI
-                uiPanel.SetActive(false);
+                uiPanel.SetActive(false); 
                 isUIVisible = false;
                 PauseMenu.isPaused = false;
-                Destroy(this.gameObject);
             }
-            else
+        }
+        else
+        {
+            if ((Input.GetKeyDown(KeyCode.E) && activeE))
             {
                 // Mostrar la UI
                 uiPanel.SetActive(true);
                 isUIVisible = true;
                 PauseMenu.isPaused = true; 
             }
+            
         }
+    
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+ private void OnTriggerEnter2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if (player)
-        {
+        if(collision.gameObject.name.Equals("Player")){
+            activeE = true; 
             textoE.gameObject.SetActive(true);
-        }
+        }                   
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if (player)
-        {
+        if(collision.gameObject.name.Equals("Player")){
+            activeE = false;
             textoE.gameObject.SetActive(false);
-        }
+        }            
     }
 }
 

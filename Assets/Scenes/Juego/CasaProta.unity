@@ -181,11 +181,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Estimado se\xF1or Helsin:\n\n\nContactamos, una vez m\xE1s, con usted
-    debido\na una incidencia relacionada con el mundo\nvamp\xEDrico. Pensamos en
-    usted para solucionar\neste peque\xF1o problema.\nSi desea saber m\xE1s sobre
-    el tema, acuda a \nla sede principal cuya direcci\xF3n adjuntamos\nen la carta.\n\nEsperamos
-    noticias."
+  m_text: 'To Mr. X:
+
+    
+
+    We are contacting you because you have been selected
+    for the job position you applied for at "Vampires Inc." We have considered your
+    qualifications to be suitable for what we are looking for in the company, so
+    we would love to schedule an interview with you to discuss the details. Our offices
+    are located in the southern part of town.
+
+    
+
+    We look forward to hearing
+    from you.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -832,9 +841,9 @@ MonoBehaviour:
   textComponent: {fileID: 1270611084}
   textName: {fileID: 1270611085}
   lines:
-  - "\xA1Una carta!"
+  - ' Oh, a letter! I hope it''s good news'
   names:
-  - 
+  - Me
   textSpeed: 0
 --- !u!61 &543888665
 BoxCollider2D:
@@ -846,7 +855,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2072,6 +2081,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -11.197
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -757.908
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4790039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -354.3462
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675836927235, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1846.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675836927235, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 222.8714
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675836927235, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.5842
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675836927235, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.6587
+      objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2159,6 +2200,38 @@ PrefabInstance:
     - target: {fileID: 3037912676629195304, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245992360117010021, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 903.5932
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245992360117010021, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 69.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245992360117010021, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -480.1466
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245992360117010021, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 119.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913515238798161703, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913515238798161703, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913515238798161703, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8913515238798161703, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a2397f09299ad498873435c37e4872, type: 3}
@@ -5102,7 +5175,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.0000305}
+  m_AnchoredPosition: {x: 0, y: -1.000061}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696552784
@@ -5229,7 +5302,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.014519978}
+  m_Offset: {x: 0, y: 0.012579724}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5240,7 +5313,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.18903995}
+  m_Size: {x: 0.16, y: 0.18515944}
   m_EdgeRadius: 0
 --- !u!212 &1981468162
 SpriteRenderer:
@@ -6080,12 +6153,10 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -2168553158005793610, guid: 530da05e0b99a8e448795b745b712b74, type: 2}
     value: {fileID: 239547460}
-  - key: {fileID: -9046014665058654921, guid: 530da05e0b99a8e448795b745b712b74, type: 2}
-    value: {fileID: 239547460}
   - key: {fileID: 4789644804084700459, guid: 530da05e0b99a8e448795b745b712b74, type: 2}
     value: {fileID: 1981468164}
-  - key: {fileID: 8089198651738586294, guid: 530da05e0b99a8e448795b745b712b74, type: 2}
-    value: {fileID: 0}
+  - key: {fileID: 4578020609142930533, guid: 530da05e0b99a8e448795b745b712b74, type: 2}
+    value: {fileID: 239547460}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &2053772863 stripped
