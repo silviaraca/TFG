@@ -42,7 +42,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 704.3, y: 199.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4787448300056204283
 CanvasRenderer:
@@ -190,7 +190,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3960247, y: 1.0559921}
+  m_Offset: {x: -1.3721223, y: -3.0326653}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -201,7 +201,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 70.1678, y: 78.35184}
+  m_Size: {x: 19.335854, y: 19.342445}
   m_EdgeRadius: 0
 --- !u!1001 &7862107849979057684
 PrefabInstance:
@@ -240,11 +240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3302329775324010790, guid: b9d61e6fea0d2ba4aac6c26954bc6d61, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 140
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3302329775324010790, guid: b9d61e6fea0d2ba4aac6c26954bc6d61, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3302329775324010790, guid: b9d61e6fea0d2ba4aac6c26954bc6d61, type: 3}
       propertyPath: m_LocalPosition.x
@@ -280,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3302329775324010790, guid: b9d61e6fea0d2ba4aac6c26954bc6d61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 3302329775324010790, guid: b9d61e6fea0d2ba4aac6c26954bc6d61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

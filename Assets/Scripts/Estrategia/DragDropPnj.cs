@@ -75,7 +75,7 @@ public class DragDropPnj : MonoBehaviour
     public void movible(){
         int posXAct = pnj.getCasAct().getPosX();
         int posYAct = pnj.getCasAct().getPosY();
-        int posArr = posXAct+posYAct*4;
+        int posArr = posXAct+posYAct*8;
         pintaCas(posArr, pnj.getMovAct());
         pintaAta(posArr, pnj.getRang());
     }
@@ -83,16 +83,16 @@ public class DragDropPnj : MonoBehaviour
     private void pintaCas(int pos, int mov){
         int posAux;
         if(mov > 0){
-            if(((posAux = pos+1)%4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if(((posAux = pos+1)%8) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaPintado(posAux, mov);
             }
-            if((((posAux = pos-1)+1) %4) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if((((posAux = pos-1)+1) %8) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaPintado(posAux, mov);
             }
-            if((posAux = pos+4) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if((posAux = pos+8) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaPintado(posAux, mov);
             }
-            if((posAux = pos-4) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if((posAux = pos-8) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaPintado(posAux, mov);
             }
         }
@@ -101,16 +101,16 @@ public class DragDropPnj : MonoBehaviour
     private void pintaAta(int pos, int rang){
         int posAux;
         if(rang > 0){
-            if(((posAux = pos+1)%4) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaAtacable(posAux, rang);
             }
-            if((((posAux = pos-1)+1) %4) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaAtacable(posAux, rang);
             }
-            if((posAux = pos+4) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaAtacable(posAux, rang);
             }
-            if((posAux = pos-4) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaAtacable(posAux, rang);
             }
         }
