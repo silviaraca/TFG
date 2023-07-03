@@ -34,33 +34,101 @@ public class DragDrop : MonoBehaviour
         if(gm.getFase() == 2 || gm.getFase() == 4){
             enMovimiento = false;
             cerrojo = true;
-            if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
-                GameObject a = Instantiate(personajePrefab);
-                //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
-                a.transform.SetParent(gm.Canvas.transform, false);
-                a.transform.position = cas.transform.position; 
-                a.gameObject.GetComponent<Personaje>().setCasAct(cas);
-                card.transform.position = gm.zonaDescarte.transform.position;
-                cas.pnj = a.GetComponent<Personaje>();
-                gm.listaPnj.Add(cas.pnj);
-                cas.vacia = false;
-                int i = card.handIndex;
-                if(card.enMano){
-                    while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
-                        gm.mano[i+1].transform.position = gm.espacioMano[i].position;
-                        gm.mano[i] = gm.mano[i+1];
-                        gm.mano[i].handIndex = i;
-                        i++;
+            if(card.esPersonaje()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos privados en cada carta
+                if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
+                    GameObject a = Instantiate(personajePrefab);
+                    //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
+                    a.transform.SetParent(gm.Canvas.transform, false);
+                    a.transform.position = cas.transform.position; 
+                    a.gameObject.GetComponent<Personaje>().setCasAct(cas);
+                    card.transform.position = gm.zonaDescarte.transform.position;
+                    cas.pnj = a.GetComponent<Personaje>();
+                    gm.listaPnj.Add(cas.pnj);
+                    cas.vacia = false;
+                    int i = card.handIndex;
+                    if(card.enMano){
+                        while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
+                            gm.mano[i+1].transform.position = gm.espacioMano[i].position;
+                            gm.mano[i] = gm.mano[i+1];
+                            gm.mano[i].handIndex = i;
+                            i++;
+                        }
+                        card.enMano = false;
+                        card.setCasAct(cas);
+                        gm.espacioManoSinUsar[i] = true;                
+                        gm.mano.Remove(gm.mano[i]);//***
                     }
-                    card.enMano = false;
-                    card.setCasAct(cas);
-                    gm.espacioManoSinUsar[i] = true;                
-                    gm.mano.Remove(gm.mano[i]);//***
+                    gm.setCarJugadas(gm.getCarJugadas() + 1);
                 }
-                gm.setCarJugadas(gm.getCarJugadas() + 1);
+                else{
+                    card.transform.position = posIni;
+                }
             }
-            else{
-                card.transform.position = posIni;
+            else if(!card.esPersonaje() && card.esHechizoTablero()){
+                if(card.esHechizoUnico()){ //Cartas de hechizo que tienen que lanzarse sobre un personaje
+                    if(sobreCasilla && !cas.vacia && gm.getCarJugadas() < 2 && ((card.esHechizoAtaque() && cas.pnj.enemigo) || (card.esHechizoDefensa() && !cas.pnj.enemigo))){
+                        card.transform.position = gm.zonaDescarte.transform.position;
+                        card.efectoHechizo(cas.pnj);
+                        int i = card.handIndex;
+                        if(card.enMano){
+                            while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
+                                gm.mano[i+1].transform.position = gm.espacioMano[i].position;
+                                gm.mano[i] = gm.mano[i+1];
+                                gm.mano[i].handIndex = i;
+                                i++;
+                            }
+                            card.enMano = false;
+                            card.setCasAct(cas);
+                            gm.espacioManoSinUsar[i] = true;                
+                            gm.mano.Remove(gm.mano[i]);//***
+                        }
+                        gm.setCarJugadas(gm.getCarJugadas() + 1);
+                    }
+                    else{
+                        card.transform.position = posIni;
+                    }
+                }
+                else if(card.esHechizoArea()){ //Cartas de hechizo en area sin necesidad de objetivo
+                    if(sobreCasilla && gm.getCarJugadas() < 2){
+                        card.transform.position = gm.zonaDescarte.transform.position;
+                        int posAux, areaAux;
+                        areaAux = card.getAreaHechizo();
+                        card.efectoHechizo(cas.pnj);
+                        int pos = cas.getPosX()+cas.getPosY()*8;
+                        while(areaAux > 0){
+                            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                                card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                               card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                                card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                                card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            areaAux--;
+                        }                        
+                        int i = card.handIndex;
+                        if(card.enMano){
+                            while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
+                                gm.mano[i+1].transform.position = gm.espacioMano[i].position;
+                                gm.mano[i] = gm.mano[i+1];
+                                gm.mano[i].handIndex = i;
+                                i++;
+                            }
+                            card.enMano = false;
+                            card.setCasAct(cas);
+                            gm.espacioManoSinUsar[i] = true;                
+                            gm.mano.Remove(gm.mano[i]);//***
+                        }
+                        gm.setCarJugadas(gm.getCarJugadas() + 1);
+                    }
+                    else{
+                        card.transform.position = posIni;
+                    }
+                }
             }
         }
     }
@@ -97,4 +165,11 @@ public class DragDrop : MonoBehaviour
             else sobreCasilla = false;
         }
    }
+
+   private void ejecutaPintado(int posAux){
+        if(gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+            gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
+            gm.tablero[posAux].pintada = true;
+        }
+    }
 }

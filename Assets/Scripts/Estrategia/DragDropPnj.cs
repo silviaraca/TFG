@@ -60,7 +60,7 @@ public class DragDropPnj : MonoBehaviour
                     pnj.transform.position = posIni;
                 }
             }
-            else{
+            else {
                 pnj.transform.position = posIni;
             }
             desPintaCas();

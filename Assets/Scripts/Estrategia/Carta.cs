@@ -19,15 +19,50 @@ public class Carta : MonoBehaviour
 
         // DATOS SOBRE LA CARTA EN SI, estos datos se usaran al construir el pnj o definir lo que hace un hechizo
         private bool personaje, enemigo; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
+        private bool area, objetivoUnico, hechizoAtaque, hechizoDefensa, hechizoTablero; //Datos sobre las cartas de hechizo
         private int ataque, vida, movMax, nAta; //Datos si es personaje
+        private bool dano, cura; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
+        private int areaHechizo;
     
-
     public Casilla getCasAct(){
         return casAct;
     }
 
+    public bool esPersonaje(){
+        return personaje;
+    }
+    public bool esEnemigo(){
+        return enemigo;
+    }
+    public bool esHechizoUnico(){
+        return objetivoUnico;
+    }
+    public bool esHechizoArea(){
+        return area;
+    }
+    public bool esHechizoDefensa(){
+        return hechizoDefensa;
+    }
+    public bool esHechizoAtaque(){
+        return hechizoAtaque;
+    }
+    public bool esHechizoTablero(){
+        return hechizoTablero;
+    }
+    public int getAreaHechizo(){
+        return areaHechizo;
+    }
     public void setCasAct(Casilla cas){
         casAct = cas;
+    }
+
+    public void efectoHechizo(Personaje pnj){
+        if(dano){
+            pnj.danar(ataque);
+        }
+        else if(cura){
+            pnj.danar(-ataque);
+        }
     }
     
 }

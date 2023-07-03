@@ -6,6 +6,7 @@ public class Personaje : MonoBehaviour
 {
     //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
     private int vida = 2;
+    private int vidaMax = 2;
     private int ataque = 1;
     private const int movMax = 2;
     private int movAct = 2;
@@ -20,8 +21,8 @@ public class Personaje : MonoBehaviour
     }
     public bool danar(int dano){
         vida -= dano;
+        if(vida > vidaMax) vida = vidaMax;
         this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida);
-        print(vida); 
         return muerto();
     }
 
