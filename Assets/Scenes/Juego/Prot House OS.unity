@@ -1762,6 +1762,7 @@ GameObject:
   - component: {fileID: 1781069754}
   - component: {fileID: 1781069756}
   - component: {fileID: 1781069755}
+  - component: {fileID: 1781069757}
   m_Layer: 0
   m_Name: Furniture Collider
   m_TagString: Untagged
@@ -2061,6 +2062,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1781069757
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781069753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1928443364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,6 +2089,7 @@ GameObject:
   - component: {fileID: 1928443365}
   - component: {fileID: 1928443367}
   - component: {fileID: 1928443366}
+  - component: {fileID: 1928443368}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -3259,6 +3277,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!68 &1928443368
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928443364}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.2382243, y: -2.2380822}
+  - {x: -2.2354503, y: -1.8111297}
+  - {x: -2.5564387, y: -1.8111986}
+  - {x: -2.5505512, y: 0.91696846}
+  - {x: -0.009441167, y: 0.9131773}
+  - {x: -0.02983594, y: -1.0331204}
+  - {x: 2.241402, y: -0.9948966}
+  - {x: 2.223589, y: -1.811545}
+  - {x: -1.6104952, y: -1.79626}
+  - {x: -1.6171575, y: -2.2435246}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1996307588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,6 +3318,7 @@ GameObject:
   - component: {fileID: 1996307589}
   - component: {fileID: 1996307591}
   - component: {fileID: 1996307590}
+  - component: {fileID: 1996307592}
   m_Layer: 0
   m_Name: Furniture Collider (1)
   m_TagString: Untagged
@@ -3919,3 +3968,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1996307592
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996307588}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
