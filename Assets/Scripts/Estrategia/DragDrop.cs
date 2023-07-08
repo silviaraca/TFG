@@ -13,11 +13,11 @@ public class DragDrop : MonoBehaviour
     private Casilla cas;
     private bool nuevaCas = false;
     public GameObject personajePrefab;
-    private GameManager gm;
+    private GameManagerEstrategia gm;
 
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = FindObjectOfType<GameManagerEstrategia>();
         posIni = transform.position;
     }
 

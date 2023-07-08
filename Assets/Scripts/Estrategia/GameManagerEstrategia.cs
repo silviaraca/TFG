@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManagerEstrategia : MonoBehaviour
 {
   public List<Carta> mazo = new List<Carta>();
   public List<Carta> descarte = new List<Carta>();
