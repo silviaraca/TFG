@@ -18,11 +18,12 @@ public class Carta : MonoBehaviour
         //Dependiendo de la carta habrá que elegir la imagen de la carta a usar
 
         // DATOS SOBRE LA CARTA EN SI, estos datos se usaran al construir el pnj o definir lo que hace un hechizo
-        private bool personaje, enemigo; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
-        private bool area, objetivoUnico, hechizoAtaque, hechizoDefensa, hechizoTablero; //Datos sobre las cartas de hechizo
-        private int ataque, vida, movMax, nAta; //Datos si es personaje
-        private bool dano, cura; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
-        private int areaHechizo;
+        [SerializeField] private bool personaje;
+        private bool enemigo; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
+        [SerializeField] private bool area, objetivoUnico, hechizoAtaque, hechizoDefensa, hechizoTablero; //Datos sobre las cartas de hechizo
+        [SerializeField] private int ataque, vida, movMax, nAta; //Datos si es personaje
+        [SerializeField] private bool dano, cura; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
+        [SerializeField] private int areaHechizo;
     
     public Casilla getCasAct(){
         return casAct;

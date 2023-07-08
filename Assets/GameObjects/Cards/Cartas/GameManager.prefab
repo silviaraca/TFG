@@ -54,6 +54,9 @@ MonoBehaviour:
   descarte: []
   zonaDescarte: {fileID: 5505761982421559282, guid: ae06f68484fe97b44a649aeb39dddc24, type: 3}
   Canvas: {fileID: 4616179167096648278, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
+  cardAldeano: {fileID: 1273880582866501711, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+  cardAgua: {fileID: 4468346709877679869, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+  cardEstaca: {fileID: 2868205627103406734, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
   espacioMano:
   - {fileID: 0}
   - {fileID: 0}
@@ -62,3 +65,4 @@ MonoBehaviour:
   tamTab: 0
   espacioManoSinUsar: 010101
   mano: []
+  listaPnj: []
