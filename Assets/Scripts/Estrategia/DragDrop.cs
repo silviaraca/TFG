@@ -34,7 +34,7 @@ public class DragDrop : MonoBehaviour
         if(gm.getFase() == 2 || gm.getFase() == 4){
             enMovimiento = false;
             cerrojo = true;
-            if(card.esPersonaje()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos privados en cada carta
+            if(card.esPersonaje()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
                     GameObject a = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
@@ -145,6 +145,7 @@ public class DragDrop : MonoBehaviour
         cas = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){ 
+            //Tiene que haber también uno de estos por cartas de hechizo y demas porque funcionan distinto, no colorean igual ni de verde
             if(cas.vacia)
                 cas.gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
                 if(casAux != cas){

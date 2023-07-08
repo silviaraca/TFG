@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour
   public List<Carta> mazo = new List<Carta>();
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
-  public GameObject Canvas;
+  public GameObject Canvas, Cards;
+  public GameObject cardAldeano, cardAgua, cardEstaca; //Objetos de las cartas que existen ya, añadir conforme 
   public Transform[] espacioMano;
   public Casilla[] tablero;
   public int tamTab;
@@ -22,6 +23,20 @@ public class GameManager : MonoBehaviour
                                                           //contador de cartas jugadas para no sobrepasar el límite
   private bool primerTurno = true, pasaTurno = false;
 
+  private List<string> listaCartas = new List<string>();
+
+
+public void Start(){
+  //Esto será tomar las cartas de la lista de cartas que haya en otro lado al iniciar la escena
+  listaCartas.Add("Aldeano");
+  listaCartas.Add("Aldeano");
+  listaCartas.Add("Agua");
+  listaCartas.Add("Agua");
+  listaCartas.Add("Estaca");
+  listaCartas.Add("Estaca");
+
+  creaCartas();
+}
   public void DrawCard(){
       if(fase == 0 || fase == 1){
         nRobadas++;
@@ -85,6 +100,24 @@ public class GameManager : MonoBehaviour
     else if(fase == 5){
       //efectos de final de turno y movimientos de enemigos
       fase = 0; //Reinicia fases cuando haya terminado lo anterior
+    }
+  }
+
+  private void creaCartas(){ //Genera la lista de cartas en el mazo del jugador a partir de una lista de strings
+    GameObject cartaAnadida = null;
+    for(int i = 0; i < listaCartas.Count; i++){
+      //Por cada nueva carta que añadamos al juego hacer la correspondiente aquí
+      if(listaCartas[i] == "Aldeano"){
+        cartaAnadida = Instantiate(cardAldeano);
+      }
+      else if(listaCartas[i] == "Agua"){
+        cartaAnadida = Instantiate(cardAgua);
+      }
+      else if(listaCartas[i] == "Estaca"){
+        cartaAnadida = Instantiate(cardEstaca);
+      }
+      cartaAnadida.transform.SetParent(Cards.transform, false);
+      mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());
     }
   }
 
