@@ -295,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 170948943}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: Pueblo
+      value: Town
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE
@@ -307,11 +307,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: playerPosition.x
-      value: -13.91
+      value: -54.2
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: playerPosition.y
-      value: 19.96
+      value: 32.47
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946311, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_Radius
