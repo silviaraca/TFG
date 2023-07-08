@@ -93,7 +93,8 @@ public class DragDrop : MonoBehaviour
                         card.transform.position = gm.zonaDescarte.transform.position;
                         int posAux, areaAux;
                         areaAux = card.getAreaHechizo();
-                        card.efectoHechizo(cas.pnj);
+                        if(!cas.vacia)
+                            card.efectoHechizo(cas.pnj);
                         int pos = cas.getPosX()+cas.getPosY()*8;
                         while(areaAux > 0){
                             if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
@@ -141,16 +142,16 @@ public class DragDrop : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Casilla casAux = cas;
         cas = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
-        if(nombreObjeto.Equals("Casilla")){ 
+        if(nombreObjeto.Equals("Casilla") && !card.zoom){ 
             //Tiene que haber también uno de estos por cartas de hechizo y demas porque funcionan distinto, no colorean igual ni de verde
-            if(cas.vacia)
-                cas.gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
-                if(casAux != cas){
-                    casAux.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-                }
+            if(cas.vacia && card.esPersonaje()) pintaAzul(cas);
+            else if(card.esHechizoArea()) pintaArea();
+            else if(card.esHechizoUnico() && !cas.vacia){
+                if(card.esHechizoAtaque() && cas.pnj.enemigo) pintaRojo(cas);
+                else if(card.esHechizoDefensa() && !cas.pnj.enemigo) pintaVerde(cas);
+            }
             if(sobreCasilla) nuevaCas = true;
             sobreCasilla = true;
         }
@@ -161,7 +162,11 @@ public class DragDrop : MonoBehaviour
         Casilla cas2 = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){
-            cas2.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            if(card.esPersonaje() || card.esHechizoUnico())
+                cas2.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            else if(card.esHechizoArea()){
+                limpiaArea(cas2);
+            }
             if(nuevaCas) nuevaCas = false;
             else sobreCasilla = false;
         }
@@ -171,6 +176,70 @@ public class DragDrop : MonoBehaviour
         if(gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
             gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
             gm.tablero[posAux].pintada = true;
+        }
+    }
+
+    private void pintaArea(){
+        int posAux, areaAux;
+        areaAux = card.getAreaHechizo();
+        pintaCasillaHechizo(cas);
+        int pos = cas.getPosX()+cas.getPosY()*8;
+        while(areaAux > 0){
+            if(((posAux = pos+1)%8) != 0){
+                pintaCasillaHechizo(gm.tablero[posAux]);
+            }
+            if((((posAux = pos-1)+1) %8) != 0){
+                pintaCasillaHechizo(gm.tablero[posAux]);
+            }
+            if((posAux = pos+8) < gm.tablero.Length){
+                pintaCasillaHechizo(gm.tablero[posAux]);
+            }
+            if((posAux = pos-8) >= 0){
+                pintaCasillaHechizo(gm.tablero[posAux]);
+            }
+            areaAux--;
+        }
+    }
+    private void limpiaArea(Casilla casAux){
+        int posAux;
+        int areaAux = card.getAreaHechizo();
+        casAux.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        int pos = casAux.getPosX()+cas.getPosY()*8;
+        while(areaAux > 0){
+            if(((posAux = pos+1)%8) != 0){
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            }
+            if((((posAux = pos-1)+1) %8) != 0){
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            }
+            if((posAux = pos+8) < gm.tablero.Length){
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            }
+            if((posAux = pos-8) >= 0){
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            }
+            areaAux--;
+        }
+    }
+    private void pintaRojo(Casilla casilla){
+        casilla.gameObject.GetComponent<Image>().color = new Color32(200, 0, 0, 100);
+    }
+    private void pintaVerde(Casilla casilla){
+        casilla.gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
+    }
+    private void pintaAzul(Casilla casilla){
+        casilla.gameObject.GetComponent<Image>().color = new Color32(0, 0, 200, 100);
+    }
+
+    private void pintaCasillaHechizo(Casilla casilla){
+        if(casilla.vacia){
+            pintaAzul(casilla);
+        }
+        else if(!casilla.vacia && casilla.pnj.enemigo){
+            pintaRojo(casilla);
+        }
+        else if(!casilla.vacia && !casilla.pnj.enemigo){
+            pintaVerde(casilla);
         }
     }
 }

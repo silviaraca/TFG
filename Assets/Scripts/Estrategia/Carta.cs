@@ -24,6 +24,7 @@ public class Carta : MonoBehaviour
         [SerializeField] private int ataque, vida, movMax, nAta; //Datos si es personaje
         [SerializeField] private bool dano, cura; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
         [SerializeField] private int areaHechizo;
+        public bool zoom = false;
     
     public Casilla getCasAct(){
         return casAct;
@@ -58,10 +59,10 @@ public class Carta : MonoBehaviour
     }
 
     public void efectoHechizo(Personaje pnj){
-        if(dano){
+        if(dano && pnj.enemigo){
             pnj.danar(ataque);
         }
-        else if(cura){
+        else if(cura && !pnj.enemigo){
             pnj.danar(-ataque);
         }
     }

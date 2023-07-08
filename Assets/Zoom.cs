@@ -7,7 +7,7 @@ public class Zoom : MonoBehaviour
 {
     //public GameManager gm;
     public GameObject Carta;
-    public GameObject canv;
+    private GameManagerE gm;
     private GameObject carta;
     private Sprite zoom;
 
@@ -15,14 +15,22 @@ public class Zoom : MonoBehaviour
         zoom = gameObject.GetComponent<Image>().sprite;
     }
 
+    
+
+    void Start()
+    {
+        gm = FindObjectOfType<GameManagerE>();
+    }
+
     public void OnHoverEnter(){
         carta = Instantiate(Carta);
-        carta.transform.SetParent(canv.gameObject.transform, true);
+        carta.transform.SetParent(gm.Cards.transform, false);
+        carta.GetComponent<Carta>().zoom = true;
         carta.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y + 150);
         carta.GetComponent<Image>().sprite = zoom;
 
         RectTransform rect = carta.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(10000, 10000);
+        rect.sizeDelta = new Vector2(200, 200);
     }
 
     public void OnHoverExit(){

@@ -12,7 +12,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private Movement move;
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI textName;
-    public string[] lines;
+    public string[] sentences;
     public string[] names;
     public float textSpeed;
 
@@ -44,7 +44,7 @@ public class Dialogue : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
             {
-                if(textComponent.text == lines[index])
+                if(textComponent.text == sentences[index])
                 {
                     NextLine();
                 }
@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
                 {
                     //textName.text = names[index];
                     StopAllCoroutines();
-                    textComponent.text = lines[index];
+                    textComponent.text = sentences[index];
                 }
             }
     }
@@ -65,7 +65,7 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-        foreach(char c in lines[index].ToCharArray())
+        foreach(char c in sentences[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -74,7 +74,7 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
-        if(index < lines.Length - 1)
+        if(index < sentences.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;

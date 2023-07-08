@@ -274,4 +274,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carta: {fileID: 1273880582866501711}
-  canv: {fileID: 4616179167096648278, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
+  canv: {fileID: 3513576060506891516, guid: 7e8514c8598c1e54595053c900f62246, type: 3}
