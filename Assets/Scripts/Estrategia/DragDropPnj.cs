@@ -12,11 +12,11 @@ public class DragDropPnj : MonoBehaviour
     private bool cerrojo = true;
     private Casilla cas;
     private bool nuevaCas = false;
-    private GameManagerEstrategia gm;
+    private GameManagerE gm;
 
     void Start()
     {
-        gm = FindObjectOfType<GameManagerEstrategia>();
+        gm = FindObjectOfType<GameManagerE>();
         posIni = transform.position;
     }
 
