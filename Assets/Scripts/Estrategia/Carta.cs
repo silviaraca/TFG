@@ -18,12 +18,12 @@ public class Carta : MonoBehaviour
         //Dependiendo de la carta habrá que elegir la imagen de la carta a usar
 
         // DATOS SOBRE LA CARTA EN SI, estos datos se usaran al construir el pnj o definir lo que hace un hechizo
-        [SerializeField] private bool personaje;
-        private bool enemigo; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
+        [SerializeField] private bool personaje; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
         [SerializeField] private bool area, objetivoUnico, hechizoAtaque, hechizoDefensa, hechizoTablero; //Datos sobre las cartas de hechizo
-        [SerializeField] private int ataque, vida, movMax, nAta; //Datos si es personaje
+        [SerializeField] private int ataque, vida, movMax, nAta, rango; //Datos si es personaje
         [SerializeField] private bool dano, cura; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
         [SerializeField] private int areaHechizo;
+        public bool zoom = false;
     
     public Casilla getCasAct(){
         return casAct;
@@ -31,9 +31,6 @@ public class Carta : MonoBehaviour
 
     public bool esPersonaje(){
         return personaje;
-    }
-    public bool esEnemigo(){
-        return enemigo;
     }
     public bool esHechizoUnico(){
         return objetivoUnico;
@@ -57,11 +54,27 @@ public class Carta : MonoBehaviour
         casAct = cas;
     }
 
+    public int getVidaMax(){
+        return vida;
+    }
+    public int getAtaque(){
+        return ataque;
+    }
+    public int getMovMax(){
+        return movMax;
+    }
+    public int getNumAta(){
+        return nAta;
+    }
+    public int getRango(){
+        return rango;
+    }
+
     public void efectoHechizo(Personaje pnj){
-        if(dano){
+        if(dano && pnj.enemigo){
             pnj.danar(ataque);
         }
-        else if(cura){
+        else if(cura && !pnj.enemigo){
             pnj.danar(-ataque);
         }
     }

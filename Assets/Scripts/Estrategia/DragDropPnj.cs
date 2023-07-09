@@ -12,11 +12,11 @@ public class DragDropPnj : MonoBehaviour
     private bool cerrojo = true;
     private Casilla cas;
     private bool nuevaCas = false;
-    private GameManager gm;
+    private GameManagerE gm;
 
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = FindObjectOfType<GameManagerE>();
         posIni = transform.position;
     }
 
@@ -38,23 +38,23 @@ public class DragDropPnj : MonoBehaviour
                 Casilla casAct = pnj.getCasAct();
                 casAct.vacia = true;
                 pnj.transform.position = cas.transform.position;
-                pnj.setMov(pnj.getMovAct()-cas.getConsumeMov());
+                pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
                 cas.pnj = pnj;
                 cas.vacia = false;
                 pnj.setCasAct(cas);
+                
             }
             else if(sobreCasilla && !cas.vacia && cas.pintada){
                 Casilla casAct = pnj.getCasAct();
                 Personaje pnjAct = cas.pnj;
-                if(pnjAct.danar(pnj.getAtaque())){
+                pnj.setMovAct(pnj.getMovAct()-1);
+                pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+                if(pnjAct.danar(pnj.getAtaque()) && pnj.getRang() == 1){
                     //Aquí cosas que pasen si se muere el enemigo
-
-                    //casAct.vacia = true;
-                    //Destroy(pnjAct.gameObject);
-                    //pnj.transform.position = cas.transform.position;
-                    //cas.pnj = pnj;
-                    //pnj.setCasAct(cas);
-                    pnj.transform.position = posIni;
+                    casAct.vacia = true;
+                    pnj.transform.position = cas.transform.position;
+                    cas.pnj = pnj;
+                    pnj.setCasAct(cas);
                 }
                 else{
                     pnj.transform.position = posIni;
@@ -77,7 +77,8 @@ public class DragDropPnj : MonoBehaviour
         int posYAct = pnj.getCasAct().getPosY();
         int posArr = posXAct+posYAct*8;
         pintaCas(posArr, pnj.getMovAct());
-        pintaAta(posArr, pnj.getRang());
+        if(pnj.getNumAtaAct() > 0)
+            pintaAta(posArr, pnj.getRang());
     }
 
     private void pintaCas(int pos, int mov){
@@ -100,6 +101,7 @@ public class DragDropPnj : MonoBehaviour
 
     private void pintaAta(int pos, int rang){
         int posAux;
+        print(pnj.getNumAtaAct());
         if(rang > 0){
             if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaAtacable(posAux, rang);

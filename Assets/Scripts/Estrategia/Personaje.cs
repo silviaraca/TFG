@@ -5,19 +5,18 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
     //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
-    private int vida = 2;
-    private int vidaMax = 2;
-    private int ataque = 1;
-    private const int movMax = 2;
-    private int movAct = 2;
-    private int numAtaques = 1;
-
-    private int rango = 1;
+    [SerializeField] private int vidaMax, ataque, movMax, numAtaques, rango;
+    private int movAct, vida, numAtaAct;
     public bool enemigo, enRango;
     public Casilla cas;
 
 
     void Start(){
+        vida = vidaMax;
+        movAct = movMax;
+        numAtaAct = numAtaques;
+        this.transform.GetComponentInChildren<HelthBar>().iniVida();
+
     }
     public bool danar(int dano){
         vida -= dano;
@@ -43,8 +42,14 @@ public class Personaje : MonoBehaviour
     public int getMovAct(){
         return movAct;
     }
-    public void setMov(int m){
+    public void setMovAct(int m){
         movAct = m;
+    }
+    public void setNumAtaAct(int a){
+        numAtaAct = a;
+    }
+    public int getNumAtaAct(){
+        return numAtaAct;
     }
     public Casilla getCasAct(){
         return cas;
@@ -69,8 +74,18 @@ public class Personaje : MonoBehaviour
     }
     public void setNumAta(int a){
         numAtaques = a;
+        numAtaAct = a;
     } 
     public int getVida(){
         return vida;
+    }
+    public void setVidaMax(int v){
+        vidaMax = v;
+        vida = v;
+    }
+    public void setMovMax(int m){
+        movMax = m;
+        movAct = m;
+        this.transform.GetComponentInChildren<HelthBar>().iniVida();
     }
 }

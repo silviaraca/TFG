@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class GameManager : MonoBehaviour
+public class GameManagerE : MonoBehaviour
 {
   public List<Carta> mazo = new List<Carta>();
   public List<Carta> descarte = new List<Carta>();
@@ -15,15 +17,15 @@ public class GameManager : MonoBehaviour
   public bool[] espacioManoSinUsar;
   public List<Carta> mano = new List<Carta>();
   public List<Personaje> listaPnj = new List<Personaje>();
+  public TextMeshProUGUI textoFase;
 
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
-  private int fase = 0, nRobadas = 0, nCartasJugadas = 0; //Identificador de fase que se usará para entrar o no a hacer cosas, 
-                                                          //contador de cartas robadas para no sobrepasar el límite, 
-                                                          //contador de cartas jugadas para no sobrepasar el límite
-  private bool primerTurno = true, pasaTurno = false;
+  private static int fase;//Identificador de fase que se usará para entrar o no a hacer cosas, 
+  private static int nRobadas = 0, nCartasJugadas = 0; //contador de cartas robadas para no sobrepasar el límite y contador de cartas jugadas para no sobrepasar el límite
+  private static bool primerTurno, pasaTurno, roba;
 
-  private List<string> listaCartas = new List<string>();
+  private static List<string> listaCartas = new List<string>();
 
 
 public void Start(){
@@ -34,6 +36,10 @@ public void Start(){
   listaCartas.Add("Agua");
   listaCartas.Add("Estaca");
   listaCartas.Add("Estaca");
+  pasaTurno = false;
+  roba = false;
+  primerTurno = true;
+  fase = 0;
 
   creaCartas();
 }
@@ -74,26 +80,28 @@ public void Start(){
         primerTurno = false;
       }
       //efectos de inicio de turno
+      nRobadas = 0;
       fase++; //No pasa hasta que se ejecuten todos
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
     }
     else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
       fase++;
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
       nRobadas = 0;
       pasaTurno = false;
     }
     else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
       fase++;
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
       pasaTurno = false;
       nCartasJugadas = 0;
     }
     else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
       fase++;
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
       for(int i = 0; i < listaPnj.Count; i++){
-        listaPnj[i].setMov(listaPnj[i].getMaxMov());
+        listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+        listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
       }
       pasaTurno = false;
     }
@@ -101,6 +109,11 @@ public void Start(){
       //efectos de final de turno y movimientos de enemigos
       fase = 0; //Reinicia fases cuando haya terminado lo anterior
     }
+    if(fase == 1 && roba){
+      DrawCard();
+      roba = false;
+    }
+
   }
 
   private void creaCartas(){ //Genera la lista de cartas en el mazo del jugador a partir de una lista de strings
@@ -134,5 +147,9 @@ public void Start(){
 
   public void pasaT(){
     pasaTurno = true;
+  }
+
+  public void robaCarta(){
+    roba = true;
   }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8626704393824186355
+--- !u!1 &1119762936444122163
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8626704393824186357}
-  - component: {fileID: 8626704393824186356}
+  - component: {fileID: 1119762936444122162}
+  - component: {fileID: 5842494667995113200}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManagerE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8626704393824186357
+--- !u!4 &1119762936444122162
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8626704393824186355}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 629.2516, y: 314.54138, z: -4912.4434}
-  m_LocalScale: {x: 54.520824, y: 54.520824, z: 54.520824}
+  m_GameObject: {fileID: 1119762936444122163}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 296.3242, y: 149.63971, z: 106.59142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8626704393824186356
+--- !u!114 &5842494667995113200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8626704393824186355}
+  m_GameObject: {fileID: 1119762936444122163}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c258c28ddc86c704fb4d588815f56e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mazo:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  mazo: []
   descarte: []
-  zonaDescarte: {fileID: 5505761982421559282, guid: ae06f68484fe97b44a649aeb39dddc24, type: 3}
+  zonaDescarte: {fileID: 0}
   Canvas: {fileID: 4616179167096648278, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
+  Cards: {fileID: 8405276281981966934, guid: 8503a610394054841b16535abcf5bb57, type: 3}
   cardAldeano: {fileID: 1273880582866501711, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
   cardAgua: {fileID: 4468346709877679869, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
   cardEstaca: {fileID: 2868205627103406734, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
@@ -61,8 +56,40 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  tablero: []
+  tablero:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   tamTab: 0
-  espacioManoSinUsar: 010101
+  espacioManoSinUsar: 000000
   mano: []
   listaPnj: []

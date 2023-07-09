@@ -9,7 +9,7 @@ public class HelthBar : MonoBehaviour
     public Image healthBar;
     public float maxHealth;
     private List<Image> barras = new List<Image>();
-    void Start()
+    public void iniVida()
     {
         maxHealth = this.transform.parent.gameObject.GetComponent<Personaje>().getVida();
         for(int i = 0; i < maxHealth;i++){
