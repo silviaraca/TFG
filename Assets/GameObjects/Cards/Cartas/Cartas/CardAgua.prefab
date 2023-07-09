@@ -32,15 +32,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4468346709877679869}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 500}
+  m_LocalPosition: {x: 0, y: 0, z: 1000}
   m_LocalScale: {x: 1, y: 1.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -12.51, y: -0.57}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -107,9 +107,11 @@ MonoBehaviour:
   vida: 0
   movMax: 0
   nAta: 0
+  rango: 0
   dano: 1
   cura: 1
   areaHechizo: 1
+  zoom: 0
 --- !u!114 &4468346711354431684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,4 +276,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carta: {fileID: 4468346709877679869}
-  canv: {fileID: 4616179167096648278, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}

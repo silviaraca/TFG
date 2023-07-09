@@ -94,6 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1f95602807d8f46b85e02f43aad324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaMax: 0
+  ataque: 0
+  movMax: 0
+  numAtaques: 0
+  rango: 0
   enemigo: 0
   enRango: 0
   cas: {fileID: 0}

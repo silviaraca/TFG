@@ -36,14 +36,16 @@ public class DragDrop : MonoBehaviour
             cerrojo = true;
             if(card.esPersonaje()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
-                    GameObject a = Instantiate(personajePrefab);
+                    GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
-                    a.transform.SetParent(gm.Canvas.transform, false);
-                    a.transform.position = cas.transform.position; 
-                    a.gameObject.GetComponent<Personaje>().setCasAct(cas);
+                    personajeCreado.transform.SetParent(gm.Canvas.transform, false);
+                    personajeCreado.transform.position = cas.transform.position; 
+                    personajeCreado.gameObject.GetComponent<Personaje>().setCasAct(cas);
+                    setCharacterValues(personajeCreado.GetComponent<Personaje>());
                     card.transform.position = gm.zonaDescarte.transform.position;
-                    cas.pnj = a.GetComponent<Personaje>();
+                    cas.pnj = personajeCreado.GetComponent<Personaje>();
                     gm.listaPnj.Add(cas.pnj);
+
                     cas.vacia = false;
                     int i = card.handIndex;
                     if(card.enMano){
@@ -70,6 +72,7 @@ public class DragDrop : MonoBehaviour
                         card.transform.position = gm.zonaDescarte.transform.position;
                         card.efectoHechizo(cas.pnj);
                         int i = card.handIndex;
+                        //Correr posición de las cartas de la mano para dejar hueco
                         if(card.enMano){
                             while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
                                 gm.mano[i+1].transform.position = gm.espacioMano[i].position;
@@ -91,22 +94,25 @@ public class DragDrop : MonoBehaviour
                 else if(card.esHechizoArea()){ //Cartas de hechizo en area sin necesidad de objetivo
                     if(sobreCasilla && gm.getCarJugadas() < 2){
                         card.transform.position = gm.zonaDescarte.transform.position;
+                        //Añadir a una lista de descartes
+                        //---------------
                         int posAux, areaAux;
                         areaAux = card.getAreaHechizo();
+                        //Una vez soltada la carta de hechizo en area hace si efecto en todas las casillas ocupadas por algún personaje
                         if(!cas.vacia)
                             card.efectoHechizo(cas.pnj);
                         int pos = cas.getPosX()+cas.getPosY()*8;
                         while(areaAux > 0){
-                            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia){
                                 card.efectoHechizo(gm.tablero[posAux].pnj);
                             }
-                            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia){
                                card.efectoHechizo(gm.tablero[posAux].pnj);
                             }
-                            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia){
                                 card.efectoHechizo(gm.tablero[posAux].pnj);
                             }
-                            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia){
                                 card.efectoHechizo(gm.tablero[posAux].pnj);
                             }
                             areaAux--;
@@ -136,7 +142,7 @@ public class DragDrop : MonoBehaviour
     void Update()
     {
         if(enMovimiento){
-            card.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+            card.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100);
         }
     }
     
@@ -172,14 +178,7 @@ public class DragDrop : MonoBehaviour
         }
    }
 
-   private void ejecutaPintado(int posAux){
-        if(gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-            gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
-            gm.tablero[posAux].pintada = true;
-        }
-    }
-
-    private void pintaArea(){
+    private void pintaArea(){//Pinta el área de acción de un hechizo de área según qué objetivo haya (En vez de pintar en un futuro cambiará colores de tiles)
         int posAux, areaAux;
         areaAux = card.getAreaHechizo();
         pintaCasillaHechizo(cas);
@@ -200,7 +199,7 @@ public class DragDrop : MonoBehaviour
             areaAux--;
         }
     }
-    private void limpiaArea(Casilla casAux){
+    private void limpiaArea(Casilla casAux){//Devuelve a la forma original las casillas de un área
         int posAux;
         int areaAux = card.getAreaHechizo();
         casAux.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
@@ -241,5 +240,13 @@ public class DragDrop : MonoBehaviour
         else if(!casilla.vacia && !casilla.pnj.enemigo){
             pintaVerde(casilla);
         }
+    }
+
+    private void setCharacterValues(Personaje pnj){
+        pnj.setAtaque(card.getAtaque());
+        pnj.setMovMax(card.getMovMax());
+        pnj.setNumAta(card.getNumAta());
+        pnj.setRang(card.getRango());
+        pnj.setVidaMax(card.getVidaMax());
     }
 }

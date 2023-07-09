@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManagerE : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class GameManagerE : MonoBehaviour
   public bool[] espacioManoSinUsar;
   public List<Carta> mano = new List<Carta>();
   public List<Personaje> listaPnj = new List<Personaje>();
+  public TextMeshProUGUI textoFase;
 
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
@@ -79,25 +82,26 @@ public void Start(){
       //efectos de inicio de turno
       nRobadas = 0;
       fase++; //No pasa hasta que se ejecuten todos
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
     }
     else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
       fase++;
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
       nRobadas = 0;
       pasaTurno = false;
     }
     else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
       fase++;
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
       pasaTurno = false;
       nCartasJugadas = 0;
     }
     else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
       fase++;
-      print(fase);
+      textoFase.text = "Fase Actual: " + fase;
       for(int i = 0; i < listaPnj.Count; i++){
-        listaPnj[i].setMov(listaPnj[i].getMaxMov());
+        listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+        listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
       }
       pasaTurno = false;
     }
