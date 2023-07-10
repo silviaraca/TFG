@@ -6,7 +6,7 @@ public class Casilla : MonoBehaviour
 {
     public Personaje pnj;
     public bool vacia = true;
-    private GameManager gm;
+    private GameManagerE gm;
     private int posX, posY;
     public bool pintada = false;
 
@@ -14,7 +14,7 @@ public class Casilla : MonoBehaviour
 
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        gm = FindObjectOfType<GameManagerE>();
         string nombreObjeto = this.gameObject.name.Substring(8);
         posY = int.Parse(nombreObjeto.Substring(0,1));
         posX = int.Parse(nombreObjeto.Substring(1,1));
