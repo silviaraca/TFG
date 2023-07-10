@@ -101,7 +101,6 @@ public class DragDropPnj : MonoBehaviour
 
     private void pintaAta(int pos, int rang){
         int posAux;
-        print(pnj.getNumAtaAct());
         if(rang > 0){
             if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
                 ejecutaAtacable(posAux, rang);

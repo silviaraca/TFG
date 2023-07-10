@@ -9,24 +9,28 @@ public class Personaje : MonoBehaviour
     private int movAct, vida, numAtaAct;
     public bool enemigo, enRango;
     public Casilla cas;
+    private bool ini = true;
 
 
     void Start(){
         vida = vidaMax;
         movAct = movMax;
         numAtaAct = numAtaques;
-        this.transform.GetComponentInChildren<HelthBar>().iniVida();
-
+        if(vidaMax > 0 && ini){
+            this.transform.GetComponentInChildren<HelthBar>().iniVida();
+            ini = false;
+        }
     }
     public bool danar(int dano){
         vida -= dano;
         if(vida > vidaMax) vida = vidaMax;
+        if(vida < 0) vida = 0;
         this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida);
         return muerto();
     }
 
     private bool muerto(){
-        if(vida <= 0){     
+        if(vida == 0){     
             cas.vacia = true;
             cas.pnj = null;
             Destroy(this.gameObject);

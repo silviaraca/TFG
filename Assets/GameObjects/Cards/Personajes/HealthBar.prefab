@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3302329775324010795}
   - component: {fileID: 3302329775324010792}
   - component: {fileID: 3302329775324010793}
-  - component: {fileID: 3302329775047169605}
+  - component: {fileID: 3036236372155356360}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -778, y: 326}
-  m_SizeDelta: {x: 120, y: 10}
+  m_SizeDelta: {x: 10, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3302329775324010795
 CanvasRenderer:
@@ -93,7 +93,7 @@ MonoBehaviour:
   bar: {fileID: 7701289384411657814, guid: 455748de43173e449b9e7314021883dc, type: 3}
   healthBar: {fileID: 3302329775324010792}
   maxHealth: 10
---- !u!114 &3302329775047169605
+--- !u!114 &3036236372155356360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,20 +102,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3302329775324010791}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
     m_Left: 3
     m_Right: 3
-    m_Top: 0
-    m_Bottom: 0
+    m_Top: 4
+    m_Bottom: 4
   m_ChildAlignment: 4
-  m_Spacing: 3
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 0
+  m_Spacing: 4
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0

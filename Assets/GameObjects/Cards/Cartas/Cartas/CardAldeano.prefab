@@ -41,7 +41,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.750001, y: -0.49000043}
+  m_AnchoredPosition: {x: 42, y: -200}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1273880584075951728
@@ -107,7 +107,7 @@ MonoBehaviour:
   vida: 2
   movMax: 2
   nAta: 1
-  rango: 1
+  rango: 0
   dano: 0
   cura: 0
   areaHechizo: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sobreCasilla: 0
   card: {fileID: 1273880584075951715}
-  personajePrefab: {fileID: 4787448300056204280, guid: 5dc136793eed3814bab108c4c6f1331c, type: 3}
+  personajePrefab: {fileID: 2435221960745580321, guid: 300d3b09031164049b481425837f0b37, type: 3}
 --- !u!114 &1273880584075951733
 MonoBehaviour:
   m_ObjectHideFlags: 0
