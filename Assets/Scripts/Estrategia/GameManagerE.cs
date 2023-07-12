@@ -29,6 +29,8 @@ public class GameManagerE : MonoBehaviour
 
   private static List<string> listaCartas = new List<string>();
   private static List<string> listaEnemigos = new List<string>();
+  private static List<Casilla> listaCasMovible = new List<Casilla>();
+  private static List<Casilla> listaCasAtacable = new List<Casilla>();
 
 
 public void Start(){
@@ -161,7 +163,106 @@ public void Start(){
       listaPnjEnemigos.Add(pnjAnadido);
     }
   }
+private void movEnemigos(){
+  for(int i = 0; i < listaPnjEnemigos.Count; i++){
+    mueveEnemigo(listaPnjEnemigos[i]);
+  }
+}
+private void mueveEnemigo(Personaje pnj){
+  int posIniX = pnj.cas.getPosX();
+  int posIniY = pnj.cas.getPosY();
+  int posArr = posXAct+posYAct*8;
+  pintaCas(pnj, posArr, pnj.getMovAct());
+  if(pnj.getNumAtaAct() > 0){
+    pintaAta(pnj, posArr, pnj.getRang());
+  }
 
+  if(listaCasAtacable.Count > 0){
+    Personaje enemigoAtacar = listaCasAtacable[0].pnj;
+    bool matable = false;
+    if(pnj.getAtaque() >= listaCasAtacable[0].pnj.getVida()) matable = true;
+    for(int i = 1; i < listaCasAtacable.Count;i++){
+      if(cambioObjetivo(pnj, enemigoAtacar, listaCasAtacable[i].pnj, posIniX, posIniY, matable) ){
+        enemigoAtacar = listaCasAtacable[i].pnj;
+      }
+      //Ahora se movería hacia el enemigo seleccionado y le atacaría
+    }
+  }
+
+}
+
+private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIniX, int posIniY, bool matable){
+  if (matable && pnj.getAtaque() >= listaCasAtacable[i].pnj.getVida() && 
+      ((p1.getVida() < listaCasAtacable[i].pnj.getVida()) || 
+      (p1.getVida() == listaCasAtacable[i].pnj.getVida() && 
+      p1.getCasAct().getConsumeMov > p2.getCasAct().getConsumeMov()))) return true; //Si ambos son matables pero el segundo tiene más vida o tienen la misma vida pero el segundo está más cerca matará el segundo
+  else if(!matable && pnj.getAtaque() >= listaCasAtacable[i].pnj.getVida()){ //Si el primero no es matable y el segundo sí prefiere el segundo
+    matable = true;
+    return true;
+  }
+  else if(!matable && ((p1.getVida() > listaCasAtacable[i].pnj.getVida()) || 
+      (p1.getVida() == listaCasAtacable[i].pnj.getVida() && 
+      p1.getCasAct().getConsumeMov > p2.getCasAct().getConsumeMov())))return true; //Si ninguno es matable va a por el de menor vida si tienen la misma vida va al más cercano
+  return false; //Si no cumple ninguna anterior se queda con el primer objetivo
+}
+private void pintaCas(Personaje pnj, int pos, int mov){
+        int posAux;
+        if(mov > 0){
+            if(((posAux = pos+1)%8) != 0 && tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaPintado(pnj, posAux, mov);
+            }
+            if((((posAux = pos-1)+1) %8) != 0 && tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaPintado(pnj, posAux, mov);
+            }
+            if((posAux = pos+8) < tablero.Length && tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaPintado(pnj, posAux, mov);
+            }
+            if((posAux = pos-8) >= 0 && tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaPintado(pnj, posAux, mov);
+            }
+        }
+    }
+
+    private void pintaAta(Personaje pnj, int pos, int rang){
+        int posAux;
+        if(rang > 0){
+            if(((posAux = pos+1)%8) != 0 && !tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaAtacable(pnj, posAux, rang);
+            }
+            if((((posAux = pos-1)+1) %8) != 0 && !tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaAtacable(pnj, posAux, rang);
+            }
+            if((posAux = pos+8) < tablero.Length && !tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaAtacable(pnj, posAux, rang);
+            }
+            if((posAux = pos-8) >= 0 && !tablero[posAux].vacia && !tablero[posAux].pintada){
+                ejecutaAtacable(pnj, posAux, rang);
+            }
+        }
+    }
+    private void ejecutaPintado(Personaje pnj, int posAux, int mov){
+        if(tablero[posAux].vacia && !tablero[posAux].pintada){
+            tablero[posAux].pintada = true;
+            tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
+            listaCasMovible.Add(tablero[posAux]);
+            pintaCas(pnj, posAux, mov-1);
+        }
+    }
+
+    private void ejecutaAtacable(Personaje pnj, int posAux, int rang){
+        if(!tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.enemigo){
+            tablero[posAux].pintada = true;
+            listaCasAtacable.Add(tablero[posAux]);
+            pintaCas(pnj, posAux, rang-1);
+        }
+    }
+    private void desPintaCas(){
+        for(int i = 0; i < gm.tablero.Length;i++){
+            tablero[i].pintada = false;
+        }
+        listaCasMovible.Clear();
+        listaCasAtacable.Clear();
+    }
 private void spawnEnemigo(){
   GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
   listaPnjEnemigos.Remove(randEnemigo);
@@ -178,18 +279,15 @@ private void spawnEnemigo(){
   public int getFase(){
     return fase;
   }
-
   public int getCarJugadas(){
     return nCartasJugadas;
   }
   public void setCarJugadas(int n){
     nCartasJugadas = n;
   }
-
   public void pasaT(){
     pasaTurno = true;
   }
-
   public void robaCarta(){
     roba = true;
   }
