@@ -11,6 +11,7 @@ public class HelthBar : MonoBehaviour
     private List<Image> barras = new List<Image>();
     public void iniVida()
     {
+        barras.Clear();
         maxHealth = this.transform.parent.gameObject.GetComponent<Personaje>().getVida();
         for(int i = 0; i < maxHealth;i++){
             GameObject a = Instantiate(bar);

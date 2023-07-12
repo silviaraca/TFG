@@ -9,14 +9,16 @@ public class GameManagerE : MonoBehaviour
   public List<Carta> mazo = new List<Carta>();
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
-  public GameObject Canvas, Cards;
+  public GameObject Canvas, Cards, Personajes;
   public GameObject cardAldeano, cardAgua, cardEstaca; //Objetos de las cartas que existen ya, añadir conforme 
+  public GameObject characterZombie; //Lo de arriba pero enemigos 
   public Transform[] espacioMano;
   public Casilla[] tablero;
   public int tamTab;
   public bool[] espacioManoSinUsar;
   public List<Carta> mano = new List<Carta>();
   public List<Personaje> listaPnj = new List<Personaje>();
+  public List<GameObject> listaPnjEnemigos = new List<GameObject>();
   public TextMeshProUGUI textoFase;
 
   //Sitema de turnos
@@ -26,6 +28,7 @@ public class GameManagerE : MonoBehaviour
   private static bool primerTurno, pasaTurno, roba;
 
   private static List<string> listaCartas = new List<string>();
+  private static List<string> listaEnemigos = new List<string>();
 
 
 public void Start(){
@@ -36,41 +39,22 @@ public void Start(){
   listaCartas.Add("Agua");
   listaCartas.Add("Estaca");
   listaCartas.Add("Estaca");
+
+  //Esto se tomará de una lista de enemigos según el contrincante
+  listaEnemigos.Add("Zombie");
+  listaEnemigos.Add("Zombie");
+  listaEnemigos.Add("Zombie");
+  listaEnemigos.Add("Zombie");
+  listaEnemigos.Add("Zombie");
+
   pasaTurno = false;
   roba = false;
   primerTurno = true;
   fase = 0;
 
   creaCartas();
+  creaEnemigos();
 }
-  public void DrawCard(){
-      if(fase == 0 || fase == 1){
-        nRobadas++;
-        if(mazo.Count >= 1){
-          Carta randCard = mazo[Random.Range(0,mazo.Count)];
-          for(int i = 0; i < espacioManoSinUsar.Length; i++){
-              if(espacioManoSinUsar[i]){
-                  randCard.gameObject.SetActive(true);
-                  randCard.handIndex = i;
-                  randCard.enMano = true;
-                  mano.Add(randCard);
-                  randCard.transform.position = espacioMano[i].position;
-                  espacioManoSinUsar[i] = false;
-                  mazo.Remove(randCard);
-                  return;
-              }
-          }
-      }
-      else if (descarte.Count >= 1){
-        for(int i = 0; i < descarte.Count; i++){
-          mazo.Add(descarte[i]);
-        }
-        descarte.Clear();
-        DrawCard();
-      }
-    }
-    
-  }
 
   public void Update(){
     if(fase == 0){ //fase inicial y efectos de inicio de turno
@@ -81,6 +65,7 @@ public void Start(){
       }
       //efectos de inicio de turno
       nRobadas = 0;
+      roba = false;
       fase++; //No pasa hasta que se ejecuten todos
       textoFase.text = "Fase Actual: " + fase;
     }
@@ -107,6 +92,9 @@ public void Start(){
     }
     else if(fase == 5){
       //efectos de final de turno y movimientos de enemigos
+      if(listaPnjEnemigos.Count > 0){
+        spawnEnemigo();
+      }
       fase = 0; //Reinicia fases cuando haya terminado lo anterior
     }
     if(fase == 1 && roba){
@@ -134,6 +122,59 @@ public void Start(){
     }
   }
 
+  public void DrawCard(){
+    if(fase == 0 || fase == 1){
+      nRobadas++;
+      if(mazo.Count >= 1){
+        Carta randCard = mazo[Random.Range(0,mazo.Count)];
+        for(int i = 0; i < espacioManoSinUsar.Length; i++){
+            if(espacioManoSinUsar[i]){
+                randCard.gameObject.SetActive(true);
+                randCard.handIndex = i;
+                randCard.enMano = true;
+                mano.Add(randCard);
+                randCard.transform.position = espacioMano[i].position;
+                espacioManoSinUsar[i] = false;
+                mazo.Remove(randCard);
+                return;
+            }
+        }
+      }
+      else if (descarte.Count >= 1){
+        for(int i = 0; i < descarte.Count; i++){
+          mazo.Add(descarte[i]);
+        }
+        descarte.Clear();
+        DrawCard();
+      }
+    }
+  }
+
+  private void creaEnemigos(){ //Genera la lista de enemigos a partir de una lista de strings para que aparezcan en los turnos enemigos
+    GameObject pnjAnadido = null;
+    for(int i = 0; i < listaEnemigos.Count; i++){
+      //Por cada nueva carta que añadamos al juego hacer la correspondiente aquí
+      if(listaEnemigos[i] == "Zombie"){
+        pnjAnadido = Instantiate(characterZombie);
+      }
+      pnjAnadido.transform.SetParent(Personajes.transform, false);
+      listaPnjEnemigos.Add(pnjAnadido);
+    }
+  }
+
+private void spawnEnemigo(){
+  GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
+  listaPnjEnemigos.Remove(randEnemigo);
+  int xCas = Random.Range(0, tamTab);
+  while(!tablero[24 + xCas].vacia){
+    xCas = Random.Range(0, tamTab);
+  }
+  
+  randEnemigo.transform.position = tablero[24 + xCas].transform.position;
+  randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[24 + xCas]);
+  tablero[24 + xCas].pnj = randEnemigo.GetComponent<Personaje>();
+  tablero[24 + xCas].vacia = false;
+}
   public int getFase(){
     return fase;
   }

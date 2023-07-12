@@ -38,14 +38,13 @@ public class DragDrop : MonoBehaviour
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
                     GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
-                    personajeCreado.transform.SetParent(gm.Canvas.transform, false);
+                    personajeCreado.transform.SetParent(gm.Personajes.transform, false);
                     personajeCreado.transform.position = cas.transform.position; 
                     personajeCreado.gameObject.GetComponent<Personaje>().setCasAct(cas);
                     setCharacterValues(personajeCreado.GetComponent<Personaje>());
                     card.transform.position = gm.zonaDescarte.transform.position;
                     cas.pnj = personajeCreado.GetComponent<Personaje>();
                     gm.listaPnj.Add(cas.pnj);
-
                     cas.vacia = false;
                     int i = card.handIndex;
                     if(card.enMano){
@@ -57,6 +56,7 @@ public class DragDrop : MonoBehaviour
                         }
                         card.enMano = false;
                         card.setCasAct(cas);
+                        gm.descarte.Add(card);
                         gm.espacioManoSinUsar[i] = true;                
                         gm.mano.Remove(gm.mano[i]);//***
                     }
@@ -82,6 +82,7 @@ public class DragDrop : MonoBehaviour
                             }
                             card.enMano = false;
                             card.setCasAct(cas);
+                            gm.descarte.Add(card);
                             gm.espacioManoSinUsar[i] = true;                
                             gm.mano.Remove(gm.mano[i]);//***
                         }
@@ -127,6 +128,7 @@ public class DragDrop : MonoBehaviour
                             }
                             card.enMano = false;
                             card.setCasAct(cas);
+                            gm.descarte.Add(card);
                             gm.espacioManoSinUsar[i] = true;                
                             gm.mano.Remove(gm.mano[i]);//***
                         }
@@ -142,7 +144,7 @@ public class DragDrop : MonoBehaviour
     void Update()
     {
         if(enMovimiento){
-            card.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100);
+            card.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 200);
         }
     }
     
@@ -170,7 +172,7 @@ public class DragDrop : MonoBehaviour
         if(nombreObjeto.Equals("Casilla")){
             if(card.esPersonaje() || card.esHechizoUnico())
                 cas2.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
-            else if(card.esHechizoArea()){
+            else if(card.esHechizoArea() && cas2 != null){
                 limpiaArea(cas2);
             }
             if(nuevaCas) nuevaCas = false;
