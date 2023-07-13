@@ -165,13 +165,13 @@ public void Start(){
   }
 private void movEnemigos(){
   for(int i = 0; i < listaPnjEnemigos.Count; i++){
-    mueveEnemigo(listaPnjEnemigos[i]);
+    mueveEnemigo(listaPnjEnemigos[i].GetComponent<Personaje>());
   }
 }
 private void mueveEnemigo(Personaje pnj){
   int posIniX = pnj.cas.getPosX();
   int posIniY = pnj.cas.getPosY();
-  int posArr = posXAct+posYAct*8;
+  int posArr = posIniX+posIniY*8;
   pintaCas(pnj, posArr, pnj.getMovAct());
   if(pnj.getNumAtaAct() > 0){
     pintaAta(pnj, posArr, pnj.getRang());
@@ -192,17 +192,17 @@ private void mueveEnemigo(Personaje pnj){
 }
 
 private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIniX, int posIniY, bool matable){
-  if (matable && pnj.getAtaque() >= listaCasAtacable[i].pnj.getVida() && 
-      ((p1.getVida() < listaCasAtacable[i].pnj.getVida()) || 
-      (p1.getVida() == listaCasAtacable[i].pnj.getVida() && 
-      p1.getCasAct().getConsumeMov > p2.getCasAct().getConsumeMov()))) return true; //Si ambos son matables pero el segundo tiene más vida o tienen la misma vida pero el segundo está más cerca matará el segundo
-  else if(!matable && pnj.getAtaque() >= listaCasAtacable[i].pnj.getVida()){ //Si el primero no es matable y el segundo sí prefiere el segundo
+  if (matable && pnj.getAtaque() >= p2.getVida() && 
+      ((p1.getVida() < p2.getVida()) || 
+      (p1.getVida() == p2.getVida() && 
+      p1.getCasAct().getConsumeMov() > p2.getCasAct().getConsumeMov()))) return true; //Si ambos son matables pero el segundo tiene más vida o tienen la misma vida pero el segundo está más cerca matará el segundo
+  else if(!matable && pnj.getAtaque() >= p2.getVida()){ //Si el primero no es matable y el segundo sí prefiere el segundo
     matable = true;
     return true;
   }
-  else if(!matable && ((p1.getVida() > listaCasAtacable[i].pnj.getVida()) || 
-      (p1.getVida() == listaCasAtacable[i].pnj.getVida() && 
-      p1.getCasAct().getConsumeMov > p2.getCasAct().getConsumeMov())))return true; //Si ninguno es matable va a por el de menor vida si tienen la misma vida va al más cercano
+  else if(!matable && ((p1.getVida() > p2.getVida()) || 
+      (p1.getVida() == p2.getVida() && 
+      p1.getCasAct().getConsumeMov() > p2.getCasAct().getConsumeMov())))return true; //Si ninguno es matable va a por el de menor vida si tienen la misma vida va al más cercano
   return false; //Si no cumple ninguna anterior se queda con el primer objetivo
 }
 private void pintaCas(Personaje pnj, int pos, int mov){
@@ -257,7 +257,7 @@ private void pintaCas(Personaje pnj, int pos, int mov){
         }
     }
     private void desPintaCas(){
-        for(int i = 0; i < gm.tablero.Length;i++){
+        for(int i = 0; i < tablero.Length;i++){
             tablero[i].pintada = false;
         }
         listaCasMovible.Clear();
