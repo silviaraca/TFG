@@ -9,8 +9,8 @@ public class Casilla : MonoBehaviour
     private GameManagerE gm;
     private int posX, posY;
     public bool pintada = false;
-
-    private int consumeMov = 0;
+    private Casilla casAnt;
+    [SerializeField] private int consumeMov = 0;
 
     void Start()
     {
@@ -34,5 +34,11 @@ public class Casilla : MonoBehaviour
 
     public void setConsumeMov(int c){
         consumeMov = c;
+    }
+    public Casilla getCasAnt(){
+        return casAnt;
+    }
+    public void setCasAnt(Casilla cas){
+        casAnt = cas;
     }
 }

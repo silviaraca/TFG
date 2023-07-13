@@ -53,7 +53,6 @@ public void Start(){
   roba = false;
   primerTurno = true;
   fase = 0;
-
   creaCartas();
   creaEnemigos();
 }
@@ -190,6 +189,8 @@ private void mueveEnemigo(Personaje pnj){
   }
 
 }
+
+
 
 private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIniX, int posIniY, bool matable){
   if (matable && pnj.getAtaque() >= p2.getVida() && 

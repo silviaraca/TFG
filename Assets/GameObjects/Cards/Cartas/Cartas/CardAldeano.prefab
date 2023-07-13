@@ -107,7 +107,7 @@ MonoBehaviour:
   vida: 2
   movMax: 2
   nAta: 1
-  rango: 0
+  rango: 1
   dano: 0
   cura: 0
   areaHechizo: 0

@@ -47,18 +47,19 @@ public class DragDropPnj : MonoBehaviour
             else if(sobreCasilla && !cas.vacia && cas.pintada){
                 Casilla casAct = pnj.getCasAct();
                 Personaje pnjAct = cas.pnj;
-                pnj.setMovAct(pnj.getMovAct()-1);
                 pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
-                if(pnjAct.danar(pnj.getAtaque()) && pnj.getRang() == 1){
+                if(pnjAct.danar(pnj.getAtaque())){
                     //Aquí cosas que pasen si se muere el enemigo
-                    casAct.vacia = true;
-                    pnj.transform.position = cas.transform.position;
-                    cas.pnj = pnj;
-                    pnj.setCasAct(cas);
+                    cas.vacia = true;
+                    cas.pnj = null;
                 }
-                else{
-                    pnj.transform.position = posIni;
-                }
+                pnj.transform.position = cas.getCasAnt().transform.position;
+                pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
+                pnj.cas.vacia = true;
+                pnj.cas.pnj = null;
+                cas.getCasAnt().vacia = false;
+                cas.getCasAnt().pnj = pnj;
+                pnj.cas = cas.getCasAnt();
             }
             else {
                 pnj.transform.position = posIni;
@@ -76,61 +77,68 @@ public class DragDropPnj : MonoBehaviour
         int posXAct = pnj.getCasAct().getPosX();
         int posYAct = pnj.getCasAct().getPosY();
         int posArr = posXAct+posYAct*8;
-        pintaCas(posArr, pnj.getMovAct());
         if(pnj.getNumAtaAct() > 0)
-            pintaAta(posArr, pnj.getRang());
+            pintaAta(posArr, pnj.getRang(), pnj.cas);
+        pintaCas(posArr, pnj.getMovAct(), pnj.getRang());
     }
 
-    private void pintaCas(int pos, int mov){
+    private void pintaCas(int pos, int mov, int rang){
         int posAux;
         if(mov > 0){
             if(((posAux = pos+1)%8) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov);
+                ejecutaPintado(posAux, mov, rang);
+                if(pnj.getNumAtaAct() > 0)
+                    pintaAta(posAux, rang, gm.tablero[posAux]);
             }
             if((((posAux = pos-1)+1) %8) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov);
+                ejecutaPintado(posAux, mov, rang);
+                if(pnj.getNumAtaAct() > 0)
+                    pintaAta(posAux, rang, gm.tablero[posAux]);
             }
             if((posAux = pos+8) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov);
+                ejecutaPintado(posAux, mov, rang);
+                if(pnj.getNumAtaAct() > 0)
+                    pintaAta(posAux, rang, gm.tablero[posAux]);
             }
             if((posAux = pos-8) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov);
+                ejecutaPintado(posAux, mov, rang);
+                if(pnj.getNumAtaAct() > 0)
+                    pintaAta(posAux, rang, gm.tablero[posAux]);
             }
         }
     }
 
-    private void pintaAta(int pos, int rang){
+    private void pintaAta(int pos, int rang, Casilla cas){
         int posAux;
-        if(rang > 0){
-            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaAtacable(posAux, rang);
+        for(int i = rang; i > 0; i--)
+            if(i > 0){
+                if(((posAux = pos+i)%8) != i-1 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                    ejecutaAtacable(posAux, cas);
+                }
+                if((((posAux = pos-i)+1) %8) != rang-1 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                    ejecutaAtacable(posAux, cas);
+                }
+                if((posAux = pos+8*i) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                    ejecutaAtacable(posAux, cas);
+                }
+                if((posAux = pos-8*i) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
+                    ejecutaAtacable(posAux, cas);
+                }
             }
-            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaAtacable(posAux, rang);
-            }
-            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaAtacable(posAux, rang);
-            }
-            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaAtacable(posAux, rang);
-            }
-        }
     }
 
-    private void ejecutaPintado(int posAux, int mov){
-        if(gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-            gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
-            gm.tablero[posAux].pintada = true;
-            gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
-            pintaCas(posAux,mov-1);
-        }
+    private void ejecutaPintado(int posAux, int mov, int rang){
+        gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
+        gm.tablero[posAux].pintada = true;
+        gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
+        pintaCas(posAux, mov-1, rang);
     }
 
-    private void ejecutaAtacable(int posAux, int rang){
-        if(!gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada && gm.tablero[posAux].pnj.enemigo){
+    private void ejecutaAtacable(int posAux, Casilla cas){
+        if(gm.tablero[posAux].pnj.enemigo){
             gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(200, 0, 0, 100);
             gm.tablero[posAux].pintada = true;
-            pintaCas(posAux, rang-1);
+            gm.tablero[posAux].setCasAnt(cas);
         }
     }
 
@@ -138,6 +146,7 @@ public class DragDropPnj : MonoBehaviour
         for(int i = 0; i < gm.tablero.Length;i++){
             gm.tablero[i].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             gm.tablero[i].pintada = false;
+            gm.tablero[i].setCasAnt(null);
         }
     }
     
