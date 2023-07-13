@@ -20,8 +20,8 @@ public class HelthBar : MonoBehaviour
         }
     }
 
-    public void pierdeVida(int vidaAct){
-        for(int i = vidaAct; i < maxHealth; i++){
+    public void pierdeVida(int vidaAct, int vidaMax){
+        for(int i = 0; i < vidaMax - vidaAct; i++){
             barras[i].gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 50);
         }
     }

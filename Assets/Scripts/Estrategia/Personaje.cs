@@ -25,7 +25,8 @@ public class Personaje : MonoBehaviour
         vida -= dano;
         if(vida > vidaMax) vida = vidaMax;
         if(vida < 0) vida = 0;
-        this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida);
+        if(vida > 0)
+            this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida, vidaMax);
         return muerto();
     }
 
