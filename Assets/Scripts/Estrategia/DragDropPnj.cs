@@ -48,6 +48,8 @@ public class DragDropPnj : MonoBehaviour
                 Casilla casAct = pnj.getCasAct();
                 Personaje pnjAct = cas.pnj;
                 pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+                if(pnjAct.getVida() <= pnj.getAtaque())
+                    gm.listaPnjEnemigosEnTablero.Remove(pnjAct);
                 if(pnjAct.danar(pnj.getAtaque())){
                     //Aquí cosas que pasen si se muere el enemigo
                     cas.vacia = true;
