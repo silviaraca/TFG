@@ -10,9 +10,11 @@ public class Personaje : MonoBehaviour
     public bool enemigo, enRango;
     public Casilla cas;
     private bool ini = true;
+    private GameManagerE gm;
 
 
     void Start(){
+        gm = FindObjectOfType<GameManagerE>();
         vida = vidaMax;
         movAct = movMax;
         numAtaAct = numAtaques;
@@ -31,7 +33,13 @@ public class Personaje : MonoBehaviour
     }
 
     private bool muerto(){
-        if(vida == 0){     
+        if(vida == 0){ 
+            if(enemigo){
+                gm.listaPnjEnemigosEnTablero.Remove(this);
+            }
+            else{
+                gm.listaPnj.Remove(this);
+            }
             cas.vacia = true;
             cas.pnj = null;
             Destroy(this.gameObject);
