@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
       fase++;
       print(fase);
       for(int i = 0; i < listaPnj.Count; i++){
-        listaPnj[i].setMov(listaPnj[i].getMaxMov());
+        //listaPnj[i].setMov(listaPnj[i].getMaxMov());
       }
       pasaTurno = false;
     }

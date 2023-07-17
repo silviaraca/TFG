@@ -32,9 +32,9 @@ public class AutoDialogue : MonoBehaviour
     void Update()
     {
         if(activeE){
+            move.allowMove = false;
             gameObject.SetActive(true);
             panel.gameObject.SetActive(true);
-            move.allowMove = false;
             StartDialogue(); 
             textName.text = names[index];
             activeE = false;
@@ -84,6 +84,7 @@ public class AutoDialogue : MonoBehaviour
             move.allowMove = true;
             textComponent.text = string.Empty;
             textName.text = string.Empty;
+            Destroy(this.gameObject);
         }
     }
 
@@ -91,7 +92,8 @@ public class AutoDialogue : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
-            activeE = true; 
+            activeE = true;
+            move.allowMove = false; 
         }                   
     }
 
@@ -100,6 +102,7 @@ public class AutoDialogue : MonoBehaviour
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
             activeE = false;
+            Destroy(this.gameObject);
         }            
     }
 }

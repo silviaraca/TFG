@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum CollectableType{ NONE, CARD};
+public enum CollectableType{ NONE, CARD, COLLECT};
 
 public class Collectable : MonoBehaviour
 {
@@ -18,13 +18,21 @@ public class Collectable : MonoBehaviour
 
     private void Start(){
         textoE.gameObject.SetActive(false);
-        type = CollectableType.CARD;
+        //type = CollectableType.CARD;
    }
 
    private void Update(){
         if(recogible && Input.GetKeyDown(KeyCode.E))
-            if(player.inventory.Add(this))
-                Destroy(this.gameObject);
+        {
+
+            if(type == CollectableType.CARD)
+            {
+                player.inventory.Add(this);
+            }
+            Destroy(this.gameObject);
+        }
+       
+               
    }
    
    private void OnTriggerEnter2D(Collider2D collision)
