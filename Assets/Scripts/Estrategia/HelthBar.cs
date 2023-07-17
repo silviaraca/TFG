@@ -25,4 +25,9 @@ public class HelthBar : MonoBehaviour
             barras[i].gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 50);
         }
     }
+    public void ganaVida(int vidaAct, int vidaMax){
+        for(int i = 0; i < vidaAct; i++){
+            barras[i].gameObject.GetComponent<Image>().color = new Color32(255, 0, 0, 255);
+        }
+    }
 }

@@ -144,7 +144,8 @@ public class DragDropPnj : MonoBehaviour
 
     private void desPintaCas(){
         for(int i = 0; i < gm.tablero.Length;i++){
-            gm.tablero[i].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            gm.tablero[i].gameObject.GetComponent<Image>().color = gm.tablero[i].getColIni();
+            gm.tablero[i].setConsumeMov(0);
             gm.tablero[i].pintada = false;
             gm.tablero[i].setCasAnt(null);
         }

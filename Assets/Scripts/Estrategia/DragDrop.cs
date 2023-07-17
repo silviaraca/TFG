@@ -34,7 +34,7 @@ public class DragDrop : MonoBehaviour
         if(gm.getFase() == 2 || gm.getFase() == 4){
             enMovimiento = false;
             cerrojo = true;
-            if(card.esPersonaje()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
+            if(card.esPersonaje() && cas.esSpawnAli()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
                     GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
@@ -56,7 +56,6 @@ public class DragDrop : MonoBehaviour
                         }
                         card.enMano = false;
                         card.setCasAct(cas);
-                        gm.descarte.Add(card);
                         gm.espacioManoSinUsar[i] = true;                
                         gm.mano.Remove(gm.mano[i]);//***
                     }
@@ -139,6 +138,9 @@ public class DragDrop : MonoBehaviour
                     }
                 }
             }
+            else{
+                card.transform.position = posIni;
+            }
         }
     }
     void Update()
@@ -154,7 +156,7 @@ public class DragDrop : MonoBehaviour
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla") && !card.zoom){ 
             //Tiene que haber también uno de estos por cartas de hechizo y demas porque funcionan distinto, no colorean igual ni de verde
-            if(cas.vacia && card.esPersonaje()) pintaAzul(cas);
+            if(cas.vacia && card.esPersonaje() && cas.esSpawnAli()) pintaAzul(cas);
             else if(card.esHechizoArea()) pintaArea();
             else if(card.esHechizoUnico() && !cas.vacia){
                 if(card.esHechizoAtaque() && cas.pnj.enemigo) pintaRojo(cas);
@@ -171,7 +173,7 @@ public class DragDrop : MonoBehaviour
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){
             if(card.esPersonaje() || card.esHechizoUnico())
-                cas2.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                cas2.gameObject.GetComponent<Image>().color = cas2.getColIni();
             else if(card.esHechizoArea() && cas2 != null){
                 limpiaArea(cas2);
             }
@@ -204,20 +206,20 @@ public class DragDrop : MonoBehaviour
     private void limpiaArea(Casilla casAux){//Devuelve a la forma original las casillas de un área
         int posAux;
         int areaAux = card.getAreaHechizo();
-        casAux.gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        casAux.gameObject.GetComponent<Image>().color = casAux.getColIni();
         int pos = casAux.getPosX()+cas.getPosY()*8;
         while(areaAux > 0){
             if(((posAux = pos+1)%8) != 0){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
             }
             if((((posAux = pos-1)+1) %8) != 0){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
             }
             if((posAux = pos+8) < gm.tablero.Length){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
             }
             if((posAux = pos-8) >= 0){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
             }
             areaAux--;
         }
@@ -250,5 +252,6 @@ public class DragDrop : MonoBehaviour
         pnj.setNumAta(card.getNumAta());
         pnj.setRang(card.getRango());
         pnj.setVidaMax(card.getVidaMax());
+        pnj.setCarta(card);
     }
 }

@@ -11,6 +11,7 @@ public class Personaje : MonoBehaviour
     public Casilla cas;
     private bool ini = true;
     private GameManagerE gm;
+    private Carta card;
 
 
     void Start(){
@@ -25,10 +26,15 @@ public class Personaje : MonoBehaviour
     }
     public bool danar(int dano){
         vida -= dano;
-        if(vida > vidaMax) vida = vidaMax;
-        if(vida < 0) vida = 0;
-        if(vida > 0)
-            this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida, vidaMax);
+        if(dano >= 0){
+            if(vida < 0) vida = 0;
+            if(vida > 0)
+                this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida, vidaMax);
+        }
+        else{
+            if(vida > vidaMax) vida = vidaMax;
+            this.transform.GetComponentInChildren<HelthBar>().ganaVida(vida, vidaMax);
+        }
         return muerto();
     }
 
@@ -40,6 +46,8 @@ public class Personaje : MonoBehaviour
             else{
                 gm.listaPnj.Remove(this);
             }
+            if(!enemigo)
+                gm.descarte.Add(card);
             cas.vacia = true;
             cas.pnj = null;
             Destroy(this.gameObject);
@@ -100,5 +108,11 @@ public class Personaje : MonoBehaviour
         movMax = m;
         movAct = m;
         this.transform.GetComponentInChildren<HelthBar>().iniVida();
+    }
+    public void setCarta(Carta c){
+        card = c;
+    }
+    public Carta getCarta(){
+        return card;
     }
 }

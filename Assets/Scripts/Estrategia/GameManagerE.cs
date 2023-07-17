@@ -185,7 +185,6 @@ private void mueveEnemigo(Personaje pnj){
       if(listaCasAtacable.Count > 0){
         Personaje enemigoAtacar = listaCasAtacable[0].pnj;
         bool matable = false;
-        print(enemigoAtacar.getCasAct().getPosX());
         if(pnj.getAtaque() >= enemigoAtacar.getVida()) matable = true;
         for(int i = 1; i < listaCasAtacable.Count;i++){
           if(cambioObjetivo(pnj, enemigoAtacar, listaCasAtacable[i].pnj, posIniX, posIniY, matable) ){
@@ -228,7 +227,7 @@ private void mueveEnemigo(Personaje pnj){
     if(pnj.getNumAtaAct() > 0)
       pintaAta(pnj, posArr, pnj.getRang(), pnj.cas);
     pintaCas(pnj, posArr, pnj.getMovAct(), pnj.getRang());
-    mueveHacia(4, 1, pnj);
+    mueveHacia(1, 1, pnj);
     desPintaCas();
   }
 }
@@ -307,6 +306,8 @@ private void ejecutaAtacable(int posAux, Casilla cas){
 private void desPintaCas(){
         for(int i = 0; i < tablero.Length;i++){
             tablero[i].pintada = false;
+            tablero[i].setConsumeMov(0);
+            tablero[i].setCasAnt(null);
         }
         listaCasMovible.Clear();
         listaCasAtacable.Clear();
@@ -340,15 +341,15 @@ private void spawnEnemigo(){
   GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
   listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
   listaPnjEnemigos.Remove(randEnemigo);
-  int xCas = Random.Range(0, tamTab);
-  while(!tablero[24 + xCas].vacia){
-    xCas = Random.Range(0, tamTab);
+  int xCas = Random.Range(0, 48);
+  while(!tablero[xCas].vacia || !tablero[xCas].esSpawnEne()){
+    xCas = Random.Range(0, 48);
   }
   
-  randEnemigo.transform.position = tablero[24 + xCas].transform.position;
-  randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[24 + xCas]);
-  tablero[24 + xCas].pnj = randEnemigo.GetComponent<Personaje>();
-  tablero[24 + xCas].vacia = false;
+  randEnemigo.transform.position = tablero[xCas].transform.position;
+  randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[xCas]);
+  tablero[xCas].pnj = randEnemigo.GetComponent<Personaje>();
+  tablero[xCas].vacia = false;
 }
   public int getFase(){
     return fase;
