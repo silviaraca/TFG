@@ -14,6 +14,9 @@ public class DragDrop : MonoBehaviour
     private bool nuevaCas = false;
     public GameObject personajePrefab;
     private GameManagerE gm;
+    public Sprite casAta;
+    public Sprite casAli;
+    public Sprite casVacia;
 
     void Start()
     {
@@ -39,7 +42,8 @@ public class DragDrop : MonoBehaviour
                     GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
                     personajeCreado.transform.SetParent(gm.Personajes.transform, false);
-                    personajeCreado.transform.position = cas.transform.position; 
+                    //personajeCreado.transform.position = cas.transform.position;
+                    personajeCreado.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
                     personajeCreado.gameObject.GetComponent<Personaje>().setCasAct(cas);
                     setCharacterValues(personajeCreado.GetComponent<Personaje>());
                     card.transform.position = gm.zonaDescarte.transform.position;
@@ -173,7 +177,7 @@ public class DragDrop : MonoBehaviour
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){
             if(card.esPersonaje() || card.esHechizoUnico())
-                cas2.gameObject.GetComponent<Image>().color = cas2.getColIni();
+                cas2.gameObject.GetComponent<Image>().sprite = cas2.getImagenIni();
             else if(card.esHechizoArea() && cas2 != null){
                 limpiaArea(cas2);
             }
@@ -206,32 +210,32 @@ public class DragDrop : MonoBehaviour
     private void limpiaArea(Casilla casAux){//Devuelve a la forma original las casillas de un área
         int posAux;
         int areaAux = card.getAreaHechizo();
-        casAux.gameObject.GetComponent<Image>().color = casAux.getColIni();
+        casAux.gameObject.GetComponent<Image>().sprite = casAux.getImagenIni();
         int pos = casAux.getPosX()+cas.getPosY()*8;
         while(areaAux > 0){
             if(((posAux = pos+1)%8) != 0){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
+                gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = gm.tablero[posAux].getImagenIni();
             }
             if((((posAux = pos-1)+1) %8) != 0){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
+                gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = gm.tablero[posAux].getImagenIni();
             }
             if((posAux = pos+8) < gm.tablero.Length){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
+                gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = gm.tablero[posAux].getImagenIni();
             }
             if((posAux = pos-8) >= 0){
-                gm.tablero[posAux].gameObject.GetComponent<Image>().color = gm.tablero[posAux].getColIni();
+                gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = gm.tablero[posAux].getImagenIni();
             }
             areaAux--;
         }
     }
     private void pintaRojo(Casilla casilla){
-        casilla.gameObject.GetComponent<Image>().color = new Color32(200, 0, 0, 100);
+        casilla.gameObject.GetComponent<Image>().sprite = casAta;
     }
     private void pintaVerde(Casilla casilla){
-        casilla.gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
+        casilla.gameObject.GetComponent<Image>().sprite = casAli;
     }
     private void pintaAzul(Casilla casilla){
-        casilla.gameObject.GetComponent<Image>().color = new Color32(0, 0, 200, 100);
+        casilla.gameObject.GetComponent<Image>().sprite = casVacia;
     }
 
     private void pintaCasillaHechizo(Casilla casilla){

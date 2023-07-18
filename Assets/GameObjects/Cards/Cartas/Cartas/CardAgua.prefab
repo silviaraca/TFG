@@ -127,6 +127,9 @@ MonoBehaviour:
   sobreCasilla: 0
   card: {fileID: 4468346711354431697}
   personajePrefab: {fileID: 4787448300056204280, guid: 5dc136793eed3814bab108c4c6f1331c, type: 3}
+  casAta: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
+  casAli: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
+  casVacia: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
 --- !u!114 &4468346711354431687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +232,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2365334, y: 44.864124}
+  m_Offset: {x: -1.3140564, y: 46.57023}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -240,7 +243,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.479572, y: 3.8122025}
+  m_Size: {x: 0.73272705, y: 0.3999977}
   m_EdgeRadius: 0
 --- !u!50 &4468346711354431689
 Rigidbody2D:

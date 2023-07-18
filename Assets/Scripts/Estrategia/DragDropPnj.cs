@@ -13,6 +13,8 @@ public class DragDropPnj : MonoBehaviour
     private Casilla cas;
     private bool nuevaCas = false;
     private GameManagerE gm;
+    [SerializeField] private Sprite casAta;
+    [SerializeField] private Sprite casMov;
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class DragDropPnj : MonoBehaviour
             if(sobreCasilla && cas.vacia && cas.pintada){ 
                 Casilla casAct = pnj.getCasAct();
                 casAct.vacia = true;
-                pnj.transform.position = cas.transform.position;
+                pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
                 pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
                 cas.pnj = pnj;
                 cas.vacia = false;
@@ -53,7 +55,7 @@ public class DragDropPnj : MonoBehaviour
                     cas.vacia = true;
                     cas.pnj = null;
                 }
-                pnj.transform.position = cas.getCasAnt().transform.position;
+                pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 35, cas.getCasAnt().transform.position.z+10);
                 pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
                 pnj.cas.vacia = true;
                 pnj.cas.pnj = null;
@@ -128,7 +130,7 @@ public class DragDropPnj : MonoBehaviour
     }
 
     private void ejecutaPintado(int posAux, int mov, int rang){
-        gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(0, 200, 0, 100);
+        gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = casMov;
         gm.tablero[posAux].pintada = true;
         gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
         pintaCas(posAux, mov-1, rang);
@@ -136,7 +138,7 @@ public class DragDropPnj : MonoBehaviour
 
     private void ejecutaAtacable(int posAux, Casilla cas){
         if(gm.tablero[posAux].pnj.enemigo){
-            gm.tablero[posAux].gameObject.GetComponent<Image>().color = new Color32(200, 0, 0, 100);
+            gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = casAta;
             gm.tablero[posAux].pintada = true;
             gm.tablero[posAux].setCasAnt(cas);
         }
@@ -144,7 +146,7 @@ public class DragDropPnj : MonoBehaviour
 
     private void desPintaCas(){
         for(int i = 0; i < gm.tablero.Length;i++){
-            gm.tablero[i].gameObject.GetComponent<Image>().color = gm.tablero[i].getColIni();
+            gm.tablero[i].gameObject.GetComponent<Image>().sprite = gm.tablero[i].getImagenIni();
             gm.tablero[i].setConsumeMov(0);
             gm.tablero[i].pintada = false;
             gm.tablero[i].setCasAnt(null);

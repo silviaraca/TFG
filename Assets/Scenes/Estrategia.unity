@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 14782952}
   - component: {fileID: 14782951}
   - component: {fileID: 14782950}
-  - component: {fileID: 14782949}
+  - component: {fileID: 14782953}
   m_Layer: 5
   m_Name: Casilla 56
   m_TagString: Untagged
@@ -163,32 +163,6 @@ RectTransform:
   m_AnchoredPosition: {x: -200, y: -433}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &14782949
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14782947}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &14782950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +181,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &14782951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +220,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14782947}
   m_CullTransparentMesh: 1
+--- !u!60 &14782953
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14782947}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.21260065, y: 50.105114}
+      - {x: -0.10074788, y: 49.839283}
+      - {x: -49.480392, y: 18.11028}
+      - {x: -0.049922585, y: -15.901925}
+      - {x: 49.41846, y: 17.315144}
 --- !u!1 &114207383
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +359,7 @@ GameObject:
   - component: {fileID: 174021744}
   - component: {fileID: 174021743}
   - component: {fileID: 174021742}
-  - component: {fileID: 174021741}
+  - component: {fileID: 174021745}
   m_Layer: 5
   m_Name: Casilla 44
   m_TagString: Untagged
@@ -382,32 +387,6 @@ RectTransform:
   m_AnchoredPosition: {x: -350, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &174021741
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174021739}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &174021742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +405,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &174021743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +444,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174021739}
   m_CullTransparentMesh: 1
+--- !u!60 &174021745
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174021739}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.2245705, y: 49.983055}
+      - {x: -0.95105654, y: 50.51669}
+      - {x: -49.57084, y: 18.37603}
+      - {x: 0.17956376, y: -16.320307}
+      - {x: 48.70954, y: 17.861273}
 --- !u!1 &261165824
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +652,7 @@ GameObject:
   - component: {fileID: 386075835}
   - component: {fileID: 386075834}
   - component: {fileID: 386075833}
-  - component: {fileID: 386075832}
+  - component: {fileID: 386075836}
   m_Layer: 5
   m_Name: Casilla 52
   m_TagString: Untagged
@@ -670,32 +680,6 @@ RectTransform:
   m_AnchoredPosition: {x: -150, y: -181}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &386075832
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386075830}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &386075833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +698,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &386075834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,6 +737,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386075830}
   m_CullTransparentMesh: 1
+--- !u!60 &386075836
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386075830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.70478064, y: 49.629536}
+      - {x: -0.5986662, y: 49.878277}
+      - {x: -50.157043, y: 17.162796}
+      - {x: -0.46938562, y: -16.0792}
+      - {x: 49.932983, y: 17.576048}
 --- !u!1 &459405488
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +779,7 @@ GameObject:
   - component: {fileID: 459405493}
   - component: {fileID: 459405492}
   - component: {fileID: 459405491}
-  - component: {fileID: 459405490}
+  - component: {fileID: 459405494}
   m_Layer: 5
   m_Name: Casilla 53
   m_TagString: Untagged
@@ -792,32 +807,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100.000015, y: -214}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &459405490
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 459405488}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &459405491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +825,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &459405492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,6 +864,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459405488}
   m_CullTransparentMesh: 1
+--- !u!60 &459405494
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459405488}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.30079234, y: 50.02807}
+      - {x: -0.19909924, y: 49.938625}
+      - {x: -50.217392, y: 17.53889}
+      - {x: -0.46496427, y: -15.697885}
+      - {x: 49.527912, y: 17.453804}
 --- !u!1 &480094195
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +984,7 @@ GameObject:
   - component: {fileID: 544254153}
   - component: {fileID: 544254152}
   - component: {fileID: 544254151}
-  - component: {fileID: 544254150}
+  - component: {fileID: 544254154}
   m_Layer: 5
   m_Name: Casilla 43
   m_TagString: Untagged
@@ -992,32 +1012,6 @@ RectTransform:
   m_AnchoredPosition: {x: -150.00003, y: -247}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &544254150
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544254148}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &544254151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,6 +1030,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &544254152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,6 +1069,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544254148}
   m_CullTransparentMesh: 1
+--- !u!60 &544254154
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544254148}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 50.5655}
+      - {x: 0.17972511, y: 50.43988}
+      - {x: -49.96486, y: 18.037186}
+      - {x: 0.9647331, y: -16.074413}
+      - {x: 50.153282, y: 17.848713}
+      - {x: 0.19717073, y: 50.43988}
 --- !u!224 &594418425 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2435221960745580320, guid: 300d3b09031164049b481425837f0b37, type: 3}
@@ -1091,7 +1117,7 @@ GameObject:
   - component: {fileID: 604098713}
   - component: {fileID: 604098712}
   - component: {fileID: 604098711}
-  - component: {fileID: 604098710}
+  - component: {fileID: 604098714}
   m_Layer: 5
   m_Name: Casilla 47
   m_TagString: Untagged
@@ -1119,32 +1145,6 @@ RectTransform:
   m_AnchoredPosition: {x: -200.00006, y: -500.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &604098710
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604098708}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &604098711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,6 +1163,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &604098712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1201,6 +1202,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604098708}
   m_CullTransparentMesh: 1
+--- !u!60 &604098714
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604098708}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.68944705, y: 50.121716}
+      - {x: -0.26160944, y: 50.46481}
+      - {x: -49.537113, y: 17.460814}
+      - {x: -0.27399993, y: -15.631705}
+      - {x: 49.211037, y: 17.889446}
 --- !u!1 &633768391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1325,7 @@ GameObject:
   - component: {fileID: 661527612}
   - component: {fileID: 661527611}
   - component: {fileID: 661527610}
-  - component: {fileID: 661527609}
+  - component: {fileID: 661527613}
   m_Layer: 5
   m_Name: Casilla 55
   m_TagString: Untagged
@@ -1322,32 +1353,6 @@ RectTransform:
   m_AnchoredPosition: {x: -250, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &661527609
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661527607}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &661527610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1371,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &661527611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1410,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661527607}
   m_CullTransparentMesh: 1
+--- !u!60 &661527613
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661527607}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.19312797, y: 50.0593}
+      - {x: -0.37167263, y: 50.140923}
+      - {x: -49.26083, y: 17.539974}
+      - {x: -0.7642044, y: -16.453934}
+      - {x: 49.044716, y: 17.305923}
 --- !u!1001 &696839897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1614,7 +1650,7 @@ GameObject:
   - component: {fileID: 736632355}
   - component: {fileID: 736632354}
   - component: {fileID: 736632353}
-  - component: {fileID: 736632352}
+  - component: {fileID: 736632356}
   m_Layer: 5
   m_Name: Casilla 46
   m_TagString: Untagged
@@ -1642,32 +1678,6 @@ RectTransform:
   m_AnchoredPosition: {x: -250, y: -466}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &736632352
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736632350}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &736632353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,6 +1696,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &736632354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,6 +1735,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736632350}
   m_CullTransparentMesh: 1
+--- !u!60 &736632356
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736632350}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.36838242, y: 49.254616}
+      - {x: 0.0389477, y: 49.526497}
+      - {x: -50.08809, y: 17.011106}
+      - {x: -0.54360783, y: -16.649132}
+      - {x: 49.31997, y: 16.9977}
 --- !u!1 &784585332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1777,7 @@ GameObject:
   - component: {fileID: 784585337}
   - component: {fileID: 784585336}
   - component: {fileID: 784585335}
-  - component: {fileID: 784585334}
+  - component: {fileID: 784585338}
   m_Layer: 5
   m_Name: Casilla 40
   m_TagString: Untagged
@@ -1764,32 +1805,6 @@ RectTransform:
   m_AnchoredPosition: {x: -300, y: -148}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &784585334
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784585332}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &784585335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,6 +1823,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &784585336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1846,6 +1862,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784585332}
   m_CullTransparentMesh: 1
+--- !u!60 &784585338
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784585332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.49086297, y: 49.71721}
+      - {x: -0.3374778, y: 49.88519}
+      - {x: -49.67314, y: 17.352583}
+      - {x: -0.639325, y: -15.657339}
+      - {x: 49.66822, y: 17.611609}
 --- !u!1 &808520282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1904,7 @@ GameObject:
   - component: {fileID: 808520287}
   - component: {fileID: 808520286}
   - component: {fileID: 808520285}
-  - component: {fileID: 808520284}
+  - component: {fileID: 808520288}
   m_Layer: 5
   m_Name: Casilla 50
   m_TagString: Untagged
@@ -1883,35 +1929,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -250, y: -114}
+  m_AnchoredPosition: {x: -250, y: -115}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &808520284
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808520282}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &808520285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,6 +1950,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &808520286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1968,6 +1989,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808520282}
   m_CullTransparentMesh: 1
+--- !u!60 &808520288
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808520282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.09948021, y: 49.4468}
+      - {x: -0.4536556, y: 49.551662}
+      - {x: -50.10234, y: 17.10052}
+      - {x: -0.13129407, y: -15.550427}
+      - {x: 49.074207, y: 17.605965}
 --- !u!1 &847573947
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +2031,7 @@ GameObject:
   - component: {fileID: 847573952}
   - component: {fileID: 847573951}
   - component: {fileID: 847573950}
-  - component: {fileID: 847573949}
+  - component: {fileID: 847573953}
   m_Layer: 5
   m_Name: Casilla 45
   m_TagString: Untagged
@@ -2008,32 +2059,6 @@ RectTransform:
   m_AnchoredPosition: {x: -300, y: -433}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &847573949
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847573947}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &847573950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2077,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &847573951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,6 +2116,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847573947}
   m_CullTransparentMesh: 1
+--- !u!60 &847573953
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847573947}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.21255365, y: 49.89251}
+      - {x: 0.32440633, y: 50.051884}
+      - {x: -49.692898, y: 17.25997}
+      - {x: -0.049922705, y: -15.264215}
+      - {x: 49.63097, y: 17.527697}
 --- !u!1 &943474074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,7 +2198,7 @@ GameObject:
   - component: {fileID: 1079719370}
   - component: {fileID: 1079719369}
   - component: {fileID: 1079719368}
-  - component: {fileID: 1079719367}
+  - component: {fileID: 1079719371}
   m_Layer: 5
   m_Name: Casilla 51
   m_TagString: Untagged
@@ -2170,32 +2226,6 @@ RectTransform:
   m_AnchoredPosition: {x: -199.99997, y: -148}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &1079719367
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079719365}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &1079719368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,6 +2244,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &1079719369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2252,6 +2283,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079719365}
   m_CullTransparentMesh: 1
+--- !u!60 &1079719371
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079719365}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.74866486, y: 49.81006}
+      - {x: -0.6516282, y: 50.017406}
+      - {x: -50.29622, y: 17.45733}
+      - {x: -0.1608795, y: -15.332276}
+      - {x: 49.761116, y: 17.527273}
 --- !u!1 &1096882892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,7 +2401,7 @@ GameObject:
   - component: {fileID: 1258506815}
   - component: {fileID: 1258506814}
   - component: {fileID: 1258506813}
-  - component: {fileID: 1258506812}
+  - component: {fileID: 1258506816}
   m_Layer: 5
   m_Name: Casilla 42
   m_TagString: Untagged
@@ -2368,32 +2429,6 @@ RectTransform:
   m_AnchoredPosition: {x: -200.00002, y: -214}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &1258506812
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1258506810}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &1258506813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,6 +2447,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &1258506814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,6 +2486,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258506810}
   m_CullTransparentMesh: 1
+--- !u!60 &1258506816
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258506810}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 49.913864}
+      - {x: -0.28780833, y: 49.88608}
+      - {x: -49.99905, y: 17.430052}
+      - {x: -0.07546294, y: -15.566092}
+      - {x: 49.53327, y: 17.22159}
 --- !u!1 &1259518908
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,7 +2609,7 @@ GameObject:
   - component: {fileID: 1329063358}
   - component: {fileID: 1329063357}
   - component: {fileID: 1329063356}
-  - component: {fileID: 1329063355}
+  - component: {fileID: 1329063359}
   m_Layer: 5
   m_Name: Casilla 54
   m_TagString: Untagged
@@ -2571,32 +2637,6 @@ RectTransform:
   m_AnchoredPosition: {x: -50.000023, y: -247}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &1329063355
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329063353}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &1329063356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2615,6 +2655,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &1329063357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2653,6 +2694,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329063353}
   m_CullTransparentMesh: 1
+--- !u!60 &1329063359
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329063353}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.31720775, y: 50.802223}
+      - {x: 0.00056660175, y: 50.42845}
+      - {x: -48.486717, y: 17.589266}
+      - {x: 1.1436985, y: -15.263512}
+      - {x: 50.43612, y: 18.390093}
 --- !u!1 &1369576640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2889,7 +2960,7 @@ GameObject:
   - component: {fileID: 1586454991}
   - component: {fileID: 1586454990}
   - component: {fileID: 1586454989}
-  - component: {fileID: 1586454988}
+  - component: {fileID: 1586454992}
   m_Layer: 5
   m_Name: Casilla 41
   m_TagString: Untagged
@@ -2917,32 +2988,6 @@ RectTransform:
   m_AnchoredPosition: {x: -250.00003, y: -181}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &1586454988
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586454986}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &1586454989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2961,6 +3006,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &1586454990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2999,6 +3045,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586454986}
   m_CullTransparentMesh: 1
+--- !u!60 &1586454992
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586454986}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.12393868, y: 50.07515}
+      - {x: -0.20747161, y: 50.12775}
+      - {x: -50.282627, y: 17.408274}
+      - {x: 0.21601641, y: -15.184539}
+      - {x: 49.778378, y: 17.534893}
 --- !u!1 &1608691574
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,7 +3100,7 @@ RectTransform:
   m_GameObject: {fileID: 1608691574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 480094196}
@@ -3590,7 +3666,7 @@ GameObject:
   - component: {fileID: 2121617134}
   - component: {fileID: 2121617133}
   - component: {fileID: 2121617132}
-  - component: {fileID: 2121617131}
+  - component: {fileID: 2121617135}
   m_Layer: 5
   m_Name: Casilla 57
   m_TagString: Untagged
@@ -3618,32 +3694,6 @@ RectTransform:
   m_AnchoredPosition: {x: -149.99997, y: -466}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &2121617131
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121617129}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &2121617132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3662,6 +3712,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!114 &2121617133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3700,6 +3751,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121617129}
   m_CullTransparentMesh: 1
+--- !u!60 &2121617135
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121617129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.24571368, y: 49.413406}
+      - {x: -48.627228, y: 17.265991}
+      - {x: -49.001194, y: 17.376713}
+      - {x: -0.886685, y: -17.02871}
+      - {x: 48.627247, y: 17.266}
+      - {x: -0.031986356, y: 49.45971}
 --- !u!224 &2123120464 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4468346711354431698, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
@@ -3847,32 +3929,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
---- !u!61 &58363407235290128
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3687376785232573669}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &320906419052384731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3891,6 +3948,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!224 &442424501618075117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3929,6 +3987,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &854044786872574648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3947,6 +4006,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &933942023374193989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3965,6 +4025,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!1001 &1117614826034218674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4072,6 +4133,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5bd5a03f354f35d4d97255f02354e215, type: 3}
+    - target: {fileID: 2868205626165417143, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: casAli
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
+    - target: {fileID: 2868205626165417143, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: casAta
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
+    - target: {fileID: 2868205626165417143, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: casVacia
+      value: 
+      objectReference: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
     - target: {fileID: 2868205627103406734, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
       propertyPath: m_Name
       value: CardEstaca
@@ -4482,6 +4555,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951734, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: casAli
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
+    - target: {fileID: 1273880584075951734, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: casAta
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
+    - target: {fileID: 1273880584075951734, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: casVacia
+      value: 
+      objectReference: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
 --- !u!114 &1258502485161990876
@@ -4640,32 +4725,6 @@ RectTransform:
   m_AnchoredPosition: {x: -600, y: -433}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &2086717309710937579
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3393157504171085086}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!224 &2147466342753057250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5026,32 +5085,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &2298480267967902404
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3172433216910103089}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &2313387375222166189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5070,6 +5103,7 @@ MonoBehaviour:
   spawnEne: 1
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
 --- !u!1001 &2435221961225694681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5217,6 +5251,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &2792702710008070414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5235,6 +5270,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!224 &2810111078097438223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5874,6 +5910,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CardAgua
       objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431684, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: casAli
+      value: 
+      objectReference: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
+    - target: {fileID: 4468346711354431684, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: casAta
+      value: 
+      objectReference: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
+    - target: {fileID: 4468346711354431684, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: casVacia
+      value: 
+      objectReference: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
     - target: {fileID: 4468346711354431685, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5988,7 +6036,7 @@ GameObject:
   - component: {fileID: 6255666198949124361}
   - component: {fileID: 6052880217715409314}
   - component: {fileID: 4173467705335211994}
-  - component: {fileID: 2298480267967902404}
+  - component: {fileID: 7172186957232938354}
   m_Layer: 5
   m_Name: Casilla 25
   m_TagString: Untagged
@@ -6044,6 +6092,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!224 &3334497979802002556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6087,7 +6136,7 @@ GameObject:
   - component: {fileID: 6179152775512180262}
   - component: {fileID: 6273641323583544973}
   - component: {fileID: 4250121732042782965}
-  - component: {fileID: 2086717309710937579}
+  - component: {fileID: 6960577105953096287}
   m_Layer: 5
   m_Name: Casilla 34
   m_TagString: Untagged
@@ -6137,7 +6186,7 @@ GameObject:
   - component: {fileID: 5330601516105170909}
   - component: {fileID: 5416327218797619062}
   - component: {fileID: 2792702710008070414}
-  - component: {fileID: 58363407235290128}
+  - component: {fileID: 8980798452419247014}
   m_Layer: 5
   m_Name: Casilla 14
   m_TagString: Untagged
@@ -6269,6 +6318,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4250121732042782965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6287,6 +6337,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!1 &4486826806692594623
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,6 +6418,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!222 &4816944333954127253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6393,6 +6445,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &4975245166765832418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6411,6 +6464,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &4975245166818769138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6429,6 +6483,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245166865504251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6447,6 +6502,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &4975245166866229379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6465,6 +6521,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245166997213516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6483,6 +6540,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245167620720284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6501,6 +6559,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245167661453109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6519,6 +6578,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &4975245167813545278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6537,6 +6597,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &4975245167829579310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6555,6 +6616,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &4975245168202746953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6573,6 +6635,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245168300585448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6591,6 +6654,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245168390353158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6609,6 +6673,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245168661184427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6627,6 +6692,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!114 &4975245168701464620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6645,6 +6711,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 1
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
 --- !u!114 &5165291838792909641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6663,6 +6730,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!1 &5166394458766161752
 GameObject:
   m_ObjectHideFlags: 0
@@ -6691,7 +6759,7 @@ GameObject:
   - component: {fileID: 3709809369267249557}
   - component: {fileID: 3579045355854657854}
   - component: {fileID: 6647408092394889030}
-  - component: {fileID: 8813160830949935704}
+  - component: {fileID: 6647408092394889031}
   m_Layer: 5
   m_Name: Casilla 36
   m_TagString: Untagged
@@ -6817,7 +6885,7 @@ GameObject:
   - component: {fileID: 3878360129546359541}
   - component: {fileID: 3963733662096902750}
   - component: {fileID: 6550774257388891174}
-  - component: {fileID: 9000429694425332024}
+  - component: {fileID: 6550774257388891175}
   m_Layer: 5
   m_Name: Casilla 35
   m_TagString: Untagged
@@ -6865,7 +6933,7 @@ GameObject:
   - component: {fileID: 3039976586387638525}
   - component: {fileID: 2945525301419872342}
   - component: {fileID: 4975245167829579310}
-  - component: {fileID: 7135226260876993328}
+  - component: {fileID: 5829349967687812038}
   m_Layer: 5
   m_Name: Casilla 01
   m_TagString: Untagged
@@ -6873,6 +6941,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349967687812038
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349967687812037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.8199707, y: 50.198524}
+      - {x: -0.4044093, y: 50.60079}
+      - {x: -48.692993, y: 17.777079}
+      - {x: -0.5055324, y: -15.8419075}
+      - {x: 49.60291, y: 17.255173}
 --- !u!1 &5829349967688579285
 GameObject:
   m_ObjectHideFlags: 0
@@ -6885,7 +6983,7 @@ GameObject:
   - component: {fileID: 3039976586399413229}
   - component: {fileID: 2945525301435312966}
   - component: {fileID: 4975245167813545278}
-  - component: {fileID: 7135226260873549856}
+  - component: {fileID: 5829349967688579286}
   m_Layer: 5
   m_Name: Casilla 20
   m_TagString: Untagged
@@ -6893,6 +6991,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349967688579286
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349967688579285}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 49.92379}
+      - {x: -0.06474221, y: 49.941822}
+      - {x: -50.22061, y: 17.626049}
+      - {x: -0.6530359, y: -15.876148}
+      - {x: 49.697594, y: 17.680515}
 --- !u!1 &5829349967739388931
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,7 +7033,7 @@ GameObject:
   - component: {fileID: 3039976586450227003}
   - component: {fileID: 2945525301250332560}
   - component: {fileID: 4975245168300585448}
-  - component: {fileID: 7135226260923458806}
+  - component: {fileID: 5829349967739388932}
   m_Layer: 5
   m_Name: Casilla 30
   m_TagString: Untagged
@@ -6913,6 +7041,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349967739388932
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349967739388931}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.11824736, y: 49.85051}
+      - {x: -0.12308979, y: 49.750904}
+      - {x: -50.14797, y: 17.406393}
+      - {x: -0.47672307, y: -15.71256}
+      - {x: 49.801517, y: 17.459919}
 --- !u!1 &5829349967775824290
 GameObject:
   m_ObjectHideFlags: 0
@@ -6925,7 +7083,7 @@ GameObject:
   - component: {fileID: 3039976586551112346}
   - component: {fileID: 2945525301348624945}
   - component: {fileID: 4975245168202746953}
-  - component: {fileID: 7135226260956731735}
+  - component: {fileID: 5829349967775824291}
   m_Layer: 5
   m_Name: Casilla 21
   m_TagString: Untagged
@@ -6933,6 +7091,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349967775824291
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349967775824290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 50.10949}
+      - {x: 0.29900712, y: 50.311428}
+      - {x: -49.340134, y: 17.7633}
+      - {x: 0.4777222, y: -15.3343935}
+      - {x: 49.9192, y: 17.58541}
 --- !u!1 &5829349968130917613
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,7 +7133,7 @@ GameObject:
   - component: {fileID: 3039976586900443093}
   - component: {fileID: 2945525301932316542}
   - component: {fileID: 4975245168390353158}
-  - component: {fileID: 7135226260229973016}
+  - component: {fileID: 5829349968130917614}
   m_Layer: 5
   m_Name: Casilla 32
   m_TagString: Untagged
@@ -6953,6 +7141,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968130917614
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968130917613}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.2044393, y: 49.98136}
+      - {x: -0.95105654, y: 50.29407}
+      - {x: -49.55565, y: 17.733479}
+      - {x: 0.69732904, y: -15.641923}
+      - {x: 50.19138, y: 17.368011}
+      - {x: -0.82594645, y: 50.065758}
 --- !u!1 &5829349968384969280
 GameObject:
   m_ObjectHideFlags: 0
@@ -6965,7 +7184,7 @@ GameObject:
   - component: {fileID: 3039976587162354040}
   - component: {fileID: 2945525301661948371}
   - component: {fileID: 4975245168661184427}
-  - component: {fileID: 7135226260513254069}
+  - component: {fileID: 5829349968384969281}
   m_Layer: 5
   m_Name: Casilla 22
   m_TagString: Untagged
@@ -6973,6 +7192,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968384969281
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968384969280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.9217556, y: 49.85286}
+      - {x: -0.49015522, y: 50.31406}
+      - {x: -49.671074, y: 17.395575}
+      - {x: -0.7948247, y: -16.017962}
+      - {x: 49.803917, y: 17.361473}
 --- !u!1 &5829349968425489863
 GameObject:
   m_ObjectHideFlags: 0
@@ -6985,7 +7234,7 @@ GameObject:
   - component: {fileID: 3039976587127414527}
   - component: {fileID: 2945525301621720660}
   - component: {fileID: 4975245168701464620}
-  - component: {fileID: 7135226260539880754}
+  - component: {fileID: 5829349968425489864}
   m_Layer: 5
   m_Name: Casilla 03
   m_TagString: Untagged
@@ -6993,6 +7242,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968425489864
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968425489863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.1583445, y: 49.648914}
+      - {x: -0.37190783, y: 49.92324}
+      - {x: -0.7808191, y: 49.963505}
+      - {x: -49.412476, y: 18.110062}
+      - {x: -0.57051194, y: -15.094795}
+      - {x: 49.406982, y: 17.490585}
 --- !u!1 &5829349968569703784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,7 +7285,7 @@ GameObject:
   - component: {fileID: 3039976585200162384}
   - component: {fileID: 2945525300537134843}
   - component: {fileID: 4975245166866229379}
-  - component: {fileID: 7135226259623329181}
+  - component: {fileID: 5829349968569703785}
   m_Layer: 5
   m_Name: Casilla 33
   m_TagString: Untagged
@@ -7013,6 +7293,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968569703785
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968569703784}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3953808, y: 50.41851}
+      - {x: 0.03734845, y: 50.715885}
+      - {x: -50.006294, y: 16.981615}
+      - {x: -1.1912874, y: -16.227598}
+      - {x: 50.369614, y: 17.704363}
 --- !u!1 &5829349968585761296
 GameObject:
   m_ObjectHideFlags: 0
@@ -7025,7 +7335,7 @@ GameObject:
   - component: {fileID: 3039976585205213480}
   - component: {fileID: 2945525300538388867}
   - component: {fileID: 4975245166865504251}
-  - component: {fileID: 7135226259609879269}
+  - component: {fileID: 5829349968585761297}
   m_Layer: 5
   m_Name: Casilla 00
   m_TagString: Untagged
@@ -7033,6 +7343,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968585761297
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968585761296}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5119584, y: 49.89237}
+      - {x: 0.072883785, y: 50.225304}
+      - {x: -0.075826764, y: 49.875217}
+      - {x: -48.81652, y: 18.133562}
+      - {x: -1.5874833, y: -16.534481}
+      - {x: 49.587414, y: 17.715744}
 --- !u!1 &5829349968690040089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7045,7 +7386,7 @@ GameObject:
   - component: {fileID: 3039976585250735649}
   - component: {fileID: 2945525300283137674}
   - component: {fileID: 4975245166818769138}
-  - component: {fileID: 7135226259740519916}
+  - component: {fileID: 5829349968690040090}
   m_Layer: 5
   m_Name: Casilla 23
   m_TagString: Untagged
@@ -7053,6 +7394,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968690040090
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968690040089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 50.339256}
+      - {x: -0.43709904, y: 50.419136}
+      - {x: -0.3308301, y: 50.58602}
+      - {x: -49.00843, y: 17.436205}
+      - {x: 0.07382798, y: -15.970551}
+      - {x: 50.03331, y: 17.526333}
 --- !u!1 &5829349968716929605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7065,7 +7437,7 @@ GameObject:
   - component: {fileID: 3039976585338474877}
   - component: {fileID: 2945525300407536086}
   - component: {fileID: 4975245166727983022}
-  - component: {fileID: 7135226259745127088}
+  - component: {fileID: 5829349968716929606}
   m_Layer: 5
   m_Name: Casilla 11
   m_TagString: Untagged
@@ -7073,6 +7445,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968716929606
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968716929605}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2293688, y: 49.856438}
+      - {x: -0.033557594, y: 50.312366}
+      - {x: -49.673588, y: 17.999605}
+      - {x: -0.5590824, y: -15.488906}
+      - {x: 50.13502, y: 17.442186}
 --- !u!1 &5829349968737733897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7085,7 +7487,7 @@ GameObject:
   - component: {fileID: 3039976585300559409}
   - component: {fileID: 2945525300369628826}
   - component: {fileID: 4975245166765832418}
-  - component: {fileID: 7135226259791359484}
+  - component: {fileID: 5829349968737733898}
   m_Layer: 5
   m_Name: Casilla 10
   m_TagString: Untagged
@@ -7093,6 +7495,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968737733898
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968737733897}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.27734512, y: 49.812595}
+      - {x: -0.11902118, y: 49.95358}
+      - {x: -49.261677, y: 17.911695}
+      - {x: 0.3104403, y: -15.785605}
+      - {x: 50.040977, y: 17.365658}
 --- !u!1 &5829349968986203303
 GameObject:
   m_ObjectHideFlags: 0
@@ -7105,7 +7537,7 @@ GameObject:
   - component: {fileID: 3039976585606147999}
   - component: {fileID: 2945525300137719604}
   - component: {fileID: 4975245166997213516}
-  - component: {fileID: 7135226260014253138}
+  - component: {fileID: 5829349968986203304}
   m_Layer: 5
   m_Name: Casilla 13
   m_TagString: Untagged
@@ -7113,6 +7545,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349968986203304
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349968986203303}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3123631, y: 49.725677}
+      - {x: -0.014014363, y: 50.28405}
+      - {x: -49.625774, y: 17.619276}
+      - {x: -0.6615733, y: -16.738546}
+      - {x: 48.427376, y: 17.487951}
 --- !u!1 &5829349969398790878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,7 +7587,7 @@ GameObject:
   - component: {fileID: 3039976586018730470}
   - component: {fileID: 2945525300782164301}
   - component: {fileID: 4975245167661453109}
-  - component: {fileID: 7135226259366861355}
+  - component: {fileID: 5829349969398790879}
   m_Layer: 5
   m_Name: Casilla 02
   m_TagString: Untagged
@@ -7133,6 +7595,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349969398790879
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349969398790878}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.31233954, y: 50.350357}
+      - {x: -0.638717, y: 49.971687}
+      - {x: -0.5877852, y: 50.10306}
+      - {x: -49.074924, y: 17.931648}
+      - {x: -1.2862991, y: -17.363224}
+      - {x: 49.052006, y: 17.175589}
 --- !u!1 &5829349969492013943
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,7 +7638,7 @@ GameObject:
   - component: {fileID: 3039976586055333967}
   - component: {fileID: 2945525300554391780}
   - component: {fileID: 4975245167620720284}
-  - component: {fileID: 7135226259472798594}
+  - component: {fileID: 5829349969492013944}
   m_Layer: 5
   m_Name: Casilla 31
   m_TagString: Untagged
@@ -7153,6 +7646,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &5829349969492013944
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5829349969492013943}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.46725112, y: 50.05737}
+      - {x: -0.32807064, y: 50.300797}
+      - {x: -50.11236, y: 17.568054}
+      - {x: -0.8472692, y: -15.518633}
+      - {x: 49.743896, y: 17.530048}
 --- !u!224 &5888938068233066515
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7265,7 +7788,7 @@ GameObject:
   - component: {fileID: 3371861624242895311}
   - component: {fileID: 3178401653693456740}
   - component: {fileID: 4751570078646060828}
-  - component: {fileID: 7493429767387714050}
+  - component: {fileID: 6061117462438523640}
   m_Layer: 5
   m_Name: Casilla 12
   m_TagString: Untagged
@@ -7273,6 +7796,37 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!60 &6061117462438523640
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6061117462438523639}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.2733236, y: 50.4718}
+      - {x: -0.13108581, y: 50.87416}
+      - {x: -49.239616, y: 17.503756}
+      - {x: -1.0521561, y: -15.568584}
+      - {x: -1.083355, y: -16.194633}
+      - {x: 49.329613, y: 17.528496}
 --- !u!222 &6179152775512180262
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7339,32 +7893,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &6511468323744429510
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7619537940667274547}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!114 &6550774257388891174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7383,6 +7911,37 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
+--- !u!60 &6550774257388891175
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5693846858979498445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.2493582, y: 49.41331}
+      - {x: -0.95110357, y: 49.034695}
+      - {x: -49.31346, y: 17.30696}
+      - {x: -0.97393596, y: -16.113867}
+      - {x: 48.739693, y: 17.487951}
 --- !u!224 &6554558902506814735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7421,6 +7980,37 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
+--- !u!60 &6647408092394889031
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309123316517399213}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.7230774, y: 49.627373}
+      - {x: -0.227979, y: 50.02103}
+      - {x: -49.57667, y: 17.26806}
+      - {x: -0.31609672, y: -15.451466}
+      - {x: 49.036064, y: 17.48226}
 --- !u!224 &6780044434426588016
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7461,6 +8051,37 @@ RectTransform:
   m_AnchoredPosition: {x: -400, y: -433}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!60 &6960577105953096287
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393157504171085086}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 50.082253}
+      - {x: 0.076811254, y: 50.41918}
+      - {x: 0.18312734, y: 50.58602}
+      - {x: -49.77934, y: 17.95017}
+      - {x: -1.3542378, y: -16.184662}
+      - {x: 49.26235, y: 17.526379}
 --- !u!114 &6997753705583616829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7491,396 +8112,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!61 &7135226259366861355
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349969398790878}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226259472798594
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349969492013943}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226259609879269
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968585761296}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226259623329181
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968569703784}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226259740519916
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968690040089}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226259745127088
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968716929605}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226259791359484
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968737733897}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260014253138
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968986203303}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260229973016
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968130917613}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260513254069
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968384969280}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260539880754
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349968425489863}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260873549856
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349967688579285}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260876993328
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349967687812037}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260923458806
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349967739388931}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
---- !u!61 &7135226260956731735
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5829349967775824290}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!224 &7172186957232938353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7901,6 +8132,36 @@ RectTransform:
   m_AnchoredPosition: {x: -400.00003, y: -500}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!60 &7172186957232938354
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172433216910103089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.3736974, y: 49.951073}
+      - {x: -0.20370871, y: 50.38109}
+      - {x: -49.352028, y: 17.127283}
+      - {x: -0.72008514, y: -15.382228}
+      - {x: 49.341606, y: 17.684795}
 --- !u!222 &7191600812170247062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8075,32 +8336,6 @@ PolygonCollider2D:
       - {x: -49.63284, y: 18.126112}
       - {x: -0.1882447, y: -15.243154}
       - {x: 49.73377, y: 17.642473}
---- !u!61 &7493429767387714050
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6061117462438523639}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!1 &7597994893134252367
 GameObject:
   m_ObjectHideFlags: 0
@@ -8163,7 +8398,7 @@ GameObject:
   - component: {fileID: 1398404051133128203}
   - component: {fileID: 1276929020686796448}
   - component: {fileID: 8958667450897391832}
-  - component: {fileID: 6511468323744429510}
+  - component: {fileID: 8958667450897391833}
   m_Layer: 5
   m_Name: Casilla 24
   m_TagString: Untagged
@@ -8367,32 +8602,6 @@ RectTransform:
   m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &8813160830949935704
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5309123316517399213}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
 --- !u!224 &8825178687392671750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8461,6 +8670,37 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
+--- !u!60 &8958667450897391833
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619537940667274547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.31236306, y: 50.350357}
+      - {x: -0.014014363, y: 50.28405}
+      - {x: -49.93814, y: 17.30696}
+      - {x: -0.34925687, y: -16.113867}
+      - {x: 49.67673, y: 17.487951}
 --- !u!114 &8979084668330425508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8479,6 +8719,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
 --- !u!60 &8979084668330425509
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8529,13 +8770,13 @@ RectTransform:
   m_AnchoredPosition: {x: -500, y: -500.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!61 &9000429694425332024
-BoxCollider2D:
+--- !u!60 &8980798452419247014
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5693846858979498445}
+  m_GameObject: {fileID: 3687376785232573669}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -8552,9 +8793,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 100, y: 100}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.42153263, y: 49.33561}
+      - {x: 0.032503843, y: 49.3472}
+      - {x: -0.3067478, y: 49.493713}
+      - {x: -49.394283, y: 17.17639}
+      - {x: -0.25527978, y: -15.703154}
+      - {x: 49.427113, y: 17.732302}
 --- !u!224 &9001121581078348849
 RectTransform:
   m_ObjectHideFlags: 0

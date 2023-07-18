@@ -97,6 +97,21 @@ MonoBehaviour:
   hasBeenPlayed: 0
   enMano: 0
   handIndex: 0
+  personaje: 0
+  area: 0
+  objetivoUnico: 0
+  hechizoAtaque: 0
+  hechizoDefensa: 0
+  hechizoTablero: 0
+  ataque: 0
+  vida: 0
+  movMax: 0
+  nAta: 0
+  rango: 0
+  dano: 0
+  cura: 0
+  areaHechizo: 0
+  zoom: 0
 --- !u!114 &1273880584075951734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +127,9 @@ MonoBehaviour:
   sobreCasilla: 0
   card: {fileID: 1273880584075951715}
   personajePrefab: {fileID: 4787448300056204280, guid: 5dc136793eed3814bab108c4c6f1331c, type: 3}
+  casAta: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
+  casAli: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
+  casVacia: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
 --- !u!114 &1273880584075951733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,4 +279,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carta: {fileID: 1273880582866501711}
-  canv: {fileID: 4616179167096648278, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
