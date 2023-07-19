@@ -30,7 +30,7 @@ public class Zoom : MonoBehaviour
         carta.GetComponent<Image>().sprite = zoom;
 
         RectTransform rect = carta.GetComponent<RectTransform>();
-        rect.sizeDelta = new Vector2(200, 240);
+        rect.sizeDelta = new Vector2(200, 200);
     }
 
     public void OnHoverExit(){

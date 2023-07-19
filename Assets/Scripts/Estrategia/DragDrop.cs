@@ -37,7 +37,7 @@ public class DragDrop : MonoBehaviour
         if(gm.getFase() == 2 || gm.getFase() == 4){
             enMovimiento = false;
             cerrojo = true;
-            if(card.esPersonaje() && cas.esSpawnAli()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
+            if (cas != null && card.esPersonaje() && cas.esSpawnAli()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
                     GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
