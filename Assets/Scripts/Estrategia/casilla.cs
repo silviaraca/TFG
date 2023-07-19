@@ -10,6 +10,7 @@ public class Casilla : MonoBehaviour
     private GameManagerE gm;
     private int posX, posY;
     public bool pintada = false;
+    public int fila;
     private Casilla casAnt;
     [SerializeField] private bool spawnEne, spawnAli;
     [SerializeField] private int consumeMov = 0;

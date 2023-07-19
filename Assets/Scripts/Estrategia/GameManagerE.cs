@@ -20,7 +20,10 @@ public class GameManagerE : MonoBehaviour
   public List<Personaje> listaPnj = new List<Personaje>();
   public List<Personaje> listaPnjEnemigosEnTablero = new List<Personaje>();
   public List<GameObject> listaPnjEnemigos = new List<GameObject>();
+  public List<GameObject> filasPnj = new List<GameObject>();
   public TextMeshProUGUI textoFase;
+  public GameObject draggingPos;
+  public bool win, loose;
 
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
@@ -199,6 +202,7 @@ private void mueveEnemigo(Personaje pnj){
             cas.vacia = true;
             cas.pnj = null;
         }
+        pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false);
         pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 35, cas.getCasAnt().transform.position.z+10);
         pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
         pnj.cas.vacia = true;
@@ -333,6 +337,7 @@ private void mueveHacia(int posX, int posY, Personaje pnj){
     pnj.cas = casillaMueve;
     casillaMueve.vacia = false;
     casillaMueve.pnj = pnj;
+    pnj.transform.SetParent(filasPnj[casillaMueve.fila].transform, false);
     pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 35, casillaMueve.transform.position.z+10);
     pnj.setMovAct(pnj.getMovAct()-casillaMueve.getConsumeMov());
   }
@@ -345,7 +350,7 @@ private void spawnEnemigo(){
   while(!tablero[xCas].vacia || !tablero[xCas].esSpawnEne()){
     xCas = Random.Range(0, 48);
   }
-  
+  randEnemigo.transform.SetParent(filasPnj[tablero[xCas].fila].transform, false);
   randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 35, tablero[xCas].transform.position.z+10);
   randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[xCas]);
   tablero[xCas].pnj = randEnemigo.GetComponent<Personaje>();

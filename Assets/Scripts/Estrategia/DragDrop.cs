@@ -41,8 +41,7 @@ public class DragDrop : MonoBehaviour
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
                     GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
-                    personajeCreado.transform.SetParent(gm.Personajes.transform, false);
-                    //personajeCreado.transform.position = cas.transform.position;
+                    personajeCreado.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
                     personajeCreado.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
                     personajeCreado.gameObject.GetComponent<Personaje>().setCasAct(cas);
                     setCharacterValues(personajeCreado.GetComponent<Personaje>());

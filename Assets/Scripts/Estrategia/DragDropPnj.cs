@@ -7,6 +7,7 @@ public class DragDropPnj : MonoBehaviour
 {
     private bool enMovimiento = false;
     private Vector2 posIni;
+    private int filaIni;
     public bool sobreCasilla;
     public Personaje pnj; 
     private bool cerrojo = true;
@@ -25,8 +26,10 @@ public class DragDropPnj : MonoBehaviour
     public void cogePnj(){
         if(gm.getFase() == 3 && !pnj.enemigo){
             enMovimiento = true;
-            if(cerrojo)
+            if(cerrojo){
                 posIni = transform.position;
+                filaIni = cas.fila;
+            }
             cerrojo = false;
             movible();
         }
@@ -39,6 +42,7 @@ public class DragDropPnj : MonoBehaviour
             if(sobreCasilla && cas.vacia && cas.pintada){ 
                 Casilla casAct = pnj.getCasAct();
                 casAct.vacia = true;
+                pnj.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
                 pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
                 pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
                 cas.pnj = pnj;
@@ -55,6 +59,7 @@ public class DragDropPnj : MonoBehaviour
                     cas.vacia = true;
                     cas.pnj = null;
                 }
+                pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
                 pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 35, cas.getCasAnt().transform.position.z+10);
                 pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
                 pnj.cas.vacia = true;
@@ -64,6 +69,7 @@ public class DragDropPnj : MonoBehaviour
                 pnj.cas = cas.getCasAnt();
             }
             else {
+                pnj.transform.SetParent(gm.filasPnj[filaIni].transform, false);
                 pnj.transform.position = posIni;
             }
             desPintaCas();
@@ -72,6 +78,7 @@ public class DragDropPnj : MonoBehaviour
     void Update()
     {
         if(enMovimiento){
+            pnj.transform.SetParent(gm.draggingPos.transform, false);
             pnj.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         }
     }

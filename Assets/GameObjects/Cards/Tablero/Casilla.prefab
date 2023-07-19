@@ -93,9 +93,11 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
+  imagenIni: {fileID: 0}
 --- !u!60 &1627023523346951231
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -121,8 +123,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.27803802, y: 49.934937}
-      - {x: -0.116942465, y: 49.800045}
-      - {x: -48.96664, y: 17.263554}
-      - {x: -0.8024123, y: -16.935314}
-      - {x: 48.920364, y: 17.48872}
+    - - {x: 1.3144913, y: 40.37976}
+      - {x: 1.4755869, y: 40.563366}
+      - {x: -33.35985, y: 18.219074}
+      - {x: 0.15310073, y: -4.19508}
+      - {x: 35.54312, y: 18.125729}
