@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2ac0e8783f828c94a99873eb6b1a992d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
-  imagenIni: {fileID: 0}
+  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
 --- !u!60 &1627023523346951231
 PolygonCollider2D:
   m_ObjectHideFlags: 0
