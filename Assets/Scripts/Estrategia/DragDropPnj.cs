@@ -164,7 +164,11 @@ public class DragDropPnj : MonoBehaviour
     {
         cas = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
-        if(nombreObjeto.Equals("Casilla")){ 
+        if(nombreObjeto.Equals("Casilla")){
+            if(cas.pintada){
+                cas.setColorAnt(cas.GetComponent<Image>().sprite);
+                pintaAzul(cas);
+            }
             if(sobreCasilla) nuevaCas = true;
             sobreCasilla = true;
         }
@@ -172,10 +176,17 @@ public class DragDropPnj : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Casilla cas2 = collision.GetComponent<Casilla>();
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla")){
+            if(cas2.pintada){
+                cas2.GetComponent<Image>().sprite = cas2.getColorAnt();
+            }
             if(nuevaCas) nuevaCas = false;
             else sobreCasilla = false;
         }
+    }
+        private void pintaAzul(Casilla casilla){
+        casilla.gameObject.GetComponent<Image>().sprite = gm.casVacia;
     }
 }

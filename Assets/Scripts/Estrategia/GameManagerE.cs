@@ -23,6 +23,9 @@ public class GameManagerE : MonoBehaviour
   public List<GameObject> filasPnj = new List<GameObject>();
   public TextMeshProUGUI textoFase;
   public GameObject draggingPos;
+  public Sprite casAta;
+  public Sprite casAli;
+  public Sprite casVacia;
   public bool win, loose;
 
   //Sitema de turnos
@@ -35,6 +38,7 @@ public class GameManagerE : MonoBehaviour
   private static List<string> listaEnemigos = new List<string>();
   private static List<Casilla> listaCasMovible = new List<Casilla>();
   private static List<Casilla> listaCasAtacable = new List<Casilla>();
+  public GameObject puntero;
 
 
 public void Start(){

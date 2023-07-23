@@ -12,6 +12,7 @@ public class Casilla : MonoBehaviour
     public bool pintada = false;
     public int fila;
     private Casilla casAnt;
+    private Sprite colorAnt;
     [SerializeField] private bool spawnEne, spawnAli;
     [SerializeField] private int consumeMov = 0;
     [SerializeField] private Sprite imagenIni;
@@ -53,5 +54,11 @@ public class Casilla : MonoBehaviour
     }
     public Sprite getImagenIni(){
         return imagenIni;
+    }
+    public Sprite getColorAnt(){
+        return colorAnt;
+    }
+    public void setColorAnt(Sprite c){
+        colorAnt = c;
     }
 }

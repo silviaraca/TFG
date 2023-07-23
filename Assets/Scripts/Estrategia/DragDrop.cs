@@ -14,9 +14,7 @@ public class DragDrop : MonoBehaviour
     private bool nuevaCas = false;
     public GameObject personajePrefab;
     private GameManagerE gm;
-    public Sprite casAta;
-    public Sprite casAli;
-    public Sprite casVacia;
+
 
     void Start()
     {
@@ -228,13 +226,13 @@ public class DragDrop : MonoBehaviour
         }
     }
     private void pintaRojo(Casilla casilla){
-        casilla.gameObject.GetComponent<Image>().sprite = casAta;
+        casilla.gameObject.GetComponent<Image>().sprite = gm.casAta;
     }
     private void pintaVerde(Casilla casilla){
-        casilla.gameObject.GetComponent<Image>().sprite = casAli;
+        casilla.gameObject.GetComponent<Image>().sprite = gm.casAli;
     }
     private void pintaAzul(Casilla casilla){
-        casilla.gameObject.GetComponent<Image>().sprite = casVacia;
+        casilla.gameObject.GetComponent<Image>().sprite = gm.casVacia;
     }
 
     private void pintaCasillaHechizo(Casilla casilla){
