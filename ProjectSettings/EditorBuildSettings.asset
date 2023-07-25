@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Juego/Dungeon Room.unity
     guid: 2fd8c543dbcfbf34a83363e041e9e004
   - enabled: 1
+    path: Assets/Scenes/Juego/Castle Hall.unity
+    guid: f84bc36c6985eb94fb8145a96a67b9cd
+  - enabled: 1
     path: Assets/Scenes/Juego/Labyrinth.unity
     guid: 5aa3cd5b3c2e9e6489c136977f1ee9cc
   - enabled: 1
@@ -39,8 +42,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Juego/Pasdillo ofi.unity
     guid: 1b0ed80380e229a4990ed12d9375abd2
   - enabled: 1
+    path: Assets/Scenes/Juego/Castle Room.unity
+    guid: bc2d6a87137b9974fa4e5410683e3417
+  - enabled: 1
     path: Assets/Scenes/Juego/P. House OS.unity
     guid: f881bb778c09afd47a1e123e0a028399
+  - enabled: 1
+    path: Assets/Scenes/Juego/P. House.unity
+    guid: 7e281a08285e3d54b9e77ddd62028fb8
   - enabled: 1
     path: Assets/Scenes/Juego/Office room.unity
     guid: d5a0a73c6f338d04f93f0413b7628518

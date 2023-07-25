@@ -379,7 +379,7 @@ PrefabInstance:
       objectReference: {fileID: 170948943}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: Town
+      value: Office Hall
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE
@@ -483,7 +483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946316, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_Name
-      value: Puerta
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
