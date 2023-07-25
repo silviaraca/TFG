@@ -27,6 +27,7 @@ public class GameManagerE : MonoBehaviour
   public Sprite casAli;
   public Sprite casVacia;
   public bool win, loose;
+  public TextMeshProUGUI textoCartasPorJugar;
 
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
@@ -57,6 +58,7 @@ public void Start(){
   listaEnemigos.Add("Zombie");
   listaEnemigos.Add("Zombie");
 
+  textoCartasPorJugar.enabled = false;
   pasaTurno = false;
   roba = false;
   primerTurno = true;
@@ -83,12 +85,17 @@ public void Start(){
       textoFase.text = "Fase Actual: " + fase;
       nRobadas = 0;
       pasaTurno = false;
+      textoCartasPorJugar.enabled = true;
+      int porJugar = maxJug - nCartasJugadas;
+      textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
     }
     else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
       fase++;
       textoFase.text = "Fase Actual: " + fase;
       pasaTurno = false;
-      nCartasJugadas = 0;
+      textoCartasPorJugar.enabled = false;
+      if(fase == 4)
+        nCartasJugadas = 0;
     }
     else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
       fase++;
@@ -98,6 +105,9 @@ public void Start(){
         listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
       }
       pasaTurno = false;
+      textoCartasPorJugar.enabled = true;
+      int porJugar = maxJug - nCartasJugadas;
+      textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
     }
     else if(fase == 5){
       //efectos de final de turno y movimientos de enemigos
@@ -368,6 +378,8 @@ private void spawnEnemigo(){
   }
   public void setCarJugadas(int n){
     nCartasJugadas = n;
+    int porJugar = maxJug - nCartasJugadas;
+    textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
   }
   public void pasaT(){
     pasaTurno = true;
