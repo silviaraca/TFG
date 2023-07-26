@@ -42,6 +42,7 @@ public class Personaje : MonoBehaviour
         if(vida == 0){ 
             if(enemigo){
                 gm.listaPnjEnemigosEnTablero.Remove(this);
+                gm.enemigosVivos--;
             }
             else{
                 gm.listaPnj.Remove(this);

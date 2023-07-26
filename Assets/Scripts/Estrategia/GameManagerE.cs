@@ -28,6 +28,7 @@ public class GameManagerE : MonoBehaviour
   public Sprite casVacia;
   public bool win, loose;
   public TextMeshProUGUI textoCartasPorJugar;
+  public TextMeshProUGUI textoTurnos;
 
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
@@ -40,6 +41,8 @@ public class GameManagerE : MonoBehaviour
   private static List<Casilla> listaCasMovible = new List<Casilla>();
   private static List<Casilla> listaCasAtacable = new List<Casilla>();
   public GameObject puntero;
+  public int turnosParaPerder; //Según el combate se configurará
+  public int enemigosVivos;
 
 
 public void Start(){
@@ -59,6 +62,7 @@ public void Start(){
   listaEnemigos.Add("Zombie");
 
   textoCartasPorJugar.enabled = false;
+  enemigosVivos = listaEnemigos.Count;
   pasaTurno = false;
   roba = false;
   primerTurno = true;
@@ -68,60 +72,71 @@ public void Start(){
 }
 
   public void Update(){
-    if(fase == 0){ //fase inicial y efectos de inicio de turno
-      if(primerTurno){
+    if(!win && !loose){
+      if(fase == 0){ //fase inicial y efectos de inicio de turno
+        textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
+        if(primerTurno){
+          DrawCard();
+          DrawCard();
+          primerTurno = false;
+        }
+        //efectos de inicio de turno
+        nRobadas = 0;
+        roba = false;
+        fase++; //No pasa hasta que se ejecuten todos
+        textoFase.text = "Fase Actual: " + fase;
+      }
+      else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
+        fase++;
+        textoFase.text = "Fase Actual: " + fase;
+        nRobadas = 0;
+        pasaTurno = false;
+        textoCartasPorJugar.enabled = true;
+        int porJugar = maxJug - nCartasJugadas;
+        textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+      }
+      else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
+        pasaTurno = false;
+        textoCartasPorJugar.enabled = false;
+        if(fase == 4)
+          nCartasJugadas = 0;
+        fase++;
+        textoFase.text = "Fase Actual: " + fase;
+      }
+      else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
+        fase++;
+        textoFase.text = "Fase Actual: " + fase;
+        for(int i = 0; i < listaPnj.Count; i++){
+          listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+          listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
+        }
+        pasaTurno = false;
+        textoCartasPorJugar.enabled = true;
+        int porJugar = maxJug - nCartasJugadas;
+        textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+      }
+      else if(fase == 5){
+        //efectos de final de turno y movimientos de enemigos
+        movEnemigos();
+        if(listaPnjEnemigos.Count > 0){
+          spawnEnemigo();
+        }
+        turnosParaPerder--;
+        fase = 0; //Reinicia fases cuando haya terminado lo anterior
+      }
+      if(fase == 1 && roba){
         DrawCard();
-        DrawCard();
-        primerTurno = false;
+        roba = false;
       }
-      //efectos de inicio de turno
-      nRobadas = 0;
-      roba = false;
-      fase++; //No pasa hasta que se ejecuten todos
-      textoFase.text = "Fase Actual: " + fase;
-    }
-    else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
-      fase++;
-      textoFase.text = "Fase Actual: " + fase;
-      nRobadas = 0;
-      pasaTurno = false;
-      textoCartasPorJugar.enabled = true;
-      int porJugar = maxJug - nCartasJugadas;
-      textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-    }
-    else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
-      fase++;
-      textoFase.text = "Fase Actual: " + fase;
-      pasaTurno = false;
-      textoCartasPorJugar.enabled = false;
-      if(fase == 4)
-        nCartasJugadas = 0;
-    }
-    else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
-      fase++;
-      textoFase.text = "Fase Actual: " + fase;
-      for(int i = 0; i < listaPnj.Count; i++){
-        listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
-        listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
+      if(enemigosVivos == 0){
+        win = true;
+        //Salir de escena ganado
       }
-      pasaTurno = false;
-      textoCartasPorJugar.enabled = true;
-      int porJugar = maxJug - nCartasJugadas;
-      textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-    }
-    else if(fase == 5){
-      //efectos de final de turno y movimientos de enemigos
-      movEnemigos();
-      if(listaPnjEnemigos.Count > 0){
-        spawnEnemigo();
+      else if(turnosParaPerder == 0){
+        loose = true;
+        //Salir de escena perdiendo
       }
-      fase = 0; //Reinicia fases cuando haya terminado lo anterior
     }
-    if(fase == 1 && roba){
-      DrawCard();
-      roba = false;
-    }
-
   }
 
   private void creaCartas(){ //Genera la lista de cartas en el mazo del jugador a partir de una lista de strings
