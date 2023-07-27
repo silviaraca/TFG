@@ -17,8 +17,6 @@ GameObject:
   - component: {fileID: 2868205626165417141}
   - component: {fileID: 2868205626165417146}
   - component: {fileID: 2868205626165417147}
-  - component: {fileID: 2007419473591898038}
-  - component: {fileID: 8255931569978456644}
   m_Layer: 0
   m_Name: CardEstaca
   m_TagString: Untagged
@@ -126,12 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b26d82379cd99b40b973d6ef7c1ea03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sobreCasilla: 0
   card: {fileID: 2868205626165417122}
   personajePrefab: {fileID: 4787448300056204280, guid: 5dc136793eed3814bab108c4c6f1331c, type: 3}
-  casAta: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
-  casAli: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
-  casVacia: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
 --- !u!114 &2868205626165417140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,22 +158,6 @@ MonoBehaviour:
         - m_Target: {fileID: 2868205626165417147}
           m_TargetAssemblyTypeName: Zoom, Assembly-CSharp
           m_MethodName: OnHoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 6
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2868205626165417143}
-          m_TargetAssemblyTypeName: DragDrop, Assembly-CSharp
-          m_MethodName: sueltaCarta
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -281,63 +259,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carta: {fileID: 2868205627103406734}
---- !u!60 &2007419473591898038
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2868205627103406734}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
---- !u!60 &8255931569978456644
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2868205627103406734}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
