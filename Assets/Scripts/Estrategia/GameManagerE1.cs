@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameManagerE : MonoBehaviour
+public class GameManagerTutorial : MonoBehaviour
 {
   public List<Carta> mazo = new List<Carta>();
   public List<Carta> descarte = new List<Carta>();
@@ -43,7 +43,6 @@ public class GameManagerE : MonoBehaviour
   public GameObject puntero;
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
-  public bool tutorial;
 
 
 public void Start(){
@@ -73,158 +72,69 @@ public void Start(){
 }
 
   public void Update(){
-    if(!tutorial){
-
-      if(!win && !loose){
-        if(fase == 0){ //fase inicial y efectos de inicio de turno
-          textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
-          if(primerTurno){
-            DrawCard();
-            DrawCard();
-            primerTurno = false;
-          }
-          //efectos de inicio de turno
-          nRobadas = 0;
-          roba = false;
-          fase++; //No pasa hasta que se ejecuten todos
-          textoFase.text = "Fase Actual: " + fase;
-        }
-        else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          nRobadas = 0;
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-        }
-        else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = false;
-          if(fase == 4)
-            nCartasJugadas = 0;
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-        }
-        else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          for(int i = 0; i < listaPnj.Count; i++){
-            listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
-            listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
-          }
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-        }
-        else if(fase == 5){
-          //efectos de final de turno y movimientos de enemigos
-          movEnemigos();
-          if(listaPnjEnemigos.Count > 0){
-            spawnEnemigo();
-          }
-          turnosParaPerder--;
-          fase = 0; //Reinicia fases cuando haya terminado lo anterior
-        }
-        if(fase == 1 && roba){
+    if(!win && !loose){
+      if(fase == 0){ //fase inicial y efectos de inicio de turno
+        textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
+        if(primerTurno){
           DrawCard();
-          roba = false;
+          DrawCard();
+          primerTurno = false;
         }
-        if(enemigosVivos == 0){
-          win = true;
-          //Salir de escena ganado
-        }
-        else if(turnosParaPerder == 0){
-          loose = true;
-          //Salir de escena perdiendo
-        }
+        //efectos de inicio de turno
+        nRobadas = 0;
+        roba = false;
+        fase++; //No pasa hasta que se ejecuten todos
+        textoFase.text = "Fase Actual: " + fase;
       }
-    }
-    else{ //Script del tutorial
-      if(!win && !loose){
-        if(fase == 0){ //fase inicial y efectos de inicio de turno
-          textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
-          if(primerTurno){
-
-            //Aquí primer diálogo explicando lo que es la estrategia
-            //Roba las dos cartas que estás scripteadas para robar
-
-          }
-          //efectos de inicio de turno
-          nRobadas = 0;
-          roba = false;
-          fase++; //No pasa hasta que se ejecuten todos
-          textoFase.text = "Fase Actual: " + fase;
+      else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
+        fase++;
+        textoFase.text = "Fase Actual: " + fase;
+        nRobadas = 0;
+        pasaTurno = false;
+        textoCartasPorJugar.enabled = true;
+        int porJugar = maxJug - nCartasJugadas;
+        textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+      }
+      else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
+        pasaTurno = false;
+        textoCartasPorJugar.enabled = false;
+        if(fase == 4)
+          nCartasJugadas = 0;
+        fase++;
+        textoFase.text = "Fase Actual: " + fase;
+      }
+      else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
+        fase++;
+        textoFase.text = "Fase Actual: " + fase;
+        for(int i = 0; i < listaPnj.Count; i++){
+          listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+          listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
         }
-        else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
-
-          //Dialogo del robo de cartas mostrando que hay un contador de cartas por robar
-          //Obliga a robar una carta antes de explicar pasar turno
-
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          nRobadas = 0;
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+        pasaTurno = false;
+        textoCartasPorJugar.enabled = true;
+        int porJugar = maxJug - nCartasJugadas;
+        textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+      }
+      else if(fase == 5){
+        //efectos de final de turno y movimientos de enemigos
+        movEnemigos();
+        if(listaPnjEnemigos.Count > 0){
+          spawnEnemigo();
         }
-        else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
-          //FASE 2
-          //Dialogo dice que mete un enemigo para que pueda probar las cartas
-          //Spawn un enemigo
-          //Explica que puede usar la carta de estaca que es de primer turno
-
-          //FASE 4
-          //Dialogo dice que puede usar cartas de segundo turno de jugar cartas 
-          //Hace aparecer un aldeano herido rodeado de enemigos a uno de vida y explica que puede usar agua bendita
-          //Solo permite usar agua bendita en la casilla elegida para curar y matar a todos los malos
-
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = false;
-          if(fase == 4)
-            nCartasJugadas = 0;
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-        }
-        else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
-          //Esta fase la explicará en tutorial 2 de personajes
-          
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          for(int i = 0; i < listaPnj.Count; i++){
-            listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
-            listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
-          }
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-        }
-        else if(fase == 5){
-          //Fin del tutorial, propuesta de una pelea de práctica con una pool de enemigos ya elegida
-
-          //efectos de final de turno y movimientos de enemigos
-          movEnemigos();
-          if(listaPnjEnemigos.Count > 0){
-            spawnEnemigo();
-          }
-          turnosParaPerder--;
-          fase = 0; //Reinicia fases cuando haya terminado lo anterior
-        }
-        if(fase == 1 && roba){
-          DrawCard();
-          roba = false;
-        }
-        if(enemigosVivos == 0){
-          win = true;
-          //Salir de escena ganado
-        }
-        else if(turnosParaPerder == 0){
-          loose = true;
-          //Salir de escena perdiendo
-        }
+        turnosParaPerder--;
+        fase = 0; //Reinicia fases cuando haya terminado lo anterior
+      }
+      if(fase == 1 && roba){
+        DrawCard();
+        roba = false;
+      }
+      if(enemigosVivos == 0){
+        win = true;
+        //Salir de escena ganado
+      }
+      else if(turnosParaPerder == 0){
+        loose = true;
+        //Salir de escena perdiendo
       }
     }
   }
