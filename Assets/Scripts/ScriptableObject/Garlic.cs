@@ -17,7 +17,6 @@ public class Garlic : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
         textoE.gameObject.SetActive(false);
-        isVisible = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

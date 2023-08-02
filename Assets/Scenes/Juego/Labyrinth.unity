@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 68671019}
   - component: {fileID: 68671021}
   - component: {fileID: 68671020}
+  - component: {fileID: 68671022}
   m_Layer: 0
   m_Name: Labyrinth 2
   m_TagString: Untagged
@@ -1605,6 +1606,42 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!68 &68671022
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68671018}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -25.184929, y: 14.5506115}
+  - {x: -23.522518, y: 14.554706}
+  - {x: -23.538519, y: 15.787544}
+  - {x: -22.254072, y: 15.769209}
+  - {x: -22.22313, y: 13.618714}
+  - {x: -24.176077, y: 13.59903}
+  - {x: -24.159609, y: 12.783171}
+  - {x: -21.202257, y: 12.786041}
+  - {x: -21.263233, y: 15.461572}
+  - {x: -20.245365, y: 15.473772}
+  - {x: -20.209028, y: 14.320634}
+  - {x: -19.328205, y: 14.330013}
+  - {x: -19.333399, y: 13.455126}
+  - {x: -20.230478, y: 13.467653}
+  - {x: -20.240475, y: 12.996135}
+  - {x: -17.874733, y: 12.9464}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &135890592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1761,7 +1798,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 17
+  orthographic size: 50
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -17383,6 +17420,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5054287906517754304, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754312, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_Name
       value: Player
@@ -17441,7 +17482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754319, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: speed
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
@@ -17504,6 +17545,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 518101819}
+    - target: {fileID: 2186468156956998023, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
 --- !u!1 &1987183172

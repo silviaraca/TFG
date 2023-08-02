@@ -2255,7 +2255,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.2647425}
@@ -2283,6 +2283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5540a0a52260684294e052159b34e68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textoE: {fileID: 473800416}
 --- !u!1001 &943876143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2296,11 +2297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754307, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.0625
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754307, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.5
+      value: 1.4375
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754312, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_Name
@@ -2469,7 +2470,7 @@ PrefabInstance:
       objectReference: {fileID: 1835811866}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: textSpeed
-      value: 0.2
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: textComponent
@@ -6484,6 +6485,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.5583496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -245.27026
+      objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_Pivot.x
       value: 0
