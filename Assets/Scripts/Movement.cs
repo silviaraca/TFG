@@ -23,8 +23,7 @@ public class Movement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         
-        direction = new Vector3(horizontal, vertical);
-
+        direction = new Vector3(horizontal, vertical, vertical/1000);
         AnimateMovement(direction);
     }
     
@@ -33,6 +32,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position += direction * speed * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y/1000);
     }
 
     private void AnimateMovement(Vector3 direction)

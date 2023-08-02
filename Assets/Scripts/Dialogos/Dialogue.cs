@@ -83,7 +83,6 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            textoE.gameObject.SetActive(true);
             panel.gameObject.SetActive(false);
             move.allowMove = true;
             textComponent.text = string.Empty;
