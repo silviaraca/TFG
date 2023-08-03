@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Playables;
 
 public class AutoDialogue : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class AutoDialogue : MonoBehaviour
     public string[] lines;
     public string[] names;
     public float textSpeed;
-
+ 
     private int index;
     private bool activeE;
     private Player player;
+    private TimelineActivator tl;
 
 
     // Start is called before the first frame update
@@ -40,7 +42,7 @@ public class AutoDialogue : MonoBehaviour
             activeE = false;
         }
 
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E))
             {
                 if(textComponent.text == lines[index])
                 {
@@ -84,25 +86,29 @@ public class AutoDialogue : MonoBehaviour
             move.allowMove = true;
             textComponent.text = string.Empty;
             textName.text = string.Empty;
+            TimelineActivator.play = true;
             Destroy(this.gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+  
+private void OnTriggerEnter2D(Collider2D collision)
+{
+    player = collision.GetComponent<Player>();
+    if (collision.gameObject.name.Equals("Player"))
     {
-        player = collision.GetComponent<Player>();
-        if(collision.gameObject.name.Equals("Player")){
-            activeE = true;
-            move.allowMove = false; 
-        }                   
+        activeE = true;
+        move.allowMove = false;
     }
+}
 
-    private void OnTriggerExit2D(Collider2D collision)
+private void OnTriggerExit2D(Collider2D collision)
+{
+    player = collision.GetComponent<Player>();
+    if (collision.gameObject.name.Equals("Player"))
     {
-        player = collision.GetComponent<Player>();
-        if(collision.gameObject.name.Equals("Player")){
-            activeE = false;
-            Destroy(this.gameObject);
-        }            
+        activeE = false;
+        move.allowMove = true;
     }
+}
 }

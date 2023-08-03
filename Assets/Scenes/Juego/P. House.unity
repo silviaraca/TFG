@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 350193721}
   - component: {fileID: 350193720}
+  - component: {fileID: 350193722}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -150,7 +151,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 1c09941ae62a9da41a56aba89e138ad2, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -176,6 +177,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &350193722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350193719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335705a5a54679043b23ebd656a192bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 350193720}
 --- !u!1 &378062698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2083,14 @@ PrefabInstance:
       propertyPath: playerStorage
       value: 
       objectReference: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: playerPosition.x
+      value: -53
+      objectReference: {fileID: 0}
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: playerPosition.y
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 4950456147939579461, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: player
       value: 
@@ -2127,7 +2149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946316, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_Name
-      value: Puerta
+      value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5893120099755946315, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
@@ -2258,7 +2280,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2647425}
+  m_Offset: {x: 0, y: 0.13849926}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2269,7 +2291,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.08, y: 1.3694849}
+  m_Size: {x: 1.08, y: 1.1169984}
   m_EdgeRadius: 0
 --- !u!114 &680343542
 MonoBehaviour:
@@ -2284,6 +2306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoE: {fileID: 473800416}
+  boxCollider: {fileID: 680343541}
 --- !u!1001 &943876143
 PrefabInstance:
   m_ObjectHideFlags: 0

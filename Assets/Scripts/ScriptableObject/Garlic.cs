@@ -8,12 +8,15 @@ using TMPro;
 public class Garlic : MonoBehaviour
 {
     public TextMeshProUGUI textoE;
+    public BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private Player player;
     private bool dejable;
+    private bool done;
 
     void Start()
     {
+        done = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
         textoE.gameObject.SetActive(false);
@@ -22,7 +25,7 @@ public class Garlic : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if(player){
+        if(player && !done){
             textoE.gameObject.SetActive(true);
             dejable = true;
         }                  
@@ -31,7 +34,7 @@ public class Garlic : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if(collision.gameObject.name.Equals("Player")){
+        if(collision.gameObject.name.Equals("Player") && !done){
             textoE.gameObject.SetActive(false);
             dejable = false;
         } 
@@ -39,9 +42,13 @@ public class Garlic : MonoBehaviour
 
     void Update()
     {
-        if (dejable && Input.GetKeyDown(KeyCode.E))
+        if (dejable && Input.GetKeyDown(KeyCode.E) && !done)
         {
             spriteRenderer.enabled = true;
+            textoE.gameObject.SetActive(false);
+            done = true;
+            boxCollider.enabled = false;
+
         }
     }
 }

@@ -17,17 +17,24 @@ public class Movement : MonoBehaviour
 
     }
 
-   private void Update()
-   {
-    if(allowMove && !PauseMenu.isPaused){
+  private void Update()
+{
+    if (allowMove && !PauseMenu.isPaused)
+    {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        
-        direction = new Vector3(horizontal, vertical, vertical/1000);
+
+        direction = new Vector3(horizontal, vertical, vertical / 1000);
         AnimateMovement(direction);
     }
-    
-   }
+    else
+    {
+        // Restablecer la dirección cuando el movimiento está deshabilitado
+        direction = Vector2.zero;
+        AnimateMovement(direction);
+    }
+}
+   
 
     private void FixedUpdate()
     {
