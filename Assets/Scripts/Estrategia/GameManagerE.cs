@@ -45,6 +45,7 @@ public class GameManagerE : MonoBehaviour
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
   public bool tutorial;
+  private bool dialogo = true;
 
 
 public void Start(){
@@ -54,7 +55,7 @@ public void Start(){
       string deckData = PlayerPrefs.GetString("DeckData");
       listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
   }
-  else{ //Si no hubiese data(cargar directamente estrategia para probar cosas) hace esto
+  else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
     listaCartas.Add("Aldeano");
     listaCartas.Add("Aldeano");
     listaCartas.Add("Agua");
@@ -69,7 +70,7 @@ public void Start(){
       string enemiesData = PlayerPrefs.GetString("EnemiesData");
       listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
   }
-  else{
+  else{//Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
     listaEnemigos.Add("Zombie");
     listaEnemigos.Add("Zombie");
     listaEnemigos.Add("Zombie");
@@ -89,11 +90,11 @@ public void Start(){
 
   public void Update(){
     if(!tutorial){
-
       if(!win && !loose){
         if(fase == 0){ //fase inicial y efectos de inicio de turno
           textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
           if(primerTurno){
+            print("A");
             DrawCard();
             DrawCard();
             primerTurno = false;
@@ -160,17 +161,17 @@ public void Start(){
       if(!win && !loose){
         if(fase == 0){ //fase inicial y efectos de inicio de turno
           textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
-          if(primerTurno){
-
-            //Aquí primer diálogo explicando lo que es la estrategia
+          //Aquí primer diálogo explicando lo que es la estrategia
+          if(primerTurno && !dialogo){
+            primerTurno = false;
+            nRobadas = 0;
+            roba = false;
+            fase++; //No pasa hasta que se ejecuten todos
+            textoFase.text = "Fase Actual: " + fase;
             //Roba las dos cartas que estás scripteadas para robar
-
+            drawScripted(3);
+            drawScripted(3);
           }
-          //efectos de inicio de turno
-          nRobadas = 0;
-          roba = false;
-          fase++; //No pasa hasta que se ejecuten todos
-          textoFase.text = "Fase Actual: " + fase;
         }
         else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
 
@@ -243,7 +244,21 @@ public void Start(){
       }
     }
   }
-
+  private void drawScripted(int index){
+    Carta cardDraw = mazo[index];
+    for(int i = 0; i < espacioManoSinUsar.Length; i++){
+        if(espacioManoSinUsar[i]){
+            cardDraw.gameObject.SetActive(true);
+            cardDraw.handIndex = i;
+            cardDraw.enMano = true;
+            mano.Add(cardDraw);
+            cardDraw.transform.position = espacioMano[i].position;
+            espacioManoSinUsar[i] = false;
+            mazo.Remove(cardDraw);
+            return;
+        }
+    }
+  }
   private void creaCartas(){ //Genera la lista de cartas en el mazo del jugador a partir de una lista de strings
     GameObject cartaAnadida = null;
     for(int i = 0; i < listaCartas.Count; i++){
@@ -506,5 +521,8 @@ private void spawnEnemigo(){
   }
   public void robaCarta(){
     roba = true;
+  }
+  public void finDialogo(){
+    dialogo = false;
   }
 }
