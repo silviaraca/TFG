@@ -10,7 +10,7 @@ public class DialogoDecisiones : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoE;
     [SerializeField] private Image panel;
     [SerializeField] private Movement move;
-    [SerializeField] private Cargar cargar;
+    [SerializeField] private CambioEscenaEstrategia cargar;
     [SerializeField] private List<int> listaMomentoDecisiones;
     [SerializeField] private List<string> listaDecisiones1;
     [SerializeField] private List<string> listaDecisiones2;
@@ -136,7 +136,7 @@ public class DialogoDecisiones : MonoBehaviour
     public void decision1(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
         //Invoca a la estrategia
-        cargar.load("Estrategia");
+        cargar.cargaEstrategia();
     }
     public void decision2(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;

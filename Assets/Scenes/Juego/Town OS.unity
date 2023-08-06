@@ -284,6 +284,34 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.data[0]
+      value: Aldeano
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.data[1]
+      value: Aldeano
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.data[2]
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.data[3]
+      value: Agua
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.data[4]
+      value: Estaca
+      objectReference: {fileID: 0}
+    - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: deck.Array.data[5]
+      value: Estaca
+      objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754312, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18891,6 +18919,10 @@ PrefabInstance:
     - target: {fileID: 3481757626703713867, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778634647972869211, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 3811607991855628389, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -82337,6 +82369,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -34.607178
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -307.66638
+      objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -82479,6 +82519,7 @@ GameObject:
   - component: {fileID: 2801447885948886267}
   - component: {fileID: 2801447885948886270}
   - component: {fileID: 2801447885948886271}
+  - component: {fileID: 2801447885948886272}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -82620,7 +82661,7 @@ MonoBehaviour:
   textoE: {fileID: 207703888}
   panel: {fileID: 2125737829}
   move: {fileID: 564258505}
-  cargar: {fileID: 2801447885948886271}
+  cargar: {fileID: 2801447885948886272}
   listaMomentoDecisiones: 00000000
   listaDecisiones1:
   - Si
@@ -82652,3 +82693,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1367303288}
+--- !u!114 &2801447885948886272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801447885948886259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac435923d17db84ca06496313eabb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 207703888}
+  cargar: {fileID: 2801447885948886271}
+  escena: '"Estrategia"'
+  deck:
+  - Aldeano
+  - Aldeano
+  - Agua
+  - Agua
+  - Estaca
+  - Estaca
+  enemies:
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie

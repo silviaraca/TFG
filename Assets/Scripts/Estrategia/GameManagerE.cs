@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Newtonsoft.Json;
 
 public class GameManagerE : MonoBehaviour
 {
@@ -47,20 +48,34 @@ public class GameManagerE : MonoBehaviour
 
 
 public void Start(){
-  //Esto será tomar las cartas de la lista de cartas que haya en otro lado al iniciar la escena
-  listaCartas.Add("Aldeano");
-  listaCartas.Add("Aldeano");
-  listaCartas.Add("Agua");
-  listaCartas.Add("Agua");
-  listaCartas.Add("Estaca");
-  listaCartas.Add("Estaca");
+  //Tomar las cartas de la lista de cartas que haya en deckData al iniciar la escena
+  if (PlayerPrefs.HasKey("DeckData"))
+  {
+      string deckData = PlayerPrefs.GetString("DeckData");
+      listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
+  }
+  else{ //Si no hubiese data(cargar directamente estrategia para probar cosas) hace esto
+    listaCartas.Add("Aldeano");
+    listaCartas.Add("Aldeano");
+    listaCartas.Add("Agua");
+    listaCartas.Add("Agua");
+    listaCartas.Add("Estaca");
+    listaCartas.Add("Estaca");
+  }
 
   //Esto se tomará de una lista de enemigos según el contrincante
-  listaEnemigos.Add("Zombie");
-  listaEnemigos.Add("Zombie");
-  listaEnemigos.Add("Zombie");
-  listaEnemigos.Add("Zombie");
-  listaEnemigos.Add("Zombie");
+  if (PlayerPrefs.HasKey("EnemiesData"))
+  {
+      string enemiesData = PlayerPrefs.GetString("EnemiesData");
+      listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
+  }
+  else{
+    listaEnemigos.Add("Zombie");
+    listaEnemigos.Add("Zombie");
+    listaEnemigos.Add("Zombie");
+    listaEnemigos.Add("Zombie");
+    listaEnemigos.Add("Zombie");
+  }
 
   textoCartasPorJugar.enabled = false;
   enemigosVivos = listaEnemigos.Count;
