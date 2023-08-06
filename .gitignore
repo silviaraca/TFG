@@ -70,3 +70,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/Sprites/Layout/Mirror.asset
+Assets/Sprites/Layout/Mirror.asset.meta
+Assets/Sprites/Layout/Mirror.png
+Assets/Sprites/Layout/Mirror.png.meta
+Assets/Sprites/Layout/Mirror.webp
+Assets/Sprites/Layout/Mirror.webp.meta

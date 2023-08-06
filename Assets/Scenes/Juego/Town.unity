@@ -16441,7 +16441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &317980404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20292,11 +20292,11 @@ PrefabInstance:
       objectReference: {fileID: 1000908654}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: lines.Array.size
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: names.Array.size
-      value: 8
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: playableDirector
@@ -20335,6 +20335,14 @@ PrefabInstance:
       value: This is very dangerous!!
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[8]
+      value: Anyways... Let's talk about your job
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[9]
+      value: You'll have to help us on the Other Side
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: names.Array.data[0]
       value: VH
       objectReference: {fileID: 0}
@@ -20360,6 +20368,146 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: names.Array.data[7]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[8]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[9]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[10]
+      value: The... Other Side?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[11]
+      value: That's right
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[12]
+      value: 'There are two dimensions: this one, which you call  "the real world"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[13]
+      value: And the Other Side, the place where our "alter egos" live
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[14]
+      value: What do you mean by "alter ego"?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[15]
+      value: All vampires and magical creatures have a different persona in each
+        dimension
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[16]
+      value: That's why we have now a problem, the Dracula from the Other Side decided
+        to break the link between him and his real world's persona
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[17]
+      value: And why does it care?
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[18]
+      value: BECAUSE HE IS DRACULA!! The evil vampire!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[19]
+      value: Oh... I see
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[20]
+      value: 'We, the ones that have an alter ego in the Other Side can''t go there,
+        we can''t coexist '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[21]
+      value: That's why we need you!!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[22]
+      value: But how can I help???
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[23]
+      value: You have to go there and talk to my alter ego, he'll tell you what to
+        do
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[24]
+      value: But first, let's take that horrible garlic out of your house
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: lines.Array.data[25]
+      value: Follow me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[10]
+      value: Me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[11]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[12]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[13]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[14]
+      value: Me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[15]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[16]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[17]
+      value: Me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[18]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[19]
+      value: Me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[20]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[21]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[22]
+      value: Me
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[23]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[24]
+      value: VH
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[25]
       value: VH
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22947,6 +23095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147589339}
   - component: {fileID: 1147589338}
+  - component: {fileID: 1147589340}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -22992,6 +23141,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1147589340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147589337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344a966419fb99b41a748adcfa8724b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playableDirector: {fileID: 1147589338}
 --- !u!1 &1249202261
 GameObject:
   m_ObjectHideFlags: 0
