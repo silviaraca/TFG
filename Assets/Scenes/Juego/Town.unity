@@ -16441,7 +16441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &317980404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22947,7 +22947,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1147589339}
   - component: {fileID: 1147589338}
-  - component: {fileID: 1147589340}
   m_Layer: 0
   m_Name: Director
   m_TagString: Untagged
@@ -22974,6 +22973,8 @@ PlayableDirector:
     value: {fileID: 317980406}
   - key: {fileID: 2642816633120416994, guid: fe8bf73b59000f44a909b01c40ae2f2b, type: 2}
     value: {fileID: 317980406}
+  - key: {fileID: 7452289233306604660, guid: fe8bf73b59000f44a909b01c40ae2f2b, type: 2}
+    value: {fileID: 317980403}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1147589339
@@ -22991,19 +22992,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1147589340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147589337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f8b7f205ed76b34c8e05971ffbe244d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playableDirector: {fileID: 1147589338}
 --- !u!1 &1249202261
 GameObject:
   m_ObjectHideFlags: 0
