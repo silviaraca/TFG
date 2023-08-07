@@ -31,7 +31,7 @@ public class GameManagerE : MonoBehaviour
   public TextMeshProUGUI textoCartasPorJugar;
   public TextMeshProUGUI textoTurnos;
   public DialogueScripted ds;
-
+  public GameObject aliado;
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
   private static int fase;//Identificador de fase que se usará para entrar o no a hacer cosas, 
@@ -46,7 +46,7 @@ public class GameManagerE : MonoBehaviour
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
   public bool tutorial;
-  private bool dialogo = true;
+  private static bool dialogo = true, spawnea = true, mata = true;
 
 
 public void Start(){
@@ -159,11 +159,11 @@ public void Start(){
       }
     }
     else{ //Script del tutorial
-      if(!win && !loose){
+      if(!win && !loose && !dialogo){
         if(fase == 0){ //fase inicial y efectos de inicio de turno
           textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
           //Aquí primer diálogo explicando lo que es la estrategia
-          if(primerTurno && !dialogo){
+          if(primerTurno){
             primerTurno = false;
             nRobadas = 0;
             roba = false;
@@ -199,13 +199,16 @@ public void Start(){
           //Dialogo dice que puede usar cartas de segundo turno de jugar cartas 
           //Hace aparecer un aldeano herido rodeado de enemigos a uno de vida y explica que puede usar agua bendita
           //Solo permite usar agua bendita en la casilla elegida para curar y matar a todos los malos
-
           pasaTurno = false;
           textoCartasPorJugar.enabled = false;
           if(fase == 4)
             nCartasJugadas = 0;
           fase++;
           textoFase.text = "Fase Actual: " + fase;
+          ds.setReactivable();
+          ds.reactivarDialogo();
+          spawnea = true;
+          mata = true;
         }
         else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
           //Esta fase la explicará en tutorial 2 de personajes
@@ -236,7 +239,8 @@ public void Start(){
           pasaTurno = false;
         }
         if(fase == 1 && roba && !ds.getReactivable()){
-          DrawCard();
+          drawScripted(2);
+          nRobadas++;
           roba = false;
         }
         else{
@@ -250,8 +254,41 @@ public void Start(){
           loose = true;
           //Salir de escena perdiendo
         }
+        if(fase == 2 && spawnea && nCartasJugadas == 0){
+          spawnea = false;
+          spawnEnemigo();
+        }
+        else if (fase == 2 && mata && nCartasJugadas == 1){
+          mata = false;
+          ds.setReactivable();
+          ds.reactivarDialogo();
+        }
+        else if (fase == 3 && spawnea){
+          spawnea = false;
+          spawnEnemigoScripted(13);
+          spawnAliadoScripted(15);
+        }
       }
     }
+  }
+
+  private void spawnEnemigoScripted(int pos){
+    GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
+    listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
+    listaPnjEnemigos.Remove(randEnemigo);
+    randEnemigo.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
+    randEnemigo.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 35, tablero[pos].transform.position.z+10);
+    randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
+    tablero[pos].pnj = randEnemigo.GetComponent<Personaje>();
+    tablero[pos].vacia = false;
+  }
+  private void spawnAliadoScripted(int pos){
+    listaPnj.Add(aliado.GetComponent<Personaje>());
+    aliado.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
+    aliado.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 35, tablero[pos].transform.position.z+10);
+    aliado.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
+    tablero[pos].pnj = aliado.GetComponent<Personaje>();
+    tablero[pos].vacia = false;
   }
   private void drawScripted(int index){
     Carta cardDraw = mazo[index];
@@ -532,6 +569,9 @@ private void spawnEnemigo(){
     roba = true;
   }
   public void finDialogo(){
+    dialogo = false;
+  }
+  public void reactivaDialogo(){
     dialogo = false;
   }
 }

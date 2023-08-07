@@ -148,6 +148,8 @@ public class DialogueScripted : MonoBehaviour
             textName.text = names[index];
             activeE = false;
             reactivable = false;
+            GameManagerE gm = FindObjectOfType<GameManagerE>();
+            gm.reactivaDialogo();
         }
     }
 

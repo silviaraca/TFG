@@ -20,7 +20,7 @@ public class DragDrop : MonoBehaviour
 
     public void cogeCarta(){
         if(gm.tutorial){
-            if((gm.getFase() == 2 && card.nombreCarta == "Estaca" || gm.getFase() == 4 && card.nombreCarta == "Agua") && gm.getCarJugadas() < 2){
+            if(((gm.getFase() == 2 && card.nombreCarta == "Estaca" && gm.getCarJugadas() == 0) || (gm.getFase() == 4 && card.nombreCarta == "Agua" && gm.getCarJugadas() == 1)) && gm.getCarJugadas() < 2){
                 GetComponent<Image>().color = new Color(0, 255, 255, 255);
                 enMovimiento = true;
                 gm.puntero.GetComponent<DropCard>().card = card;
