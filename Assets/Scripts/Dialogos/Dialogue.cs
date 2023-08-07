@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class Dialogue : MonoBehaviour
     public string[] sentences;
     public string[] names;
     public float textSpeed;
-
+    private Scene currentScene;
     private int index;
-    private bool activeE;
+    private bool activeE = true;
     private Player player;
 
 
@@ -27,16 +28,26 @@ public class Dialogue : MonoBehaviour
         panel.gameObject.SetActive(false);
         textComponent.text = string.Empty;
         textName.text = string.Empty;
+        currentScene = SceneManager.GetActiveScene ();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(activeE && Input.GetKeyDown(KeyCode.E)){
+        if(activeE && Input.GetKeyDown(KeyCode.E) && currentScene.name != "EstrategiaTuto"){
             gameObject.SetActive(true);
             textoE.gameObject.SetActive(false);
             panel.gameObject.SetActive(true);
             move.allowMove = false;
+            StartDialogue(); 
+            textName.text = names[index];
+            activeE = false;
+        }
+        else if (currentScene.name == "EstrategiaTuto" && activeE){
+            gameObject.SetActive(true);
+            textoE.gameObject.SetActive(false);
+            panel.gameObject.SetActive(true);
             StartDialogue(); 
             textName.text = names[index];
             activeE = false;
@@ -84,7 +95,12 @@ public class Dialogue : MonoBehaviour
         else
         {
             panel.gameObject.SetActive(false);
-            move.allowMove = true;
+            if(currentScene.name != "EstrategiaTuto")
+                move.allowMove = true;
+            else{
+                GameManagerE gm = FindObjectOfType<GameManagerE>();
+                gm.finDialogo();
+            }
             textComponent.text = string.Empty;
             textName.text = string.Empty;
         }

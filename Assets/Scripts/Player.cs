@@ -6,6 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     public Inventory inventory;
+    public List<string> deck;
     public int numItem;
     public Vector2 playerPosition;
     [SerializeField] private TextMeshProUGUI textoE;

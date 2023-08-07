@@ -10,7 +10,7 @@ public class DialogoDecisiones : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoE;
     [SerializeField] private Image panel;
     [SerializeField] private Movement move;
-    [SerializeField] private Cargar cargar;
+    [SerializeField] private CambioEscenaEstrategia cargar;
     [SerializeField] private List<int> listaMomentoDecisiones;
     [SerializeField] private List<string> listaDecisiones1;
     [SerializeField] private List<string> listaDecisiones2;
@@ -24,7 +24,7 @@ public class DialogoDecisiones : MonoBehaviour
     public string[] names;
     public float textSpeed;
 
-    private int index;
+    private int index, indexDecisiones;
     private bool activeE;
     private static bool decision;
     private Player player;
@@ -71,15 +71,13 @@ public class DialogoDecisiones : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+        indexDecisiones = 0;
         StartCoroutine(TypeLine());
-        if(listaMomentoDecisiones.Count > 0 && index == listaMomentoDecisiones[0]){
-            listaMomentoDecisiones.RemoveAt(0);
+        if(listaMomentoDecisiones.Count > 0 && index == listaMomentoDecisiones[indexDecisiones]){
             BotonDecision1.gameObject.SetActive(true);
-            TextoBotonDecision1.text = listaDecisiones1[0];
-            listaDecisiones1.RemoveAt(0);
+            TextoBotonDecision1.text = listaDecisiones1[indexDecisiones];
             BotonDecision2.gameObject.SetActive(true);
-            TextoBotonDecision2.text = listaDecisiones2[0];
-            listaDecisiones2.RemoveAt(0);
+            TextoBotonDecision2.text = listaDecisiones2[indexDecisiones];
             decision = true;
         }
     }
@@ -98,15 +96,13 @@ public class DialogoDecisiones : MonoBehaviour
         if(index < sentences.Length - 1)
         {
             index++;
-            if(listaMomentoDecisiones.Count > 0 && index == listaMomentoDecisiones[0]){
-                listaMomentoDecisiones.RemoveAt(0);
+            if(listaMomentoDecisiones.Count > 0 && index == listaMomentoDecisiones[indexDecisiones]){
                 BotonDecision1.gameObject.SetActive(true);
+                TextoBotonDecision1.text = listaDecisiones1[indexDecisiones];
                 BotonDecision2.gameObject.SetActive(true);
-                TextoBotonDecision1.text = listaDecisiones1[0];
-                listaDecisiones1.RemoveAt(0);
-                TextoBotonDecision2.text = listaDecisiones2[0];
-                listaDecisiones2.RemoveAt(0);
+                TextoBotonDecision2.text = listaDecisiones2[indexDecisiones];
                 decision = true;
+                indexDecisiones++;
             }
             textComponent.text = string.Empty;
             textName.text = names[index];
@@ -140,7 +136,7 @@ public class DialogoDecisiones : MonoBehaviour
     public void decision1(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
         //Invoca a la estrategia
-        cargar.load("Estrategia");
+        cargar.cargaEstrategia();
     }
     public void decision2(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
