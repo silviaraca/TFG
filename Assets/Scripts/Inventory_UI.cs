@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Inventory_UI : MonoBehaviour
 {
@@ -46,7 +48,7 @@ public class Inventory_UI : MonoBehaviour
                 {
                     slots[i].SetItem(player.inventory.slots[i]);
                    
-
+            
                 }
                 else
                 {
@@ -55,4 +57,7 @@ public class Inventory_UI : MonoBehaviour
             }
         }
     }
+
+
+
 }

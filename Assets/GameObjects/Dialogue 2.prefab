@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354.35, y: 90.994}
-  m_SizeDelta: {x: 1005.825, y: 78.204}
+  m_AnchoredPosition: {x: -607.6836, y: 177.80899}
+  m_SizeDelta: {x: 499.1646, y: 52.5863}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3512267278828978726
 CanvasRenderer:
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -172,8 +172,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34.6071, y: -307.6664}
-  m_SizeDelta: {x: -129.3473, y: -819.8083}
+  m_AnchoredPosition: {x: 3.0374756, y: -345.31104}
+  m_SizeDelta: {x: -6.95, y: -725.8756}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3037912675099760088
 CanvasRenderer:
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -2109253442, guid: c40f3ff7daa0267429f3eb9495c7be0c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -248,8 +248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.5695, y: -19.6256}
-  m_SizeDelta: {x: 1705.3801, y: 166.545}
+  m_AnchoredPosition: {x: 2.4269, y: -1.5805}
+  m_SizeDelta: {x: 1782.2341, y: 237.7061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3037912675836927233
 CanvasRenderer:
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 3037912676629195286}
   - component: {fileID: 3037912676629195305}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: Dialogue 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

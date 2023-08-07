@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
-public class Inventory 
+public class Inventory
 {
     public List<Slot> slots = new List<Slot>();
     public int count; //Items ahora mismo
@@ -22,30 +23,7 @@ public class Inventory
             slots.Add(slot);
         }
     }
-    [System.Serializable]
-    public class Slot 
-    {
-        public int count; //Items ahora mismo
-        public int max; //Num max de items permitidos
-        public CollectableType type;
-        public Sprite icon;
-        
-        public Slot()
-        {
-            type = CollectableType.NONE;
-            count = 0;
-            max = 4;
-        }
 
-        public void AddItem(Collectable item)
-        {
-            this.type = (CollectableType)item.type;
-            this.icon = item.icon;
-            count++;
-             
-        }
-
-    }
 
 
     //Se añade un item

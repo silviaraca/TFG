@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        inventory = new Inventory(24);
+        inventory = new Inventory(52);
         textoE.gameObject.SetActive(false);
         //Cargar inventario
         if (PlayerPrefs.HasKey("InventoryData"))
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     public Player()
     {
-        inventory = new Inventory(24);
+        inventory = new Inventory(52);
     }
 
     void Update()

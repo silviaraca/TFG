@@ -7,15 +7,17 @@ using TMPro;
 public class Slots_UI : MonoBehaviour
 {
    public Image itemIcon;
-   public TextMeshProUGUI valueText;
+   public TextMeshProUGUI countAddedText; // Referencia al Text debajo del +
+   public TextMeshProUGUI countRemainingText; // Referencia al Text debajo del -
 
-   public void SetItem(Inventory.Slot slot)
+   public void SetItem(Slot slot)
    {
         if(slot != null)    
         {
             itemIcon.sprite = slot.icon;
             itemIcon.color = new Color(1,1,1,1);
-            valueText.text = slot.count.ToString();
+            countAddedText.text = slot.countAdded.ToString();
+            countRemainingText.text = slot.countRemaining.ToString();
         }
    }
 
@@ -23,6 +25,8 @@ public class Slots_UI : MonoBehaviour
    {
         itemIcon.sprite = null;
         itemIcon.color = new Color(1,1,1,0);
-        valueText.text = "";
+        countAddedText.text = "";
+        countRemainingText.text = "";
+        
    }
 }
