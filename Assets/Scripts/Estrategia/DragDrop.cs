@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DragDrop : MonoBehaviour
 {
@@ -18,12 +19,23 @@ public class DragDrop : MonoBehaviour
     }
 
     public void cogeCarta(){
-        if((gm.getFase() == 2 || gm.getFase() == 4) && gm.getCarJugadas() < 2){
-            GetComponent<Image>().color = new Color(0, 255, 255, 255);
-            enMovimiento = true;
-            gm.puntero.GetComponent<DropCard>().card = card;
-            gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
-            
+        if(gm.tutorial){
+            if((gm.getFase() == 2 && card.nombreCarta == "Estaca" || gm.getFase() == 4 && card.nombreCarta == "Agua") && gm.getCarJugadas() < 2){
+                GetComponent<Image>().color = new Color(0, 255, 255, 255);
+                enMovimiento = true;
+                gm.puntero.GetComponent<DropCard>().card = card;
+                gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
+                
+            }
+        }
+        else{
+            if((gm.getFase() == 2 || gm.getFase() == 4) && gm.getCarJugadas() < 2){
+                GetComponent<Image>().color = new Color(0, 255, 255, 255);
+                enMovimiento = true;
+                gm.puntero.GetComponent<DropCard>().card = card;
+                gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
+                
+            }
         }
     }
     void Update()

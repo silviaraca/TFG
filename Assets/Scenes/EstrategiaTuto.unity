@@ -663,6 +663,11 @@ PolygonCollider2D:
       - {x: -36.408546, y: 18.37603}
       - {x: -0.01692462, y: -5.318981}
       - {x: 36.136578, y: 17.861273}
+--- !u!1 &192313985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2868205627103406734, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+  m_PrefabInstance: {fileID: 1117614826034218674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &221335998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,21 +1025,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 328946600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Script: {fileID: 11500000, guid: a6fdfd6e861db8443b221f4e5f35fc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textoE: {fileID: 338129625}
   panel: {fileID: 1055776836}
-  move: {fileID: 0}
+  momentosScript: 020000000400000006000000
   textComponent: {fileID: 1186275079}
   textName: {fileID: 1099791794}
   sentences:
-  - Bueno, te voy a explicar como funciona esto
-  - "Cuendo haya alg\xFAn aliado a la causa de este Dr\xE1cula que quiera gresca
-    le vas a tener que recordar que ya fue derrotado antiguamente"
-  - Para ello tienes los recuerdos de objetos y personas que hayas ido recuperando,
-    de momento toma estos
+  - Bueno, te voy a explicar como funciona esto.
+  - "Cuando haya alg\xFAn aliado a la causa de \"este Dr\xE1cula\" que quiera gresca
+    le vas a tener que recordar que ya fue derrotado antiguamente."
+  - "Para ello tienes los recuerdos de objetos y personas que hayas ido recuperando,
+    de momento toma estos. Prueba a pasar la mano por encima para verlas m\xE1s de
+    cerca."
+  - "Muy bien, ahora como ves es la \"Fase 1\", en esta fase podr\xE1s obtener hasta
+    DOS recuerdos m\xE1s, sin pasarte del l\xEDmite de TRES recuerdos  que puedes
+    tener."
+  - "Para ello c\xF3gelos de la pila de recuerdos a la derecha y luego pasa de fase."
+  - "Genial, ahora ya es hora de usar tus recuerdos, pero como solo tienes objetos
+    necesaritar\xE1s alg\xFAn objetivo para poder usarlos, deja que traiga un enemigo
+    para que lo pruebes."
+  - Prueba a usar la estaca contra este enemigo.
+  - "Perfecto, lo vas pillando r\xE1pido, pasa fase y empezar\xE9 a explicarte el
+    movimiento de tus propios personajes."
   names:
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
   - Van Helsing
   - Van Helsing
   - Van Helsing
@@ -2816,8 +2836,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 328946604}
     m_Modifications:
     - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -67.5099
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -725.8757
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -34.607178
+      value: -2.8250122
       objectReference: {fileID: 0}
     - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2825,11 +2853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3037912675836927232, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
       propertyPath: m_fontSize
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3037912675836927232, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
       propertyPath: m_fontSizeBase
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
       propertyPath: m_Pivot.x
@@ -4942,6 +4970,11 @@ PolygonCollider2D:
       - {x: -33.543552, y: 18.769007}
       - {x: 1.5369453, y: -3.0730333}
       - {x: 34.509884, y: 18.19347}
+--- !u!1 &1334644347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4468346709877679869, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+  m_PrefabInstance: {fileID: 3171066044465032288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1366732595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5715,6 +5748,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1496267643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1273880582866501711, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+  m_PrefabInstance: {fileID: 1147963211156238072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1570183495 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4975245168731972309, guid: c86f067a661cb164fa649498a7754be9, type: 3}
@@ -7701,9 +7739,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417122, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: nombreCarta
+      value: Estaca
+      objectReference: {fileID: 0}
     - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 328946605}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: reactivarDialogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueScripted, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868205626165417140, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2868205626165417142, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
       propertyPath: m_Sprite
@@ -7785,6 +7855,10 @@ PrefabInstance:
       value: GameManagerE
       objectReference: {fileID: 0}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: ds
+      value: 
+      objectReference: {fileID: 328946605}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: Cards
       value: 
       objectReference: {fileID: 385371730}
@@ -7809,6 +7883,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1366732595}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardAgua
+      value: 
+      objectReference: {fileID: 1334644347}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: casVacia
       value: 
       objectReference: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
@@ -7828,6 +7906,14 @@ PrefabInstance:
       propertyPath: Personajes
       value: 
       objectReference: {fileID: 1096882892}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardEstaca
+      value: 
+      objectReference: {fileID: 192313985}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardAldeano
+      value: 
+      objectReference: {fileID: 1496267643}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: draggingPos
       value: 
@@ -8296,6 +8382,38 @@ PrefabInstance:
     - target: {fileID: 1273880584075951712, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951715, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: nombreCarta
+      value: Aldeano
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 328946605}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: reactivarDialogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueScripted, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273880584075951733, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1273880584075951734, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: casAli
@@ -9671,6 +9789,38 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 863c3a6671e9e834e907980c7e1f6acd, type: 3}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 328946605}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: reactivarDialogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueScripted, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431687, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468346711354431697, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
+      propertyPath: nombreCarta
+      value: Agua
+      objectReference: {fileID: 0}
     - target: {fileID: 4468346711354431698, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

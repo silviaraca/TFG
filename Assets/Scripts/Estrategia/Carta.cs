@@ -11,7 +11,7 @@ public class Carta : MonoBehaviour
         public int handIndex;
         private Casilla casAct;
 
-        private int nombreCarta; //Basaremos en esta la creación de cartas distintas
+        public string nombreCarta; //Basaremos en esta la creación de cartas distintas
 
     //DATOS DE CADA CARTA EN CONCRETO, dependiendo del nombre de la carta, los datos se buscarán en un documento
         

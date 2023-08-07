@@ -30,6 +30,7 @@ public class GameManagerE : MonoBehaviour
   public bool win, loose;
   public TextMeshProUGUI textoCartasPorJugar;
   public TextMeshProUGUI textoTurnos;
+  public DialogueScripted ds;
 
   //Sitema de turnos
   private const int maxRob = 2, maxJug = 2; //Contadores de máximo número de cartas a robar y a jugar
@@ -173,10 +174,10 @@ public void Start(){
             drawScripted(3);
           }
         }
-        else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
+        else if(nRobadas > 0 && fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
 
           //Dialogo del robo de cartas mostrando que hay un contador de cartas por robar
-          //Obliga a robar una carta antes de explicar pasar turno
+          //Obliga a robar una carta antes de explicar poder pasar turno
 
           fase++;
           textoFase.text = "Fase Actual: " + fase;
@@ -185,8 +186,10 @@ public void Start(){
           textoCartasPorJugar.enabled = true;
           int porJugar = maxJug - nCartasJugadas;
           textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+          ds.setReactivable();
+          ds.reactivarDialogo();
         }
-        else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
+        else if(((fase == 2 && nCartasJugadas == 1) || (fase == 4 && nCartasJugadas == 2)) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
           //FASE 2
           //Dialogo dice que mete un enemigo para que pueda probar las cartas
           //Spawn un enemigo
@@ -229,8 +232,14 @@ public void Start(){
           turnosParaPerder--;
           fase = 0; //Reinicia fases cuando haya terminado lo anterior
         }
-        if(fase == 1 && roba){
+        else{
+          pasaTurno = false;
+        }
+        if(fase == 1 && roba && !ds.getReactivable()){
           DrawCard();
+          roba = false;
+        }
+        else{
           roba = false;
         }
         if(enemigosVivos == 0){
