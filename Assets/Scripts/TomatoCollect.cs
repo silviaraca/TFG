@@ -10,10 +10,7 @@ public class TomatoCollect : MonoBehaviour
    public TextMeshProUGUI textoE;
    private bool recogible;
    private Player player;
-   public Cargar cargar;
-   public CollectableType type;
-
-   public Collectable col;
+   //public CollectableType type;
 
    private void Start(){
         textoE.gameObject.SetActive(false);
@@ -22,8 +19,10 @@ public class TomatoCollect : MonoBehaviour
 
    private void Update(){
         if(recogible && Input.GetKeyDown(KeyCode.E))
-            if(player.inventory.Add(col))
-                Destroy(this.gameObject);
+        {
+            Jabs.num++;
+            Destroy(this.gameObject);
+        }
    }
    
    private void OnTriggerEnter2D(Collider2D collision)

@@ -18,13 +18,14 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     private Scene currentScene;
     private int index;
-    private bool activeE = true;
+    private bool activeE;
     private Player player;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        activeE = false;
         panel.gameObject.SetActive(false);
         textComponent.text = string.Empty;
         textName.text = string.Empty;
