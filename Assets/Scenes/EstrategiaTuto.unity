@@ -178,8 +178,8 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 8
-  spawnEne: 1
+  fila: 0
+  spawnEne: 0
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
@@ -590,7 +590,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 7
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 4
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1543,7 +1543,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 5
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 6
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1968,8 +1968,8 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 10
-  spawnEne: 1
+  fila: 0
+  spawnEne: 0
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
@@ -2308,7 +2308,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 7
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 9
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 3
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -3027,7 +3027,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 2
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -3129,7 +3129,7 @@ RectTransform:
   m_GameObject: {fileID: 847573947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2096663160}
@@ -3137,7 +3137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -300, y: -433}
+  m_AnchoredPosition: {x: -300, y: -432.99994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &847573950
@@ -3155,7 +3155,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 8
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 3
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -4430,7 +4430,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 5
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -4908,7 +4908,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 6
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -5830,7 +5830,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 4
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7070,8 +7070,8 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 9
-  spawnEne: 1
+  fila: 0
+  spawnEne: 0
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 3e12888adc7f5e846970d0529bfa4dc8, type: 3}
@@ -7542,7 +7542,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 11
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7562,7 +7562,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 12
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7602,7 +7602,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 13
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7622,7 +7622,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 12
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7642,7 +7642,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 14
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -8609,7 +8609,7 @@ RectTransform:
   m_GameObject: {fileID: 5927670013862065826}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 943474075}
@@ -8617,7 +8617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -450, y: -533}
+  m_AnchoredPosition: {x: -450.00012, y: -533.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2177403294850357075
@@ -8669,7 +8669,7 @@ RectTransform:
   m_GameObject: {fileID: 5829349969398790878}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 500}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 261165825}
@@ -8789,7 +8789,7 @@ RectTransform:
   m_GameObject: {fileID: 5829349968585761296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 500}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 640811240}
@@ -8797,7 +8797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -750, y: -400}
+  m_AnchoredPosition: {x: -749.9999, y: -400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2263067416721562247
@@ -8809,7 +8809,7 @@ RectTransform:
   m_GameObject: {fileID: 5829349968425489863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 500}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 496900736}
@@ -8909,7 +8909,7 @@ RectTransform:
   m_GameObject: {fileID: 5829349967687812037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 500}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2096663160}
@@ -8917,7 +8917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -700, y: -433}
+  m_AnchoredPosition: {x: -699.99994, y: -433.00003}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &2263067417462683541
@@ -8975,7 +8975,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 11
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -9124,7 +9124,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 11
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -9144,7 +9144,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 10
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -9999,7 +9999,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 12
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10226,7 +10226,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 10
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10246,7 +10246,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 8
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10328,9 +10328,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 8
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!222 &4816944333954127253
@@ -10356,9 +10356,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 7
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245166765832418
@@ -10376,9 +10376,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 6
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245166818769138
@@ -10396,7 +10396,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 8
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10416,9 +10416,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 7
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245166866229379
@@ -10436,7 +10436,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 7
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10456,7 +10456,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 9
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10476,7 +10476,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 5
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10496,9 +10496,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 9
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245167813545278
@@ -10516,9 +10516,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 5
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245167829579310
@@ -10536,9 +10536,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 8
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245168202746953
@@ -10556,9 +10556,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 6
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!114 &4975245168300585448
@@ -10576,9 +10576,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 4
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!114 &4975245168390353158
@@ -10596,7 +10596,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 6
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10616,7 +10616,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 7
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10636,9 +10636,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 10
+  fila: 0
   spawnEne: 0
-  spawnAli: 1
+  spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!114 &5165291838792909641
@@ -10656,7 +10656,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 11
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10840,7 +10840,7 @@ RectTransform:
   m_GameObject: {fileID: 2294940628242589858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 149118924}
@@ -11615,7 +11615,7 @@ RectTransform:
   m_GameObject: {fileID: 2177403294850357075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 114207384}
@@ -11623,7 +11623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -300, y: -566}
+  m_AnchoredPosition: {x: -300.00006, y: -566.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5927670013862065826
@@ -11774,7 +11774,7 @@ RectTransform:
   m_GameObject: {fileID: 1809209711959290030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1891284926}
@@ -11838,7 +11838,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 9
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -11882,7 +11882,7 @@ RectTransform:
   m_GameObject: {fileID: 1547124608289108559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 943474075}
@@ -11890,7 +11890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -350.00003, y: -533}
+  m_AnchoredPosition: {x: -350.0001, y: -533.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6647408092394889030
@@ -11908,7 +11908,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 10
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -11952,7 +11952,7 @@ RectTransform:
   m_GameObject: {fileID: 1268197910701466672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 114207384}
@@ -11972,7 +11972,7 @@ RectTransform:
   m_GameObject: {fileID: 3393157504171085086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2096663160}
@@ -11980,7 +11980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -400, y: -433}
+  m_AnchoredPosition: {x: -400.00012, y: -432.99994}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &6960577105953096287
@@ -12453,7 +12453,7 @@ RectTransform:
   m_GameObject: {fileID: 4039466262768574125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 114207384}
@@ -12461,7 +12461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -400, y: -566}
+  m_AnchoredPosition: {x: -400.00006, y: -566.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &8611186036583846382
@@ -12544,7 +12544,7 @@ RectTransform:
   m_GameObject: {fileID: 3888665281102341958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 943474075}
@@ -12600,7 +12600,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 9
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -12650,7 +12650,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 13
+  fila: 0
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -12745,7 +12745,7 @@ RectTransform:
   m_GameObject: {fileID: 3703205023352327025}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 943474075}
@@ -12753,7 +12753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -550, y: -533}
+  m_AnchoredPosition: {x: -550.0001, y: -533.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!60 &9001121581078348850

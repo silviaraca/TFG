@@ -541,9 +541,10 @@ private void spawnEnemigo(){
   GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
   listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
   listaPnjEnemigos.Remove(randEnemigo);
-  int xCas = Random.Range(0, 48);
+  int xCas = Random.Range(0, 64);
+  print(xCas);
   while(!tablero[xCas].vacia || !tablero[xCas].esSpawnEne()){
-    xCas = Random.Range(0, 48);
+    xCas = Random.Range(0, 64);
   }
   randEnemigo.transform.SetParent(filasPnj[tablero[xCas].fila].transform, false);
   randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 35, tablero[xCas].transform.position.z+10);
