@@ -178,8 +178,8 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
-  spawnEne: 0
+  fila: 8
+  spawnEne: 1
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
@@ -590,7 +590,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 7
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 4
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1543,7 +1543,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 5
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1787,7 +1787,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 6
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -1968,8 +1968,8 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
-  spawnEne: 0
+  fila: 10
+  spawnEne: 1
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
@@ -2308,7 +2308,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 7
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -2638,7 +2638,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 9
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 3
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -3027,7 +3027,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 2
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -3155,7 +3155,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 8
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -3863,7 +3863,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 3
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -4430,7 +4430,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 5
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -4908,7 +4908,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 6
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -5830,7 +5830,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 4
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7070,8 +7070,8 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
-  spawnEne: 0
+  fila: 9
+  spawnEne: 1
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 3e12888adc7f5e846970d0529bfa4dc8, type: 3}
@@ -7542,7 +7542,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 11
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7562,7 +7562,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 12
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7602,7 +7602,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 13
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7622,7 +7622,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 12
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -7642,7 +7642,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 14
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -8975,7 +8975,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 11
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -9124,7 +9124,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 11
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -9144,7 +9144,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 10
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -9999,7 +9999,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 12
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10226,7 +10226,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 10
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10246,7 +10246,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 8
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10328,9 +10328,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 8
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!222 &4816944333954127253
@@ -10376,9 +10376,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 6
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245166818769138
@@ -10396,7 +10396,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 8
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10416,9 +10416,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 7
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245166866229379
@@ -10436,7 +10436,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 7
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10456,7 +10456,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 9
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10476,7 +10476,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 5
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10496,9 +10496,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 9
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245167813545278
@@ -10516,9 +10516,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 5
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245167829579310
@@ -10536,9 +10536,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 8
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
 --- !u!114 &4975245168202746953
@@ -10556,9 +10556,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 6
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!114 &4975245168300585448
@@ -10576,9 +10576,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 4
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!114 &4975245168390353158
@@ -10596,7 +10596,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 6
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10616,7 +10616,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 7
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -10636,9 +10636,9 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 10
   spawnEne: 0
-  spawnAli: 0
+  spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
 --- !u!114 &5165291838792909641
@@ -10656,7 +10656,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 11
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -11838,7 +11838,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 9
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -11908,7 +11908,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 10
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -12600,7 +12600,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 9
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0
@@ -12650,7 +12650,7 @@ MonoBehaviour:
   pnj: {fileID: 0}
   vacia: 1
   pintada: 0
-  fila: 0
+  fila: 13
   spawnEne: 0
   spawnAli: 0
   consumeMov: 0

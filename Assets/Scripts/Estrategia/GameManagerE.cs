@@ -205,10 +205,10 @@ public void Start(){
             nCartasJugadas = 0;
           fase++;
           textoFase.text = "Fase Actual: " + fase;
-          ds.setReactivable();
-          ds.reactivarDialogo();
           spawnea = true;
           mata = true;
+          ds.setReactivable();
+          ds.reactivarDialogo();
         }
         else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
           //Esta fase la explicará en tutorial 2 de personajes
@@ -260,11 +260,13 @@ public void Start(){
         }
         else if (fase == 2 && mata && nCartasJugadas == 1){
           mata = false;
+          print("b");
           ds.setReactivable();
           ds.reactivarDialogo();
         }
         else if (fase == 3 && spawnea){
           spawnea = false;
+          print("a");
           spawnEnemigoScripted(13);
           spawnAliadoScripted(15);
         }
