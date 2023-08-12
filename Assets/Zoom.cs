@@ -26,7 +26,7 @@ public class Zoom : MonoBehaviour
         carta = Instantiate(Carta);
         carta.transform.SetParent(gm.Cards.transform, false);
         carta.GetComponent<Carta>().zoom = true;
-        carta.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y + 150);
+        carta.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y + 200);
         carta.GetComponent<Image>().sprite = zoom;
 
         RectTransform rect = carta.GetComponent<RectTransform>();

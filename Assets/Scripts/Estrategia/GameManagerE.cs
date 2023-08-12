@@ -27,6 +27,8 @@ public class GameManagerE : MonoBehaviour
   public Sprite casAta;
   public Sprite casAli;
   public Sprite casVacia;
+  public Sprite casMarcada;
+  public Sprite casEstandar;
   public bool win, loose;
   public TextMeshProUGUI textoCartasPorJugar;
   public TextMeshProUGUI textoTurnos;
@@ -46,7 +48,7 @@ public class GameManagerE : MonoBehaviour
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
   public bool tutorial;
-  private static bool dialogo = true, spawnea = true, mata = true;
+  private static bool dialogo = true, spawnea = true, mata = true, pasa = false;
 
 
 public void Start(){
@@ -95,7 +97,6 @@ public void Start(){
         if(fase == 0){ //fase inicial y efectos de inicio de turno
           textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
           if(primerTurno){
-            print("A");
             DrawCard();
             DrawCard();
             primerTurno = false;
@@ -206,23 +207,27 @@ public void Start(){
           fase++;
           textoFase.text = "Fase Actual: " + fase;
           spawnea = true;
-          mata = true;
           ds.setReactivable();
           ds.reactivarDialogo();
         }
-        else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
+        else if(fase == 3 && (nRobadas == 2 || pasaTurno) && pasa){ //Fase3 de mover pnj
           //Esta fase la explicará en tutorial 2 de personajes
-          
           fase++;
           textoFase.text = "Fase Actual: " + fase;
           for(int i = 0; i < listaPnj.Count; i++){
             listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
             listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
           }
+          pasa = false;
           pasaTurno = false;
           textoCartasPorJugar.enabled = true;
           int porJugar = maxJug - nCartasJugadas;
           textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+          ds.setReactivable();
+          ds.reactivarDialogo();
+          listaPnj[0].danar(1);
+          tablero[14].muyPintada = true;
+          tablero[14].setColor(casMarcada);
         }
         else if(fase == 5){
           //Fin del tutorial, propuesta de una pelea de práctica con una pool de enemigos ya elegida
@@ -260,15 +265,25 @@ public void Start(){
         }
         else if (fase == 2 && mata && nCartasJugadas == 1){
           mata = false;
-          print("b");
           ds.setReactivable();
           ds.reactivarDialogo();
         }
         else if (fase == 3 && spawnea){
           spawnea = false;
-          print("a");
           spawnEnemigoScripted(13);
           spawnAliadoScripted(15);
+        }
+        else if (fase == 3 && mata){
+          mata = false;
+          pasa = true;
+          ds.setReactivable();
+          ds.reactivarDialogo();
+        }
+        else if (fase == 4 && mata){
+          mata = false;
+          pasa = true;
+          ds.setReactivable();
+          ds.reactivarDialogo();
         }
       }
     }
@@ -279,7 +294,7 @@ public void Start(){
     listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
     listaPnjEnemigos.Remove(randEnemigo);
     randEnemigo.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
-    randEnemigo.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 35, tablero[pos].transform.position.z+10);
+    randEnemigo.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 70, tablero[pos].transform.position.z+10);
     randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
     tablero[pos].pnj = randEnemigo.GetComponent<Personaje>();
     tablero[pos].vacia = false;
@@ -287,7 +302,7 @@ public void Start(){
   private void spawnAliadoScripted(int pos){
     listaPnj.Add(aliado.GetComponent<Personaje>());
     aliado.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
-    aliado.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 35, tablero[pos].transform.position.z+10);
+    aliado.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 70, tablero[pos].transform.position.z+10);
     aliado.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
     tablero[pos].pnj = aliado.GetComponent<Personaje>();
     tablero[pos].vacia = false;
@@ -400,7 +415,7 @@ private void mueveEnemigo(Personaje pnj){
             cas.pnj = null;
         }
         pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false);
-        pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 35, cas.getCasAnt().transform.position.z+10);
+        pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 70, cas.getCasAnt().transform.position.z+10);
         pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
         pnj.cas.vacia = true;
         pnj.cas.pnj = null;
@@ -535,7 +550,7 @@ private void mueveHacia(int posX, int posY, Personaje pnj){
     casillaMueve.vacia = false;
     casillaMueve.pnj = pnj;
     pnj.transform.SetParent(filasPnj[casillaMueve.fila].transform, false);
-    pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 35, casillaMueve.transform.position.z+10);
+    pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 70, casillaMueve.transform.position.z+10);
     pnj.setMovAct(pnj.getMovAct()-casillaMueve.getConsumeMov());
   }
 }
@@ -544,12 +559,11 @@ private void spawnEnemigo(){
   listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
   listaPnjEnemigos.Remove(randEnemigo);
   int xCas = Random.Range(0, 64);
-  print(xCas);
   while(!tablero[xCas].vacia || !tablero[xCas].esSpawnEne()){
     xCas = Random.Range(0, 64);
   }
   randEnemigo.transform.SetParent(filasPnj[tablero[xCas].fila].transform, false);
-  randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 35, tablero[xCas].transform.position.z+10);
+  randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 70, tablero[xCas].transform.position.z+10);
   randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[xCas]);
   tablero[xCas].pnj = randEnemigo.GetComponent<Personaje>();
   tablero[xCas].vacia = false;
@@ -576,5 +590,9 @@ private void spawnEnemigo(){
   }
   public void reactivaDialogo(){
     dialogo = false;
+  }
+
+  public void setMata(){
+    mata = true;
   }
 }

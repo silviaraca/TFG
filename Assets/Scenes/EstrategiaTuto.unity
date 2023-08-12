@@ -183,6 +183,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
+  muyPintada: 0
 --- !u!114 &14782951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,6 +596,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &174021743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,7 +1031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1055776836}
-  momentosScript: 0200000004000000060000000700000009000000
+  momentosScript: 02000000040000000600000007000000090000000a0000000c000000
   textComponent: {fileID: 1186275079}
   textName: {fileID: 1099791794}
   sentences:
@@ -1053,7 +1055,30 @@ MonoBehaviour:
     propios claro. '
   - "En la \"Fase 3\" podr\xE1s indicar a tus aliados donde moverse y obviamente,
     atacar, prueba a atacar al enemigo que tiene cerca."
+  - "Bien hecho, ya casi est\xE1s preparado para empezar a valerte por ti mismo,
+    te voy a exlicar una \xFAltima cosa antes de que empieces a moverte por el pueblo,
+    pasa de fase."
+  - En la "Fase 4" puedes jugar otra carta e incluso hay algunas que solo pueden
+    jugarse en esta fase, tenlo en cuenta, prueba a usar el agua bendita.
+  - "Este recuerdo es un hechizo de \xE1rea, voy a hacerle da\xF1o a tu aldeano para
+    que veas bien su efecto, l\xE1nzalo en la zona que te he marcado anda."
+  - GENIAL, ya eres un experto cazavampiros o salvavampiros... o lo que prefieras
+    ver la verdad
+  - "Ahora cuando pases de fase se acabar\xE1 el turno entero, tu contrincante har\xE1
+    aparecer siempre nuevos enemigos en este momento."
+  - "Ten cuidado con los turnos porque cuanto m\xE1s tardes m\xE1s d\xE9bil se har\xE1
+    el recuerdo y dependiendo de tu contrincante tendr\xE1s m\xE1s o menos tiempo."
+  - Cuando el contador llega a 0 ya no hay nada que hacer, al menos no en ese momento.
+  - "Pasa de fase una \xFAltima vez y daremos por concluida tu instrucci\xF3n."
   names:
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
   - Van Helsing
   - Van Helsing
   - Van Helsing
@@ -1348,6 +1373,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &386075834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1548,6 +1574,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &459405492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,6 +1819,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &544254152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1973,6 +2001,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
+  muyPintada: 0
 --- !u!114 &604098712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2313,6 +2342,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &661527611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2643,6 +2673,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &736632354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2771,6 +2802,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &784585336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3032,6 +3064,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &808520286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3160,6 +3193,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &847573951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3868,6 +3902,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &1079719369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4435,6 +4470,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &1258506814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4913,6 +4949,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &1329063357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5835,6 +5872,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &1586454990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7075,6 +7113,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 3e12888adc7f5e846970d0529bfa4dc8, type: 3}
+  muyPintada: 0
 --- !u!114 &2121617133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7547,6 +7586,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &320906419052384731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7567,6 +7607,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!224 &442424501618075117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7607,6 +7648,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &854044786872574648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7627,6 +7669,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &933942023374193989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7647,6 +7690,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!1001 &1117614826034218674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7926,9 +7970,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 192313985}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: casMarcada
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c3c56cbb58828943bfab66d6650ff9a, type: 3}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: cardAldeano
       value: 
       objectReference: {fileID: 1496267643}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: casEstandar
+      value: 
+      objectReference: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: draggingPos
       value: 
@@ -8980,6 +9032,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!1001 &2435221961225694681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9129,6 +9182,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &2792702710008070414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9149,6 +9203,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!224 &2810111078097438223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10004,6 +10059,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!224 &3334497979802002556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10231,6 +10287,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4250121732042782965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10251,6 +10308,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!1 &4486826806692594623
 GameObject:
   m_ObjectHideFlags: 0
@@ -10333,6 +10391,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
+  muyPintada: 0
 --- !u!222 &4816944333954127253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10361,6 +10420,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245166765832418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10381,6 +10441,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245166818769138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10401,6 +10462,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245166865504251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10421,6 +10483,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245166866229379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10441,6 +10504,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245166997213516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10461,6 +10525,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245167620720284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10481,6 +10546,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245167661453109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10501,6 +10567,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245167813545278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10521,6 +10588,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245167829579310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10541,6 +10609,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245168202746953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10561,6 +10630,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245168300585448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10581,6 +10651,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245168390353158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10601,6 +10672,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245168661184427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10621,6 +10693,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!114 &4975245168701464620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10641,6 +10714,7 @@ MonoBehaviour:
   spawnAli: 1
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
+  muyPintada: 0
 --- !u!114 &5165291838792909641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10661,6 +10735,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!1 &5166394458766161752
 GameObject:
   m_ObjectHideFlags: 0
@@ -11843,6 +11918,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!60 &6550774257388891175
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11913,6 +11989,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!60 &6647408092394889031
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12605,6 +12682,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!60 &8958667450897391833
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12655,6 +12733,7 @@ MonoBehaviour:
   spawnAli: 0
   consumeMov: 0
   imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
+  muyPintada: 0
 --- !u!60 &8979084668330425509
 PolygonCollider2D:
   m_ObjectHideFlags: 0

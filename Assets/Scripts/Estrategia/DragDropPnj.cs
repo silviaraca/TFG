@@ -39,40 +39,68 @@ public class DragDropPnj : MonoBehaviour
         if(gm.getFase() == 3 && !pnj.enemigo){
             enMovimiento = false;
             cerrojo = true;
-            if(sobreCasilla && cas.vacia && cas.pintada){ 
-                Casilla casAct = pnj.getCasAct();
-                casAct.vacia = true;
-                pnj.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
-                pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
-                pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
-                cas.pnj = pnj;
-                cas.vacia = false;
-                pnj.setCasAct(cas);
-                
-            }
-            else if(sobreCasilla && !cas.vacia && cas.pintada){
-                Casilla casAct = pnj.getCasAct();
-                Personaje pnjAct = cas.pnj;
-                pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
-                if(pnjAct.danar(pnj.getAtaque())){
-                    //Aquí cosas que pasen si se muere el enemigo
-                    cas.vacia = true;
-                    cas.pnj = null;
+            if(!gm.tutorial){
+                if(sobreCasilla && cas.vacia && cas.pintada){ 
+                    Casilla casAct = pnj.getCasAct();
+                    casAct.vacia = true;
+                    pnj.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
+                    pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 70, cas.transform.position.z+10);
+                    pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
+                    cas.pnj = pnj;
+                    cas.vacia = false;
+                    pnj.setCasAct(cas);
+                    
                 }
-                pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
-                pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 35, cas.getCasAnt().transform.position.z+10);
-                pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
-                pnj.cas.vacia = true;
-                pnj.cas.pnj = null;
-                cas.getCasAnt().vacia = false;
-                cas.getCasAnt().pnj = pnj;
-                pnj.cas = cas.getCasAnt();
+                else if(sobreCasilla && !cas.vacia && cas.pintada){
+                    Casilla casAct = pnj.getCasAct();
+                    Personaje pnjAct = cas.pnj;
+                    pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+                    if(pnjAct.danar(pnj.getAtaque())){
+                        //Aquí cosas que pasen si se muere el enemigo
+                        cas.vacia = true;
+                        cas.pnj = null;
+                    }
+                    pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
+                    pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 70, cas.getCasAnt().transform.position.z+10);
+                    pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
+                    pnj.cas.vacia = true;
+                    pnj.cas.pnj = null;
+                    cas.getCasAnt().vacia = false;
+                    cas.getCasAnt().pnj = pnj;
+                    pnj.cas = cas.getCasAnt();
+                }
+                else {
+                    pnj.transform.SetParent(gm.filasPnj[filaIni].transform, false);
+                    pnj.transform.position = posIni;
+                }
+                desPintaCas();
             }
-            else {
-                pnj.transform.SetParent(gm.filasPnj[filaIni].transform, false);
-                pnj.transform.position = posIni;
+            else{
+                if(sobreCasilla && !cas.vacia && cas.pintada){
+                    Casilla casAct = pnj.getCasAct();
+                    Personaje pnjAct = cas.pnj;
+                    pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+                    if(pnjAct.danar(pnj.getAtaque())){
+                        //Aquí cosas que pasen si se muere el enemigo
+                        cas.vacia = true;
+                        cas.pnj = null;
+                    }
+                    pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
+                    pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 70, cas.getCasAnt().transform.position.z+10);
+                    pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
+                    pnj.cas.vacia = true;
+                    pnj.cas.pnj = null;
+                    cas.getCasAnt().vacia = false;
+                    cas.getCasAnt().pnj = pnj;
+                    pnj.cas = cas.getCasAnt();
+                    gm.setMata();
+                }
+                else {
+                    pnj.transform.SetParent(gm.filasPnj[filaIni].transform, false);
+                    pnj.transform.position = posIni;
+                }
+                desPintaCas();
             }
-            desPintaCas();
         }
     }
     void Update()

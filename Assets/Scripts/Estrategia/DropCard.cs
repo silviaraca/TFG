@@ -70,7 +70,7 @@ public class DropCard : MonoBehaviour
                         gm.setCarJugadas(gm.getCarJugadas() + 1);
                     }
                 }
-                else if(card.esHechizoArea()){ //Cartas de hechizo en area sin necesidad de objetivo
+                else if(card.esHechizoArea() && !gm.tutorial){ //Cartas de hechizo en area sin necesidad de objetivo
                     if(sobreCasilla && gm.getCarJugadas() < 2){
                         card.transform.position = gm.zonaDescarte.transform.position;
                         //Añadir a una lista de descartes
@@ -111,6 +111,51 @@ public class DropCard : MonoBehaviour
                             gm.mano.Remove(gm.mano[i]);//***
                         }
                         gm.setCarJugadas(gm.getCarJugadas() + 1);
+                    }
+                }
+                else if(card.esHechizoArea() && gm.tutorial){ //Cartas de hechizo en area sin necesidad de objetivo
+                    if(sobreCasilla && gm.getCarJugadas() < 2 && cas.muyPintada){
+                        card.transform.position = gm.zonaDescarte.transform.position;
+                        //Añadir a una lista de descartes
+                        //---------------
+                        int posAux, areaAux;
+                        areaAux = card.getAreaHechizo();
+                        //Una vez soltada la carta de hechizo en area hace si efecto en todas las casillas ocupadas por algún personaje
+                        if(!cas.vacia)
+                            card.efectoHechizo(cas.pnj);
+                        int pos = cas.getPosX()+cas.getPosY()*8;
+                        while(areaAux > 0){
+                            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia){
+                                card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia){
+                               card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia){
+                                card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia){
+                                card.efectoHechizo(gm.tablero[posAux].pnj);
+                            }
+                            areaAux--;
+                        }                        
+                        int i = card.handIndex;
+                        if(card.enMano){
+                            while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
+                                gm.mano[i+1].transform.position = gm.espacioMano[i].position;
+                                gm.mano[i] = gm.mano[i+1];
+                                gm.mano[i].handIndex = i;
+                                i++;
+                            }
+                            card.enMano = false;
+                            card.setCasAct(cas);
+                            gm.descarte.Add(card);
+                            gm.espacioManoSinUsar[i] = true;                
+                            gm.mano.Remove(gm.mano[i]);//***
+                        }
+                        gm.setCarJugadas(gm.getCarJugadas() + 1);
+                        cas.setColor(gm.casEstandar);
+                        gm.setMata();
                     }
                 }
             }

@@ -17,6 +17,7 @@ public class Casilla : MonoBehaviour
     [SerializeField] private int consumeMov = 0;
     [SerializeField] private Sprite imagenIni;
 
+    public bool muyPintada = false;
     void Start()
     {
         gm = FindObjectOfType<GameManagerE>();
@@ -60,5 +61,9 @@ public class Casilla : MonoBehaviour
     }
     public void setColorAnt(Sprite c){
         colorAnt = c;
+    }
+    public void setColor(Sprite color){
+        this.gameObject.GetComponent<Image>().sprite = color;
+        imagenIni = color;
     }
 }
