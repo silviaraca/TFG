@@ -53,7 +53,7 @@ public class GameManagerE : MonoBehaviour
 
 public void Start(){
   //Tomar las cartas de la lista de cartas que haya en deckData al iniciar la escena
-  if (PlayerPrefs.HasKey("DeckData"))
+  if (PlayerPrefs.HasKey("DeckData") && !tutorial)
   {
       string deckData = PlayerPrefs.GetString("DeckData");
       listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);

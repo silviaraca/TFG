@@ -155,4 +155,5 @@ public class DialogoDecisiones : MonoBehaviour
             textComponent.text = sentences[index];
         }
     }
+
 }
