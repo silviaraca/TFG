@@ -359,6 +359,105 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+--- !u!1 &253639033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 253639037}
+  - component: {fileID: 253639036}
+  - component: {fileID: 253639035}
+  - component: {fileID: 253639034}
+  m_Layer: 0
+  m_Name: Machine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &253639034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253639033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 1796368978}
+  panel: {fileID: 829494383}
+  move: {fileID: 2053772862}
+  textComponent: {fileID: 829494382}
+  textName: {fileID: 829494381}
+  sentences:
+  - '*brrrr* *brrrrr* *metal sound*'
+  - Here it is
+  names:
+  - Machine
+  - Me
+  textSpeed: 0
+--- !u!114 &253639035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253639033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a479e3a0351f2854ca776b152da3278b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2053772864}
+  textoE: {fileID: 1796368978}
+  dialogueScript: {fileID: 253639034}
+--- !u!61 &253639036
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253639033}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08184719, y: -0.28646183}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.864626, y: 1.5729237}
+  m_EdgeRadius: 0
+--- !u!4 &253639037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253639033}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18, y: 29, z: -0.1627501}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264009860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,7 +1997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2066,7 +2165,7 @@ Transform:
   - {fileID: 601640144}
   - {fileID: 1205781053}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -0.754, z: 0}
 --- !u!1 &942725584
 GameObject:
@@ -2168,7 +2267,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &942725588
 CapsuleCollider2D:
@@ -2767,11 +2866,32 @@ MonoBehaviour:
   textComponent: {fileID: 829494382}
   textName: {fileID: 829494381}
   sentences:
-  - Hey are you Ratonella?
-  - Yes
+  - Sorry, do you know if there is any rat over here?
+  - You are looking for Ratonella, aren't you?
+  - Yes! How do you know?
+  - Because I'm Ratonella
+  - I didn't know you could change your appearance so much
+  - You don't look... like a rat
+  - Yes, we can have any appereance
+  - You told me you needed help with something
+  - Indeed, in this company I am exploited and they do not leave me a second to rest
+    and have a coffee.
+  - Do you want an end to labor exploitation and the right to more dignified conditions?
+  - No, I want you to bring me a coffee from the machine
+  - Oh! Easy
   names:
   - Me
+  - Secretary
+  - Me
   - Ratonella
+  - Me
+  - Me
+  - Ratonella
+  - Me
+  - Ratonella
+  - Me
+  - Ratonella
+  - Me
   textSpeed: 0
 --- !u!114 &1313960587
 MonoBehaviour:
@@ -2787,6 +2907,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueScript1: {fileID: 1313960581}
   dialogueScript2: {fileID: 1313960586}
+  dialogueScript3: {fileID: 1313960588}
+--- !u!114 &1313960588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313960580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 1796368978}
+  panel: {fileID: 829494383}
+  move: {fileID: 2053772862}
+  textComponent: {fileID: 829494382}
+  textName: {fileID: 829494381}
+  sentences:
+  - Thank you very much
+  - You can go now to the Other Side and I'll help you
+  names:
+  - Ratonella
+  - Ratonella
+  textSpeed: 0
 --- !u!1 &1409284520
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,165 +6852,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1578327781
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Size.x
-      value: 0.30113947
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Size.y
-      value: 0.249224
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0002584085
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.005505085
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: d.name
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: d.sentences.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5654485413541784259, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Name
-      value: Ratonella
-      objectReference: {fileID: 0}
-    - target: {fileID: 6204242264757187170, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1181993000, guid: 8a6e241bcba5bfa4d85c7a7fd2d3b680, type: 3}
-    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5339131
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Size.y
-      value: 0.6085974
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.016509086
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.0074246526
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.276599
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.4937572
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624852170560625862, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
---- !u!1 &1578327782 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5654485413541784259, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-  m_PrefabInstance: {fileID: 1578327781}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1578327783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578327782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textoE: {fileID: 1796368978}
-  panel: {fileID: 829494383}
-  move: {fileID: 2053772862}
-  textComponent: {fileID: 829494382}
-  textName: {fileID: 829494381}
-  sentences:
-  - Ratonella?
-  - You found me!!
-  - It's a good thing I didn't have to go rat by rat looking for you.
-  - How can I help you?
-  names:
-  - Me
-  - Ratonella
-  - Me
-  - Me
-  textSpeed: 0
 --- !u!1 &1649018281
 GameObject:
   m_ObjectHideFlags: 0
@@ -7925,7 +7911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946313, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946313, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9713,7 +9699,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019018, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019018, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchorMax.x

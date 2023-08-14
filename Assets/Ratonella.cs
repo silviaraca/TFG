@@ -6,22 +6,41 @@ public class Ratonella : MonoBehaviour
 {
     public Dialogue dialogueScript1;
     public Dialogue dialogueScript2; 
+    public Dialogue dialogueScript3;
+    public static bool machine;
+    private string ratData;
 
     void Start()
     {
+        ratData = PlayerPrefs.GetString("RatSecretary");
+        machine = false;
+        
+    }
 
-        string ratData = PlayerPrefs.GetString("RatSecretary");
-
-        if(ratData == "done")
+    void Update()
+    {
+        //Si aún no ha cogido el café
+        if(ratData == "done" && !machine)
         {
             dialogueScript1.enabled = true;
             dialogueScript2.enabled = false;
+            dialogueScript3.enabled = false;
         }
-        else
+
+        //Si ha cogido el café
+        if(ratData == "done" && machine)
+        {
+            dialogueScript1.enabled = false;
+            dialogueScript2.enabled = false;
+            dialogueScript3.enabled = true;
+        }
+
+        //Inicio
+        if(ratData != "done")
         {
             dialogueScript1.enabled = false;
             dialogueScript2.enabled = true;
+            dialogueScript3.enabled = false;
         }
-        
     }
 }
