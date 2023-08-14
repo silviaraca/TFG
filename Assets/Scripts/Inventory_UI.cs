@@ -9,6 +9,7 @@ public class Inventory_UI : MonoBehaviour
     public GameObject inventoryPanel;
     public Player player;
     public List<Slots_UI> slots = new List<Slots_UI>();
+    public Slots_UI slotPrefab;
 
     void Start()
     {
@@ -41,20 +42,16 @@ public class Inventory_UI : MonoBehaviour
     {
         if(slots.Count == player.inventory.slots.Count)
         { 
-            for(int i = 0; i < slots.Count; i++)
+            foreach (Slot slot in player.inventory.slots)
             {
-                
-                if(player.inventory.slots[i].type != CollectableType.NONE)
+                if (slot.type != CollectableType.NONE)
                 {
-                    slots[i].SetItem(player.inventory.slots[i]);
-                   
-            
-                }
-                else
-                {
-                    slots[i].SetEmpty();
+                    Slots_UI slotUI = Instantiate(slotPrefab, transform);
+                    slotUI.Initialize(slot);
+                    slots.Add(slotUI);
                 }
             }
+
         }
     }
 
