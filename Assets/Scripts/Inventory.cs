@@ -1,53 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
-
-[System.Serializable]
-public class Inventory
+public class Inventory : MonoBehaviour
 {
-    public List<Slot> slots = new List<Slot>();
+    public List<GameObject> slots = new List<GameObject>();
+    public GameObject slot;
     public int count; // Items ahora mismo
     public int maxSlots;
     public int busySlots;
 
     // Inicializar
-    public Inventory(int num)
+    public void Start()
     {
         count = 0;
         busySlots = 0;
-        this.maxSlots = num;
-        for (int i = 0; i < num; i++)
+        this.maxSlots = 22;
+        for (int i = 0; i < 22; i++)
         {
-            Slot slot = new Slot();
-            slots.Add(slot);
+            GameObject slotAux = Instantiate(slot, transform);
+            slots.Add(slotAux);
         }
     }
 
     // Se añade un item
     public bool Add(Collectable item)
     {
-        foreach (Slot slot in slots)
+        for (int i = 0; i < slots.Count; i++)
         {
             // Items ya existentes
-            if (slot.type == (CollectableType)item.type)
+            if (slots[i].GetComponent<Slot>().type == (CollectableType)item.type)
             {
-                if (slot.max > slot.count)
+                if (slots[i].GetComponent<Slot>().max > slots[i].GetComponent<Slot>().count)
                 {
                     // Se añade el item
-                    slot.AddItem(item);
+                    slots[i].GetComponent<Slot>().AddItem(item);
                     return true;
                 }
                 else return false;
             }
         }
 
-        foreach (Slot slot in slots)
+        for (int i = 0; i < slots.Count; i++)
         {
             // Items nuevos
-            if (slot.type == CollectableType.NONE)
+            if (slots[i].GetComponent<Slot>().type == CollectableType.NONE)
             {
-                slot.AddItem(item);
+                slots[i].GetComponent<Slot>().AddItem(item);
                 busySlots++;
                 return true;
             }

@@ -994,6 +994,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   slotPrefab: {fileID: 0}
+  slotsPanel: {fileID: 0}
 --- !u!1 &7432411899234702538
 GameObject:
   m_ObjectHideFlags: 0

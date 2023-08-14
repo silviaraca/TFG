@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Slots_UI : MonoBehaviour
 {
@@ -9,21 +10,20 @@ public class Slots_UI : MonoBehaviour
     public TextMeshProUGUI countAddedText;
     public TextMeshProUGUI countRemainingText;
 
-    private Slot associatedSlot;
+    [SerializeField] private Slot associatedSlot;
 
     public void Initialize(Slot slot)
     {
         associatedSlot = slot;
         UpdateUI();
-        // Resto del código de inicialización si lo tienes
     }
 
     private void UpdateUI()
     {
         itemIcon.sprite = associatedSlot.icon;
         itemIcon.color = new Color(1, 1, 1, 1);
-        UpdateCountAddedText(associatedSlot.countAdded);
-        UpdateCountRemainingText(associatedSlot.countRemaining);
+        UpdateCountAddedText(associatedSlot.getCountAdded());
+        UpdateCountRemainingText(associatedSlot.getCountRemaining());
     }
 
     private void UpdateCountAddedText(int newValue)

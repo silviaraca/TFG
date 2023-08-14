@@ -8,8 +8,9 @@ public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public Player player;
-    public List<Slots_UI> slots = new List<Slots_UI>();
-    public Slots_UI slotPrefab;
+    public List<GameObject> slots = new List<GameObject>();
+    public GameObject slotPrefab;
+    public GameObject slotsPanel;
 
     void Start()
     {
@@ -40,21 +41,16 @@ public class Inventory_UI : MonoBehaviour
 
     public void Setup()
     {
-        if(slots.Count == player.inventory.slots.Count)
-        { 
-            foreach (Slot slot in player.inventory.slots)
-            {
-                if (slot.type != CollectableType.NONE)
-                {
-                    Slots_UI slotUI = Instantiate(slotPrefab, transform);
-                    slotUI.Initialize(slot);
-                    slots.Add(slotUI);
-                }
-            }
-
+        for(int i = 0; i < player.inventory.slots.Count; i++)
+        {
+            GameObject slotUI = Instantiate(slotPrefab, transform);
+            slotUI.gameObject.transform.SetParent(slotsPanel.transform, false);
+            slots.Add(slotUI);
+        }
+        for(int i = 0; i < player.inventory.slots.Count; i++)
+        {
+            slots[i].GetComponent<Slots_UI>().Initialize(player.inventory.slots[i].GetComponent<Slot>());
         }
     }
-
-
 
 }

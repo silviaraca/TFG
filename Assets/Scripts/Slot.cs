@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
-[System.Serializable]
-public class Slot
+public class Slot : MonoBehaviour
 {
     public int countAdded; // Items añadidos
     public int countRemaining; // Items por añadir
@@ -14,8 +12,9 @@ public class Slot
     public Sprite icon; 
     public event Action<int> OnCountAddedChanged;
     public event Action<int> OnCountRemainingChanged;
+    public int index;
 
-    public Slot()
+    public void Start()
     {
         type = CollectableType.NONE;
         count = 0;
@@ -39,10 +38,6 @@ public class Slot
         {
             countAdded++;
             countRemaining--;
-              // Disparar el evento OnCountAddedChanged
-            OnCountAddedChanged?.Invoke(countAdded);
-            // Disparar el evento OnCountRemainingChanged
-            OnCountRemainingChanged?.Invoke(countRemaining);
         }
     }
 
@@ -52,12 +47,17 @@ public class Slot
         {
             countAdded--;
             countRemaining++;
-
-            
-            // Disparar el evento OnCountAddedChanged
-            OnCountAddedChanged?.Invoke(countAdded);
-            // Disparar el evento OnCountRemainingChanged
-            OnCountRemainingChanged?.Invoke(countRemaining);
         }
+    }
+
+    public int getCountAdded(){
+        return countAdded;
+    }
+    public int getCountRemaining(){
+        return countRemaining;
+    }
+
+    public void setCountAdded(int c){
+        countAdded = c;
     }
 }
