@@ -18,6 +18,7 @@ public class DialogoDecisiones : MonoBehaviour
     [SerializeField] private Button BotonDecision2;
     [SerializeField] private TextMeshProUGUI TextoBotonDecision1;
     [SerializeField] private TextMeshProUGUI TextoBotonDecision2;
+    [SerializeField] private Player playerExistente;
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI textName;
     public string[] sentences;
@@ -44,7 +45,7 @@ public class DialogoDecisiones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeE && Input.GetKeyDown(KeyCode.E)){
+        if(activeE && Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name)){
             gameObject.SetActive(true);
             textoE.gameObject.SetActive(false);
             panel.gameObject.SetActive(true);
@@ -53,7 +54,7 @@ public class DialogoDecisiones : MonoBehaviour
             textName.text = names[index];
             activeE = false;
         }
-        if(Input.GetKeyDown(KeyCode.E) && !decision)
+        if(Input.GetKeyDown(KeyCode.E) && !decision && playerExistente.getActivo().Equals(this.gameObject.name))
         {
             if(textComponent.text == sentences[index])
             {

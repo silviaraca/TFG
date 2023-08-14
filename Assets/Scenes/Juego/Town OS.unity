@@ -1312,7 +1312,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119062072}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
   m_Name: 
@@ -1320,6 +1320,7 @@ MonoBehaviour:
   textoE: {fileID: 207703888}
   panel: {fileID: 1443609061}
   move: {fileID: 564258505}
+  playerExistente: {fileID: 1367303288}
   textComponent: {fileID: 1924281459}
   textName: {fileID: 1420677165}
   sentences:
@@ -84749,6 +84750,7 @@ MonoBehaviour:
   BotonDecision2: {fileID: 241366807}
   TextoBotonDecision1: {fileID: 1470047932}
   TextoBotonDecision2: {fileID: 553867698}
+  playerExistente: {fileID: 1367303288}
   textComponent: {fileID: 1924281459}
   textName: {fileID: 1420677165}
   sentences:

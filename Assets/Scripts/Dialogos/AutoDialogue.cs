@@ -10,6 +10,7 @@ public class AutoDialogue : MonoBehaviour
 {
     [SerializeField] private Image panel;
     [SerializeField] private Movement move;
+    [SerializeField] private Player playerExistente;
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI textName;
     public string[] lines;
@@ -33,7 +34,7 @@ public class AutoDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeE){
+        if(activeE && playerExistente.getActivo().Equals(this.gameObject.name)){
             move.allowMove = false;
             gameObject.SetActive(true);
             panel.gameObject.SetActive(true);
@@ -42,7 +43,7 @@ public class AutoDialogue : MonoBehaviour
             activeE = false;
         }
 
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
             {
                 if(textComponent.text == lines[index])
                 {

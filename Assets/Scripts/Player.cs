@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int numItem;
     public Vector2 playerPosition;
     [SerializeField] private TextMeshProUGUI textoE;
+    private string nombreActivo = "";
 
 
     private void Awake()
@@ -33,5 +34,18 @@ public class Player : MonoBehaviour
     void Update()
     {
         playerPosition = transform.position;
+    }
+
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        nombreActivo = collision.gameObject.name;  
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        nombreActivo = "";          
+    }
+    public string getActivo(){
+        return nombreActivo;
     }
 }

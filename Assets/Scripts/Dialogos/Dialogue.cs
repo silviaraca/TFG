@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoE;
     [SerializeField] private Image panel;
     [SerializeField] private Movement move;
+    [SerializeField] private Player playerExistente;
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI textName;
     public string[] sentences;
@@ -45,7 +46,7 @@ public class Dialogue : MonoBehaviour
             textName.text = names[index];
             activeE = false;
         }
-        else if (currentScene.name == "EstrategiaTuto" && activeE){
+        else if (currentScene.name == "EstrategiaTuto" && activeE && playerExistente.getActivo().Equals(this.gameObject.name)){
             gameObject.SetActive(true);
             textoE.gameObject.SetActive(false);
             panel.gameObject.SetActive(true);
@@ -53,8 +54,7 @@ public class Dialogue : MonoBehaviour
             textName.text = names[index];
             activeE = false;
         }
-
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
             {
                 if(textComponent.text == sentences[index])
                 {
