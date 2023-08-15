@@ -7,23 +7,16 @@ using TMPro;
 public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventoryPanel;
+    public GameObject deckSelectorPanel;
     public Player player;
     public List<GameObject> slots = new List<GameObject>();
     public GameObject slotPrefab;
-    public GameObject slotsPanel;
+    public GameObject slotsPanel; 
+
 
     void Start()
     {
         inventoryPanel.SetActive(false);
-    }
-
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            ToggleInventory();
-
-        }
     }
 
     public void ToggleInventory()
@@ -55,6 +48,22 @@ public class Inventory_UI : MonoBehaviour
         {
             slots[i].GetComponent<Slots_UI>().Initialize(player.inventory.slots[i].GetComponent<Slot>());
         }
+    }
+
+    public void Open()
+    {
+        deckSelectorPanel.SetActive(false);
+        ToggleInventory();
+    }
+    
+    public void End()
+    {
+        inventoryPanel.SetActive(false);
+        for(int i = 0; i < slots.Count; i++){
+            Destroy(slots[i]);
+        }
+        slots.Clear(); 
+        deckSelectorPanel.SetActive(true);
     }
 
 }

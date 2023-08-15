@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Inventory : MonoBehaviour
 {
     public List<GameObject> slots = new List<GameObject>();
