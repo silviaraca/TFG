@@ -31,6 +31,7 @@ public class Dialogue : MonoBehaviour
         textComponent.text = string.Empty;
         textName.text = string.Empty;
         currentScene = SceneManager.GetActiveScene ();
+        textSpeed = 0.03f;
         
     }
 
