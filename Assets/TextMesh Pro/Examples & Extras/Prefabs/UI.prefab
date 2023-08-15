@@ -939,62 +939,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 7432411897719267507}
-  player: {fileID: 0}
-  slots:
-  - {fileID: 7432411899276592591}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  slotPrefab: {fileID: 0}
-  slotsPanel: {fileID: 0}
+  player: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+  slots: []
+  slotPrefab: {fileID: 7432411898152120807}
+  slotsPanel: {fileID: 7432411899234702538}
 --- !u!1 &7432411899234702538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1343,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7432411899375558152}
     m_Modifications:
+    - target: {fileID: 1274963321724392107, guid: 3873df075d958e043879d32f795e84f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7432411899276592591}
+    - target: {fileID: 1274963321724392107, guid: 3873df075d958e043879d32f795e84f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlusButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109783317313012243, guid: 3873df075d958e043879d32f795e84f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7432411899276592591}
+    - target: {fileID: 3109783317313012243, guid: 3873df075d958e043879d32f795e84f7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMinusButtonClick
+      objectReference: {fileID: 0}
     - target: {fileID: 3880452348597805896, guid: 3873df075d958e043879d32f795e84f7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1490,12 +1454,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3880452348597805896, guid: 3873df075d958e043879d32f795e84f7, type: 3}
   m_PrefabInstance: {fileID: 5980527313786163884}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7432411898152120807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3880452348597805899, guid: 3873df075d958e043879d32f795e84f7, type: 3}
+  m_PrefabInstance: {fileID: 5980527313786163884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7432411899276592591 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3880452347347490659, guid: 3873df075d958e043879d32f795e84f7, type: 3}
   m_PrefabInstance: {fileID: 5980527313786163884}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 7432411898152120807}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1e4b4d555528c64a8504d2b877adf70, type: 3}

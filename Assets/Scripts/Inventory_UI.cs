@@ -35,7 +35,11 @@ public class Inventory_UI : MonoBehaviour
         }
         else
         {
-            inventoryPanel.SetActive(false); 
+            inventoryPanel.SetActive(false);
+            for(int i = 0; i < slots.Count; i++){
+                Destroy(slots[i]);
+            }
+            slots.Clear(); 
         }
     }
 
