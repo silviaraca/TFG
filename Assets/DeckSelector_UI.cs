@@ -14,7 +14,7 @@ public class DeckSelector_UI : MonoBehaviour
     }
 
 
-    void Update()
+    public void Update()
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {

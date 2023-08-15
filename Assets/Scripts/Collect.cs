@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TomatoCollect : MonoBehaviour
+public class Collect : MonoBehaviour
 {
    public TextMeshProUGUI textoE;
    private bool recogible;
