@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Newtonsoft.Json;
 
 public class Inventory_UI : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Inventory_UI : MonoBehaviour
         {
             GameObject slotUI = Instantiate(slotPrefab, transform);
             slotUI.gameObject.transform.SetParent(slotsPanel.transform, false);
+            slotUI.GetComponent<Slots_UI>().nombreCarta = player.inventory.slots[i].GetComponent<Slot>().nombre;
             slots.Add(slotUI);
         }
         for(int i = 0; i < player.inventory.slots.Count; i++)
@@ -62,7 +64,10 @@ public class Inventory_UI : MonoBehaviour
         for(int i = 0; i < slots.Count; i++){
             Destroy(slots[i]);
         }
-        slots.Clear(); 
+        slots.Clear();
+        string deckData = JsonConvert.SerializeObject(player.deck);
+          PlayerPrefs.SetString("DeckData", deckData);
+          PlayerPrefs.Save(); 
         deckSelectorPanel.SetActive(true);
     }
 

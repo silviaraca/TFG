@@ -9,7 +9,7 @@ public class Slots_UI : MonoBehaviour
     public Image itemIcon;
     public TextMeshProUGUI countAddedText;
     public TextMeshProUGUI countRemainingText;
-
+    public string nombreCarta;
     [SerializeField] private Slot associatedSlot;
 
     public void Initialize(Slot slot)
@@ -39,12 +39,16 @@ public class Slots_UI : MonoBehaviour
     public void OnPlusButtonClick()
     {
         associatedSlot.Sumar();
+        Player player = FindObjectOfType<Player>();
+        player.deck.Add(nombreCarta);
         UpdateUI();
     }
 
     public void OnMinusButtonClick()
     {
         associatedSlot.Restar();
+        Player player = FindObjectOfType<Player>();
+        player.deck.Remove(nombreCarta);
         UpdateUI();
     }
 

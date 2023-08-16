@@ -151,10 +151,12 @@ public void Start(){
         }
         if(enemigosVivos == 0){
           win = true;
+          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
           //Salir de escena ganado
         }
         else if(turnosParaPerder == 0){
           loose = true;
+          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
           //Salir de escena perdiendo
         }
       }
@@ -253,10 +255,12 @@ public void Start(){
         }
         if(enemigosVivos == 0){
           win = true;
+          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
           //Salir de escena ganado
         }
         else if(turnosParaPerder == 0){
           loose = true;
+          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
           //Salir de escena perdiendo
         }
         if(fase == 2 && spawnea && nCartasJugadas == 0){

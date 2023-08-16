@@ -13,6 +13,7 @@ public class Slot : MonoBehaviour
     public event Action<int> OnCountAddedChanged;
     public event Action<int> OnCountRemainingChanged;
     public int index;
+    public string nombre;
 
     public void Start()
     {

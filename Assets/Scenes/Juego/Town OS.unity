@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &114322917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3240995623381409134, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+  m_PrefabInstance: {fileID: 1881270139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &207639982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19236,6 +19241,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1077803388997037260, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: deckSelectorPanel
+      value: 
+      objectReference: {fileID: 114322917}
     - target: {fileID: 1454827514715767399, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -19599,6 +19608,10 @@ PrefabInstance:
     - target: {fileID: 3068220696168686234, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240995623381409134, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3376752078437036947, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -84340,11 +84353,6 @@ MonoBehaviour:
   textoE: {fileID: 207703888}
   cargar: {fileID: 2801447885948886271}
   escena: EstartegiaTuto
-  deck:
-  - Agua
-  - Agua
-  - Agua
-  - Estaca
   enemies:
   - Zombie
   - Zombie

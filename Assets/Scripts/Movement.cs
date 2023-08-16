@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
 
     private void Start(){
         allowMove = true;
-        transform.position = startingPosition.initialValue;
+        //transform.position = startingPosition.initialValue;
 
     }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class CambioEscenaEstrategia : MonoBehaviour
 {
@@ -13,11 +15,10 @@ public class CambioEscenaEstrategia : MonoBehaviour
    private Player player;
    public Cargar cargar;
    [SerializeField] private string escena;
-   [SerializeField] private List<string> deck;
    [SerializeField] private List<string> enemies;
 
    private void Start(){
-        textoE.gameObject.SetActive(false);
+        //textoE.gameObject.SetActive(false);
    }
 
    private void Update(){
@@ -25,12 +26,24 @@ public class CambioEscenaEstrategia : MonoBehaviour
             cargar.load("Estrategia");
    }
    public void cargaEstrategia(){
-          string deckData = JsonConvert.SerializeObject(deck); //Hacer que lo tome mejor del player
-          PlayerPrefs.SetString("DeckData", deckData);
-          PlayerPrefs.Save();
+          string thisScene = SceneManager.GetActiveScene().name;
           string enemyData = JsonConvert.SerializeObject(enemies); //Esto vale así porque lo toma del npc en concreto ya que cambio estrategia está dentro del NPC
           PlayerPrefs.SetString("EnemiesData", enemyData);
           PlayerPrefs.Save();
+          string escenaRPG = JsonConvert.SerializeObject(thisScene);
+          PlayerPrefs.SetString("EscenaRPG", escenaRPG);
+          PlayerPrefs.Save();
+          Player playerPos = FindObjectOfType<Player>();
+          Vector3 vectorPos = playerPos.gameObject.transform.position;
+          string posRPG = JsonUtility.ToJson(vectorPos);
+          print(posRPG);
+          PlayerPrefs.SetString("PosicionPlayer", posRPG);
+          PlayerPrefs.Save();
           cargar.load("Estrategia");
+     }
+     public void cargaRPG(){
+          string escenaRPG = PlayerPrefs.GetString("EscenaRPG");
+          string escena = JsonConvert.DeserializeObject<string>(escenaRPG);
+          cargar.load(escena);
      }
 }    

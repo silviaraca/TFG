@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Newtonsoft.Json;
 
 public class Player : MonoBehaviour
 {
@@ -17,11 +18,18 @@ public class Player : MonoBehaviour
     {
         textoE.gameObject.SetActive(false);
         //Cargar inventario
-        if (PlayerPrefs.HasKey("InventoryData"))
+        /*if (PlayerPrefs.HasKey("InventoryData"))
         {
             string inventoryData = PlayerPrefs.GetString("InventoryData");
+            print(inventoryData);
             inventory = JsonUtility.FromJson<Inventory>(inventoryData);
 
+        }*/ //Esto está comentado hasta que se haga el json con el nuevo formato de inventario jiji
+        if (PlayerPrefs.HasKey("PosicionPlayer"))
+        {
+            string posicionJSON = PlayerPrefs.GetString("PosicionPlayer");
+            Vector3 posicion= JsonUtility.FromJson<Vector3>(posicionJSON);
+            this.gameObject.transform.position = posicion;
         }
     }
 
