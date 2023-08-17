@@ -56,15 +56,18 @@ public class DialogoDecisiones : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.E) && !decision && playerExistente.getActivo().Equals(this.gameObject.name))
         {
-            if(textComponent.text == sentences[index])
+
+            if(sentences.Length > index && textComponent.text == sentences[index])
             {
                 NextLine();
+                
             }
             else
             {
                 //textName.text = names[index];
                 StopAllCoroutines();
-                textComponent.text = sentences[index];
+                if(sentences.Length > index) textComponent.text = sentences[index];
+                else EndDialogue();
             }
         }
     }
@@ -97,13 +100,14 @@ public class DialogoDecisiones : MonoBehaviour
         if(index < sentences.Length - 1)
         {
             index++;
+
             if(listaMomentoDecisiones.Count > 0 && index == listaMomentoDecisiones[indexDecisiones]){
                 BotonDecision1.gameObject.SetActive(true);
                 TextoBotonDecision1.text = listaDecisiones1[indexDecisiones];
                 BotonDecision2.gameObject.SetActive(true);
                 TextoBotonDecision2.text = listaDecisiones2[indexDecisiones];
                 decision = true;
-                indexDecisiones++;
+                if(listaMomentoDecisiones.Count > indexDecisiones + 1) indexDecisiones++;
             }
             textComponent.text = string.Empty;
             textName.text = names[index];
@@ -111,10 +115,7 @@ public class DialogoDecisiones : MonoBehaviour
         }
         else
         {
-            panel.gameObject.SetActive(false);
-            move.allowMove = true;
-            textComponent.text = string.Empty;
-            textName.text = string.Empty;
+           EndDialogue();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -134,6 +135,15 @@ public class DialogoDecisiones : MonoBehaviour
             activeE = false;
         }            
     }
+
+    private void EndDialogue()
+    {
+        panel.gameObject.SetActive(false);
+        move.allowMove = true;
+        textComponent.text = string.Empty;
+        textName.text = string.Empty;
+
+    }
     public void decision1(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
         //Invoca a la estrategia
@@ -144,6 +154,7 @@ public class DialogoDecisiones : MonoBehaviour
         BotonDecision1.gameObject.SetActive(false);
         BotonDecision2.gameObject.SetActive(false);
         //Decisión NO, solo pasa como si hubiese dado a la E
+
         if(textComponent.text == sentences[index])
         {
             NextLine();
@@ -154,6 +165,46 @@ public class DialogoDecisiones : MonoBehaviour
             //textName.text = names[index];
             StopAllCoroutines();
             textComponent.text = sentences[index];
+        }
+    }
+
+    public void decisionLamias_Wrong()
+    {
+        decision = false;
+        BotonDecision1.gameObject.SetActive(false);
+        BotonDecision2.gameObject.SetActive(false);
+
+        if(textComponent.text == sentences[index])
+        {
+            NextLine();
+            index = sentences.Length;
+        }
+        else
+        {
+            
+            //textName.text = names[index];
+            StopAllCoroutines();
+        }
+    }
+
+    public void decisionLamias_Right()
+    {
+        decision = false;
+        BotonDecision1.gameObject.SetActive(false);
+        BotonDecision2.gameObject.SetActive(false);
+        index += 2;
+
+        if(textComponent.text == sentences[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            
+            //textName.text = names[index];
+            StopAllCoroutines();
+            textComponent.text = sentences[index];
+          
         }
     }
 

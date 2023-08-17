@@ -12,7 +12,8 @@ public class Ratonella : MonoBehaviour
 
     void Start()
     {
-        ratData = PlayerPrefs.GetString("RatSecretary");
+        ratData = "";
+        if(PlayerPrefs.HasKey("RatSecretary")) ratData = PlayerPrefs.GetString("RatSecretary");
         machine = false;
         
     }
