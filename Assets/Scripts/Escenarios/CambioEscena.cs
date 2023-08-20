@@ -11,7 +11,7 @@ public class CambioEscena : MonoBehaviour
    private bool usable;
    private Player player;
    public Cargar cargar;
-   public Vector2 playerPosition;
+   public Vector3 playerPosition;
    public VectorPosition playerStorage;
    [SerializeField] private string escena;
 
@@ -36,7 +36,9 @@ public class CambioEscena : MonoBehaviour
 
             textoE.gameObject.SetActive(true);
             usable = true; 
-            playerStorage.initialValue = playerPosition;
+            string posRPG = JsonUtility.ToJson(playerPosition);
+            PlayerPrefs.SetString("PosicionPlayer", posRPG);
+            PlayerPrefs.Save();
         }                   
     }
 

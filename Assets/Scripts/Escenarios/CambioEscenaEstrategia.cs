@@ -36,7 +36,6 @@ public class CambioEscenaEstrategia : MonoBehaviour
           Player playerPos = FindObjectOfType<Player>();
           Vector3 vectorPos = playerPos.gameObject.transform.position;
           string posRPG = JsonUtility.ToJson(vectorPos);
-          print(posRPG);
           PlayerPrefs.SetString("PosicionPlayer", posRPG);
           PlayerPrefs.Save();
           cargar.load("Estrategia");
