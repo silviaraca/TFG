@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 098248a17d2aef247a3082221922de5a
+guid: 2c2e1b88ed20e17449bffcfe581ca758
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,55 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI books & more_0
+      name: Nosferatu_0
       rect:
         serializedVersion: 2
-        x: 512
-        y: 399
-        width: 49
-        height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72eb2ad3f8bc2e74c8a6aa94e48cc244
-      internalID: -436748154
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI books & more_1
-      rect:
-        serializedVersion: 2
-        x: 319
-        y: 193
-        width: 33
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abe91bbbcb84e5a47be3871f346f8e65
-      internalID: -295914454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI books & more_2
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 160
-        width: 32
-        height: 16
+        x: 95
+        y: 1210
+        width: 37
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,29 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a8fc4e32f1b5124eaa695e43ae5a388
-      internalID: -276245510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI books & more_3
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 160
-        width: 33
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d4fbefc1ffdc5b46b30bf2cb0a00a34
-      internalID: 1747462995
+      spriteID: aff964f72f774ed4f9f1b9652e3f1c3a
+      internalID: -24072399
       vertices: []
       indices: 
       edges: []
@@ -199,10 +136,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI books & more_2: -276245510
-      UI books & more_1: -295914454
-      UI books & more_3: 1747462995
-      UI books & more_0: -436748154
+      Nosferatu_0: -24072399
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
