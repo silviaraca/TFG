@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public int numItem;
     public Vector2 playerPosition;
     [SerializeField] private TextMeshProUGUI textoE;
-    private string nombreActivo = "";
+    [SerializeField] private string nombreActivo = " ";
 
 
     private void Awake()
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
             Vector3 posicion= JsonUtility.FromJson<Vector3>(posicionJSON);
             this.gameObject.transform.position = posicion;
         }
+        nombreActivo = " ";
     }
 
     void Update()
@@ -40,12 +41,12 @@ public class Player : MonoBehaviour
 
      private void OnTriggerEnter2D(Collider2D collision)
     {
-        nombreActivo = collision.gameObject.name;  
+        nombreActivo = collision.gameObject.name.ToString().Trim();  
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        nombreActivo = "";          
+        nombreActivo = " ";          
     }
     public string getActivo(){
         return nombreActivo;

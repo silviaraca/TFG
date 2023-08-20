@@ -9,8 +9,10 @@ using UnityEngine.Playables;
 public class AutoDialogue : MonoBehaviour
 {
     [SerializeField] private Image panel;
+    [SerializeField] private Image pnj;
     [SerializeField] private Movement move;
     [SerializeField] private Player playerExistente;
+    [SerializeField] private GameObject npcHablando;
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI textName;
     public string[] lines;
@@ -21,6 +23,7 @@ public class AutoDialogue : MonoBehaviour
     private bool activeE;
     private Player player;
     private TimelineActivator tl;
+    [SerializeField] private Sprite personajeImage;
 
 
     // Start is called before the first frame update
@@ -29,12 +32,14 @@ public class AutoDialogue : MonoBehaviour
         panel.gameObject.SetActive(false);
         textComponent.text = string.Empty;
         textName.text = string.Empty;
+        personajeImage = npcHablando.GetComponent<Image>().sprite;
+        pnj.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(activeE && playerExistente.getActivo().Equals(this.gameObject.name)){
+        if(activeE){
             move.allowMove = false;
             gameObject.SetActive(true);
             panel.gameObject.SetActive(true);
@@ -42,19 +47,25 @@ public class AutoDialogue : MonoBehaviour
             textName.text = names[index];
             activeE = false;
         }
-
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E))
+        {
+            if(textComponent.text == lines[index])
             {
-                if(textComponent.text == lines[index])
-                {
-                    NextLine();
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    textComponent.text = lines[index];
-                }
+                NextLine();
             }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+        }
+        if(textName.text != string.Empty && textName.text != "Me"){
+            pnj.sprite = personajeImage;
+            pnj.gameObject.SetActive(true);
+        }
+        else if (textName.text != string.Empty){
+            pnj.gameObject.SetActive(false);
+        }
     }
 
     void StartDialogue()

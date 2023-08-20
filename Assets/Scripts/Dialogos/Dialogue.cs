@@ -56,18 +56,18 @@ public class Dialogue : MonoBehaviour
             activeE = false;
         }
         if(Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
+        {
+            if(textComponent.text == sentences[index])
             {
-                if(textComponent.text == sentences[index])
-                {
-                    NextLine();
-                }
-                else
-                {
-                    //textName.text = names[index];
-                    StopAllCoroutines();
-                    textComponent.text = sentences[index];
-                }
+                NextLine();
             }
+            else
+            {
+                //textName.text = names[index];
+                StopAllCoroutines();
+                textComponent.text = sentences[index];
+            }
+        }
     }
 
     void StartDialogue()
