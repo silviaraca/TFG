@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Newtonsoft.Json;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class CambioEscenaEstrategia : MonoBehaviour

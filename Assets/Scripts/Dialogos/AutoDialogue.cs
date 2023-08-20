@@ -22,7 +22,7 @@ public class AutoDialogue : MonoBehaviour
     private int index;
     private bool activeE;
     private Player player;
-    private TimelineActivator tl;
+    public TimelineActivator tl;
     [SerializeField] private Sprite personajeImage;
 
 
@@ -34,6 +34,7 @@ public class AutoDialogue : MonoBehaviour
         textName.text = string.Empty;
         personajeImage = npcHablando.GetComponent<Image>().sprite;
         pnj.gameObject.SetActive(false);
+        TimelineActivator.play = false;
     }
 
     // Update is called once per frame

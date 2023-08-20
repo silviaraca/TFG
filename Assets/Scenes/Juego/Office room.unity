@@ -212,7 +212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207315922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.2, y: -21.9, z: -10}
+  m_LocalPosition: {x: -29, y: -19, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.x
-      value: 0.61463386
+      value: 0.36265492
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.y
@@ -322,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.x
-      value: 0.027197689
+      value: 0.017118447
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.y
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426824758}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
   m_Name: 
@@ -419,15 +419,35 @@ MonoBehaviour:
   textoE: {fileID: 1830551375}
   panel: {fileID: 1103873160}
   move: {fileID: 1860496283}
-  playerExistente: {fileID: 0}
+  playerExistente: {fileID: 1860496285}
   textComponent: {fileID: 64510945}
   textName: {fileID: 2144706058}
   sentences:
   - 'Are you the new one? '
   - Wish you the best
+  - Is it very dangerous?
+  - Dracula is a being far older and more powerful than you could ever imagine. Over
+    the centuries, he has amassed an unparalleled ability to manipulate and seduce
+    those around him.
+  - His agenda is dark and his thirst for power is unquenchable.
+  - Isn't he just a vampire... like you?
+  - ' Dracula goes beyond what any mortal or even vampire can comprehend. He is not
+    just a blood predator; he is a being who has mastered the art of influence and
+    manipulation on a global scale. '
+  - ' His influence reaches to the highest echelons of society, and he has woven
+    a web of twisted allegiances that allow him to move in the shadows undetected.'
+  - I understand the gravity of the situation, Varney. I will not take this assignment
+    lightly.
   names:
-  - Fredrick
-  - Fredrick
+  - Varney
+  - Varney
+  - Me
+  - Varney
+  - Varney
+  - Me
+  - Varney
+  - Varney
+  - Me
   textSpeed: 0
 --- !u!1 &501585686
 GameObject:
@@ -3191,7 +3211,7 @@ MonoBehaviour:
   textoE: {fileID: 1830551375}
   panel: {fileID: 1103873160}
   move: {fileID: 1860496283}
-  playerExistente: {fileID: 0}
+  playerExistente: {fileID: 1860496285}
   textComponent: {fileID: 64510945}
   textName: {fileID: 2144706058}
   sentences:
@@ -3241,9 +3261,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Size.x
+      value: 0.17462115
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0955624
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00845518
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.06557414
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 5654485413541784259, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Name
-      value: NPC
+      value: Varney
       objectReference: {fileID: 0}
     - target: {fileID: 6204242264757187170, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.x
@@ -3263,19 +3319,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.x
-      value: 0.31032532
+      value: 0.27184087
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.y
-      value: 0.386633
+      value: 0.32249206
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.x
-      value: 0.05008046
+      value: 0.022285938
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.y
-      value: -0.04347463
+      value: -0.079821184
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -3347,7 +3407,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
-    - {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
 --- !u!1 &1657890089
 GameObject:
@@ -3360,8 +3419,9 @@ GameObject:
   - component: {fileID: 1657890090}
   - component: {fileID: 1657890092}
   - component: {fileID: 1657890091}
+  - component: {fileID: 1657890093}
   m_Layer: 0
-  m_Name: Floor decor
+  m_Name: Wall Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3875,6 +3935,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1657890093
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657890089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1689042666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,8 +4562,8 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!68 &1689042670
-EdgeCollider2D:
+--- !u!19719996 &1689042670
+TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4500,22 +4576,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -2.8852243, y: -1.2653053}
-  - {x: -2.7160463, y: -1.2761939}
-  - {x: -2.7202325, y: -0.14321494}
-  - {x: -2.0822086, y: -0.14570817}
-  - {x: -2.0864255, y: 0.16589563}
-  - {x: -0.98250574, y: 0.15256973}
-  - {x: -0.98212945, y: -0.14524442}
-  - {x: -0.31116492, y: -0.17394245}
-  - {x: -0.3145916, y: -1.5919694}
-  - {x: -2.881514, y: -1.5990072}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1001 &1757930988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4673,6 +4735,7 @@ GameObject:
   - component: {fileID: 1829447751}
   - component: {fileID: 1829447753}
   - component: {fileID: 1829447752}
+  - component: {fileID: 1829447754}
   m_Layer: 0
   m_Name: Decor Transparent
   m_TagString: Untagged
@@ -5138,6 +5201,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1829447754
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829447750}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!114 &1830551375 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5054287904887673338, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
@@ -5158,7 +5237,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5054287906517754304, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_SortingOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754312, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_Name
@@ -5178,11 +5257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.2
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.9
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5218,7 +5297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754319, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: speed
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754319, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: startingPosition
@@ -5266,11 +5345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.2
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -21.9
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5428,7 +5507,7 @@ PrefabInstance:
       objectReference: {fileID: 621357198}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: Office Aisle
+      value: P. House
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE
@@ -5438,6 +5517,14 @@ PrefabInstance:
       propertyPath: playerStorage
       value: 
       objectReference: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: playerPosition.x
+      value: -129.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: playerPosition.y
+      value: -25.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4950456147939579461, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: player
       value: 
@@ -5505,6 +5592,22 @@ PrefabInstance:
     - target: {fileID: 5893120099755946316, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_Name
       value: Puerta
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491208812465516899, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1191034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491208812465516899, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: m_Size.y
+      value: 5.6969585
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491208812465516899, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.059551746
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491208812465516899, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.63472414
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5893120099755946311, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}

@@ -25910,7 +25910,7 @@ PrefabInstance:
       objectReference: {fileID: 1501922218}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: P. House
+      value: P. House No Garlic
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE

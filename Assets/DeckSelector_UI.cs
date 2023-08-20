@@ -10,7 +10,7 @@ public class DeckSelector_UI : MonoBehaviour
 
     void Start()
     {
-        deckSelectorPanel.SetActive(true);
+        deckSelectorPanel.SetActive(false);
     }
 
 
