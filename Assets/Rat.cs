@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+    public Dialogue dialogue1;
+    public Dialogue dialogue2;
     private bool activeE;
     private Player player;
     private string rat;
@@ -27,6 +29,19 @@ public class Rat : MonoBehaviour
             PlayerPrefs.SetString("RatSecretary", rat);
             PlayerPrefs.Save();
         }
+        
+        //Si aún no se ha hecho lo del café
+        if(!Ratonella.machine)
+        {
+            dialogue1.enabled = true;
+            dialogue2.enabled = false;
+        }
+        else //Si se ha hecho lo del café
+        {
+            dialogue1.enabled = false;
+            dialogue2.enabled = true;
+        }
+
     }
 
      private void OnTriggerEnter2D(Collider2D collision)

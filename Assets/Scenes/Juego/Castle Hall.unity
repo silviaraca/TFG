@@ -5248,7 +5248,7 @@ MonoBehaviour:
   - Gossiping around the castle I found something like a diary.
   - Apparently it belongs to Dracula, and I believe it has information that may be
     useful to you.
-  - Great! Then give it to me
+  - Great! Then tell me about that information
   - Not so easy mate, you have to help me first
   - In this town nobody gives things for free...
   - As far as I can see, you can go to the other side with ease. I need you to look
@@ -5290,6 +5290,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a921bf7fae60d4d9f652e2a13cc464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue1: {fileID: 1143210932}
+  dialogue2: {fileID: 0}
+--- !u!114 &1143210934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143210931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 964970560}
+  panel: {fileID: 410873757}
+  move: {fileID: 964970561}
+  playerExistente: {fileID: 964970559}
+  textComponent: {fileID: 410873756}
+  textName: {fileID: 410873755}
+  sentences:
+  - So... you just wanted a coffee?
+  - I am sure that what my other self needed was some time to relax and free time.
+  - The good thing is that you helped me, so now I can tell you all I know about
+    Dracula
+  - Apparently, Dracula has been trying to disconnect himself from the human world
+    in order to regain self-awareness and convince the rest of the beings in this
+    world to do the same.
+  - He wants us to join him and gain strength against the other world to become as
+    powerful again as Dracula once was.
+  - And how can I stop him?
+  - 'In his diary, he mentions that he was formerly attacked with a wooden stake
+    and that it almost killed him. '
+  - Maybe you can try to get one, I think you can find one in the trees outside the
+    castle.
+  - Great, anything else?
+  - He also talks about a horse cart, maybe Van Helsin can give you more information
+    about that.
+  - Thank you! I'll ask him
+  - Good luck
+  names:
+  - Me
+  - Ratonella
+  - Ratonella
+  - Ratonella
+  - Ratonella
+  - Me
+  - Ratonella
+  - Ratonella
+  - Me
+  - Ratonella
+  - Me
+  - Ratonella
+  textSpeed: 0
 --- !u!1 &1264863798
 GameObject:
   m_ObjectHideFlags: 0
