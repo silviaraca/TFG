@@ -60,9 +60,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Juego/Rand House OS.unity
     guid: 6bc8905f64567474d899e81c3cae8290
   - enabled: 1
-    path: Assets/Scenes/Juego/P. House No Garlic.unity
-    guid: c4e91bda23ffb824db4008fb04818d41
-  - enabled: 1
     path: Assets/Scenes/Juego/Office room.unity
     guid: d5a0a73c6f338d04f93f0413b7628518
   - enabled: 1
@@ -74,4 +71,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Estrategia.unity
     guid: f322b19390cc36d449b7f2582681ae7e
+  - enabled: 1
+    path: Assets/Scenes/Juego/P. House1.unity
+    guid: e4b88d47e85ff2e47a7bff3d316e4866
+  - enabled: 1
+    path: Assets/Scenes/Juego/P. House2.unity
+    guid: c4e91bda23ffb824db4008fb04818d41
+  - enabled: 1
+    path: Assets/Scenes/Juego/Town2.unity
+    guid: a217c6b074e40f64890294f0b5af62f1
   m_configObjects: {}

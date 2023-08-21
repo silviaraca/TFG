@@ -391,11 +391,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
-  panel: {fileID: 0}
+  panel: {fileID: 1263581649}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
-  textComponent: {fileID: 0}
-  textName: {fileID: 0}
+  textComponent: {fileID: 786223402}
+  textName: {fileID: 529913461}
   sentences:
   - '*brrrr* *brrrrr* *metal sound*'
   - Here it is
@@ -2812,11 +2812,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
-  panel: {fileID: 0}
+  panel: {fileID: 1263581649}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
-  textComponent: {fileID: 0}
-  textName: {fileID: 0}
+  textComponent: {fileID: 786223402}
+  textName: {fileID: 529913461}
   sentences:
   - Sorry, do you know if there is any rat over here?
   - You are looking for Ratonella, aren't you?

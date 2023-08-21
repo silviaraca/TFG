@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7335622464036899413}
   - component: {fileID: 7335622464036899418}
   - component: {fileID: 7335622464036899419}
+  - component: {fileID: 5422023119307393758}
   m_Layer: 0
   m_Name: Dialogue Activator
   m_TagString: Untagged
@@ -72,7 +73,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 0}
+  pnj: {fileID: 0}
   move: {fileID: 0}
+  playerExistente: {fileID: 0}
+  npcHablando: {fileID: 0}
   textComponent: {fileID: 0}
   textName: {fileID: 0}
   lines:
@@ -84,3 +88,17 @@ MonoBehaviour:
   - Me
   - Me
   textSpeed: 0
+  tl: {fileID: 0}
+  personajeImage: {fileID: 0}
+--- !u!114 &5422023119307393758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335622464036899416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dcf7fee49825c74390a52f65e6f3be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

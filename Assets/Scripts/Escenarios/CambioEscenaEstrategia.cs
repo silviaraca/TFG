@@ -42,6 +42,10 @@ public class CambioEscenaEstrategia : MonoBehaviour
      public void cargaRPG(){
           string escenaRPG = PlayerPrefs.GetString("EscenaRPG");
           string escena = JsonConvert.DeserializeObject<string>(escenaRPG);
-          cargar.load(escena);
+          string escena2 = escena;
+            if(PlayerPrefs.HasKey(escena)) {
+                escena2 = PlayerPrefs.GetString(escena);
+            }
+            cargar.load(escena2);
      }
 }    

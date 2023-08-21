@@ -20,8 +20,13 @@ public class CambioEscena : MonoBehaviour
    }
 
    private void Update(){
-        if(usable && Input.GetKeyDown(KeyCode.E))
-            cargar.load(escena);
+        if(usable && Input.GetKeyDown(KeyCode.E)){
+            string escena2 = escena;
+            if(PlayerPrefs.HasKey(escena)) {
+                escena2 = PlayerPrefs.GetString(escena);
+            }
+            cargar.load(escena2);
+        }
    }
    
    private void OnTriggerEnter2D(Collider2D collision)

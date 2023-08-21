@@ -57,6 +57,7 @@ public class AutoDialogue : MonoBehaviour
             else
             {
                 StopAllCoroutines();
+                pnj.gameObject.SetActive(false);
                 textComponent.text = lines[index];
             }
         }
@@ -100,6 +101,7 @@ public class AutoDialogue : MonoBehaviour
             textComponent.text = string.Empty;
             textName.text = string.Empty;
             TimelineActivator.play = true;
+            pnj.gameObject.SetActive(false);
             Destroy(this.gameObject);
         }
     }
