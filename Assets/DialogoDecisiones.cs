@@ -148,6 +148,7 @@ public class DialogoDecisiones : MonoBehaviour
         decision = false;
         //Invoca a la estrategia
         cargar.cargaEstrategia();
+        
     }
     public void decision2(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
@@ -206,6 +207,31 @@ public class DialogoDecisiones : MonoBehaviour
             textComponent.text = sentences[index];
           
         }
+    }
+
+    public void decision1_Reinfield(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        //Invoca a la estrategia
+        cargar.cargaEstrategia();
+
+        if(textComponent.text == sentences[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            
+            //textName.text = names[index];
+            StopAllCoroutines();
+            textComponent.text = sentences[index];
+        }
+        
+    }
+    public void decision2_Reinfield(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        BotonDecision1.gameObject.SetActive(false);
+        BotonDecision2.gameObject.SetActive(false);
+        
     }
 
 }
