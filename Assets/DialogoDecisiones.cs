@@ -213,6 +213,7 @@ public class DialogoDecisiones : MonoBehaviour
         decision = false;
         //Invoca a la estrategia
         cargar.cargaEstrategia();
+        Debug.Log("Funciona!!");
 
         if(textComponent.text == sentences[index])
         {
