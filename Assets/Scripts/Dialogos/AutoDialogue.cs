@@ -20,10 +20,10 @@ public class AutoDialogue : MonoBehaviour
     public float textSpeed;
  
     private int index;
-    private bool activeE;
+    private bool activeE, dialogue = false;
     private Player player;
     public TimelineActivator tl;
-    [SerializeField] private Sprite personajeImage;
+    [SerializeField] private Sprite personajeImage = null;
 
 
     // Start is called before the first frame update
@@ -32,9 +32,11 @@ public class AutoDialogue : MonoBehaviour
         panel.gameObject.SetActive(false);
         textComponent.text = string.Empty;
         textName.text = string.Empty;
-        personajeImage = npcHablando.GetComponent<Image>().sprite;
         pnj.gameObject.SetActive(false);
         TimelineActivator.play = false;
+        dialogue = false;
+        if(npcHablando.GetComponent<Image>() != null)
+            personajeImage = npcHablando.GetComponent<Image>().sprite;
     }
 
     // Update is called once per frame
@@ -47,8 +49,9 @@ public class AutoDialogue : MonoBehaviour
             StartDialogue(); 
             textName.text = names[index];
             activeE = false;
+            dialogue = true;
         }
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E))
+        if(dialogue && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E)))
         {
             if(textComponent.text == lines[index])
             {
@@ -61,11 +64,11 @@ public class AutoDialogue : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
-        if(textName.text != string.Empty && textName.text != "Me"){
+        if(dialogue && textName.text != string.Empty && textName.text != "Me" && personajeImage != null){
             pnj.sprite = personajeImage;
             pnj.gameObject.SetActive(true);
         }
-        else if (textName.text != string.Empty){
+        else if (dialogue && textName.text != string.Empty && personajeImage != null){
             pnj.gameObject.SetActive(false);
         }
     }
@@ -102,6 +105,7 @@ public class AutoDialogue : MonoBehaviour
             textName.text = string.Empty;
             TimelineActivator.play = true;
             pnj.gameObject.SetActive(false);
+            dialogue = false;
             Destroy(this.gameObject);
         }
     }

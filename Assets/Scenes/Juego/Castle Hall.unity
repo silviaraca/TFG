@@ -455,6 +455,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c24a4bd8d84d38242aee31ddc135eab9, type: 3}
+    - target: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998481361538263454, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998481361538263454, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 554
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998481361538263454, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 140
+      objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1788,6 +1808,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019018, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432411899398019029, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019030, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
@@ -5139,6 +5163,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 535961246, guid: 8a6e241bcba5bfa4d85c7a7fd2d3b680, type: 3}
+    - target: {fileID: 6486255608185457374, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c24a4bd8d84d38242aee31ddc135eab9, type: 3}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.x
       value: 0.36157227
@@ -5237,8 +5269,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 964970560}
   panel: {fileID: 410873757}
+  pnj: {fileID: 1145870969}
   move: {fileID: 964970561}
   playerExistente: {fileID: 964970559}
+  npcHablando: {fileID: 1143210931}
   textComponent: {fileID: 410873756}
   textName: {fileID: 410873755}
   sentences:
@@ -5286,6 +5320,7 @@ MonoBehaviour:
   - Ratonella
   - Me
   textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!114 &1143210933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5314,8 +5349,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 964970560}
   panel: {fileID: 410873757}
+  pnj: {fileID: 1145870969}
   move: {fileID: 964970561}
   playerExistente: {fileID: 964970559}
+  npcHablando: {fileID: 1143210931}
   textComponent: {fileID: 410873756}
   textName: {fileID: 410873755}
   sentences:
@@ -5352,6 +5389,18 @@ MonoBehaviour:
   - Me
   - Ratonella
   textSpeed: 0
+  personajeImage: {fileID: 0}
+--- !u!114 &1145870969 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 410873754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264863798
 GameObject:
   m_ObjectHideFlags: 0

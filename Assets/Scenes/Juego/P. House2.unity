@@ -251,8 +251,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 473800416}
   panel: {fileID: 1835811868}
+  pnj: {fileID: 1522376164}
   move: {fileID: 943876144}
   playerExistente: {fileID: 1579697571}
+  npcHablando: {fileID: 99516805}
   textComponent: {fileID: 1835811867}
   textName: {fileID: 1835811866}
   sentences:
@@ -271,6 +273,7 @@ MonoBehaviour:
   - Van Helsin
   - Van Helsin
   textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!61 &99516807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3710,6 +3713,17 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1522376164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 1835811865}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1553704708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6557,6 +6571,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3037912675099760093, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -2.5583496

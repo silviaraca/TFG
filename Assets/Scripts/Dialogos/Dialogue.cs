@@ -10,8 +10,10 @@ public class Dialogue : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textoE;
     [SerializeField] private Image panel;
+    [SerializeField] private Image pnj;
     [SerializeField] private Movement move;
     [SerializeField] private Player playerExistente;
+    [SerializeField] private GameObject npcHablando;
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI textName;
     public string[] sentences;
@@ -19,8 +21,9 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     private Scene currentScene;
     private int index;
-    private bool activeE;
+    private bool activeE, dialogue = false;
     private Player player;
+    [SerializeField] private Sprite personajeImage = null;
 
 
     // Start is called before the first frame update
@@ -31,7 +34,11 @@ public class Dialogue : MonoBehaviour
         textComponent.text = string.Empty;
         textName.text = string.Empty;
         currentScene = SceneManager.GetActiveScene ();
+        pnj.gameObject.SetActive(false);
         textSpeed = 0.03f;
+        dialogue = false;
+        if(npcHablando.GetComponent<Image>() != null)
+            personajeImage = npcHablando.GetComponent<Image>().sprite;
         
     }
 
@@ -49,6 +56,7 @@ public class Dialogue : MonoBehaviour
             StartDialogue(); 
             textName.text = names[index];
             activeE = false;
+            dialogue = true;
         }
         else if (currentScene.name == "EstrategiaTuto" && activeE && playerExistente.getActivo().Equals(this.gameObject.name)){
             gameObject.SetActive(true);
@@ -58,8 +66,9 @@ public class Dialogue : MonoBehaviour
             textName.text = names[index];
             activeE = false;
         }
-        if(Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
+        if(dialogue && Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
         {
+            
             if(textComponent.text == sentences[index])
             {
                 NextLine();
@@ -68,8 +77,16 @@ public class Dialogue : MonoBehaviour
             {
                 //textName.text = names[index];
                 StopAllCoroutines();
+                pnj.gameObject.SetActive(false);
                 textComponent.text = sentences[index];
             }
+        }
+        if(dialogue && textName.text != string.Empty && textName.text != "Me" && personajeImage != null){
+            pnj.sprite = personajeImage;
+            pnj.gameObject.SetActive(true);
+        }
+        else if (dialogue && textName.text != string.Empty && personajeImage != null){
+            pnj.gameObject.SetActive(false);
         }
     }
 
@@ -108,6 +125,8 @@ public class Dialogue : MonoBehaviour
             }
             textComponent.text = string.Empty;
             textName.text = string.Empty;
+            dialogue = false;
+            pnj.gameObject.SetActive(false);
         }
     }
 
