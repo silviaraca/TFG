@@ -25,13 +25,12 @@ public class Rat : MonoBehaviour
         if(activeE)
         {
             rat = "done";
-            string ratData = JsonUtility.ToJson(rat);
             PlayerPrefs.SetString("RatSecretary", rat);
             PlayerPrefs.Save();
         }
         
         //Si aún no se ha hecho lo del café
-        if(!Ratonella.machine)
+        if(!PlayerPrefs.HasKey("CompletaRat"))
         {
             dialogue1.enabled = true;
             dialogue2.enabled = false;

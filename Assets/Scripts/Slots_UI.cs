@@ -51,14 +51,4 @@ public class Slots_UI : MonoBehaviour
         player.deck.Remove(nombreCarta);
         UpdateUI();
     }
-
-    private void OnDestroy()
-    {
-        // Darse de baja de los eventos cuando el objeto se destruye
-        if (associatedSlot != null)
-        {
-            associatedSlot.OnCountAddedChanged -= UpdateCountAddedText;
-            associatedSlot.OnCountRemainingChanged -= UpdateCountRemainingText;
-        }
-    }
 }

@@ -9,26 +9,32 @@ using TMPro;
 public class Machine : MonoBehaviour
 {
     public Player player;
-    public TextMeshProUGUI textoE;
     private bool activeE;
-    private string ratData;
+    private bool machine;
     public Dialogue dialogueScript;
 
     void Start()
     {
-        ratData = PlayerPrefs.GetString("RatSecretary");
-       dialogueScript.enabled = false;
+        dialogueScript.enabled = false;
     }
 
     void Update()
     {
-        if(ratData == "done")
+        if(PlayerPrefs.HasKey("ActivaMachine"))
         {
             dialogueScript.enabled = true;
             if(activeE && Input.GetKeyDown(KeyCode.E))
             {
-                Ratonella.machine = true;
+                string activa = "done";
+                PlayerPrefs.SetString("Machine", activa);
+                PlayerPrefs.Save();
+                PlayerPrefs.DeleteKey("ActivaMachine");
+                activeE = false;
             }
+        }
+        if(dialogueScript.indexFin()){
+            dialogueScript.enabled = false;
+            print("a");
         }
     }
 
@@ -36,7 +42,6 @@ public class Machine : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
-            textoE.gameObject.SetActive(true);
             activeE = true; 
         }                   
     }

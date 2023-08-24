@@ -9,9 +9,7 @@ public class Slot : MonoBehaviour
     public int max; // Num max de items permitidos
     public int count;
     public CollectableType type;
-    public Sprite icon; 
-    public event Action<int> OnCountAddedChanged;
-    public event Action<int> OnCountRemainingChanged;
+    public Sprite icon;
     public int index;
     public string nombre;
 
