@@ -392,8 +392,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
   panel: {fileID: 1263581649}
+  pnj: {fileID: 0}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
+  npcHablando: {fileID: 0}
   textComponent: {fileID: 786223402}
   textName: {fileID: 529913461}
   sentences:
@@ -403,6 +405,7 @@ MonoBehaviour:
   - Machine
   - Me
   textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!114 &253639035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2053772864}
-  textoE: {fileID: 1796368978}
   dialogueScript: {fileID: 253639034}
 --- !u!61 &253639036
 BoxCollider2D:
@@ -2688,21 +2690,45 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.x
-      value: 0.31217778
+      value: 0.4622271
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.y
-      value: 0.2500041
+      value: 0.3887995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0478388
+      value: 0.027185857
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.y
-      value: -0.14099678
+      value: -0.21039447
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -2766,6 +2792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+    - {fileID: 1806194291649243179, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
 --- !u!1 &1313960580 stripped
 GameObject:
@@ -2786,8 +2813,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
   panel: {fileID: 1263581649}
+  pnj: {fileID: 0}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
+  npcHablando: {fileID: 0}
   textComponent: {fileID: 786223402}
   textName: {fileID: 529913461}
   sentences:
@@ -2799,6 +2828,7 @@ MonoBehaviour:
   - Receptionist
   - Receptionist
   textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!114 &1313960586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2813,8 +2843,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
   panel: {fileID: 1263581649}
+  pnj: {fileID: 0}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
+  npcHablando: {fileID: 0}
   textComponent: {fileID: 786223402}
   textName: {fileID: 529913461}
   sentences:
@@ -2845,6 +2877,7 @@ MonoBehaviour:
   - Ratonella
   - Me
   textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!114 &1313960587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2876,8 +2909,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
   panel: {fileID: 1263581649}
+  pnj: {fileID: 0}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
+  npcHablando: {fileID: 0}
   textComponent: {fileID: 786223402}
   textName: {fileID: 529913461}
   sentences:
@@ -2887,6 +2922,7 @@ MonoBehaviour:
   - Ratonella
   - Ratonella
   textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!1 &1409284520
 GameObject:
   m_ObjectHideFlags: 0
