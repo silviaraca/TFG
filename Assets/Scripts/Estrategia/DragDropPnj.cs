@@ -44,7 +44,7 @@ public class DragDropPnj : MonoBehaviour
                     Casilla casAct = pnj.getCasAct();
                     casAct.vacia = true;
                     pnj.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
-                    pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 70, cas.transform.position.z+10);
+                    pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 40, cas.transform.position.z+10);
                     pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
                     cas.pnj = pnj;
                     cas.vacia = false;
@@ -61,7 +61,7 @@ public class DragDropPnj : MonoBehaviour
                         cas.pnj = null;
                     }
                     pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
-                    pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 70, cas.getCasAnt().transform.position.z+10);
+                    pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
                     pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
                     pnj.cas.vacia = true;
                     pnj.cas.pnj = null;
@@ -86,7 +86,7 @@ public class DragDropPnj : MonoBehaviour
                         cas.pnj = null;
                     }
                     pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
-                    pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 70, cas.getCasAnt().transform.position.z+10);
+                    pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
                     pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
                     pnj.cas.vacia = true;
                     pnj.cas.pnj = null;

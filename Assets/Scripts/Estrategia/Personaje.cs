@@ -12,6 +12,8 @@ public class Personaje : MonoBehaviour
     private bool ini = true;
     private GameManagerE gm;
     private Carta card;
+    public int turnoEfectoFin = 0;
+    public string efecto;
 
 
     void Start(){
@@ -55,6 +57,26 @@ public class Personaje : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    
+    public void activaEfectoFin(){
+        if(efecto == "CuraArea"){
+            int posAux;
+            int pos = cas.getPosX()+cas.getPosY()*8;
+            if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
+                gm.tablero[posAux].pnj.danar(-1);
+            }
+            if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
+            gm.tablero[posAux].pnj.danar(-1);
+            }
+            if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
+                gm.tablero[posAux].pnj.danar(-1);
+            }
+            if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
+                gm.tablero[posAux].pnj.danar(-1);
+            }
+        }
     }
 
 

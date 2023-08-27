@@ -11,7 +11,7 @@ public class GameManagerE : MonoBehaviour
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
   public GameObject Canvas, Cards, Personajes;
-  public GameObject cardAldeano, cardAgua, cardEstaca; //Objetos de las cartas que existen ya, añadir conforme 
+  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina; //Objetos de las cartas que existen ya, añadir conforme 
   public GameObject characterZombie; //Lo de arriba pero enemigos 
   public Transform[] espacioMano;
   public Casilla[] tablero;
@@ -65,6 +65,7 @@ public void Start(){
     listaCartas.Add("Agua");
     listaCartas.Add("Estaca");
     listaCartas.Add("Estaca");
+    listaCartas.Add("Mina");
   }
 
   //Esto se tomará de una lista de enemigos según el contrincante
@@ -125,6 +126,7 @@ public void Start(){
           textoFase.text = "Fase Actual: " + fase;
         }
         else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
+          activaFinTuro(fase);
           fase++;
           textoFase.text = "Fase Actual: " + fase;
           for(int i = 0; i < listaPnj.Count; i++){
@@ -293,12 +295,20 @@ public void Start(){
     }
   }
 
+  private void activaFinTuro(int f){
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].turnoEfectoFin == f){
+        listaPnj[i].activaEfectoFin();
+      }
+    }
+  }
+
   private void spawnEnemigoScripted(int pos){
     GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
     listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
     listaPnjEnemigos.Remove(randEnemigo);
     randEnemigo.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
-    randEnemigo.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 70, tablero[pos].transform.position.z+10);
+    randEnemigo.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 40, tablero[pos].transform.position.z+10);
     randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
     tablero[pos].pnj = randEnemigo.GetComponent<Personaje>();
     tablero[pos].vacia = false;
@@ -306,7 +316,7 @@ public void Start(){
   private void spawnAliadoScripted(int pos){
     listaPnj.Add(aliado.GetComponent<Personaje>());
     aliado.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
-    aliado.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 70, tablero[pos].transform.position.z+10);
+    aliado.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 40, tablero[pos].transform.position.z+10);
     aliado.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
     tablero[pos].pnj = aliado.GetComponent<Personaje>();
     tablero[pos].vacia = false;
@@ -338,6 +348,9 @@ public void Start(){
       }
       else if(listaCartas[i] == "Estaca"){
         cartaAnadida = Instantiate(cardEstaca);
+      }
+      else if(listaCartas[i] == "Mina"){
+        cartaAnadida = Instantiate(cardMina);
       }
       cartaAnadida.transform.SetParent(Cards.transform, false);
       mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());
@@ -419,7 +432,7 @@ private void mueveEnemigo(Personaje pnj){
             cas.pnj = null;
         }
         pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false);
-        pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 70, cas.getCasAnt().transform.position.z+10);
+        pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
         pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
         pnj.cas.vacia = true;
         pnj.cas.pnj = null;
@@ -554,7 +567,7 @@ private void mueveHacia(int posX, int posY, Personaje pnj){
     casillaMueve.vacia = false;
     casillaMueve.pnj = pnj;
     pnj.transform.SetParent(filasPnj[casillaMueve.fila].transform, false);
-    pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 70, casillaMueve.transform.position.z+10);
+    pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 40, casillaMueve.transform.position.z+10);
     pnj.setMovAct(pnj.getMovAct()-casillaMueve.getConsumeMov());
   }
 }
@@ -567,7 +580,7 @@ private void spawnEnemigo(){
     xCas = Random.Range(0, 64);
   }
   randEnemigo.transform.SetParent(filasPnj[tablero[xCas].fila].transform, false);
-  randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 70, tablero[xCas].transform.position.z+10);
+  randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 40, tablero[xCas].transform.position.z+10);
   randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[xCas]);
   tablero[xCas].pnj = randEnemigo.GetComponent<Personaje>();
   tablero[xCas].vacia = false;
