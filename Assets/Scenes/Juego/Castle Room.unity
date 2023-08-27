@@ -237,7 +237,7 @@ Transform:
   - {fileID: 577805699}
   - {fileID: 1882976562}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46558651
 GameObject:
@@ -6820,7 +6820,7 @@ PrefabInstance:
       objectReference: {fileID: 935270688}
     - target: {fileID: 5893120099755946313, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946313, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6885,9 +6885,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: cargar
+      value: 
+      objectReference: {fileID: 1854378978}
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: textoE
+      value: 
+      objectReference: {fileID: 872773949}
+    - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: playerStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
+    - target: {fileID: 4950456147939579461, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 935270688}
     - target: {fileID: 5893120099755946313, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5893120099755946313, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6946,7 +6962,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7031,12 +7047,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5654485413541784259, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Name
-      value: Lilith
+      value: Elizabeth
       objectReference: {fileID: 0}
     - target: {fileID: 6204242264757187170, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -492254270, guid: 1998f601546ebda44a7da9b78ee9a398, type: 3}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -15
@@ -7174,9 +7194,11 @@ MonoBehaviour:
   panel: {fileID: 650574509}
   move: {fileID: 1829628329}
   cargar: {fileID: 568866898}
-  listaMomentoDecisiones: 
-  listaDecisiones1: []
-  listaDecisiones2: []
+  listaMomentoDecisiones: 0c000000
+  listaDecisiones1:
+  - I'll fight
+  listaDecisiones2:
+  - Wait
   BotonDecision1: {fileID: 650574506}
   BotonDecision2: {fileID: 650574504}
   TextoBotonDecision1: {fileID: 650574505}
@@ -7185,9 +7207,43 @@ MonoBehaviour:
   textComponent: {fileID: 650574508}
   textName: {fileID: 650574507}
   sentences:
-  - 
+  - Ah, the bold hero arrives, seeking to challenge the Count himself. How amusing.
+    You think you can defeat him?
+  - What? Who are you?
+  - My name is Elizabeth Bathory, also known as the "Blood Countess",  a name that
+    evokes both fascination and dread in the annals of history
+  - 'My actions, though shrouded in legend and rumour, have forever linked my name
+    with unspeakable deeds. '
+  - Whispers of my predilection for young girls and the belief that their blood could
+    grant me eternal youth have fuelled tales of cruelty that haunt the minds of
+    those who hear them.
+  - History may have distorted my story, weaving a tapestry of half-truths and exaggerations,
+    but the weight of my actions is undeniable.
+  - The cries of those who suffered at my hands, real or imagined, linger like a
+    relentless specter in the corridors of my mind.
+  - I understand you're here to stop me from putting an end to Dracula's plan, right?
+  - You are naive, aren't you? Dracula's plan is far greater than you can comprehend.
+    He seeks to reshape the world, and I have joined his cause.
+  - I won't let his darkness consume both worlds. Innocent lives are at stake.
+  - You believe yourself righteous, but you lack understanding. Dracula's vision
+    is beyond mortality's limitations. Join us, and you'll see the truth.
+  - ' I''ll never align with someone who revels in darkness and death.'
+  - Very well, then. If you're so determined to stand against us, prove your strength.
+    Defeat me, and maybe, just maybe, I'll let you continue on your futile quest.
   names:
-  - 
+  - Elizabeth
+  - Me
+  - Elizabeth
+  - Elizabeth
+  - Elizabeth
+  - Elizabeth
+  - Elizabeth
+  - Me
+  - Elizabeth
+  - Me
+  - Elizabeth
+  - Me
+  - Elizabeth
   textSpeed: 0
 --- !u!1 &577805698
 GameObject:
@@ -8119,6 +8175,38 @@ PrefabInstance:
     - target: {fileID: 4878753816372788900, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_Name
       value: Dialogue Decisiones
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812012496163, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568866900}
+    - target: {fileID: 7609963812012496163, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: decision2_Reinfield
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 568866900}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: decision1_Reinfield
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogoDecisiones, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
@@ -12168,7 +12256,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1607021014
 MonoBehaviour:
@@ -12221,7 +12309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalScale.x
@@ -12319,6 +12407,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4747663, y: 6.4166527}
   m_EdgeRadius: 0
+--- !u!114 &1854378978 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4950456147939579461, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+  m_PrefabInstance: {fileID: 239189772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854378975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fad7f13bd0ca23469cb9649e646d546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1882976561
 GameObject:
   m_ObjectHideFlags: 0

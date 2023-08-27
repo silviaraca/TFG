@@ -5266,8 +5266,38 @@ MonoBehaviour:
   textComponent: {fileID: 1328808458}
   textName: {fileID: 1328808457}
   sentences:
-  - Cucuuu
+  - Excuse me, sir. I've heard stories about what happened here with Dracula years
+    ago. Do you have any information on Dracula?
+  - Aye, I was there that fateful day. The memories are etched in my mind, like a
+    curse I can never shake.
+  - I need to have information about him that can weaken him.
+  - All I can tell you is how they attacked the horse-drawn wagon with Dracula in
+    it.
+  - We carried Dracula hidden in his coffin to his castle. He promised to reward
+    us with a good sum of money.
+  - Suddenly bandits came out of nowhere and tried to attack us. I ran away to protect
+    my life
+  - What about Dracula?
+  - I understand that his fate was fatal. The bandits found his coffin and opened
+    it thinking that we would keep great rewards there.
+  - Unfortunately for Dracula, we were attacked at dusk, but there was still plenty
+    of light.
+  - ' I am sure that if the attack had taken place at nightfall, Dracula would have
+    been able to defend himself better.'
+  - ' Great, thanks for the information'
+  - ' Here, perhaps this will help you stop the madness of this new face of Dracula.'
   names:
+  - Me
+  - Peddler
+  - Me
+  - Peddler
+  - Peddler
+  - Peddler
+  - Me
+  - Peddler
+  - Peddler
+  - Peddler
+  - Me
   - Peddler
   textSpeed: 0
   personajeImage: {fileID: 0}
