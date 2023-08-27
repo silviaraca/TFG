@@ -253,6 +253,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &25277595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 25277591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &114322917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3240995623381409134, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
@@ -268,6 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 135677768}
   - component: {fileID: 135677767}
+  - component: {fileID: 135677769}
   m_Layer: 0
   m_Name: Treasure Box 2
   m_TagString: Untagged
@@ -316,6 +328,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &135677769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135677766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 207703888}
+  panel: {fileID: 25277594}
+  pnj: {fileID: 25277595}
+  move: {fileID: 564258505}
+  playerExistente: {fileID: 1367303288}
+  npcHablando: {fileID: 135677766}
+  textComponent: {fileID: 25277593}
+  textName: {fileID: 25277592}
+  sentences:
+  - I found a card!
+  - '"This card represents a small vial of blood, a treasure prized by vampires and
+    a symbol of their power and eternal life." '
+  - '"Vital to the undead, blood is said to grant strength and rejuvenation to those
+    who consume it. The Vial of Blood is an object of great value in the battle between
+    darkness and light."'
+  - '"It can be used as a strategic tool to strengthen allies or weaken enemies.
+    In the right hands, it can be a valuable resource, but also a disturbing reminder
+    of the secrets and evil that lurk in the shadows."'
+  names:
+  - Me
+  - Me
+  - Me
+  - Me
+  textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!1001 &207639982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1020,8 +1069,8 @@ MonoBehaviour:
   - The name itself has its origins in folklore, derived from the Slavic term "nosufur-atu,"
     which means "plague-carrier" or "undead." A fitting label for one like me.
   - Thank you for taking the time to speak with me, Nosferatu.
-  - ' The pleasure is mine. Farewell, and remember that the shadows hold secrets
-    that even I cannot fully comprehend.'
+  - The pleasure is mine. Farewell, and remember that the shadows hold secrets that
+    even I cannot fully comprehend.
   names:
   - Me
   - Nosferatu
@@ -1045,6 +1094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746057804}
   - component: {fileID: 746057803}
+  - component: {fileID: 746057805}
   m_Layer: 0
   m_Name: Treasure Box 1
   m_TagString: Untagged
@@ -1093,6 +1143,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &746057805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746057802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 207703888}
+  panel: {fileID: 25277594}
+  pnj: {fileID: 25277595}
+  move: {fileID: 564258505}
+  playerExistente: {fileID: 1367303288}
+  npcHablando: {fileID: 746057802}
+  textComponent: {fileID: 25277593}
+  textName: {fileID: 25277592}
+  sentences:
+  - There is a card in here
+  - '"This card depicts the iconic coffin in which Dracula rests during the day.
+    By exposing his proximity to his daytime refuge, this card gives you a strategic
+    advantage in the fight against the Count of Darkness."'
+  - '"By activating this card, you can temporarily weaken Dracula, reducing his strength
+    and ability to attack. His connection to his coffin is an Achilles'' heel that
+    you can exploit to gain the upper hand on the battlefield. "'
+  - '"However, be aware that Dracula is cunning and may look for ways to recover.
+    Use this card wisely and always keep an eye on the shadows, as his machinations
+    can be unpredictable and dangerous. shadows."'
+  names:
+  - Me
+  - Me
+  - Me
+  - Me
+  textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!1 &945497608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1298,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119062072
 GameObject:
@@ -48650,7 +48738,7 @@ Transform:
   - {fileID: 1888683021}
   - {fileID: 2114248715}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1981702763
 PrefabInstance:
