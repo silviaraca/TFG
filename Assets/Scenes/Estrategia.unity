@@ -7544,6 +7544,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardTumba
+      value: 
+      objectReference: {fileID: 2868205627103406734, guid: 8d8a07a143583334f8543d3b3c29994a, type: 3}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: pasaTurno
       value: 0
       objectReference: {fileID: 0}
@@ -7555,6 +7559,10 @@ PrefabInstance:
       propertyPath: Personajes
       value: 
       objectReference: {fileID: 1096882892}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardSangre
+      value: 
+      objectReference: {fileID: 2868205627103406734, guid: 54f8f51d822ec1e4b810de686f826f4e, type: 3}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: draggingPos
       value: 
