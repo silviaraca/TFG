@@ -121,27 +121,29 @@ public class DragDropPnj : MonoBehaviour
 
     private void pintaCas(int pos, int mov, int rang){
         int posAux;
-        if(mov > 0){
-            if(((posAux = pos+1)%8) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov, rang);
+        int movAux = mov;
+        if(movAux > 0){
+            if(((posAux = pos+1)%8) != 0 && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(posAux, rang, gm.tablero[posAux]);
             }
-            if((((posAux = pos-1)+1) %8) != 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov, rang);
+            if((((posAux = pos-1)+1) %8) != 0 && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(posAux, rang, gm.tablero[posAux]);
             }
-            if((posAux = pos+8) < gm.tablero.Length && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov, rang);
+            if((posAux = pos+8) < gm.tablero.Length && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(posAux, rang, gm.tablero[posAux]);
             }
-            if((posAux = pos-8) >= 0 && gm.tablero[posAux].vacia && !gm.tablero[posAux].pintada){
-                ejecutaPintado(posAux, mov, rang);
+            if((posAux = pos-8) >= 0 && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(posAux, rang, gm.tablero[posAux]);
             }
+
         }
     }
 
@@ -165,7 +167,8 @@ public class DragDropPnj : MonoBehaviour
     }
 
     private void ejecutaPintado(int posAux, int mov, int rang){
-        gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = casMov;
+        if(gm.tablero[posAux].gameObject.GetComponent<Image>().sprite != gm.casVacia)
+            gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = casMov;
         gm.tablero[posAux].pintada = true;
         gm.tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
         pintaCas(posAux, mov-1, rang);

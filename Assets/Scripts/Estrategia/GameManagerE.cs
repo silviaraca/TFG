@@ -11,7 +11,7 @@ public class GameManagerE : MonoBehaviour
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
   public GameObject Canvas, Cards, Personajes;
-  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina; //Objetos de las cartas que existen ya, añadir conforme 
+  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba; //Objetos de las cartas que existen ya, añadir conforme 
   public GameObject characterZombie; //Lo de arriba pero enemigos 
   public Transform[] espacioMano;
   public Casilla[] tablero;
@@ -62,8 +62,8 @@ public void Start(){
     listaCartas.Add("Aldeano");
     listaCartas.Add("Aldeano");
     listaCartas.Add("Agua");
-    listaCartas.Add("Agua");
-    listaCartas.Add("Estaca");
+    listaCartas.Add("Tumba");
+    listaCartas.Add("Sangre");
     listaCartas.Add("Estaca");
     listaCartas.Add("Mina");
   }
@@ -144,6 +144,7 @@ public void Start(){
           if(listaPnjEnemigos.Count > 0){
             spawnEnemigo();
           }
+          transformaPnj();
           turnosParaPerder--;
           fase = 0; //Reinicia fases cuando haya terminado lo anterior
         }
@@ -295,6 +296,23 @@ public void Start(){
     }
   }
 
+  private void transformaPnj(){
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].transformando && listaPnj[i].getContTrans() > 0){
+        listaPnj[i].setContTrans(listaPnj[i].getContTrans() - 1);
+      }
+      else if(listaPnj[i].transformando && listaPnj[i].getContTrans() == 0){
+        listaPnjEnemigosEnTablero.Add(listaPnj[i]);
+        listaPnj[i].enemigo = true;
+        listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+        listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
+        listaPnj[i].transformando = false;
+        listaPnj[i].GetComponent<Image>().color = new Color(255, 0, 100, 255);
+        listaPnj.Remove(listaPnj[i]);
+      }
+    }
+  }
+
   private void activaFinTuro(int f){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].turnoEfectoFin == f){
@@ -352,6 +370,12 @@ public void Start(){
       else if(listaCartas[i] == "Mina"){
         cartaAnadida = Instantiate(cardMina);
       }
+      else if(listaCartas[i] == "Sangre"){
+        cartaAnadida = Instantiate(cardSangre);
+      }
+      else if(listaCartas[i] == "Tumba"){
+        cartaAnadida = Instantiate(cardTumba);
+      }
       cartaAnadida.transform.SetParent(Cards.transform, false);
       mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());
     }
@@ -402,8 +426,6 @@ private void movEnemigos(){
   }
 }
 private void mueveEnemigo(Personaje pnj){
-  pnj.setMovAct(pnj.getMaxMov());
-  pnj.setNumAtaAct(pnj.getNumAta());
   int posIniX, posIniY;
   if(listaPnj.Count > 0){
     while(pnj.getNumAtaAct() > 0){
@@ -463,6 +485,8 @@ private void mueveEnemigo(Personaje pnj){
     mueveHacia(1, 1, pnj);
     desPintaCas();
   }
+  pnj.setMovAct(pnj.getMaxMov());
+  pnj.setNumAtaAct(pnj.getNumAta());
 }
 
 

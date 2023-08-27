@@ -20,8 +20,8 @@ public class Carta : MonoBehaviour
         // DATOS SOBRE LA CARTA EN SI, estos datos se usaran al construir el pnj o definir lo que hace un hechizo
         [SerializeField] private bool personaje; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
         [SerializeField] private bool area, objetivoUnico, hechizoAtaque, hechizoDefensa, hechizoTablero; //Datos sobre las cartas de hechizo
-        [SerializeField] private int ataque, vida, movMax, nAta, rango; //Datos si es personaje
-        [SerializeField] private bool dano, cura; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
+        [SerializeField] private int ataque, vida, movMax, nAta, rango, atMejora, turnosParaTrans; //Datos si es personaje
+        [SerializeField] private bool dano, cura, paraliza, mejoraAtaque, transforma; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
         [SerializeField] private int areaHechizo;
         public bool zoom = false;
     
@@ -74,9 +74,19 @@ public class Carta : MonoBehaviour
         if(dano && pnj.enemigo){
             pnj.danar(ataque);
         }
-        else if(cura && !pnj.enemigo){
+        if(cura && !pnj.enemigo){
             pnj.danar(-ataque);
         }
+        if(paraliza){
+            pnj.paralizar();
+        }
+        if(mejoraAtaque){
+            pnj.subeAtaque(atMejora);
+        }
+        if(transforma && !pnj.transformando){
+            pnj.transformaPnj(turnosParaTrans);
+        }
+
     }
     
 }

@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Personaje : MonoBehaviour
 {
     //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
     [SerializeField] private int vidaMax, ataque, movMax, numAtaques, rango;
     private int movAct, vida, numAtaAct;
-    public bool enemigo, enRango;
+    public bool enemigo, enRango, transformando;
     public Casilla cas;
     private bool ini = true;
     private GameManagerE gm;
     private Carta card;
     public int turnoEfectoFin = 0;
     public string efecto;
+    private int contTransform = -1;
 
 
     void Start(){
@@ -38,6 +40,19 @@ public class Personaje : MonoBehaviour
             this.transform.GetComponentInChildren<HelthBar>().ganaVida(vida, vidaMax);
         }
         return muerto();
+    }
+    public void paralizar(){
+        movAct = 0;
+        numAtaAct = 0;
+    }
+
+    public void subeAtaque(int a){
+        ataque += a;
+    }
+
+    public void transformaPnj(int t){
+        contTransform = t;
+        transformando = true;
     }
 
     private bool muerto(){
@@ -137,5 +152,11 @@ public class Personaje : MonoBehaviour
     }
     public Carta getCarta(){
         return card;
+    }
+    public int getContTrans(){
+        return contTransform;
+    }
+    public void setContTrans(int c){
+        contTransform = c;
     }
 }
