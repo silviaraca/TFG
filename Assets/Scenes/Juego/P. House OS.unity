@@ -2143,6 +2143,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
+--- !u!1 &648105007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3240995623381409134, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+  m_PrefabInstance: {fileID: 922682167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &714868346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2473,6 +2478,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1077803388997037260, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: deckSelectorPanel
+      value: 
+      objectReference: {fileID: 648105007}
     - target: {fileID: 1454827514715767399, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
