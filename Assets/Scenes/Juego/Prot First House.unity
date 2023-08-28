@@ -1353,6 +1353,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5054287906517754312, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
   m_PrefabInstance: {fileID: 239547459}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1048537487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 162071768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118508505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6469,6 +6480,10 @@ PrefabInstance:
       value: Dialogue Activator (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: pnj
+      value: 
+      objectReference: {fileID: 1048537487}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: move
       value: 
       objectReference: {fileID: 2053772863}
@@ -6480,6 +6495,10 @@ PrefabInstance:
       propertyPath: textName
       value: 
       objectReference: {fileID: 1456544440}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: npcHablando
+      value: 
+      objectReference: {fileID: 1981468158}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: textComponent
       value: 

@@ -1395,9 +1395,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room door
       objectReference: {fileID: 0}
+    - target: {fileID: 8491208812465516899, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5893120099755946315, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
     - {fileID: 5893120099755946311, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
+    - {fileID: 8491208812465516899, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
 --- !u!1 &1251410583 stripped
 GameObject:

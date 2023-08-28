@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Juego/Office room.unity
+    guid: f7a536f7f20c21b4a9489b9798257fc5
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -26,9 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Juego/Castle Exterior.unity
     guid: 832cd5e24a84a2847a7c767f079a9027
-  - enabled: 1
-    path: Assets/Scenes/Juego/Dungeon Room.unity
-    guid: 2fd8c543dbcfbf34a83363e041e9e004
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Juego/Castle Hall.unity
     guid: f84bc36c6985eb94fb8145a96a67b9cd

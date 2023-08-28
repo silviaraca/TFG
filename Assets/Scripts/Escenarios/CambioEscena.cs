@@ -13,10 +13,12 @@ public class CambioEscena : MonoBehaviour
    public Cargar cargar;
    public Vector3 playerPosition;
    public VectorPosition playerStorage;
+   public AudioSource audioSource;
    [SerializeField] private string escena;
 
    private void Start(){
         textoE.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
    }
 
    private void Update(){
@@ -24,6 +26,7 @@ public class CambioEscena : MonoBehaviour
             string escena2 = escena;
             if(PlayerPrefs.HasKey(escena)) {
                 escena2 = PlayerPrefs.GetString(escena);
+                audioSource.Play();
             }
             cargar.load(escena2);
         }

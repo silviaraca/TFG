@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public List<string> deck;
     public int numItem;
     public Vector2 playerPosition;
+    public AudioSource audioSource;
     [SerializeField] private TextMeshProUGUI textoE;
     [SerializeField] private string nombreActivo = " ";
 
@@ -17,14 +18,8 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         textoE.gameObject.SetActive(false);
-        //Cargar inventario
-        /*if (PlayerPrefs.HasKey("InventoryData"))
-        {
-            string inventoryData = PlayerPrefs.GetString("InventoryData");
-            print(inventoryData);
-            inventory = JsonUtility.FromJson<Inventory>(inventoryData);
+        audioSource = GetComponent<AudioSource>();
 
-        }*/ //Esto está comentado hasta que se haga el json con el nuevo formato de inventario jiji
         if (PlayerPrefs.HasKey("PosicionPlayer"))
         {
             string posicionJSON = PlayerPrefs.GetString("PosicionPlayer");
@@ -37,6 +32,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         playerPosition = transform.position;
+
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            if (!audioSource.isPlaying) 
+            {
+                audioSource.Play();
+            }
+        }
+
     }
 
      private void OnTriggerEnter2D(Collider2D collision)

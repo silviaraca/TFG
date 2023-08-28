@@ -217,7 +217,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &207315926
 MonoBehaviour:
@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_LocalScale.x
@@ -438,10 +438,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1830551375}
   panel: {fileID: 1103873160}
-  pnj: {fileID: 0}
+  pnj: {fileID: 1556221407}
   move: {fileID: 1860496283}
   playerExistente: {fileID: 1860496285}
-  npcHablando: {fileID: 0}
+  npcHablando: {fileID: 426824758}
   textComponent: {fileID: 64510945}
   textName: {fileID: 2144706058}
   sentences:
@@ -2219,7 +2219,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &729467419
 GameObject:
@@ -3233,10 +3233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1830551375}
   panel: {fileID: 1103873160}
-  pnj: {fileID: 0}
+  pnj: {fileID: 1556221407}
   move: {fileID: 1860496283}
   playerExistente: {fileID: 1860496285}
-  npcHablando: {fileID: 0}
+  npcHablando: {fileID: 1047335765}
   textComponent: {fileID: 64510945}
   textName: {fileID: 2144706058}
   sentences:
@@ -3342,6 +3342,10 @@ PrefabInstance:
     - target: {fileID: 6204242264757187170, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6662593817779218682, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_LocalScale.x
@@ -3511,6 +3515,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71fd6cf5eebd58949b775ff3894f43db, type: 3}
+--- !u!114 &1556221407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 1757930988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1657890089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4814,7 +4829,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797291683}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 16, y: 16, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4825,7 +4840,7 @@ Transform:
   - {fileID: 729467420}
   - {fileID: 1829447751}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1829447750
 GameObject:
@@ -5444,7 +5459,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2186468156956998020, guid: 43eaa42414eec674a94c42a723eb7c8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5517,7 +5532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019018, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019018, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_AnchorMax.x

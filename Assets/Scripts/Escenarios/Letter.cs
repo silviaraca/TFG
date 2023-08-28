@@ -32,6 +32,7 @@ public class Letter : MonoBehaviour
                 uiPanel.SetActive(false); 
                 isUIVisible = false;
                 PauseMenu.isPaused = false;
+                activeE = false;
             }
         }
         else
