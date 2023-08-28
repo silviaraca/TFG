@@ -20,7 +20,6 @@ public class Ratonella : MonoBehaviour
     {
         ratData = "";
         if(PlayerPrefs.HasKey("RatSecretary")) ratData = PlayerPrefs.GetString("RatSecretary");
-        if(PlayerPrefs.HasKey("Machine")) machine = true;
     }
 
     void Update()
@@ -62,6 +61,7 @@ public class Ratonella : MonoBehaviour
             dialogueScript2.enabled = false;
             dialogueScript3.enabled = false;
         }
+        if(PlayerPrefs.HasKey("Machine")) machine = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

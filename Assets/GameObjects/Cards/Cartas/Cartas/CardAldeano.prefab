@@ -97,6 +97,7 @@ MonoBehaviour:
   hasBeenPlayed: 0
   enMano: 0
   handIndex: 0
+  nombreCarta: Aldeano
   personaje: 1
   area: 0
   objetivoUnico: 0
@@ -108,9 +109,18 @@ MonoBehaviour:
   movMax: 2
   nAta: 1
   rango: 1
+  atMejora: 0
+  turnosParaTrans: 0
   dano: 0
   cura: 0
+  paraliza: 0
+  mejoraAtaque: 0
+  transforma: 0
+  inmuniza: 0
+  envenena: 0
   areaHechizo: 0
+  faseCarta: 24
+  turnosEnvenena: 0
   zoom: 0
 --- !u!114 &1273880584075951734
 MonoBehaviour:

@@ -29,7 +29,14 @@ public class DragDrop : MonoBehaviour
             }
         }
         else{
-            if((gm.getFase() == 2 || gm.getFase() == 4) && gm.getCarJugadas() < 2){
+            if((gm.getFase() == 2 && (card.getFaseCarta() == 2 || card.getFaseCarta() == 24)) && gm.getCarJugadas() < 2){
+                GetComponent<Image>().color = new Color(0, 255, 255, 255);
+                enMovimiento = true;
+                gm.puntero.GetComponent<DropCard>().card = card;
+                gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
+                
+            }
+            else if((gm.getFase() == 4 && (card.getFaseCarta() == 4 || card.getFaseCarta() == 24)) && gm.getCarJugadas() < 2){
                 GetComponent<Image>().color = new Color(0, 255, 255, 255);
                 enMovimiento = true;
                 gm.puntero.GetComponent<DropCard>().card = card;

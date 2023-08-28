@@ -97,6 +97,7 @@ MonoBehaviour:
   hasBeenPlayed: 0
   enMano: 0
   handIndex: 0
+  nombreCarta: Agua
   personaje: 0
   area: 1
   objetivoUnico: 0
@@ -108,9 +109,18 @@ MonoBehaviour:
   movMax: 0
   nAta: 0
   rango: 0
+  atMejora: 0
+  turnosParaTrans: 0
   dano: 1
   cura: 1
+  paraliza: 0
+  mejoraAtaque: 0
+  transforma: 0
+  inmuniza: 0
+  envenena: 0
   areaHechizo: 1
+  faseCarta: 4
+  turnosEnvenena: 0
   zoom: 0
 --- !u!114 &4468346711354431684
 MonoBehaviour:

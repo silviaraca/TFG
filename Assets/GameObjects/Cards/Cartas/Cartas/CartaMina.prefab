@@ -97,7 +97,7 @@ MonoBehaviour:
   hasBeenPlayed: 0
   enMano: 0
   handIndex: 0
-  nombreCarta: 
+  nombreCarta: Mina
   personaje: 1
   area: 0
   objetivoUnico: 0
@@ -109,9 +109,18 @@ MonoBehaviour:
   movMax: 3
   nAta: 1
   rango: 1
+  atMejora: 0
+  turnosParaTrans: 0
   dano: 0
   cura: 0
+  paraliza: 0
+  mejoraAtaque: 0
+  transforma: 0
+  inmuniza: 0
+  envenena: 0
   areaHechizo: 0
+  faseCarta: 24
+  turnosEnvenena: 0
   zoom: 0
 --- !u!114 &1273880584075951734
 MonoBehaviour:
@@ -195,6 +204,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Zoom, Assembly-CSharp
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 

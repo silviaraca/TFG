@@ -6218,7 +6218,7 @@ RectTransform:
   m_GameObject: {fileID: 1928222777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 328946604}
@@ -6227,7 +6227,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 640, y: -380}
-  m_SizeDelta: {x: 147.43994, y: 209.90002}
+  m_SizeDelta: {x: 175, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928222779
 MonoBehaviour:
@@ -6305,7 +6305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d25b8a21ba37044399275c003e37b13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a3b0922c7e9e5a489c5e3ff4c4ee017, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7531,6 +7531,10 @@ PrefabInstance:
       propertyPath: tamTab
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardAjo
+      value: 
+      objectReference: {fileID: 2868205627103406734, guid: e8937a722c4fe574886d60fa7f75420b, type: 3}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: puntero
       value: 

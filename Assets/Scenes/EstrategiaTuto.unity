@@ -3002,6 +3002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195304, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
 --- !u!1 &808520282
@@ -6584,7 +6588,7 @@ RectTransform:
   m_GameObject: {fileID: 1928222777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 328946604}
@@ -6592,8 +6596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 640, y: -380}
-  m_SizeDelta: {x: 147.43994, y: 209.90002}
+  m_AnchoredPosition: {x: 531.9883, y: -372.56403}
+  m_SizeDelta: {x: 175, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928222779
 MonoBehaviour:
@@ -6671,7 +6675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d25b8a21ba37044399275c003e37b13, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a3b0922c7e9e5a489c5e3ff4c4ee017, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7946,6 +7950,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1334644347}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardMina
+      value: 
+      objectReference: {fileID: 1273880582866501711, guid: e8e63d83abcf2fc4fa84f4c9f7d7e954, type: 3}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: casVacia
       value: 
       objectReference: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
@@ -7953,6 +7961,10 @@ PrefabInstance:
       propertyPath: tutorial
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardTumba
+      value: 
+      objectReference: {fileID: 2868205627103406734, guid: 8d8a07a143583334f8543d3b3c29994a, type: 3}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: pasaTurno
       value: 0
@@ -7969,6 +7981,10 @@ PrefabInstance:
       propertyPath: cardEstaca
       value: 
       objectReference: {fileID: 192313985}
+    - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: cardSangre
+      value: 
+      objectReference: {fileID: 2868205627103406734, guid: 54f8f51d822ec1e4b810de686f826f4e, type: 3}
     - target: {fileID: 5842494667995113200, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: casMarcada
       value: 
@@ -8432,7 +8448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273880584075951712, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 42
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1273880584075951712, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
       propertyPath: m_AnchoredPosition.y

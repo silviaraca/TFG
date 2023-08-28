@@ -21,8 +21,8 @@ public class Carta : MonoBehaviour
         [SerializeField] private bool personaje; //Saber si e sun hechizo o un pnj, en caso de pnj si es enemigo
         [SerializeField] private bool area, objetivoUnico, hechizoAtaque, hechizoDefensa, hechizoTablero; //Datos sobre las cartas de hechizo
         [SerializeField] private int ataque, vida, movMax, nAta, rango, atMejora, turnosParaTrans; //Datos si es personaje
-        [SerializeField] private bool dano, cura, paraliza, mejoraAtaque, transforma; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
-        [SerializeField] private int areaHechizo;
+        [SerializeField] private bool dano, cura, paraliza, mejoraAtaque, transforma, inmuniza, envenena; //datos sobre el tipo de hechizo o de alguna habilidad especial de personaje
+        [SerializeField] private int areaHechizo, faseCarta, turnosEnvenena, trunosInmuniza;
         public bool zoom = false;
     
     public Casilla getCasAct(){
@@ -43,6 +43,12 @@ public class Carta : MonoBehaviour
     }
     public bool esHechizoAtaque(){
         return hechizoAtaque;
+    }
+    public void swapDefensaHechizo(bool t){
+        hechizoDefensa = t;
+    }
+    public void swapAtaqueHechizo(bool t){
+        hechizoAtaque = t;
     }
     public bool esHechizoTablero(){
         return hechizoTablero;
@@ -69,6 +75,15 @@ public class Carta : MonoBehaviour
     public int getRango(){
         return rango;
     }
+    public void swapEnvenena(bool t){
+        envenena = t;
+    }
+    public void swapInmuniza(bool t){
+        inmuniza = t;
+    }
+    public int getFaseCarta(){
+        return faseCarta;
+    }
 
     public void efectoHechizo(Personaje pnj){
         if(dano && pnj.enemigo){
@@ -85,6 +100,12 @@ public class Carta : MonoBehaviour
         }
         if(transforma && !pnj.transformando){
             pnj.transformaPnj(turnosParaTrans);
+        }
+        if(envenena){
+            pnj.envenenarPnj(turnosEnvenena, ataque);
+        }
+        if(inmuniza){
+            pnj.inmunizaPnj(trunosInmuniza);
         }
 
     }

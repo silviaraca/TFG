@@ -11,7 +11,7 @@ public class GameManagerE : MonoBehaviour
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
   public GameObject Canvas, Cards, Personajes;
-  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba; //Objetos de las cartas que existen ya, añadir conforme 
+  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba, cardAjo; //Objetos de las cartas que existen ya, añadir conforme 
   public GameObject characterZombie; //Lo de arriba pero enemigos 
   public Transform[] espacioMano;
   public Casilla[] tablero;
@@ -64,12 +64,12 @@ public void Start(){
     listaCartas.Add("Agua");
     listaCartas.Add("Tumba");
     listaCartas.Add("Sangre");
-    listaCartas.Add("Estaca");
+    listaCartas.Add("Ajo");
     listaCartas.Add("Mina");
   }
 
   //Esto se tomará de una lista de enemigos según el contrincante
-  if (PlayerPrefs.HasKey("EnemiesData"))
+  if (PlayerPrefs.HasKey("EnemiesData") && !tutorial)
   {
       string enemiesData = PlayerPrefs.GetString("EnemiesData");
       listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
@@ -116,6 +116,7 @@ public void Start(){
           textoCartasPorJugar.enabled = true;
           int porJugar = maxJug - nCartasJugadas;
           textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+          modificaEfectos();
         }
         else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
           pasaTurno = false;
@@ -137,6 +138,7 @@ public void Start(){
           textoCartasPorJugar.enabled = true;
           int porJugar = maxJug - nCartasJugadas;
           textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+          modificaEfectos();
         }
         else if(fase == 5){
           //efectos de final de turno y movimientos de enemigos
@@ -145,6 +147,7 @@ public void Start(){
             spawnEnemigo();
           }
           transformaPnj();
+          danaVenenorPnj();
           turnosParaPerder--;
           fase = 0; //Reinicia fases cuando haya terminado lo anterior
         }
@@ -152,7 +155,7 @@ public void Start(){
           DrawCard();
           roba = false;
         }
-        if(enemigosVivos == 0){
+        if(listaPnjEnemigos.Count == 0 && listaPnjEnemigosEnTablero.Count == 0){
           win = true;
           this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
           //Salir de escena ganado
@@ -296,6 +299,11 @@ public void Start(){
     }
   }
 
+  public void reactivarDialogo(){
+    ds.setReactivable();
+    ds.reactivarDialogo();
+  }
+
   private void transformaPnj(){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].transformando && listaPnj[i].getContTrans() > 0){
@@ -313,6 +321,54 @@ public void Start(){
     }
   }
 
+  private void danaVenenorPnj(){
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].turnosVeneno > 0){
+        listaPnj[i].turnosVeneno--;
+        listaPnj[i].danar(listaPnj[i].danoVeneno);
+      }
+      if(listaPnj[i].turnosVeneno == 0) listaPnj[i].danoVeneno = 0;
+    }
+    for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
+      if(listaPnjEnemigosEnTablero[i].turnosVeneno > 0){
+        listaPnjEnemigosEnTablero[i].turnosVeneno--;
+        listaPnjEnemigosEnTablero[i].danar(listaPnjEnemigosEnTablero[i].danoVeneno);
+      }
+      if(listaPnjEnemigosEnTablero[i].turnosVeneno == 0) listaPnjEnemigosEnTablero[i].danoVeneno = 0;
+    }
+  }
+
+  private void contadorInmunes(){
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].turnosInmune > 0){
+        listaPnj[i].turnosInmune--;
+      }
+      if(listaPnj[i].turnosInmune == 0) listaPnj[i].inmune = false;
+    }
+    for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
+      if(listaPnjEnemigosEnTablero[i].turnosInmune > 0){
+        listaPnjEnemigosEnTablero[i].turnosInmune--;
+      }
+      if(listaPnjEnemigosEnTablero[i].turnosInmune == 0) listaPnjEnemigosEnTablero[i].inmune = false;
+    }
+  }
+
+  private void modificaEfectos(){
+    for(int i = 0; i < mano.Count; i++){
+      if(mano[i].nombreCarta == "Ajo" && fase == 2){
+        mano[i].swapEnvenena(false);
+        mano[i].swapInmuniza(true);
+        mano[i].swapDefensaHechizo(true);
+        mano[i].swapAtaqueHechizo(false);
+      }
+      else if(mano[i].nombreCarta == "Ajo" && fase == 4){
+        mano[i].swapEnvenena(true);
+        mano[i].swapInmuniza(false);
+        mano[i].swapDefensaHechizo(false);
+        mano[i].swapAtaqueHechizo(true);
+      }
+    }
+  }
   private void activaFinTuro(int f){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].turnoEfectoFin == f){
@@ -375,6 +431,9 @@ public void Start(){
       }
       else if(listaCartas[i] == "Tumba"){
         cartaAnadida = Instantiate(cardTumba);
+      }
+      else if(listaCartas[i] == "Ajo"){
+        cartaAnadida = Instantiate(cardAjo);
       }
       cartaAnadida.transform.SetParent(Cards.transform, false);
       mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());
@@ -534,16 +593,16 @@ private void pintaAta(Personaje pnj, int pos, int rang, Casilla cas){
     int posAux;
     for(int i = rang; i > 0; i--)
         if(i > 0){
-            if(((posAux = pos+i)%8) != i-1 && !tablero[posAux].vacia && !tablero[posAux].pintada){
+            if(((posAux = pos+i)%8) != i-1 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
                 ejecutaAtacable(posAux, cas);
             }
-            if((((posAux = pos-i)+1) %8) != rang-1 && !tablero[posAux].vacia && !tablero[posAux].pintada){
+            if((((posAux = pos-i)+1) %8) != rang-1 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
                 ejecutaAtacable(posAux, cas);
             }
-            if((posAux = pos+8*i) < tablero.Length && !tablero[posAux].vacia && !tablero[posAux].pintada){
+            if((posAux = pos+8*i) < tablero.Length && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
                 ejecutaAtacable(posAux, cas);
             }
-            if((posAux = pos-8*i) >= 0 && !tablero[posAux].vacia && !tablero[posAux].pintada){
+            if((posAux = pos-8*i) >= 0 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
                 ejecutaAtacable(posAux, cas);
             }
         }

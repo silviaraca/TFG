@@ -34,6 +34,9 @@ public class Zoom : MonoBehaviour
     }
 
     public void OnHoverExit(){
+        if(gm.tutorial){
+            gm.reactivarDialogo();
+        }
         Destroy(carta);
     }
 }

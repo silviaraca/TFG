@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2868205626165417146}
   - component: {fileID: 2868205626165417147}
   m_Layer: 0
-  m_Name: CardEstaca
+  m_Name: CardAjo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5bd5a03f354f35d4d97255f02354e215, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 12976ff042a9dcc43a855927fad90598, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -97,30 +97,31 @@ MonoBehaviour:
   hasBeenPlayed: 0
   enMano: 0
   handIndex: 0
-  nombreCarta: Estaca
+  nombreCarta: Ajo
   personaje: 0
   area: 0
   objetivoUnico: 1
   hechizoAtaque: 1
   hechizoDefensa: 0
   hechizoTablero: 1
-  ataque: 2
+  ataque: 1
   vida: 0
   movMax: 0
   nAta: 0
   rango: 0
   atMejora: 0
   turnosParaTrans: 0
-  dano: 1
+  dano: 0
   cura: 0
   paraliza: 0
   mejoraAtaque: 0
   transforma: 0
   inmuniza: 0
-  envenena: 0
+  envenena: 1
   areaHechizo: 0
   faseCarta: 24
-  turnosEnvenena: 0
+  turnosEnvenena: 3
+  trunosInmuniza: 1
   zoom: 0
 --- !u!114 &2868205626165417143
 MonoBehaviour:

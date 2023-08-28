@@ -8,12 +8,12 @@ public class Personaje : MonoBehaviour
     //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
     [SerializeField] private int vidaMax, ataque, movMax, numAtaques, rango;
     private int movAct, vida, numAtaAct;
-    public bool enemigo, enRango, transformando;
+    public bool enemigo, enRango, transformando, inmune;
     public Casilla cas;
     private bool ini = true;
     private GameManagerE gm;
     private Carta card;
-    public int turnoEfectoFin = 0;
+    public int turnoEfectoFin = 0, turnosInmune = 0, danoVeneno = 0, turnosVeneno = 0;
     public string efecto;
     private int contTransform = -1;
 
@@ -53,6 +53,16 @@ public class Personaje : MonoBehaviour
     public void transformaPnj(int t){
         contTransform = t;
         transformando = true;
+    }
+
+    public void envenenarPnj(int t, int a){
+        danoVeneno += a;
+        turnosVeneno += t;
+    }
+
+    public void inmunizaPnj(int t){
+        inmune = true;
+        turnosInmune = t;
     }
 
     private bool muerto(){

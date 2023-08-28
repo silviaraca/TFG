@@ -34,7 +34,6 @@ public class Machine : MonoBehaviour
         }
         if(dialogueScript.indexFin()){
             dialogueScript.enabled = false;
-            print("a");
         }
     }
 

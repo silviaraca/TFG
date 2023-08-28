@@ -97,14 +97,14 @@ MonoBehaviour:
   hasBeenPlayed: 0
   enMano: 0
   handIndex: 0
-  nombreCarta: 
+  nombreCarta: Sangre
   personaje: 0
   area: 0
   objetivoUnico: 1
   hechizoAtaque: 0
   hechizoDefensa: 1
   hechizoTablero: 1
-  ataque: -20
+  ataque: 0
   vida: 0
   movMax: 0
   nAta: 0
@@ -116,7 +116,11 @@ MonoBehaviour:
   paraliza: 0
   mejoraAtaque: 1
   transforma: 1
+  inmuniza: 0
+  envenena: 0
   areaHechizo: 0
+  faseCarta: 24
+  turnosEnvenena: 0
   zoom: 0
 --- !u!114 &2868205626165417143
 MonoBehaviour:
