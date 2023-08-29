@@ -566,24 +566,25 @@ private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIn
 }
 private void pintaCas(Personaje pnj, int pos, int mov, int rang){
         int posAux;
-        if(mov > 0){
-            if(((posAux = pos+1)%8) != 0 && tablero[posAux].vacia && !tablero[posAux].pintada){
-                ejecutaPintado(pnj, posAux, mov, rang);
+        int movAux = mov;
+        if(movAux > 0){
+            if(((posAux = pos+1)%8) != 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(pnj, posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(pnj, posAux, rang, tablero[posAux]);
             }
-            if((((posAux = pos-1)+1) %8) != 0 && tablero[posAux].vacia && !tablero[posAux].pintada){
-                ejecutaPintado(pnj, posAux, mov, rang);
+            if((((posAux = pos-1)+1) %8) != 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(pnj, posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(pnj, posAux, rang, tablero[posAux]);
             }
-            if((posAux = pos+8) < tablero.Length && tablero[posAux].vacia && !tablero[posAux].pintada){
-                ejecutaPintado(pnj, posAux, mov, rang);
+            if((posAux = pos+8) < tablero.Length && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(pnj, posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(pnj, posAux, rang, tablero[posAux]);
             }
-            if((posAux = pos-8) >= 0 && tablero[posAux].vacia && !tablero[posAux].pintada){
-                ejecutaPintado(pnj, posAux, mov, rang);
+            if((posAux = pos-8) >= 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+                ejecutaPintado(pnj, posAux, movAux, rang);
                 if(pnj.getNumAtaAct() > 0)
                     pintaAta(pnj, posAux, rang, tablero[posAux]);
             }
