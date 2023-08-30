@@ -235,23 +235,4 @@ public class DialogoDecisiones : MonoBehaviour
         
     }
 
-    public void decision2Dog(){
-        decision = false;
-        BotonDecision1.gameObject.SetActive(false);
-        BotonDecision2.gameObject.SetActive(false);
-        //Decisión NO, solo pasa como si hubiese dado a la E
-
-        if(textComponent.text == sentences[index])
-        {
-            NextLine();
-        }
-        else
-        {
-            
-            //textName.text = names[index];
-            StopAllCoroutines();
-            textComponent.text = sentences[index];
-        }
-    }
-
 }
