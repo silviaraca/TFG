@@ -25,11 +25,13 @@ public class Inventory_UI : MonoBehaviour
         if(!inventoryPanel.activeSelf && !PauseMenu.isPaused)
         {
             inventoryPanel.SetActive(true);
+            Time.timeScale = 0f; //Stop moving
             Setup();
         }
         else
         {
             inventoryPanel.SetActive(false);
+            Time.timeScale = 1f;
             for(int i = 0; i < slots.Count; i++){
                 Destroy(slots[i]);
             }

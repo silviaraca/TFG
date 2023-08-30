@@ -16,16 +16,18 @@ public class DeckSelector_UI : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetKeyDown(KeyCode.Tab) && !PauseMenu.isPaused)
         {
             if(!deckSelectorPanel.activeSelf && !PauseMenu.isPaused)
             {
                 deckSelectorPanel.SetActive(true);
+                Time.timeScale = 0f; //Stop moving
 
             }
             else
             {
                 deckSelectorPanel.SetActive(false);
+                Time.timeScale = 1f;
             }
             
         }

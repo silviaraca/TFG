@@ -2383,7 +2383,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5054287906517754319, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
   m_PrefabInstance: {fileID: 943876143}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1774740225}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 343b46d37626d8749b2091aab7d4c699, type: 3}
@@ -2490,6 +2490,10 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: npcHablando
+      value: 
+      objectReference: {fileID: 1774740225}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: textComponent
       value: 
       objectReference: {fileID: 1835811867}
@@ -2512,6 +2516,14 @@ PrefabInstance:
     - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
       propertyPath: lines.Array.data[1]
       value: My hands stink
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[0]
+      value: Bram
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[1]
+      value: Bram
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
@@ -4471,7 +4483,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
   m_PrefabInstance: {fileID: 943876143}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1774740225}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7b99e9d43ca18b42a0c9f81af0759c0, type: 3}
@@ -6609,6 +6621,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1774740225 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5054287906517754312, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+  m_PrefabInstance: {fileID: 943876143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1835811865
 PrefabInstance:
   m_ObjectHideFlags: 0
