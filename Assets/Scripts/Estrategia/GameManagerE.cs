@@ -48,24 +48,35 @@ public class GameManagerE : MonoBehaviour
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
   public bool tutorial;
-  private static bool dialogo = true, spawnea = true, mata = true, pasa = false;
+  private static bool dialogo = true, spawnea = true, mata = true, pasa = false, zoomed = false;
 
 
 public void Start(){
   //Tomar las cartas de la lista de cartas que haya en deckData al iniciar la escena
   if (PlayerPrefs.HasKey("DeckData") && !tutorial)
   {
-      string deckData = PlayerPrefs.GetString("DeckData");
-      listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
+    string deckData = PlayerPrefs.GetString("DeckData");
+    listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
   }
   else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-    listaCartas.Add("Aldeano");
-    listaCartas.Add("Aldeano");
-    listaCartas.Add("Agua");
-    listaCartas.Add("Tumba");
-    listaCartas.Add("Sangre");
     listaCartas.Add("Ajo");
-    listaCartas.Add("Mina");
+    listaCartas.Add("Ajo");
+    listaCartas.Add("Agua");
+    listaCartas.Add("Agua");
+    listaCartas.Add("Estaca");
+    listaCartas.Add("Estaca");
+
+    List<string> inventory = new List<string>();
+    if(PlayerPrefs.HasKey("InventoryCards")){
+        string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+        inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+    }
+    inventory.Add("Agua");
+    inventory.Add("Estaca");
+    inventory.Add("Ajo");
+    string inventoryData2 = JsonConvert.SerializeObject(inventory);
+    PlayerPrefs.SetString("InventoryCards", inventoryData2);
+    PlayerPrefs.Save();
   }
 
   //Esto se tomará de una lista de enemigos según el contrincante
@@ -88,6 +99,8 @@ public void Start(){
   roba = false;
   primerTurno = true;
   fase = 0;
+  win = false;
+  loose = false;
   creaCartas();
   creaEnemigos();
 }
@@ -239,7 +252,7 @@ public void Start(){
         }
         else if(fase == 5){
           //Fin del tutorial, propuesta de una pelea de práctica con una pool de enemigos ya elegida
-
+          enemigosVivos = 0;
           //efectos de final de turno y movimientos de enemigos
           movEnemigos();
           if(listaPnjEnemigos.Count > 0){
@@ -300,8 +313,11 @@ public void Start(){
   }
 
   public void reactivarDialogo(){
-    ds.setReactivable();
-    ds.reactivarDialogo();
+    if(!zoomed){
+      ds.setReactivable();
+      ds.reactivarDialogo();
+      zoomed = true;
+    }
   }
 
   private void transformaPnj(){

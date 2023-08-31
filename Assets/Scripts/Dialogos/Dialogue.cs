@@ -22,6 +22,7 @@ public class Dialogue : MonoBehaviour
     private Scene currentScene;
     private int index;
     private bool activeE, dialogue = false;
+    private static bool activo = false;
     private Player player;
     [SerializeField] private Sprite personajeImage = null;
 
@@ -48,7 +49,7 @@ public class Dialogue : MonoBehaviour
         // if(activeE)textoE.gameObject.SetActive(true);
         // else textoE.gameObject.SetActive(false);
 
-        if(activeE && Input.GetKeyDown(KeyCode.E) && currentScene.name != "EstrategiaTuto"){
+        if((activeE && Input.GetKeyDown(KeyCode.E) && currentScene.name != "EstrategiaTuto") || (activeE && activo)){
             gameObject.SetActive(true);
             textoE.gameObject.SetActive(false);
             panel.gameObject.SetActive(true);
@@ -57,6 +58,7 @@ public class Dialogue : MonoBehaviour
             textName.text = names[index];
             activeE = false;
             dialogue = true;
+            activo = false;
         }
         else if (currentScene.name == "EstrategiaTuto" && activeE && playerExistente.getActivo().Equals(this.gameObject.name)){
             gameObject.SetActive(true);
@@ -150,5 +152,9 @@ public class Dialogue : MonoBehaviour
 
     public bool indexFin(){
         return index >= names.Length;
+    }
+
+    public void activa(){
+        activo = true;
     }
 }

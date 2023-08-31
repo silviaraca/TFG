@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Newtonsoft.Json;
+
 public class Slot : MonoBehaviour
 {
     public int countAdded; // Items añadidos

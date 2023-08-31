@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Newtonsoft.Json;
 
 public class Inventory : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Inventory : MonoBehaviour
     public int count; // Items ahora mismo
     public int maxSlots;
     public int busySlots;
+    public Sprite Agua, Estaca, Sangre, Tumba, Mina, Aldeano, Ajo;
+    private List<string> inventory = new List<string>();
 
     // Inicializar
     public void Start()
@@ -18,10 +21,47 @@ public class Inventory : MonoBehaviour
         count = 0;
         busySlots = 0;
         this.maxSlots = 22;
-        for (int i = 0; i < 22; i++)
+        slots.Add(slot);
+        for (int i = 1; i < 22; i++)
         {
             GameObject slotAux = Instantiate(slot, transform);
             slots.Add(slotAux);
+        }
+        cargaInventory();
+    }
+
+    public void cargaInventory(){
+        if(PlayerPrefs.HasKey("InventoryCards")){
+            string inventoryData = PlayerPrefs.GetString("InventoryCards");
+            inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData);
+        }
+        for(int i = 0; i < inventory.Count; i++){
+            slots[i].gameObject.GetComponent<Slot>().nombre = inventory[i];
+            insertaSprite(slots[i].gameObject.GetComponent<Slot>(), inventory[i]);
+        }
+    }
+
+    private void insertaSprite(Slot s, string nombre){
+        if(nombre == "Agua"){
+            s.icon = Agua;
+        }
+        else if(nombre == "Estaca"){
+            s.icon = Estaca;
+        }
+        else if(nombre == "Sangre"){
+            s.icon = Sangre;
+        }
+        else if(nombre == "Tumba"){
+            s.icon = Tumba;
+        }
+        else if(nombre == "Mina"){
+            s.icon = Mina;
+        }
+        else if(nombre == "Aldeano"){
+            s.icon = Aldeano;
+        }
+        else if(nombre == "Ajo"){
+            s.icon = Ajo;
         }
     }
 

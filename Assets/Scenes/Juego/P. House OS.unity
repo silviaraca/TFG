@@ -369,9 +369,6 @@ MonoBehaviour:
   enemies:
   - Zombie
   - Zombie
-  - 
-  - 
-  - 
 --- !u!114 &132425664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +441,20 @@ MonoBehaviour:
   - Van Helsing
   - Van Helsing
   textSpeed: 0
+--- !u!114 &132425666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132425642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d548eb0a1805e34db9c2fdebcd686aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue1: {fileID: 132425665}
+  dialogue2: {fileID: 132425657}
 --- !u!1001 &132695247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -646,7 +657,7 @@ PrefabInstance:
       objectReference: {fileID: 132425665}
     - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: decision1
+      value: decision1_VH
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}

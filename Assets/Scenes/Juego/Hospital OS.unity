@@ -3923,7 +3923,10 @@ MonoBehaviour:
   textoE: {fileID: 1588748574}
   cargar: {fileID: 1238960536}
   escena: Estrategia
-  enemies: []
+  enemies:
+  - Zombie
+  - Zombie
+  - Zombie
 --- !u!114 &1238960536
 MonoBehaviour:
   m_ObjectHideFlags: 0

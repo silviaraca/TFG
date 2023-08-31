@@ -10,7 +10,7 @@ public class Slots_UI : MonoBehaviour
     public TextMeshProUGUI countAddedText;
     public TextMeshProUGUI countRemainingText;
     public string nombreCarta;
-    [SerializeField] private Slot associatedSlot;
+    [SerializeField] public Slot associatedSlot;
 
     public void Initialize(Slot slot)
     {

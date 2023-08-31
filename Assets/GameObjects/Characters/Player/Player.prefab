@@ -655,3 +655,10 @@ MonoBehaviour:
   count: 0
   maxSlots: 0
   busySlots: 0
+  Agua: {fileID: 21300000, guid: 863c3a6671e9e834e907980c7e1f6acd, type: 3}
+  Estaca: {fileID: 21300000, guid: 5bd5a03f354f35d4d97255f02354e215, type: 3}
+  Sangre: {fileID: 21300000, guid: 828ef24a938308b4e8443cf89d62ce56, type: 3}
+  Tumba: {fileID: 21300000, guid: 9847092a8fd66f5478c8de3ef7b815cd, type: 3}
+  Mina: {fileID: 21300000, guid: 3a2b3c01bafd5de4983f9725e8a7315d, type: 3}
+  Aldeano: {fileID: 21300000, guid: 09077ae54d3efd948bcc5edef5b5907d, type: 3}
+  Ajo: {fileID: 21300000, guid: 12976ff042a9dcc43a855927fad90598, type: 3}

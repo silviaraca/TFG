@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Newtonsoft.Json;
 
 public class DialogoDecisiones : MonoBehaviour
 {
@@ -169,6 +170,19 @@ public class DialogoDecisiones : MonoBehaviour
         }
     }
 
+    public void decision1_VH(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        //Invoca a la estrategia
+        string tuto = "done";
+        PlayerPrefs.SetString("Tutorial", tuto);
+        PlayerPrefs.Save();
+        cargar.cargaEstrategia();
+        
+    }
+
+
+                
+
     public void decisionLamias_Wrong()
     {
         decision = false;
@@ -209,11 +223,10 @@ public class DialogoDecisiones : MonoBehaviour
         }
     }
 
-    public void decision1_Reinfield(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+    public void decision1_Reinfield(){
         decision = false;
         //Invoca a la estrategia
         cargar.cargaEstrategia();
-        Debug.Log("Funciona!!");
 
         if(textComponent.text == sentences[index])
         {
@@ -228,11 +241,24 @@ public class DialogoDecisiones : MonoBehaviour
         }
         
     }
-    public void decision2_Reinfield(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+    public void decision2_Reinfield(){
         decision = false;
         BotonDecision1.gameObject.SetActive(false);
         BotonDecision2.gameObject.SetActive(false);
         
+    }
+
+    public void anadeCarta(){ //AñadeCarta
+        List<string> inventory = new List<string>();
+        if(PlayerPrefs.HasKey("InventoryCards")){
+            string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+            inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+        }
+        inventory.Add("Agua");
+        string inventoryData2 = JsonConvert.SerializeObject(inventory);
+        PlayerPrefs.SetString("InventoryCards", inventoryData2);
+        PlayerPrefs.Save();
+        playerExistente.inventory.cargaInventory();
     }
 
 }

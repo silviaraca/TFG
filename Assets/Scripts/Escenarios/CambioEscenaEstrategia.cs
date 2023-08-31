@@ -37,7 +37,8 @@ public class CambioEscenaEstrategia : MonoBehaviour
           string posRPG = JsonUtility.ToJson(vectorPos);
           PlayerPrefs.SetString("PosicionPlayer", posRPG);
           PlayerPrefs.Save();
-          cargar.load("Estrategia");
+          if(escena == "EstrategiaTuto") cargar.load("EstrategiaTuto");
+          else cargar.load("Estrategia");
      }
      public void cargaRPG(){
           string escenaRPG = PlayerPrefs.GetString("EscenaRPG");
