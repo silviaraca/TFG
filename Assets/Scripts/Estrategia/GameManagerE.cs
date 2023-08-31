@@ -48,270 +48,260 @@ public class GameManagerE : MonoBehaviour
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
   public bool tutorial;
-  private static bool dialogo = true, spawnea = true, mata = true, pasa = false, zoomed = false;
+  private static bool dialogo = true, spawnea = true, mata = true, pasa = false, zoomed = false, moviendose = false;
 
 
-public void Start(){
-  //Tomar las cartas de la lista de cartas que haya en deckData al iniciar la escena
-  if (PlayerPrefs.HasKey("DeckData") && !tutorial)
-  {
-    string deckData = PlayerPrefs.GetString("DeckData");
-    listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
-  }
-  else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-    listaCartas.Add("Ajo");
-    listaCartas.Add("Ajo");
-    listaCartas.Add("Agua");
-    listaCartas.Add("Agua");
-    listaCartas.Add("Estaca");
-    listaCartas.Add("Estaca");
-
-    List<string> inventory = new List<string>();
-    if(PlayerPrefs.HasKey("InventoryCards")){
-        string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
-        inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+  public void Start(){
+    //Tomar las cartas de la lista de cartas que haya en deckData al iniciar la escena
+    if (PlayerPrefs.HasKey("DeckData") && !tutorial)
+    {
+      string deckData = PlayerPrefs.GetString("DeckData");
+      listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
     }
-    inventory.Add("Agua");
-    inventory.Add("Estaca");
-    inventory.Add("Ajo");
-    string inventoryData2 = JsonConvert.SerializeObject(inventory);
-    PlayerPrefs.SetString("InventoryCards", inventoryData2);
-    PlayerPrefs.Save();
-  }
+    else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
+      listaCartas.Add("Ajo");
+      listaCartas.Add("Ajo");
+      listaCartas.Add("Agua");
+      listaCartas.Add("Agua");
+      listaCartas.Add("Estaca");
+      listaCartas.Add("Estaca");
 
-  //Esto se tomará de una lista de enemigos según el contrincante
-  if (PlayerPrefs.HasKey("EnemiesData") && !tutorial)
-  {
-      string enemiesData = PlayerPrefs.GetString("EnemiesData");
-      listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
-  }
-  else{//Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-    listaEnemigos.Add("Zombie");
-    listaEnemigos.Add("Zombie");
-    listaEnemigos.Add("Zombie");
-    listaEnemigos.Add("Zombie");
-    listaEnemigos.Add("Zombie");
-  }
-
-  textoCartasPorJugar.enabled = false;
-  enemigosVivos = listaEnemigos.Count;
-  pasaTurno = false;
-  roba = false;
-  primerTurno = true;
-  fase = 0;
-  win = false;
-  loose = false;
-  creaCartas();
-  creaEnemigos();
-}
-
-  public void Update(){
-    if(!tutorial){
-      if(!win && !loose){
-        if(fase == 0){ //fase inicial y efectos de inicio de turno
-          textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
-          if(primerTurno){
-            DrawCard();
-            DrawCard();
-            primerTurno = false;
-          }
-          //efectos de inicio de turno
-          nRobadas = 0;
-          roba = false;
-          fase++; //No pasa hasta que se ejecuten todos
-          textoFase.text = "Fase Actual: " + fase;
-        }
-        else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          nRobadas = 0;
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-          modificaEfectos();
-        }
-        else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = false;
-          if(fase == 4)
-            nCartasJugadas = 0;
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-        }
-        else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
-          activaFinTuro(fase);
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          for(int i = 0; i < listaPnj.Count; i++){
-            listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
-            listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
-          }
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-          modificaEfectos();
-        }
-        else if(fase == 5){
-          //efectos de final de turno y movimientos de enemigos
-          movEnemigos();
-          if(listaPnjEnemigos.Count > 0){
-            spawnEnemigo();
-          }
-          transformaPnj();
-          danaVenenorPnj();
-          turnosParaPerder--;
-          fase = 0; //Reinicia fases cuando haya terminado lo anterior
-        }
-        if(fase == 1 && roba){
-          DrawCard();
-          roba = false;
-        }
-        if(listaPnjEnemigos.Count == 0 && listaPnjEnemigosEnTablero.Count == 0){
-          win = true;
-          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
-          //Salir de escena ganado
-        }
-        else if(turnosParaPerder == 0){
-          loose = true;
-          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
-          //Salir de escena perdiendo
-        }
+      List<string> inventory = new List<string>();
+      if(PlayerPrefs.HasKey("InventoryCards")){
+          string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+          inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
       }
+      inventory.Add("Agua");
+      inventory.Add("Estaca");
+      inventory.Add("Ajo");
+      string inventoryData2 = JsonConvert.SerializeObject(inventory);
+      PlayerPrefs.SetString("InventoryCards", inventoryData2);
+      PlayerPrefs.Save();
     }
-    else{ //Script del tutorial
-      if(!win && !loose && !dialogo){
-        if(fase == 0){ //fase inicial y efectos de inicio de turno
-          textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
-          //Aquí primer diálogo explicando lo que es la estrategia
-          if(primerTurno){
-            primerTurno = false;
+
+    //Esto se tomará de una lista de enemigos según el contrincante
+    if (PlayerPrefs.HasKey("EnemiesData") && !tutorial)
+    {
+        string enemiesData = PlayerPrefs.GetString("EnemiesData");
+        listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
+    }
+    else{//Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
+    }
+
+    textoCartasPorJugar.enabled = false;
+    enemigosVivos = listaEnemigos.Count;
+    pasaTurno = false;
+    roba = false;
+    primerTurno = true;
+    fase = 0;
+    win = false;
+    loose = false;
+    creaCartas();
+    creaEnemigos();
+  }
+  public void Update(){
+    if(!moviendose) {
+      if(!tutorial){
+        if(!win && !loose){
+          if(fase == 0){ //fase inicial y efectos de inicio de turno
+            textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
+            if(primerTurno){
+              DrawCard();
+              DrawCard();
+              primerTurno = false;
+            }
+            //efectos de inicio de turno
             nRobadas = 0;
             roba = false;
             fase++; //No pasa hasta que se ejecuten todos
             textoFase.text = "Fase Actual: " + fase;
-            //Roba las dos cartas que estás scripteadas para robar
-            drawScripted(3);
-            drawScripted(3);
+          }
+          else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
+            fase++;
+            textoFase.text = "Fase Actual: " + fase;
+            nRobadas = 0;
+            pasaTurno = false;
+            textoCartasPorJugar.enabled = true;
+            int porJugar = maxJug - nCartasJugadas;
+            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            modificaEfectos();
+          }
+          else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
+            pasaTurno = false;
+            textoCartasPorJugar.enabled = false;
+            if(fase == 4)
+              nCartasJugadas = 0;
+            fase++;
+            textoFase.text = "Fase Actual: " + fase;
+          }
+          else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
+            activaFinTuro(fase);
+            fase++;
+            textoFase.text = "Fase Actual: " + fase;
+            for(int i = 0; i < listaPnj.Count; i++){
+              listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+              listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
+            }
+            pasaTurno = false;
+            textoCartasPorJugar.enabled = true;
+            int porJugar = maxJug - nCartasJugadas;
+            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            modificaEfectos();
+          }
+          else if(fase == 5){
+            //efectos de final de turno y movimientos de enemigos
+            moviendose = true;
+            movEnemigos();
+          }
+          if(fase == 1 && roba){
+            DrawCard();
+            roba = false;
+          }
+          if(listaPnjEnemigos.Count == 0 && listaPnjEnemigosEnTablero.Count == 0){
+            win = true;
+            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
+            //Salir de escena ganado
+          }
+          else if(turnosParaPerder == 0){
+            loose = true;
+            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
+            //Salir de escena perdiendo
           }
         }
-        else if(nRobadas > 0 && fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
-
-          //Dialogo del robo de cartas mostrando que hay un contador de cartas por robar
-          //Obliga a robar una carta antes de explicar poder pasar turno
-
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          nRobadas = 0;
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-          ds.setReactivable();
-          ds.reactivarDialogo();
-        }
-        else if(((fase == 2 && nCartasJugadas == 1) || (fase == 4 && nCartasJugadas == 2)) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
-          //FASE 2
-          //Dialogo dice que mete un enemigo para que pueda probar las cartas
-          //Spawn un enemigo
-          //Explica que puede usar la carta de estaca que es de primer turno
-
-          //FASE 4
-          //Dialogo dice que puede usar cartas de segundo turno de jugar cartas 
-          //Hace aparecer un aldeano herido rodeado de enemigos a uno de vida y explica que puede usar agua bendita
-          //Solo permite usar agua bendita en la casilla elegida para curar y matar a todos los malos
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = false;
-          if(fase == 4)
-            nCartasJugadas = 0;
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          spawnea = true;
-          ds.setReactivable();
-          ds.reactivarDialogo();
-        }
-        else if(fase == 3 && (nRobadas == 2 || pasaTurno) && pasa){ //Fase3 de mover pnj
-          //Esta fase la explicará en tutorial 2 de personajes
-          fase++;
-          textoFase.text = "Fase Actual: " + fase;
-          for(int i = 0; i < listaPnj.Count; i++){
-            listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
-            listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
+      }
+      else{ //Script del tutorial
+        if(!win && !loose && !dialogo){
+          if(fase == 0){ //fase inicial y efectos de inicio de turno
+            textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
+            //Aquí primer diálogo explicando lo que es la estrategia
+            if(primerTurno){
+              primerTurno = false;
+              nRobadas = 0;
+              roba = false;
+              fase++; //No pasa hasta que se ejecuten todos
+              textoFase.text = "Fase Actual: " + fase;
+              //Roba las dos cartas que estás scripteadas para robar
+              drawScripted(3);
+              drawScripted(3);
+            }
           }
-          pasa = false;
-          pasaTurno = false;
-          textoCartasPorJugar.enabled = true;
-          int porJugar = maxJug - nCartasJugadas;
-          textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-          ds.setReactivable();
-          ds.reactivarDialogo();
-          listaPnj[0].danar(1);
-          tablero[14].muyPintada = true;
-          tablero[14].setColor(casMarcada);
-        }
-        else if(fase == 5){
-          //Fin del tutorial, propuesta de una pelea de práctica con una pool de enemigos ya elegida
-          enemigosVivos = 0;
-          //efectos de final de turno y movimientos de enemigos
-          movEnemigos();
-          if(listaPnjEnemigos.Count > 0){
+          else if(nRobadas > 0 && fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
+
+            //Dialogo del robo de cartas mostrando que hay un contador de cartas por robar
+            //Obliga a robar una carta antes de explicar poder pasar turno
+
+            fase++;
+            textoFase.text = "Fase Actual: " + fase;
+            nRobadas = 0;
+            pasaTurno = false;
+            textoCartasPorJugar.enabled = true;
+            int porJugar = maxJug - nCartasJugadas;
+            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            ds.setReactivable();
+            ds.reactivarDialogo();
+          }
+          else if(((fase == 2 && nCartasJugadas == 1) || (fase == 4 && nCartasJugadas == 2)) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
+            //FASE 2
+            //Dialogo dice que mete un enemigo para que pueda probar las cartas
+            //Spawn un enemigo
+            //Explica que puede usar la carta de estaca que es de primer turno
+
+            //FASE 4
+            //Dialogo dice que puede usar cartas de segundo turno de jugar cartas 
+            //Hace aparecer un aldeano herido rodeado de enemigos a uno de vida y explica que puede usar agua bendita
+            //Solo permite usar agua bendita en la casilla elegida para curar y matar a todos los malos
+            pasaTurno = false;
+            textoCartasPorJugar.enabled = false;
+            if(fase == 4)
+              nCartasJugadas = 0;
+            fase++;
+            textoFase.text = "Fase Actual: " + fase;
+            spawnea = true;
+            ds.setReactivable();
+            ds.reactivarDialogo();
+          }
+          else if(fase == 3 && (nRobadas == 2 || pasaTurno) && pasa){ //Fase3 de mover pnj
+            //Esta fase la explicará en tutorial 2 de personajes
+            fase++;
+            textoFase.text = "Fase Actual: " + fase;
+            for(int i = 0; i < listaPnj.Count; i++){
+              listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
+              listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
+            }
+            pasa = false;
+            pasaTurno = false;
+            textoCartasPorJugar.enabled = true;
+            int porJugar = maxJug - nCartasJugadas;
+            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            ds.setReactivable();
+            ds.reactivarDialogo();
+            listaPnj[0].danar(1);
+            tablero[14].muyPintada = true;
+            tablero[14].setColor(casMarcada);
+          }
+          else if(fase == 5){
+            //Fin del tutorial, propuesta de una pelea de práctica con una pool de enemigos ya elegida
+            enemigosVivos = 0;
+            //efectos de final de turno y movimientos de enemigos
+            moviendose = true;
+            movEnemigos();
+          }
+          else{
+            pasaTurno = false;
+          }
+          if(fase == 1 && roba && !ds.getReactivable()){
+            drawScripted(2);
+            nRobadas++;
+            roba = false;
+          }
+          else{
+            roba = false;
+          }
+          if(enemigosVivos == 0){
+            win = true;
+            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
+            //Salir de escena ganado
+          }
+          else if(turnosParaPerder == 0){
+            loose = true;
+            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
+            //Salir de escena perdiendo
+          }
+          if(fase == 2 && spawnea && nCartasJugadas == 0){
+            spawnea = false;
             spawnEnemigo();
           }
-          turnosParaPerder--;
-          fase = 0; //Reinicia fases cuando haya terminado lo anterior
-        }
-        else{
-          pasaTurno = false;
-        }
-        if(fase == 1 && roba && !ds.getReactivable()){
-          drawScripted(2);
-          nRobadas++;
-          roba = false;
-        }
-        else{
-          roba = false;
-        }
-        if(enemigosVivos == 0){
-          win = true;
-          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
-          //Salir de escena ganado
-        }
-        else if(turnosParaPerder == 0){
-          loose = true;
-          this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
-          //Salir de escena perdiendo
-        }
-        if(fase == 2 && spawnea && nCartasJugadas == 0){
-          spawnea = false;
-          spawnEnemigo();
-        }
-        else if (fase == 2 && mata && nCartasJugadas == 1){
-          mata = false;
-          ds.setReactivable();
-          ds.reactivarDialogo();
-        }
-        else if (fase == 3 && spawnea){
-          spawnea = false;
-          spawnEnemigoScripted(13);
-          spawnAliadoScripted(15);
-        }
-        else if (fase == 3 && mata){
-          mata = false;
-          pasa = true;
-          ds.setReactivable();
-          ds.reactivarDialogo();
-        }
-        else if (fase == 4 && mata){
-          mata = false;
-          pasa = true;
-          ds.setReactivable();
-          ds.reactivarDialogo();
+          else if (fase == 2 && mata && nCartasJugadas == 1){
+            mata = false;
+            ds.setReactivable();
+            ds.reactivarDialogo();
+          }
+          else if (fase == 3 && spawnea){
+            spawnea = false;
+            spawnEnemigoScripted(13);
+            spawnAliadoScripted(15);
+          }
+          else if (fase == 3 && mata){
+            mata = false;
+            pasa = true;
+            ds.setReactivable();
+            ds.reactivarDialogo();
+          }
+          else if (fase == 4 && mata){
+            mata = false;
+            pasa = true;
+            ds.setReactivable();
+            ds.reactivarDialogo();
+          }
         }
       }
     }
   }
-
   public void reactivarDialogo(){
     if(!zoomed){
       ds.setReactivable();
@@ -319,7 +309,6 @@ public void Start(){
       zoomed = true;
     }
   }
-
   private void transformaPnj(){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].transformando && listaPnj[i].getContTrans() > 0){
@@ -336,7 +325,6 @@ public void Start(){
       }
     }
   }
-
   private void danaVenenorPnj(){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].turnosVeneno > 0){
@@ -353,7 +341,6 @@ public void Start(){
       if(listaPnjEnemigosEnTablero[i].turnosVeneno == 0) listaPnjEnemigosEnTablero[i].danoVeneno = 0;
     }
   }
-
   private void contadorInmunes(){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].turnosInmune > 0){
@@ -368,7 +355,6 @@ public void Start(){
       if(listaPnjEnemigosEnTablero[i].turnosInmune == 0) listaPnjEnemigosEnTablero[i].inmune = false;
     }
   }
-
   private void modificaEfectos(){
     for(int i = 0; i < mano.Count; i++){
       if(mano[i].nombreCarta == "Ajo" && fase == 2){
@@ -392,7 +378,6 @@ public void Start(){
       }
     }
   }
-
   private void spawnEnemigoScripted(int pos){
     GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
     listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
@@ -455,7 +440,6 @@ public void Start(){
       mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());
     }
   }
-
   public void DrawCard(){
     if(fase == 0 || fase == 1){
       nRobadas++;
@@ -483,7 +467,6 @@ public void Start(){
       }
     }
   }
-
   private void creaEnemigos(){ //Genera la lista de enemigos a partir de una lista de strings para que aparezcan en los turnos enemigos
     GameObject pnjAnadido = null;
     for(int i = 0; i < listaEnemigos.Count; i++){
@@ -495,196 +478,206 @@ public void Start(){
       listaPnjEnemigos.Add(pnjAnadido);
     }
   }
-private void movEnemigos(){
-  for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
-    mueveEnemigo(listaPnjEnemigosEnTablero[i]);
+  private void movEnemigos(){
+    StartCoroutine(muevePausado());
   }
-}
-private void mueveEnemigo(Personaje pnj){
-  int posIniX, posIniY;
-  if(listaPnj.Count > 0){
-    while(pnj.getNumAtaAct() > 0){
+  IEnumerator muevePausado(){
+    for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
+      mueveEnemigo(listaPnjEnemigosEnTablero[i]);
+      yield return new WaitForSeconds(0.5f);
+    }
+    if(listaPnjEnemigos.Count > 0){
+      spawnEnemigo();
+    }
+    transformaPnj();
+    danaVenenorPnj();
+    turnosParaPerder--;
+    fase = 0; //Reinicia fases cuando haya terminado lo anterior
+    print("a");
+    moviendose = false;
+  }
+  private void mueveEnemigo(Personaje pnj){
+    int posIniX, posIniY;
+    if(listaPnj.Count > 0){
+      while(pnj.getNumAtaAct() > 0){
+        posIniX = pnj.cas.getPosX();
+        posIniY = pnj.cas.getPosY();
+        int posArr = posIniX+posIniY*8;
+        if(pnj.getNumAtaAct() > 0)
+          pintaAta(pnj, posArr, pnj.getRang(), pnj.cas);
+        pintaCas(pnj, posArr, pnj.getMovAct(), pnj.getRang());
+        
+        if(listaCasAtacable.Count > 0){
+          Personaje enemigoAtacar = listaCasAtacable[0].pnj;
+          bool matable = false;
+          if(pnj.getAtaque() >= enemigoAtacar.getVida()) matable = true;
+          for(int i = 1; i < listaCasAtacable.Count;i++){
+            if(cambioObjetivo(pnj, enemigoAtacar, listaCasAtacable[i].pnj, posIniX, posIniY, matable) ){
+              enemigoAtacar = listaCasAtacable[i].pnj;
+            }
+          }
+          //Ahora se movería hacia el enemigo seleccionado y le atacaría
+          pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+          Casilla cas = enemigoAtacar.cas;
+          if(enemigoAtacar.danar(pnj.getAtaque())){
+              //Aquí cosas que pasen si se muere el enemigo
+              cas.vacia = true;
+              cas.pnj = null;
+          }
+          pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false);
+          pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
+          pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
+          pnj.cas.vacia = true;
+          pnj.cas.pnj = null;
+          cas.getCasAnt().vacia = false;
+          cas.getCasAnt().pnj = pnj;
+          pnj.cas = cas.getCasAnt();
+        }
+        else {
+          Personaje enemigoAcercar = listaPnj[0];
+          for(int i = 1; i< listaPnj.Count; i++){
+            if((listaPnj[i].getVida() <= pnj.getAtaque() && listaPnj[i].getVida() > enemigoAcercar.getVida()) ||  listaPnj[i].getVida() < enemigoAcercar.getVida()){
+              enemigoAcercar = listaPnj[i];
+            }
+          }
+          mueveHacia(enemigoAcercar.getCasAct().getPosX(), enemigoAcercar.getCasAct().getPosY(), pnj);
+          pnj.setNumAtaAct(0);
+        }
+        desPintaCas();
+      }
+    }
+    else{
       posIniX = pnj.cas.getPosX();
       posIniY = pnj.cas.getPosY();
       int posArr = posIniX+posIniY*8;
       if(pnj.getNumAtaAct() > 0)
         pintaAta(pnj, posArr, pnj.getRang(), pnj.cas);
       pintaCas(pnj, posArr, pnj.getMovAct(), pnj.getRang());
-      
-      if(listaCasAtacable.Count > 0){
-        Personaje enemigoAtacar = listaCasAtacable[0].pnj;
-        bool matable = false;
-        if(pnj.getAtaque() >= enemigoAtacar.getVida()) matable = true;
-        for(int i = 1; i < listaCasAtacable.Count;i++){
-          if(cambioObjetivo(pnj, enemigoAtacar, listaCasAtacable[i].pnj, posIniX, posIniY, matable) ){
-            enemigoAtacar = listaCasAtacable[i].pnj;
-          }
-        }
-        //Ahora se movería hacia el enemigo seleccionado y le atacaría
-        pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
-        Casilla cas = enemigoAtacar.cas;
-        if(enemigoAtacar.danar(pnj.getAtaque())){
-            //Aquí cosas que pasen si se muere el enemigo
-            cas.vacia = true;
-            cas.pnj = null;
-        }
-        pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false);
-        pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
-        pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
-        pnj.cas.vacia = true;
-        pnj.cas.pnj = null;
-        cas.getCasAnt().vacia = false;
-        cas.getCasAnt().pnj = pnj;
-        pnj.cas = cas.getCasAnt();
-      }
-      else {
-        Personaje enemigoAcercar = listaPnj[0];
-        for(int i = 1; i< listaPnj.Count; i++){
-          if((listaPnj[i].getVida() <= pnj.getAtaque() && listaPnj[i].getVida() > enemigoAcercar.getVida()) ||  listaPnj[i].getVida() < enemigoAcercar.getVida()){
-            enemigoAcercar = listaPnj[i];
-          }
-        }
-        mueveHacia(enemigoAcercar.getCasAct().getPosX(), enemigoAcercar.getCasAct().getPosY(), pnj);
-        pnj.setNumAtaAct(0);
-      }
+      mueveHacia(1, 1, pnj);
       desPintaCas();
     }
+    pnj.setMovAct(pnj.getMaxMov());
+    pnj.setNumAtaAct(pnj.getNumAta());
   }
-  else{
-    posIniX = pnj.cas.getPosX();
-    posIniY = pnj.cas.getPosY();
-    int posArr = posIniX+posIniY*8;
-    if(pnj.getNumAtaAct() > 0)
-      pintaAta(pnj, posArr, pnj.getRang(), pnj.cas);
-    pintaCas(pnj, posArr, pnj.getMovAct(), pnj.getRang());
-    mueveHacia(1, 1, pnj);
-    desPintaCas();
-  }
-  pnj.setMovAct(pnj.getMaxMov());
-  pnj.setNumAtaAct(pnj.getNumAta());
-}
-
-
-
-private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIniX, int posIniY, bool matable){
-  if (matable && pnj.getAtaque() >= p2.getVida() && 
-      ((p1.getVida() < p2.getVida()) || 
-      (p1.getVida() == p2.getVida() && 
-      p1.getCasAct().getConsumeMov() > p2.getCasAct().getConsumeMov()))) return true; //Si ambos son matables pero el segundo tiene más vida o tienen la misma vida pero el segundo está más cerca matará el segundo
-  else if(!matable && pnj.getAtaque() >= p2.getVida()){ //Si el primero no es matable y el segundo sí prefiere el segundo
-    matable = true;
-    return true;
-  }
-  else if(!matable && ((p1.getVida() > p2.getVida()) || 
-      (p1.getVida() == p2.getVida() && 
-      p1.getCasAct().getConsumeMov() > p2.getCasAct().getConsumeMov())))return true; //Si ninguno es matable va a por el de menor vida si tienen la misma vida va al más cercano
-  return false; //Si no cumple ninguna anterior se queda con el primer objetivo
-}
-private void pintaCas(Personaje pnj, int pos, int mov, int rang){
-        int posAux;
-        int movAux = mov;
-        if(movAux > 0){
-            if(((posAux = pos+1)%8) != 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(pnj, posAux, movAux, rang);
-                if(pnj.getNumAtaAct() > 0)
-                    pintaAta(pnj, posAux, rang, tablero[posAux]);
-            }
-            if((((posAux = pos-1)+1) %8) != 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(pnj, posAux, movAux, rang);
-                if(pnj.getNumAtaAct() > 0)
-                    pintaAta(pnj, posAux, rang, tablero[posAux]);
-            }
-            if((posAux = pos+8) < tablero.Length && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(pnj, posAux, movAux, rang);
-                if(pnj.getNumAtaAct() > 0)
-                    pintaAta(pnj, posAux, rang, tablero[posAux]);
-            }
-            if((posAux = pos-8) >= 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(pnj, posAux, movAux, rang);
-                if(pnj.getNumAtaAct() > 0)
-                    pintaAta(pnj, posAux, rang, tablero[posAux]);
-            }
-        }
+  private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIniX, int posIniY, bool matable){
+    if (matable && pnj.getAtaque() >= p2.getVida() && 
+        ((p1.getVida() < p2.getVida()) || 
+        (p1.getVida() == p2.getVida() && 
+        p1.getCasAct().getConsumeMov() > p2.getCasAct().getConsumeMov()))) return true; //Si ambos son matables pero el segundo tiene más vida o tienen la misma vida pero el segundo está más cerca matará el segundo
+    else if(!matable && pnj.getAtaque() >= p2.getVida()){ //Si el primero no es matable y el segundo sí prefiere el segundo
+      matable = true;
+      return true;
     }
-private void pintaAta(Personaje pnj, int pos, int rang, Casilla cas){
+    else if(!matable && ((p1.getVida() > p2.getVida()) || 
+        (p1.getVida() == p2.getVida() && 
+        p1.getCasAct().getConsumeMov() > p2.getCasAct().getConsumeMov())))return true; //Si ninguno es matable va a por el de menor vida si tienen la misma vida va al más cercano
+    return false; //Si no cumple ninguna anterior se queda con el primer objetivo
+  }
+  private void pintaCas(Personaje pnj, int pos, int mov, int rang){
     int posAux;
-    for(int i = rang; i > 0; i--)
-        if(i > 0){
-            if(((posAux = pos+i)%8) != i-1 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
-                ejecutaAtacable(posAux, cas);
-            }
-            if((((posAux = pos-i)+1) %8) != rang-1 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
-                ejecutaAtacable(posAux, cas);
-            }
-            if((posAux = pos+8*i) < tablero.Length && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
-                ejecutaAtacable(posAux, cas);
-            }
-            if((posAux = pos-8*i) >= 0 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
-                ejecutaAtacable(posAux, cas);
-            }
+    int movAux = mov;
+    if(movAux > 0){
+        if(((posAux = pos+1)%8) != 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+            ejecutaPintado(pnj, posAux, movAux, rang);
+            if(pnj.getNumAtaAct() > 0)
+                pintaAta(pnj, posAux, rang, tablero[posAux]);
         }
-}
-private void ejecutaPintado(Personaje pnj, int posAux, int mov, int rang){
-    tablero[posAux].pintada = true;
-    tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
-    pintaCas(pnj, posAux, mov-1, rang);
-}
-private void ejecutaAtacable(int posAux, Casilla cas){
-    if(!tablero[posAux].pnj.enemigo){
-        tablero[posAux].pintada = true;
-        tablero[posAux].setCasAnt(cas);
-        listaCasAtacable.Add(tablero[posAux]);
-    }
-}
-private void desPintaCas(){
-        for(int i = 0; i < tablero.Length;i++){
-            tablero[i].pintada = false;
-            tablero[i].setConsumeMov(0);
-            tablero[i].setCasAnt(null);
+        if((((posAux = pos-1)+1) %8) != 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+            ejecutaPintado(pnj, posAux, movAux, rang);
+            if(pnj.getNumAtaAct() > 0)
+                pintaAta(pnj, posAux, rang, tablero[posAux]);
         }
-        listaCasMovible.Clear();
-        listaCasAtacable.Clear();
+        if((posAux = pos+8) < tablero.Length && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+            ejecutaPintado(pnj, posAux, movAux, rang);
+            if(pnj.getNumAtaAct() > 0)
+                pintaAta(pnj, posAux, rang, tablero[posAux]);
+        }
+        if((posAux = pos-8) >= 0 && tablero[posAux].vacia && (!tablero[posAux].pintada || tablero[posAux].getConsumeMov() > 3 - movAux)){
+            ejecutaPintado(pnj, posAux, movAux, rang);
+            if(pnj.getNumAtaAct() > 0)
+                pintaAta(pnj, posAux, rang, tablero[posAux]);
+        }
     }
-private void mueveHacia(int posX, int posY, Personaje pnj){
-  int minDist = 10000;
-  int dist;
-  int pos = 0;
-  Casilla casillaMueve = null;
-  for(int i = 0; i < tablero.Length; i++){
-    if(tablero[i].pintada){
-      dist = Mathf.Abs(tablero[i].getPosX()-posX) + Mathf.Abs(tablero[i].getPosY()-posY);
-      if(dist < minDist){
-        pos = i;
-        minDist = dist;
-        casillaMueve = tablero[i];
+  }
+  private void pintaAta(Personaje pnj, int pos, int rang, Casilla cas){
+      int posAux;
+      for(int i = rang; i > 0; i--)
+          if(i > 0){
+              if(((posAux = pos+i)%8) != i-1 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
+                  ejecutaAtacable(posAux, cas);
+              }
+              if((((posAux = pos-i)+1) %8) != rang-1 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
+                  ejecutaAtacable(posAux, cas);
+              }
+              if((posAux = pos+8*i) < tablero.Length && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
+                  ejecutaAtacable(posAux, cas);
+              }
+              if((posAux = pos-8*i) >= 0 && !tablero[posAux].vacia && !tablero[posAux].pintada && !tablero[posAux].pnj.inmune){
+                  ejecutaAtacable(posAux, cas);
+              }
+          }
+  }
+  private void ejecutaPintado(Personaje pnj, int posAux, int mov, int rang){
+      tablero[posAux].pintada = true;
+      tablero[posAux].setConsumeMov(pnj.getMaxMov() - mov + 1);
+      pintaCas(pnj, posAux, mov-1, rang);
+  }
+  private void ejecutaAtacable(int posAux, Casilla cas){
+      if(!tablero[posAux].pnj.enemigo){
+          tablero[posAux].pintada = true;
+          tablero[posAux].setCasAnt(cas);
+          listaCasAtacable.Add(tablero[posAux]);
+      }
+  }
+  private void desPintaCas(){
+      for(int i = 0; i < tablero.Length;i++){
+          tablero[i].pintada = false;
+          tablero[i].setConsumeMov(0);
+          tablero[i].setCasAnt(null);
+      }
+      listaCasMovible.Clear();
+      listaCasAtacable.Clear();
+  }
+  private void mueveHacia(int posX, int posY, Personaje pnj){
+    int minDist = 10000;
+    int dist;
+    int pos = 0;
+    Casilla casillaMueve = null;
+    for(int i = 0; i < tablero.Length; i++){
+      if(tablero[i].pintada){
+        dist = Mathf.Abs(tablero[i].getPosX()-posX) + Mathf.Abs(tablero[i].getPosY()-posY);
+        if(dist < minDist){
+          pos = i;
+          minDist = dist;
+          casillaMueve = tablero[i];
+        }
       }
     }
+    if(casillaMueve != null){
+      pnj.cas.vacia = true;
+      pnj.cas.pnj = null;
+      pnj.cas = casillaMueve;
+      casillaMueve.vacia = false;
+      casillaMueve.pnj = pnj;
+      pnj.transform.SetParent(filasPnj[casillaMueve.fila].transform, false);
+      pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 40, casillaMueve.transform.position.z+10);
+      pnj.setMovAct(pnj.getMovAct()-casillaMueve.getConsumeMov());
+    }
   }
-  if(casillaMueve != null){
-    pnj.cas.vacia = true;
-    pnj.cas.pnj = null;
-    pnj.cas = casillaMueve;
-    casillaMueve.vacia = false;
-    casillaMueve.pnj = pnj;
-    pnj.transform.SetParent(filasPnj[casillaMueve.fila].transform, false);
-    pnj.transform.position = new Vector3(casillaMueve.transform.position.x + 5, casillaMueve.transform.position.y + 40, casillaMueve.transform.position.z+10);
-    pnj.setMovAct(pnj.getMovAct()-casillaMueve.getConsumeMov());
+  private void spawnEnemigo(){
+    GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
+    listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
+    listaPnjEnemigos.Remove(randEnemigo);
+    int xCas = Random.Range(0, 64);
+    while(!tablero[xCas].vacia || !tablero[xCas].esSpawnEne()){
+      xCas = Random.Range(0, 64);
+    }
+    randEnemigo.transform.SetParent(filasPnj[tablero[xCas].fila].transform, false);
+    randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 40, tablero[xCas].transform.position.z+10);
+    randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[xCas]);
+    tablero[xCas].pnj = randEnemigo.GetComponent<Personaje>();
+    tablero[xCas].vacia = false;
   }
-}
-private void spawnEnemigo(){
-  GameObject randEnemigo = listaPnjEnemigos[Random.Range(0, listaPnjEnemigos.Count)];
-  listaPnjEnemigosEnTablero.Add(randEnemigo.GetComponent<Personaje>());
-  listaPnjEnemigos.Remove(randEnemigo);
-  int xCas = Random.Range(0, 64);
-  while(!tablero[xCas].vacia || !tablero[xCas].esSpawnEne()){
-    xCas = Random.Range(0, 64);
-  }
-  randEnemigo.transform.SetParent(filasPnj[tablero[xCas].fila].transform, false);
-  randEnemigo.transform.position = new Vector3(tablero[xCas].transform.position.x + 5, tablero[xCas].transform.position.y + 40, tablero[xCas].transform.position.z+10);
-  randEnemigo.gameObject.GetComponent<Personaje>().setCasAct(tablero[xCas]);
-  tablero[xCas].pnj = randEnemigo.GetComponent<Personaje>();
-  tablero[xCas].vacia = false;
-}
   public int getFase(){
     return fase;
   }
@@ -708,7 +701,6 @@ private void spawnEnemigo(){
   public void reactivaDialogo(){
     dialogo = false;
   }
-
   public void setMata(){
     mata = true;
   }
