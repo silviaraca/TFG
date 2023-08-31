@@ -14,12 +14,14 @@ public class Jabs : MonoBehaviour
         if (PlayerPrefs.HasKey("NumJabs"))
         {
             string number = PlayerPrefs.GetString("NumJabs");
-            num = int.Parse(number); 
+            num = int.Parse(number);      
         }
         else
         {
             num = 0;
         }
+
+        Debug.Log(num);
     }
 
     // Update is called once per frame

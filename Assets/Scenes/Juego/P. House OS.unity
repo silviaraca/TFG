@@ -340,35 +340,15 @@ MonoBehaviour:
   textComponent: {fileID: 1939888258}
   textName: {fileID: 2008409679}
   sentences:
-  - WHAT JUST HAPPENDED?
-  - I just told you
-  - You crossed through the mirror and now you are in the Other Side
-  - WEREN'T YOU LYING???
-  - I'll take that as a retorical question
-  - So now that you are here, you can't be walking through town without protection
-  - Protection?? Is there something dangerous?
-  - Wow you weren't paying any attention when we talked last time
-  - Sorry, I thought all of this was a bad joke
-  - As I was saying, you need cards
-  - You can use them to fight your enemies and get some stuff
-  - And how do I get them?
-  - I'll give you the first one, talk to different people on town. If you are nice,
-    maybe they'll help you
-  - 
+  - And now that you know how to fight, you need more cards.
+  - Talk to the villagers and explore the area a bit. If you are lucky, they will
+    give you some cards
+  - Also, as the letters are materialised memories, they don't need to give you things
+    directly related to them. They can be stories they know or memories they have.
   names:
-  - Bram
-  - VH
-  - VH
-  - Bram
-  - VH
-  - VH
-  - Bram
-  - VH
-  - Bram
-  - VH
-  - VH
-  - Bram
-  - VH
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!114 &132425663
@@ -387,8 +367,8 @@ MonoBehaviour:
   cargar: {fileID: 132425664}
   escena: EstrategiaTuto
   enemies:
-  - 
-  - 
+  - Zombie
+  - Zombie
   - 
   - 
   - 
@@ -446,24 +426,23 @@ MonoBehaviour:
   - As I was saying, you need cards
   - You can use them to fight your enemies and get some stuff
   - And how do I get them?
-  - I'll give you the first one, talk to different people on town. If you are nice,
-    maybe they'll help you
+  - 'I''ll give you some cards to start with: Stake, Water and Garlic'
   - But first, I'll show you how to fight!
   names:
   - Bram
-  - VH
-  - VH
+  - Van Helsing
+  - Van Helsing
   - Bram
-  - VH
-  - VH
+  - Van Helsing
+  - Van Helsing
   - Bram
-  - VH
+  - Van Helsing
   - Bram
-  - VH
-  - VH
+  - Van Helsing
+  - Van Helsing
   - Bram
-  - VH
-  - VH
+  - Van Helsing
+  - Van Helsing
   textSpeed: 0
 --- !u!1001 &132695247
 PrefabInstance:
