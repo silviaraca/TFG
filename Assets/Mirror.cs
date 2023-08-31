@@ -18,7 +18,7 @@ public class Mirror : MonoBehaviour
 
     void Start()
     {
-        //  PlayerPrefs.DeleteKey("MirrorPlaced");
+        //PlayerPrefs.DeleteKey("MirrorPlaced");
         if(PlayerPrefs.HasKey("MirrorPlaced")) mirrorPlaced = PlayerPrefs.GetString("MirrorPlaced");
         if(mirrorPlaced != "done") //Si ya se ha colocado el espejo
         {

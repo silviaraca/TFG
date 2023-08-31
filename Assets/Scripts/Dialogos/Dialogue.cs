@@ -45,8 +45,8 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeE)textoE.gameObject.SetActive(true);
-        else textoE.gameObject.SetActive(false);
+        // if(activeE)textoE.gameObject.SetActive(true);
+        // else textoE.gameObject.SetActive(false);
 
         if(activeE && Input.GetKeyDown(KeyCode.E) && currentScene.name != "EstrategiaTuto"){
             gameObject.SetActive(true);
@@ -134,6 +134,7 @@ public class Dialogue : MonoBehaviour
     {
         player = collision.GetComponent<Player>();
         if(collision.gameObject.name.Equals("Player")){
+            textoE.gameObject.SetActive(true);
             activeE = true; 
         }                   
     }
