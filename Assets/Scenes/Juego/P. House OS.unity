@@ -653,6 +653,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Decisiones
       objectReference: {fileID: 0}
+    - target: {fileID: 7609963812012496163, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 132425665}
+    - target: {fileID: 7609963812012496163, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: decision2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 132425665}
+    - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: decision1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
 --- !u!114 &292020501 stripped
