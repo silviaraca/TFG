@@ -118,9 +118,11 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            panel.gameObject.SetActive(false);
-            if(currentScene.name != "EstrategiaTuto")
+            if(currentScene.name != "EstrategiaTuto"){
+                index++;
+                panel.gameObject.SetActive(false);
                 move.allowMove = true;
+            }
             else{
                 GameManagerE gm = FindObjectOfType<GameManagerE>();
                 gm.finDialogo();
@@ -156,5 +158,9 @@ public class Dialogue : MonoBehaviour
 
     public void activa(){
         activo = true;
+    }
+
+    public Player getPlayerExistente(){
+        return playerExistente;
     }
 }
