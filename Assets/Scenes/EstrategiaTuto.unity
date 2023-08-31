@@ -1031,46 +1031,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1055776836}
-  momentosScript: 02000000040000000600000007000000090000000a0000000c000000
+  momentosScript: 02000000040000000600000007000000090000000a0000000d000000
   textComponent: {fileID: 1186275079}
   textName: {fileID: 1099791794}
   sentences:
-  - Bueno, te voy a explicar como funciona esto.
-  - "Cuando haya alg\xFAn aliado a la causa de \"este Dr\xE1cula\" que quiera gresca
-    le vas a tener que recordar que ya fue derrotado antiguamente."
-  - "Para ello tienes los recuerdos de objetos y personas que hayas ido recuperando,
-    de momento toma estos. Prueba a pasar la mano por encima para verlas m\xE1s de
-    cerca."
-  - "Muy bien, ahora como ves es la \"Fase 1\", en esta fase podr\xE1s obtener hasta
-    DOS recuerdos m\xE1s, sin pasarte del l\xEDmite de TRES recuerdos  que puedes
-    tener."
-  - "Para ello c\xF3gelos de la pila de recuerdos a la derecha y luego pasa de fase."
-  - "Genial, ahora ya es hora de usar tus recuerdos, pero como solo tienes objetos
-    necesaritar\xE1s alg\xFAn objetivo para poder usarlos, deja que traiga un enemigo
-    para que lo pruebes."
-  - Prueba a usar la estaca contra este enemigo.
-  - "Perfecto, lo vas pillando r\xE1pido, pasa fase y empezar\xE9 a explicarte el
-    movimiento de tus propios personajes."
-  - 'Ahora te he traido un recuerdo de un campesino, hasta que consigas los tuyos
-    propios claro. '
-  - "En la \"Fase 3\" podr\xE1s indicar a tus aliados donde moverse y obviamente,
-    atacar, prueba a atacar al enemigo que tiene cerca."
-  - "Bien hecho, ya casi est\xE1s preparado para empezar a valerte por ti mismo,
-    te voy a exlicar una \xFAltima cosa antes de que empieces a moverte por el pueblo,
-    pasa de fase."
-  - En la "Fase 4" puedes jugar otra carta e incluso hay algunas que solo pueden
-    jugarse en esta fase, tenlo en cuenta, prueba a usar el agua bendita.
-  - "Este recuerdo es un hechizo de \xE1rea, voy a hacerle da\xF1o a tu aldeano para
-    que veas bien su efecto, l\xE1nzalo en la zona que te he marcado anda."
-  - GENIAL, ya eres un experto cazavampiros o salvavampiros... o lo que prefieras
-    ver la verdad
-  - "Ahora cuando pases de fase se acabar\xE1 el turno entero, tu contrincante har\xE1
-    aparecer siempre nuevos enemigos en este momento."
-  - "Ten cuidado con los turnos porque cuanto m\xE1s tardes m\xE1s d\xE9bil se har\xE1
-    el recuerdo y dependiendo de tu contrincante tendr\xE1s m\xE1s o menos tiempo."
-  - Cuando el contador llega a 0 ya no hay nada que hacer, al menos no en ese momento.
-  - "Pasa de fase una \xFAltima vez y daremos por concluida tu instrucci\xF3n."
+  - Well... I'm going to explain how it works.
+  - Whenever you meet an ally of the "Evil Dracula", they will be willing to attack
+    you, and you need to be prepared for it, you have to make them remember that
+    they were defeated before.
+  - For it you have the memories of objects and people that you will be finding arround
+    the village, for now take these. Try running your hand over them to take a closer
+    look.
+  - Nice, now as you see you are in "Phase 1" of the battle, in this phase you will
+    be able to obtain up to TWO more memories, allways having no mora than THREE
+    in your hand.
+  - To do this, take them from the memory pile on the right and then pass the phase.
+  - Great, it is time for you to try and use your memories, but since you only have
+    items you will need a target to use them, let me bring an enemy for you to test
+    it.
+  - Try and use the STAKE on the target.
+  - Very well, you are fast kid, pass the phase and i'll start explaining the movement
+    of your characters.
+  - I've brought you a Villager untill you have your own.
+  - In "Phase3" you will be able to indicate your allies where to move or attack,
+    try attacking the enemy nearby.
+  - Well done, you are almost ready to start defending your self, I have one last
+    thing to teach you before you are free to go.
+  - In "Phase4" you will be able to play cards again, be careful, there are cards
+    that only can be played on "Phase2" or only in "Phase4" or even some of them
+    change their effects.
+  - Keeping that in mind try to use the holy water, it is an object that can only
+    be used in "Phase4".
+  - This memory has an area effect, I'm going to dam,age your villager so that you
+    can see its effect, cast it in the area that I marked for you please.
+  - GREAT, you are already an expert vampire hunter or vampire savior... or whatever
+    you prefer to be called.
+  - Now if you pass the phase the entire turn will end, you opponent will always
+    spawn new enemies at this time and will try to attack you.
+  - Be careful with the turns because the longer it takes you to defeat the enemy,
+    the weaker the memory will become and depending on your opponent you will have
+    more or less time.
+  - When the counter reaches 0 there is nothing else to do, at least not at that
+    moment.
+  - Pass the phase one last time and we will conclude your instruction.
   names:
+  - Van Helsing
   - Van Helsing
   - Van Helsing
   - Van Helsing
