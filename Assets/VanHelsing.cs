@@ -18,6 +18,10 @@ public class VanHelsing : MonoBehaviour
             dialogue1.enabled = false;
             dialogue2.enabled = true;
             dialogue2.activa();
+
+            string tuto = "done";
+            PlayerPrefs.SetString("Tutorial2", tuto);
+            PlayerPrefs.Save();
             PlayerPrefs.DeleteKey("Tutorial");
         }
     }
@@ -25,11 +29,7 @@ public class VanHelsing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeE && Input.GetKeyDown(KeyCode.E))
-        {
-
-        }
-        if(!PlayerPrefs.HasKey("Tutorial"))
+        if(!PlayerPrefs.HasKey("Tutorial") && !PlayerPrefs.HasKey("Tutorial2"))
         {
             dialogue1.enabled = true;
             dialogue2.enabled = false;
