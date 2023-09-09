@@ -493,7 +493,6 @@ public class GameManagerE : MonoBehaviour
     danaVenenorPnj();
     turnosParaPerder--;
     fase = 0; //Reinicia fases cuando haya terminado lo anterior
-    print("a");
     moviendose = false;
   }
   private void mueveEnemigo(Personaje pnj){
