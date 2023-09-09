@@ -11,8 +11,8 @@ public class GameManagerE : MonoBehaviour
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
   public GameObject Canvas, Cards, Personajes;
-  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba, cardAjo; //Objetos de las cartas que existen ya, añadir conforme 
-  public GameObject characterZombie; //Lo de arriba pero enemigos 
+  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba, cardAjo, cardCuchillo, cardNosferatu, cardRatonela, cardCarreta, cardLamias; //Objetos de las cartas que existen ya, añadir conforme 
+  public GameObject characterZombie, characterAbomination, characterWolf, characterVampire; //Lo de arriba pero enemigos 
   public Transform[] espacioMano;
   public Casilla[] tablero;
   public int tamTab;
@@ -59,12 +59,14 @@ public class GameManagerE : MonoBehaviour
       listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
     }
     else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-      listaCartas.Add("Ajo");
-      listaCartas.Add("Ajo");
-      listaCartas.Add("Agua");
-      listaCartas.Add("Agua");
+      listaCartas.Add("Lamias");
+      listaCartas.Add("Lamias");
+      listaCartas.Add("Carreta");
+      listaCartas.Add("Carreta");
+      listaCartas.Add("Cuchillo");
       listaCartas.Add("Estaca");
-      listaCartas.Add("Estaca");
+      listaCartas.Add("Nosferatu");
+      listaCartas.Add("Ratonela");
 
       List<string> inventory = new List<string>();
       if(PlayerPrefs.HasKey("InventoryCards")){
@@ -86,6 +88,17 @@ public class GameManagerE : MonoBehaviour
         listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
     }
     else{//Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
+      listaEnemigos.Add("Abomination");
+      listaEnemigos.Add("Wolf");
+      listaEnemigos.Add("Wolf");
+      listaEnemigos.Add("Wolf");
+      listaEnemigos.Add("Wolf");
+      listaEnemigos.Add("Vampire");
+      listaEnemigos.Add("Vampire");
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
+      listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
@@ -157,6 +170,7 @@ public class GameManagerE : MonoBehaviour
             //efectos de final de turno y movimientos de enemigos
             moviendose = true;
             movEnemigos();
+            desPintaCas();
           }
           if(fase == 1 && roba){
             DrawCard();
@@ -302,6 +316,25 @@ public class GameManagerE : MonoBehaviour
       }
     }
   }
+  public void danaVampsAliados(){
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].vampire)
+        listaPnj[i].danar(1);
+    }
+  }
+  public void ataqueLobos(){
+    int countAtaque = 0;
+    for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
+      if(listaPnjEnemigosEnTablero[i].gameObject.name == "Wolf(Clone)"){
+        countAtaque++;
+      }
+    }
+    for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
+      if(listaPnjEnemigosEnTablero[i].gameObject.name == "Wolf(Clone)"){
+        listaPnjEnemigosEnTablero[i].setAtaque(countAtaque);
+      }
+    }
+  }
   public void reactivarDialogo(){
     if(!zoomed){
       ds.setReactivable();
@@ -346,13 +379,13 @@ public class GameManagerE : MonoBehaviour
       if(listaPnj[i].turnosInmune > 0){
         listaPnj[i].turnosInmune--;
       }
-      if(listaPnj[i].turnosInmune == 0) listaPnj[i].inmune = false;
+      if(listaPnj[i].turnosInmune <= 0) listaPnj[i].inmune = false;
     }
     for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
       if(listaPnjEnemigosEnTablero[i].turnosInmune > 0){
         listaPnjEnemigosEnTablero[i].turnosInmune--;
       }
-      if(listaPnjEnemigosEnTablero[i].turnosInmune == 0) listaPnjEnemigosEnTablero[i].inmune = false;
+      if(listaPnjEnemigosEnTablero[i].turnosInmune <= 0) listaPnjEnemigosEnTablero[i].inmune = false;
     }
   }
   private void modificaEfectos(){
@@ -436,6 +469,21 @@ public class GameManagerE : MonoBehaviour
       else if(listaCartas[i] == "Ajo"){
         cartaAnadida = Instantiate(cardAjo);
       }
+      else if(listaCartas[i] == "Cuchillo"){
+        cartaAnadida = Instantiate(cardCuchillo);
+      }
+      else if(listaCartas[i] == "Nosferatu"){
+        cartaAnadida = Instantiate(cardNosferatu);
+      }
+      else if(listaCartas[i] == "Ratonela"){
+        cartaAnadida = Instantiate(cardRatonela);
+      }
+      else if(listaCartas[i] == "Carreta"){
+        cartaAnadida = Instantiate(cardCarreta);
+      }
+      else if(listaCartas[i] == "Lamias"){
+        cartaAnadida = Instantiate(cardLamias);
+      }
       cartaAnadida.transform.SetParent(Cards.transform, false);
       mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());
     }
@@ -474,6 +522,15 @@ public class GameManagerE : MonoBehaviour
       if(listaEnemigos[i] == "Zombie"){
         pnjAnadido = Instantiate(characterZombie);
       }
+      if(listaEnemigos[i] == "Abomination"){
+        pnjAnadido = Instantiate(characterAbomination);
+      }
+      if(listaEnemigos[i] == "Vampire"){
+        pnjAnadido = Instantiate(characterVampire);
+      }
+      if(listaEnemigos[i] == "Wolf"){
+        pnjAnadido = Instantiate(characterWolf);
+      }
       pnjAnadido.transform.SetParent(Personajes.transform, false);
       listaPnjEnemigos.Add(pnjAnadido);
     }
@@ -482,15 +539,19 @@ public class GameManagerE : MonoBehaviour
     StartCoroutine(muevePausado());
   }
   IEnumerator muevePausado(){
+    ataqueLobos();
     for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
       mueveEnemigo(listaPnjEnemigosEnTablero[i]);
       yield return new WaitForSeconds(0.5f);
     }
     if(listaPnjEnemigos.Count > 0){
       spawnEnemigo();
+      if(listaPnjEnemigos.Count > 0)
+        spawnEnemigo();
     }
     transformaPnj();
     danaVenenorPnj();
+    contadorInmunes();
     turnosParaPerder--;
     fase = 0; //Reinicia fases cuando haya terminado lo anterior
     moviendose = false;
@@ -518,6 +579,12 @@ public class GameManagerE : MonoBehaviour
           //Ahora se movería hacia el enemigo seleccionado y le atacaría
           pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
           Casilla cas = enemigoAtacar.cas;
+          if(pnj.vampire){
+            pnj.danar(-1);
+          }
+          if(pnj.envenena){
+              enemigoAtacar.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
+          }
           if(enemigoAtacar.danar(pnj.getAtaque())){
               //Aquí cosas que pasen si se muere el enemigo
               cas.vacia = true;
@@ -633,6 +700,7 @@ public class GameManagerE : MonoBehaviour
           tablero[i].pintada = false;
           tablero[i].setConsumeMov(0);
           tablero[i].setCasAnt(null);
+          tablero[i].setColor(tablero[i].getImagenIni());
       }
       listaCasMovible.Clear();
       listaCasAtacable.Clear();

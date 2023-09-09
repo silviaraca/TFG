@@ -49,12 +49,24 @@ public class DragDropPnj : MonoBehaviour
                     cas.pnj = pnj;
                     cas.vacia = false;
                     pnj.setCasAct(cas);
-                    
+                    if(pnj.spawner){
+                        int posIniX = pnj.cas.getPosX();
+                        int posIniY = pnj.cas.getPosY();
+                        int posArr = posIniX+posIniY*8;
+                        limpiaSpawn();
+                        creaSpawn(posArr);
+                    }
                 }
                 else if(sobreCasilla && !cas.vacia && cas.pintada){
                     Casilla casAct = pnj.getCasAct();
                     Personaje pnjAct = cas.pnj;
                     pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+                    if(pnj.vampire){
+                        pnj.danar(-1);
+                    }
+                    if(pnj.envenena){
+                        pnjAct.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
+                    }
                     if(pnjAct.danar(pnj.getAtaque())){
                         //Aquí cosas que pasen si se muere el enemigo
                         cas.vacia = true;
@@ -68,6 +80,13 @@ public class DragDropPnj : MonoBehaviour
                     cas.getCasAnt().vacia = false;
                     cas.getCasAnt().pnj = pnj;
                     pnj.cas = cas.getCasAnt();
+                    if(pnj.spawner){
+                        int posIniX = pnj.cas.getPosX();
+                        int posIniY = pnj.cas.getPosY();
+                        int posArr = posIniX+posIniY*8;
+                        limpiaSpawn();
+                        creaSpawn(posArr);
+                    }
                 }
                 else {
                     pnj.transform.SetParent(gm.filasPnj[filaIni].transform, false);
@@ -80,6 +99,12 @@ public class DragDropPnj : MonoBehaviour
                     Casilla casAct = pnj.getCasAct();
                     Personaje pnjAct = cas.pnj;
                     pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
+                    if(pnj.vampire){
+                        pnj.danar(-1);
+                    }
+                    if(pnj.envenena){
+                        pnjAct.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
+                    }
                     if(pnjAct.danar(pnj.getAtaque())){
                         //Aquí cosas que pasen si se muere el enemigo
                         cas.vacia = true;
@@ -118,7 +143,21 @@ public class DragDropPnj : MonoBehaviour
             pintaAta(posArr, pnj.getRang(), pnj.cas);
         pintaCas(posArr, pnj.getMovAct(), pnj.getRang());
     }
-
+    private void limpiaSpawn(){
+        for(int i = 0; i < gm.tablero.Length; i++){
+            gm.tablero[i].quitaSpawnAliTem();
+        }
+    }
+    private void creaSpawn(int index){
+        if((index + 1)%8 != 0)
+            gm.tablero[index + 1].poneSpawnAliTem();
+        if((index)%8 != 0)
+            gm.tablero[index - 1].poneSpawnAliTem();
+        if((index + 8) < gm.tablero.Length)
+            gm.tablero[index + 8].poneSpawnAliTem();
+        if((index - 8) >= 0)
+            gm.tablero[index - 8].poneSpawnAliTem();
+    }
     private void pintaCas(int pos, int mov, int rang){
         int posAux;
         int movAux = mov;

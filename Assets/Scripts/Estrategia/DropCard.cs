@@ -19,7 +19,7 @@ public class DropCard : MonoBehaviour
     }
     public void sueltaCarta(){
         if(gm.getFase() == 2 || gm.getFase() == 4){
-            if (cas != null && card.esPersonaje() && cas.esSpawnAli()){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
+            if (cas != null && card.esPersonaje() && (cas.esSpawnAli() || cas.esSpawnAliTemp())){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
                     GameObject personajeCreado = Instantiate(personajePrefab);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
@@ -29,6 +29,13 @@ public class DropCard : MonoBehaviour
                     setCharacterValues(personajeCreado.GetComponent<Personaje>());
                     card.transform.position = gm.zonaDescarte.transform.position;
                     cas.pnj = personajeCreado.GetComponent<Personaje>();
+                    if(cas.pnj.spawner){
+                        int posIniX = cas.getPosX();
+                        int posIniY = cas.getPosY();
+                        int posArr = posIniX+posIniY*8;
+                        limpiaSpawn();
+                        creaSpawn(posArr);
+                    }
                     gm.listaPnj.Add(cas.pnj);
                     cas.vacia = false;
                     int i = card.handIndex;
@@ -170,7 +177,7 @@ public class DropCard : MonoBehaviour
         string nombreObjeto = collision.gameObject.name.Substring(0,7);
         if(nombreObjeto.Equals("Casilla") && !card.zoom){ 
             //Tiene que haber también uno de estos por cartas de hechizo y demas porque funcionan distinto, no colorean igual ni de verde
-            if(cas.vacia && card.esPersonaje() && cas.esSpawnAli()) pintaAzul(cas);
+            if(cas.vacia && card.esPersonaje() && (cas.esSpawnAli() || cas.esSpawnAliTemp())) pintaAzul(cas);
             else if(card.esHechizoArea()) pintaArea();
             else if(card.esHechizoUnico() && !cas.vacia){
                 if(card.esHechizoAtaque() && cas.pnj.enemigo) pintaRojo(cas);
@@ -255,6 +262,21 @@ public class DropCard : MonoBehaviour
         else if(!casilla.vacia && !casilla.pnj.enemigo){
             pintaVerde(casilla);
         }
+    }
+    private void limpiaSpawn(){
+        for(int i = 0; i < gm.tablero.Length; i++){
+            gm.tablero[i].quitaSpawnAliTem();
+        }
+    }
+    private void creaSpawn(int index){
+        if((index + 1)%8 != 0)
+            gm.tablero[index + 1].poneSpawnAliTem();
+        if((index)%8 != 0)
+            gm.tablero[index - 1].poneSpawnAliTem();
+        if((index + 8) < gm.tablero.Length)
+            gm.tablero[index + 8].poneSpawnAliTem();
+        if((index - 8) >= 0)
+            gm.tablero[index - 8].poneSpawnAliTem();
     }
     private void setCharacterValues(Personaje pnj){
         pnj.setAtaque(card.getAtaque());
