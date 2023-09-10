@@ -20,32 +20,32 @@ public class DropCard : MonoBehaviour
     }
     public void sueltaCarta(){
         if(gm.getFase() == 2 || gm.getFase() == 4){
-            if (cas != null && card.esPersonaje() && (cas.esSpawnAli() || cas.esSpawnAliTemp())){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
-                if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
+            if (cas != null && card.esPersonaje() && (cas.esSpawnAli() || cas.esSpawnAliTemp())){ //Cartas de personaje jugables solo sobre spawnAliado
+                if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ //Si se suelta en una casilla vacía
                     GameObject personajeCreado = new GameObject();
-                    if(card.nombreCarta != "Logan" || (card.nombreCarta == "Logan" && gm.getFase() == 2))
-                        personajeCreado = Instantiate(personajePrefab);
+                    if(card.nombreCarta != "Logan" || (card.nombreCarta == "Logan" && gm.getFase() == 2)) //Si es logan busca en qué fase se le spawnea
+                        personajeCreado = Instantiate(personajePrefab); //Personaje normal o de primera fase
                     else
-                        personajeCreado = Instantiate(personajePrefab2);
+                        personajeCreado = Instantiate(personajePrefab2); //Personaje de segunda fase
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
-                    personajeCreado.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
+                    personajeCreado.transform.SetParent(gm.filasPnj[cas.fila].transform, false); //Posiciona personaje en el tablero
                     personajeCreado.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
-                    personajeCreado.gameObject.GetComponent<Personaje>().setCasAct(cas);
-                    setCharacterValues(personajeCreado.GetComponent<Personaje>());
+                    personajeCreado.gameObject.GetComponent<Personaje>().setCasAct(cas); 
+                    setCharacterValues(personajeCreado.GetComponent<Personaje>()); //Inicializa a los valores de la carta
                     card.transform.position = gm.zonaDescarte.transform.position;
                     cas.pnj = personajeCreado.GetComponent<Personaje>();
-                    if(cas.pnj.spawner){
+                    if(cas.pnj.spawner){ //Activa zonas de spawn de los personajes con la caracterísitca spawner
                         int posIniX = cas.getPosX();
                         int posIniY = cas.getPosY();
                         int posArr = posIniX+posIniY*8;
                         limpiaSpawn();
                         creaSpawn(posArr);
                     }
-                    gm.listaPnj.Add(cas.pnj);
-                    cas.pnj.activaEfectoInvocacion();
+                    gm.listaPnj.Add(cas.pnj); //Añade el personaje a la lista de aliados
+                    cas.pnj.activaEfectoInvocacion(); //Activa los efectos de un personaje al ser invocado
                     cas.vacia = false;
                     int i = card.handIndex;
-                    if(card.enMano){
+                    if(card.enMano){ //Limpia el espacio que ha quedado en mano
                         while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
                             gm.mano[i+1].transform.position = gm.espacioMano[i].position;
                             gm.mano[i] = gm.mano[i+1];
@@ -55,7 +55,7 @@ public class DropCard : MonoBehaviour
                         card.enMano = false;
                         card.setCasAct(cas);
                         gm.espacioManoSinUsar[i] = true;                
-                        gm.mano.Remove(gm.mano[i]);//***
+                        gm.mano.Remove(gm.mano[i]);//Quita la carta y la añade al descarte
                     }
                     gm.setCarJugadas(gm.getCarJugadas() + 1);
                 }
@@ -64,7 +64,7 @@ public class DropCard : MonoBehaviour
                 if(card.esHechizoUnico()){ //Cartas de hechizo que tienen que lanzarse sobre un personaje
                     if(sobreCasilla && !cas.vacia && gm.getCarJugadas() < 2 && ((card.esHechizoAtaque() && cas.pnj.enemigo) || (card.esHechizoDefensa() && !cas.pnj.enemigo))){
                         card.transform.position = gm.zonaDescarte.transform.position;
-                        card.efectoHechizo(cas.pnj);
+                        card.efectoHechizo(cas.pnj); //Realiza el efecto del hechizo
                         int i = card.handIndex;
                         //Correr posición de las cartas de la mano para dejar hueco
                         if(card.enMano){
@@ -78,7 +78,7 @@ public class DropCard : MonoBehaviour
                             card.setCasAct(cas);
                             gm.descarte.Add(card);
                             gm.espacioManoSinUsar[i] = true;                
-                            gm.mano.Remove(gm.mano[i]);//***
+                            gm.mano.Remove(gm.mano[i]); //Quita la carta y la añade al descarte
                         }
                         gm.setCarJugadas(gm.getCarJugadas() + 1);
                     }
@@ -86,15 +86,13 @@ public class DropCard : MonoBehaviour
                 else if(card.esHechizoArea() && !gm.tutorial){ //Cartas de hechizo en area sin necesidad de objetivo
                     if(sobreCasilla && gm.getCarJugadas() < 2){
                         card.transform.position = gm.zonaDescarte.transform.position;
-                        //Añadir a una lista de descartes
-                        //---------------
                         int posAux, areaAux;
                         areaAux = card.getAreaHechizo();
                         //Una vez soltada la carta de hechizo en area hace si efecto en todas las casillas ocupadas por algún personaje
                         if(!cas.vacia)
                             card.efectoHechizo(cas.pnj);
                         int pos = cas.getPosX()+cas.getPosY()*8;
-                        while(areaAux > 0){
+                        while(areaAux > 0){ //Ejerce el efecto en todas las casillas en el área
                             if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia){
                                 card.efectoHechizo(gm.tablero[posAux].pnj);
                             }
@@ -110,7 +108,7 @@ public class DropCard : MonoBehaviour
                             areaAux--;
                         }                        
                         int i = card.handIndex;
-                        if(card.enMano){
+                        if(card.enMano){ //Limpia hueco en la mano
                             while(i+1 < gm.espacioMano.Length && !gm.espacioManoSinUsar[i+1]){
                                 gm.mano[i+1].transform.position = gm.espacioMano[i].position;
                                 gm.mano[i] = gm.mano[i+1];
@@ -121,12 +119,12 @@ public class DropCard : MonoBehaviour
                             card.setCasAct(cas);
                             gm.descarte.Add(card);
                             gm.espacioManoSinUsar[i] = true;                
-                            gm.mano.Remove(gm.mano[i]);//***
+                            gm.mano.Remove(gm.mano[i]);
                         }
                         gm.setCarJugadas(gm.getCarJugadas() + 1);
                     }
                 }
-                else if(card.esHechizoArea() && gm.tutorial){ //Cartas de hechizo en area sin necesidad de objetivo
+                else if(card.esHechizoArea() && gm.tutorial){ //Cartas de hechizo en area sin necesidad de objetivo para el tutorial
                     if(sobreCasilla && gm.getCarJugadas() < 2 && cas.muyPintada){
                         card.transform.position = gm.zonaDescarte.transform.position;
                         //Añadir a una lista de descartes
@@ -173,9 +171,9 @@ public class DropCard : MonoBehaviour
                 }
             }
             card.GetComponent<DragDrop>().stopMov();
-            gm.puntero.transform.position = new Vector3(-10000, -10000, 0);
+            gm.puntero.transform.position = new Vector3(-10000, -10000, 0); //Envía la carta fuera de pantalla
         }
-        card.GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        card.GetComponent<Image>().color = new Color(255, 255, 255, 255); //Devuelve color original a la carta
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

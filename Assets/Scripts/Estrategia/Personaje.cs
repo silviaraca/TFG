@@ -8,7 +8,7 @@ public class Personaje : MonoBehaviour
     //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
     [SerializeField] private int vidaMax, ataque, movMax, numAtaques, rango;
     private int movAct, vida, numAtaAct;
-    public bool enemigo, enRango, transformando, inmune, vampire, envenena, spawner, rage, healer, mejoradoAta;
+    public bool enemigo, enRango, transformando, inmune, vampire, envenena, spawner, rage, healer, mejoradoAta, dracula;
     public Casilla cas;
     private bool ini = true;
     private GameManagerE gm;
@@ -28,10 +28,13 @@ public class Personaje : MonoBehaviour
             ini = false;
         }
     }
-    public bool danar(int dano){
+    public bool danar(int dano, string ataque){
         vida -= dano;
         if(dano >= 0){
             if(vida < 0) vida = 0;
+            if(dracula && ataque != "Cuchillo" && vida <= 0){
+                vida = 1;
+            }
             if(vida > 0)
                 this.transform.GetComponentInChildren<HelthBar>().pierdeVida(vida, vidaMax);
         }
@@ -85,22 +88,21 @@ public class Personaje : MonoBehaviour
         return false;
     }
 
-    
     public void activaEfectoFin(){
         if(efecto == "CuraArea"){
             int posAux;
             int pos = cas.getPosX()+cas.getPosY()*8;
             if(((posAux = pos+1)%8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
-                gm.tablero[posAux].pnj.danar(-1);
+                gm.tablero[posAux].pnj.danar(-1, "");
             }
             if((((posAux = pos-1)+1) %8) != 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
-            gm.tablero[posAux].pnj.danar(-1);
+            gm.tablero[posAux].pnj.danar(-1, "");
             }
             if((posAux = pos+8) < gm.tablero.Length && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
-                gm.tablero[posAux].pnj.danar(-1);
+                gm.tablero[posAux].pnj.danar(-1, "");
             }
             if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
-                gm.tablero[posAux].pnj.danar(-1);
+                gm.tablero[posAux].pnj.danar(-1, "");
             }
         }
     }

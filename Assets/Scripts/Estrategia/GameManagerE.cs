@@ -29,6 +29,7 @@ public class GameManagerE : MonoBehaviour
   public Sprite casVacia;
   public Sprite casMarcada;
   public Sprite casEstandar;
+  public Sprite casFuturoAtaque;
   public bool win, loose;
   public TextMeshProUGUI textoCartasPorJugar;
   public TextMeshProUGUI textoTurnos;
@@ -45,9 +46,10 @@ public class GameManagerE : MonoBehaviour
   private static List<Casilla> listaCasMovible = new List<Casilla>();
   private static List<Casilla> listaCasAtacable = new List<Casilla>();
   public GameObject puntero;
+  public GameObject Dracula;
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
-  public bool tutorial;
+  public bool tutorial, dracula;
   private static bool dialogo = true, spawnea = true, mata = true, pasa = false, zoomed = false, moviendose = false;
 
 
@@ -131,7 +133,7 @@ public class GameManagerE : MonoBehaviour
         if(!win && !loose){
           if(fase == 0){ //fase inicial y efectos de inicio de turno
             textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
-            if(primerTurno){
+            if(primerTurno){ //Roba dos cartas inicialmente
               DrawCard();
               DrawCard();
               primerTurno = false;
@@ -142,8 +144,8 @@ public class GameManagerE : MonoBehaviour
             fase++; //No pasa hasta que se ejecuten todos
             textoFase.text = "Fase Actual: " + fase;
           }
-          else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos
-            fase++;
+          else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos finalizada
+            fase++; //Suma fase
             textoFase.text = "Fase Actual: " + fase;
             nRobadas = 0;
             pasaTurno = false;
@@ -152,7 +154,7 @@ public class GameManagerE : MonoBehaviour
             textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
             modificaEfectos();
           }
-          else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2
+          else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2 finalizan
             pasaTurno = false;
             textoCartasPorJugar.enabled = false;
             if(fase == 4)
@@ -160,7 +162,7 @@ public class GameManagerE : MonoBehaviour
             fase++;
             textoFase.text = "Fase Actual: " + fase;
           }
-          else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj
+          else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj finaliza
             activaFinTuro(fase);
             fase++;
             textoFase.text = "Fase Actual: " + fase;
@@ -172,27 +174,40 @@ public class GameManagerE : MonoBehaviour
             textoCartasPorJugar.enabled = true;
             int porJugar = maxJug - nCartasJugadas;
             textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
-            modificaEfectos();
+            modificaEfectos(); //Cambia efectos de cartas de segunda fase y cuarta fase
           }
           else if(fase == 5){
             //efectos de final de turno y movimientos de enemigos
             moviendose = true;
-            movEnemigos();
-            desPintaCas();
+            movEnemigos(); //Todos efectos de fin de turno
+            desPintaCas(); //Limpia el tablero
           }
-          if(fase == 1 && roba){
+          if(fase == 1 && roba){ //permite robar si estás en fase1
             DrawCard();
             roba = false;
           }
           if(listaPnjEnemigos.Count == 0 && listaPnjEnemigosEnTablero.Count == 0){
             win = true;
-            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
-            //Salir de escena ganado
+            PlayerPrefs.SetString("WinCombate", "win"); //Manda victoria
+            PlayerPrefs.Save();
+            //Salir de escena ganando
+            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG(); //Carga RPG si ganas el combate
           }
           else if(turnosParaPerder == 0){
             loose = true;
-            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
+            PlayerPrefs.SetString("LooseCombate", "loose"); //Manda derrota
+            PlayerPrefs.Save();
             //Salir de escena perdiendo
+            this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG(); //Carga RPG si pierde el combate
+          }
+          if(dracula){
+            if(Dracula.GetComponent<Personaje>().getVida() <= 0){
+              win = true;
+              PlayerPrefs.SetString("WinCombate", "win"); //Manda victoria
+              PlayerPrefs.Save();
+              //Salir de escena ganando
+              this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG(); //Carga RPG si ganas el combate
+            }
           }
         }
       }
@@ -262,7 +277,7 @@ public class GameManagerE : MonoBehaviour
             textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
             ds.setReactivable();
             ds.reactivarDialogo();
-            listaPnj[0].danar(1);
+            listaPnj[0].danar(1, "");
             tablero[14].muyPintada = true;
             tablero[14].setColor(casMarcada);
           }
@@ -276,7 +291,7 @@ public class GameManagerE : MonoBehaviour
           else{
             pasaTurno = false;
           }
-          if(fase == 1 && roba && !ds.getReactivable()){
+          if(fase == 1 && roba && !ds.getReactivable()){ //Robo inicial
             drawScripted(2);
             nRobadas++;
             roba = false;
@@ -294,27 +309,27 @@ public class GameManagerE : MonoBehaviour
             this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG();
             //Salir de escena perdiendo
           }
-          if(fase == 2 && spawnea && nCartasJugadas == 0){
+          if(fase == 2 && spawnea && nCartasJugadas == 0){ //Spawnea el enemigo para probar el hechizo
             spawnea = false;
-            spawnEnemigo();
+            spawnEnemigo(); //Aparece un enemigo
           }
-          else if (fase == 2 && mata && nCartasJugadas == 1){
+          else if (fase == 2 && mata && nCartasJugadas == 1){ //Si juega la carta activa el dialogo de nuevo
             mata = false;
-            ds.setReactivable();
-            ds.reactivarDialogo();
+            ds.setReactivable(); //permite reactivar el juego
+            ds.reactivarDialogo(); //reactiva el dialogo
           }
-          else if (fase == 3 && spawnea){
+          else if (fase == 3 && spawnea){ //Al acabar el dialogo de spawnear lo activa
             spawnea = false;
-            spawnEnemigoScripted(13);
-            spawnAliadoScripted(15);
+            spawnEnemigoScripted(13); //Aparece un enemigo en la casilla seleccionada
+            spawnAliadoScripted(15); //Aparece un aliado en la casilla seleccionada
           }
-          else if (fase == 3 && mata){
+          else if (fase == 3 && mata){ //Si ataca al enemigo se activa dialogo
             mata = false;
             pasa = true;
-            ds.setReactivable();
-            ds.reactivarDialogo();
+            ds.setReactivable(); //permite reactivar el juego
+            ds.reactivarDialogo(); //reactiva el dialogo
           }
-          else if (fase == 4 && mata){
+          else if (fase == 4 && mata){ //Cuando usa el agua bendita se activa el dialogo de nuevo
             mata = false;
             pasa = true;
             ds.setReactivable();
@@ -327,7 +342,7 @@ public class GameManagerE : MonoBehaviour
   public void danaVampsAliados(){
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].vampire)
-        listaPnj[i].danar(1);
+        listaPnj[i].danar(1, "");
     }
   }
   public void ataqueLobos(){
@@ -381,14 +396,14 @@ public class GameManagerE : MonoBehaviour
     for(int i = 0; i < listaPnj.Count; i++){
       if(listaPnj[i].turnosVeneno > 0){
         listaPnj[i].turnosVeneno--;
-        listaPnj[i].danar(listaPnj[i].danoVeneno);
+        listaPnj[i].danar(listaPnj[i].danoVeneno, "");
       }
       if(listaPnj[i].turnosVeneno == 0) listaPnj[i].danoVeneno = 0;
     }
     for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
       if(listaPnjEnemigosEnTablero[i].turnosVeneno > 0){
         listaPnjEnemigosEnTablero[i].turnosVeneno--;
-        listaPnjEnemigosEnTablero[i].danar(listaPnjEnemigosEnTablero[i].danoVeneno);
+        listaPnjEnemigosEnTablero[i].danar(listaPnjEnemigosEnTablero[i].danoVeneno, "");
       }
       if(listaPnjEnemigosEnTablero[i].turnosVeneno == 0) listaPnjEnemigosEnTablero[i].danoVeneno = 0;
     }
@@ -574,6 +589,16 @@ public class GameManagerE : MonoBehaviour
     transformaPnj();
     danaVenenorPnj();
     contadorInmunes();
+    if(dracula){
+      if(turnosParaPerder%2 == 1){
+        print(turnosParaPerder);
+        ataqueAleatorioDracula();
+      }
+      else{
+        print(turnosParaPerder);
+        activaAtaque();
+      }
+    }
     turnosParaPerder--;
     fase = 0; //Reinicia fases cuando haya terminado lo anterior
     moviendose = false;
@@ -584,57 +609,58 @@ public class GameManagerE : MonoBehaviour
       while(pnj.getNumAtaAct() > 0){
         posIniX = pnj.cas.getPosX();
         posIniY = pnj.cas.getPosY();
-        int posArr = posIniX+posIniY*8;
+        int posArr = posIniX+posIniY*8; //Casilla posición del personaje
         if(pnj.getNumAtaAct() > 0)
-          pintaAta(pnj, posArr, pnj.getRang(), pnj.cas);
-        pintaCas(pnj, posArr, pnj.getMovAct(), pnj.getRang());
+          pintaAta(pnj, posArr, pnj.getRang(), pnj.cas); //Pinta ataques de casillas adyacentes
+        pintaCas(pnj, posArr, pnj.getMovAct(), pnj.getRang()); //Pinta los movimientos para ver a dónde puede moverse
         
-        if(listaCasAtacable.Count > 0){
+        if(listaCasAtacable.Count > 0){ //Si hay personajes a los que atacar busca cual es el más óptimo
           Personaje enemigoAtacar = listaCasAtacable[0].pnj;
           bool matable = false;
-          if(pnj.getAtaque() >= enemigoAtacar.getVida()) matable = true;
+          if(pnj.getAtaque() >= enemigoAtacar.getVida()) matable = true; //Si puede matar al pnj lo marca
           for(int i = 1; i < listaCasAtacable.Count;i++){
-            if(cambioObjetivo(pnj, enemigoAtacar, listaCasAtacable[i].pnj, posIniX, posIniY, matable) ){
-              enemigoAtacar = listaCasAtacable[i].pnj;
+            if(cambioObjetivo(pnj, enemigoAtacar, listaCasAtacable[i].pnj, posIniX, posIniY, matable) ){ //Busca si hay un objetivo más óptimo al que atacar
+                                                                                                         //Se basa en la distancia, numataques y vida que le quede
+              enemigoAtacar = listaCasAtacable[i].pnj; //Selecciona al enemigo si es el má sóptimo al que atacar
             }
           }
           //Ahora se movería hacia el enemigo seleccionado y le atacaría
-          pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
-          Casilla cas = enemigoAtacar.cas;
-          if(pnj.vampire){
-            pnj.danar(-1);
+          pnj.setNumAtaAct(pnj.getNumAtaAct()-1); //Usa el ataque
+          Casilla cas = enemigoAtacar.cas; //Casilla a la que atacará
+          if(pnj.vampire){ //Se cura uno si es vampiro
+            pnj.danar(-1, "");
           }
-          if(pnj.envenena){
+          if(pnj.envenena){ //Envenena si envenena el pnj
               enemigoAtacar.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
           }
-          if(enemigoAtacar.danar(pnj.getAtaque())){
+          if(enemigoAtacar.danar(pnj.getAtaque(), "")){ //Si mata vacía la casilla
               //Aquí cosas que pasen si se muere el enemigo
               cas.vacia = true;
               cas.pnj = null;
           }
-          pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false);
+          pnj.transform.SetParent(filasPnj[cas.getCasAnt().fila].transform, false); //Mueve el personaje
           pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x + 5, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
-          pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
-          pnj.cas.vacia = true;
+          pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov()); //Descuenta el movimiento
+          pnj.cas.vacia = true; //Vacía la casilla anterior
           pnj.cas.pnj = null;
-          cas.getCasAnt().vacia = false;
+          cas.getCasAnt().vacia = false; //Ocupa la casilla actual
           cas.getCasAnt().pnj = pnj;
           pnj.cas = cas.getCasAnt();
         }
-        else {
+        else { //Si no puede atacar se mueve hacia personajes
           Personaje enemigoAcercar = listaPnj[0];
           for(int i = 1; i< listaPnj.Count; i++){
             if((listaPnj[i].getVida() <= pnj.getAtaque() && listaPnj[i].getVida() > enemigoAcercar.getVida()) ||  listaPnj[i].getVida() < enemigoAcercar.getVida()){
-              enemigoAcercar = listaPnj[i];
+              enemigoAcercar = listaPnj[i]; //Busca el personaje más óptimo al que atacar
             }
           }
-          mueveHacia(enemigoAcercar.getCasAct().getPosX(), enemigoAcercar.getCasAct().getPosY(), pnj);
-          pnj.setNumAtaAct(0);
+          mueveHacia(enemigoAcercar.getCasAct().getPosX(), enemigoAcercar.getCasAct().getPosY(), pnj); //Se mueve hacia el personaje
+          pnj.setNumAtaAct(0); //Gasta ataques
         }
         desPintaCas();
       }
     }
-    else{
+    else{ //Si no hay personajes aliados mueve hacia el spawn aliado
       posIniX = pnj.cas.getPosX();
       posIniY = pnj.cas.getPosY();
       int posArr = posIniX+posIniY*8;
@@ -646,6 +672,13 @@ public class GameManagerE : MonoBehaviour
     }
     pnj.setMovAct(pnj.getMaxMov());
     pnj.setNumAtaAct(pnj.getNumAta());
+  }
+  public bool hayCarreta(){
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].gameObject.name == "Carreta(Clone)")
+        return true;
+    }
+    return false;
   }
   private bool cambioObjetivo(Personaje pnj, Personaje p1, Personaje p2, int posIniX, int posIniY, bool matable){
     if (matable && pnj.getAtaque() >= p2.getVida() && 
@@ -792,5 +825,23 @@ public class GameManagerE : MonoBehaviour
   }
   public void setMata(){
     mata = true;
+  }
+  private void ataqueAleatorioDracula(){
+    int randCas = 0;
+    for(int i = 0; i < 6; i++){
+      randCas = Random.Range(0, 64);
+      tablero[randCas].futuroAtaque = true;
+      tablero[randCas].setColor(casFuturoAtaque);
+    }
+  }
+  private void activaAtaque(){
+    for(int i = 0; i < tablero.Length; i++){
+      if(tablero[i].futuroAtaque && !tablero[i].vacia){
+        tablero[i].pnj.danar(2, "");
+      }
+      tablero[i].recuperaCasOriginal();
+      tablero[i].setColor(tablero[i].getImagenIni());
+      tablero[i].futuroAtaque = false;
+    }
   }
 }

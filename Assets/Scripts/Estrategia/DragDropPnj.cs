@@ -24,7 +24,7 @@ public class DragDropPnj : MonoBehaviour
     }
 
     public void cogePnj(){
-        if(gm.getFase() == 3 && !pnj.enemigo){
+        if(gm.getFase() == 3 && !pnj.enemigo){ 
             enMovimiento = true;
             if(cerrojo){
                 posIni = transform.position;
@@ -36,51 +36,51 @@ public class DragDropPnj : MonoBehaviour
     }
 
     public void sueltaPnj(){
-        if(gm.getFase() == 3 && !pnj.enemigo){
+        if(gm.getFase() == 3 && !pnj.enemigo){ //Permite jugar personajes solo en fase 3
             enMovimiento = false;
             cerrojo = true;
             if(!gm.tutorial){
-                if(sobreCasilla && cas.vacia && cas.pintada){ 
+                if(sobreCasilla && cas.vacia && cas.pintada){  //Mover sobre una casilla vacía
                     Casilla casAct = pnj.getCasAct();
                     casAct.vacia = true;
-                    pnj.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
+                    pnj.transform.SetParent(gm.filasPnj[cas.fila].transform, false); //Mueve personaje a la casilla
                     pnj.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 40, cas.transform.position.z+10);
                     pnj.setMovAct(pnj.getMovAct()-cas.getConsumeMov());
                     cas.pnj = pnj;
                     cas.vacia = false;
                     pnj.setCasAct(cas);
-                    if(pnj.spawner){
+                    if(pnj.spawner){ //Mueve las zonas de spawn si es un personaje spawner
                         int posIniX = pnj.cas.getPosX();
                         int posIniY = pnj.cas.getPosY();
                         int posArr = posIniX+posIniY*8;
-                        limpiaSpawn();
-                        creaSpawn(posArr);
+                        limpiaSpawn(); //Quita el spawn anterior
+                        creaSpawn(posArr); //Crea el nuevo spawn
                     }
                 }
-                else if(sobreCasilla && !cas.vacia && cas.pintada){
+                else if(sobreCasilla && !cas.vacia && cas.pintada && (!cas.pnj.dracula || gm.hayCarreta())){ //Si ataca a un enemigo o cura a un aliado
                     Casilla casAct = pnj.getCasAct();
                     Personaje pnjAct = cas.pnj;
                     pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
                     if(pnj.vampire){
-                        pnj.danar(-1);
+                        pnj.danar(-1, "");
                     }
                     if(pnj.envenena){
                         pnjAct.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
                     }
-                    if(pnj.healer){
-                        pnjAct.danar(-pnj.getAtaque());
+                    if(pnj.healer){ //Si es sanador cura al objetivo
+                        pnjAct.danar(-pnj.getAtaque(), "");
                     }
                     else{
-                        if(pnjAct.danar(pnj.getAtaque())){
+                        if(pnjAct.danar(pnj.getAtaque(), "")){ //Si mata
                             //Aquí cosas que pasen si se muere el enemigo
                             cas.vacia = true;
                             cas.pnj = null;
-                            if(pnj.rage){
+                            if(pnj.rage){ //Si tiene rage recupera un ataque para popder seguir atacando
                                 pnj.setNumAtaAct(pnj.getNumAtaAct()+1);
                             }
                         }
                     }
-                    pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
+                    pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false); //mueve hasta la zona
                     pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
                     pnj.setMovAct(pnj.getMovAct()-cas.getCasAnt().getConsumeMov());
                     pnj.cas.vacia = true;
@@ -108,12 +108,12 @@ public class DragDropPnj : MonoBehaviour
                     Personaje pnjAct = cas.pnj;
                     pnj.setNumAtaAct(pnj.getNumAtaAct()-1);
                     if(pnj.vampire){
-                        pnj.danar(-1);
+                        pnj.danar(-1, "");
                     }
                     if(pnj.envenena){
                         pnjAct.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
                     }
-                    if(pnjAct.danar(pnj.getAtaque())){
+                    if(pnjAct.danar(pnj.getAtaque(), "")){
                         //Aquí cosas que pasen si se muere el enemigo
                         cas.vacia = true;
                         cas.pnj = null;
@@ -146,13 +146,13 @@ public class DragDropPnj : MonoBehaviour
             pnj.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
         }
     }
-    public void movible(){
+    public void movible(){ //Busca las casillas a las que puede mover un personaje al cogerlo
         int posXAct = pnj.getCasAct().getPosX();
         int posYAct = pnj.getCasAct().getPosY();
         int posArr = posXAct+posYAct*8;
         if(pnj.getNumAtaAct() > 0)
-            pintaAta(posArr, pnj.getRang(), pnj.cas);
-        pintaCas(posArr, pnj.getMovAct(), pnj.getRang());
+            pintaAta(posArr, pnj.getRang(), pnj.cas); //Pinta las casillas atacables adyacentes
+        pintaCas(posArr, pnj.getMovAct(), pnj.getRang()); //Pinta el resto de casillas
     }
     private void limpiaSpawn(){
         for(int i = 0; i < gm.tablero.Length; i++){
@@ -174,24 +174,24 @@ public class DragDropPnj : MonoBehaviour
         int movAux = mov;
         if(movAux > 0){
             if(((posAux = pos+1)%8) != 0 && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(posAux, movAux, rang);
+                ejecutaPintado(posAux, movAux, rang); //Busca la casilla a la derecha si es movible
                 if(pnj.getNumAtaAct() > 0)
-                    pintaAta(posAux, rang, gm.tablero[posAux]);
+                    pintaAta(posAux, rang, gm.tablero[posAux]); //Busca ataques adyacentes
             }
             if((((posAux = pos-1)+1) %8) != 0 && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(posAux, movAux, rang);
+                ejecutaPintado(posAux, movAux, rang); //Busca la casilla a la izquierda si es movible
                 if(pnj.getNumAtaAct() > 0)
-                    pintaAta(posAux, rang, gm.tablero[posAux]);
+                    pintaAta(posAux, rang, gm.tablero[posAux]); //Busca ataques adyacentes
             }
             if((posAux = pos+8) < gm.tablero.Length && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(posAux, movAux, rang);
+                ejecutaPintado(posAux, movAux, rang); //Busca la casilla de arriba si es movible
                 if(pnj.getNumAtaAct() > 0)
-                    pintaAta(posAux, rang, gm.tablero[posAux]);
+                    pintaAta(posAux, rang, gm.tablero[posAux]); //Busca ataques adyacentes
             }
             if((posAux = pos-8) >= 0 && gm.tablero[posAux].vacia && (!gm.tablero[posAux].pintada || gm.tablero[posAux].getConsumeMov() > 3 - movAux)){
-                ejecutaPintado(posAux, movAux, rang);
+                ejecutaPintado(posAux, movAux, rang); //Busca la casilla de debajo si es movible
                 if(pnj.getNumAtaAct() > 0)
-                    pintaAta(posAux, rang, gm.tablero[posAux]);
+                    pintaAta(posAux, rang, gm.tablero[posAux]); //Busca ataques adyacentes
             }
 
         }
@@ -272,7 +272,7 @@ public class DragDropPnj : MonoBehaviour
             else sobreCasilla = false;
         }
     }
-        private void pintaAzul(Casilla casilla){
+    private void pintaAzul(Casilla casilla){
         casilla.gameObject.GetComponent<Image>().sprite = gm.casVacia;
     }
 }

@@ -466,11 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &696839898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6186961711725574391, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
-  m_PrefabInstance: {fileID: 1706000285747725782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &736632353 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1706000286127840247, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
@@ -2045,9 +2040,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2435221960745580321, guid: 286f1ed09710bef4499c62f2afa37093, type: 3}
     - target: {fileID: 7971790335998678133, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: casFuturoAtaque
+      value: 
+      objectReference: {fileID: 21300000, guid: 1b7c8ab0187adc146bde884e27611d6f, type: 3}
+    - target: {fileID: 7971790335998678133, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: characterZombie
       value: 
-      objectReference: {fileID: 696839898}
+      objectReference: {fileID: 7205854992291354543, guid: b44f854fc4411194490afd2d27f4c579, type: 3}
     - target: {fileID: 7971790335998678133, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: characterVampire
       value: 

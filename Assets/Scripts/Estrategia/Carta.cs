@@ -87,10 +87,10 @@ public class Carta : MonoBehaviour
 
     public void efectoHechizo(Personaje pnj){
         if(dano && pnj.enemigo){
-            pnj.danar(ataque);
+            pnj.danar(ataque, nombreCarta);
         }
         if(cura && !pnj.enemigo){
-            pnj.danar(-ataque);
+            pnj.danar(-ataque, "");
         }
         if(paraliza){
             pnj.paralizar();

@@ -16,11 +16,14 @@ public class Casilla : MonoBehaviour
     [SerializeField] private bool spawnEne, spawnAli, spawnAliTemp;
     [SerializeField] private int consumeMov = 0;
     [SerializeField] private Sprite imagenIni;
+    private Sprite imagenOriginal;
+    public bool futuroAtaque;
 
     public bool muyPintada = false;
     void Start()
     {
         gm = FindObjectOfType<GameManagerE>();
+        imagenOriginal = imagenIni;
         string nombreObjeto = this.gameObject.name.Substring(8);
         posY = int.Parse(nombreObjeto.Substring(0,1));
         posX = int.Parse(nombreObjeto.Substring(1,1));
@@ -74,5 +77,8 @@ public class Casilla : MonoBehaviour
     public void setColor(Sprite color){
         this.gameObject.GetComponent<Image>().sprite = color;
         imagenIni = color;
+    }
+    public void recuperaCasOriginal(){
+        imagenIni = imagenOriginal;
     }
 }
