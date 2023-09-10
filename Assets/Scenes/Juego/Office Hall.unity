@@ -243,7 +243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754304, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754306, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: inventory.maxSlots
@@ -311,11 +311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6
+      value: 10.0401
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -392,10 +392,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
   panel: {fileID: 1263581649}
-  pnj: {fileID: 0}
+  pnj: {fileID: 933978699}
   move: {fileID: 2053772862}
   playerExistente: {fileID: 2053772864}
-  npcHablando: {fileID: 0}
+  npcHablando: {fileID: 253639033}
   textComponent: {fileID: 786223402}
   textName: {fileID: 529913461}
   sentences:
@@ -524,7 +524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264009860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -6, z: -10}
+  m_LocalPosition: {x: -14, y: 10.0401, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -610,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370492363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -6, z: -10}
+  m_LocalPosition: {x: -14, y: 10.0401, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
