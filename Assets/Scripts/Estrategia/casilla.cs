@@ -13,7 +13,7 @@ public class Casilla : MonoBehaviour
     public int fila;
     private Casilla casAnt;
     private Sprite colorAnt;
-    [SerializeField] private bool spawnEne, spawnAli;
+    [SerializeField] private bool spawnEne, spawnAli, spawnAliTemp;
     [SerializeField] private int consumeMov = 0;
     [SerializeField] private Sprite imagenIni;
 
@@ -49,6 +49,15 @@ public class Casilla : MonoBehaviour
     }
     public bool esSpawnAli(){
         return spawnAli;
+    }
+    public bool esSpawnAliTemp(){
+        return spawnAliTemp;
+    }
+    public void quitaSpawnAliTem(){
+        spawnAliTemp = false;
+    }
+    public void poneSpawnAliTem(){
+        spawnAliTemp = true;
     }
     public bool esSpawnEne(){
         return spawnEne;

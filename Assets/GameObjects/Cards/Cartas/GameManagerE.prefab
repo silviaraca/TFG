@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1119762936444122163
+--- !u!1 &7808689173946035061
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1119762936444122162}
-  - component: {fileID: 5842494667995113200}
+  - component: {fileID: 6318214553758018130}
+  - component: {fileID: 7971790335998678133}
+  - component: {fileID: 7808689173946035060}
+  - component: {fileID: 7808689173946035059}
   m_Layer: 0
   m_Name: GameManagerE
   m_TagString: Untagged
@@ -17,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1119762936444122162
+--- !u!4 &6318214553758018130
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119762936444122163}
+  m_GameObject: {fileID: 7808689173946035061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 296.3242, y: 149.63971, z: 106.59142}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5842494667995113200
+--- !u!114 &7971790335998678133
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119762936444122163}
+  m_GameObject: {fileID: 7808689173946035061}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c258c28ddc86c704fb4d588815f56e05, type: 3}
@@ -47,11 +49,17 @@ MonoBehaviour:
   mazo: []
   descarte: []
   zonaDescarte: {fileID: 0}
-  Canvas: {fileID: 4616179167096648278, guid: 88b2eb1daafeef344b0f9812743fea62, type: 3}
-  Cards: {fileID: 8405276281981966934, guid: 8503a610394054841b16535abcf5bb57, type: 3}
+  Canvas: {fileID: 0}
+  Cards: {fileID: 0}
+  Personajes: {fileID: 0}
   cardAldeano: {fileID: 1273880582866501711, guid: 4e358fe3c69881349a31c133519a4687, type: 3}
   cardAgua: {fileID: 4468346709877679869, guid: 3640595eea8541f49be3dddd7f342774, type: 3}
   cardEstaca: {fileID: 2868205627103406734, guid: 80e34e68ca1023a4583c103adcbbdbf8, type: 3}
+  cardMina: {fileID: 1273880582866501711, guid: e8e63d83abcf2fc4fa84f4c9f7d7e954, type: 3}
+  cardSangre: {fileID: 2868205627103406734, guid: 54f8f51d822ec1e4b810de686f826f4e, type: 3}
+  cardTumba: {fileID: 2868205627103406734, guid: 8d8a07a143583334f8543d3b3c29994a, type: 3}
+  cardAjo: {fileID: 2868205627103406734, guid: e8937a722c4fe574886d60fa7f75420b, type: 3}
+  characterZombie: {fileID: 0}
   espacioMano:
   - {fileID: 0}
   - {fileID: 0}
@@ -89,7 +97,103 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  tamTab: 0
-  espacioManoSinUsar: 000000
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  tamTab: 8
+  espacioManoSinUsar: 010101
   mano: []
   listaPnj: []
+  listaPnjEnemigosEnTablero: []
+  listaPnjEnemigos: []
+  filasPnj:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  textoFase: {fileID: 0}
+  draggingPos: {fileID: 0}
+  casAta: {fileID: 21300000, guid: 0dece02287bf41d4d990890346033db1, type: 3}
+  casAli: {fileID: 21300000, guid: 4f7c59302d244034a84590563c451a48, type: 3}
+  casVacia: {fileID: 21300000, guid: d81ea3025ec991a42858acd372ccdebd, type: 3}
+  casMarcada: {fileID: 0}
+  casEstandar: {fileID: 0}
+  win: 0
+  loose: 0
+  textoCartasPorJugar: {fileID: 0}
+  textoTurnos: {fileID: 0}
+  ds: {fileID: 0}
+  aliado: {fileID: 0}
+  puntero: {fileID: 0}
+  turnosParaPerder: 10
+  enemigosVivos: 0
+  tutorial: 0
+--- !u!114 &7808689173946035060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7808689173946035061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fad7f13bd0ca23469cb9649e646d546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!114 &7808689173946035059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7808689173946035061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac435923d17db84ca06496313eabb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 0}
+  cargar: {fileID: 7808689173946035060}
+  escena: 
+  enemies: []
