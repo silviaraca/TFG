@@ -9,6 +9,7 @@ public class DragDrop : MonoBehaviour
     private bool enMovimiento = false;
     public Carta card;    
     public GameObject personajePrefab;
+    public GameObject personajePrefab2;
     private GameManagerE gm;
 
 
@@ -25,7 +26,7 @@ public class DragDrop : MonoBehaviour
                 enMovimiento = true;
                 gm.puntero.GetComponent<DropCard>().card = card;
                 gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
-                
+                gm.puntero.GetComponent<DropCard>().personajePrefab2 = personajePrefab2;                
             }
         }
         else{
@@ -34,14 +35,14 @@ public class DragDrop : MonoBehaviour
                 enMovimiento = true;
                 gm.puntero.GetComponent<DropCard>().card = card;
                 gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
-                
+                gm.puntero.GetComponent<DropCard>().personajePrefab2 = personajePrefab2;                
             }
             else if((gm.getFase() == 4 && (card.getFaseCarta() == 4 || card.getFaseCarta() == 24)) && gm.getCarJugadas() < 2){
                 GetComponent<Image>().color = new Color(0, 255, 255, 255);
                 enMovimiento = true;
                 gm.puntero.GetComponent<DropCard>().card = card;
                 gm.puntero.GetComponent<DropCard>().personajePrefab = personajePrefab;
-                
+                gm.puntero.GetComponent<DropCard>().personajePrefab2 = personajePrefab2;
             }
         }
     }

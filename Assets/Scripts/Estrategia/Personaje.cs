@@ -8,7 +8,7 @@ public class Personaje : MonoBehaviour
     //todo esto debe poder cambiarse dependiendo del personaje que se juega por lo que debe haber algún tipo de función constructora
     [SerializeField] private int vidaMax, ataque, movMax, numAtaques, rango;
     private int movAct, vida, numAtaAct;
-    public bool enemigo, enRango, transformando, inmune, vampire, envenena, spawner;
+    public bool enemigo, enRango, transformando, inmune, vampire, envenena, spawner, rage, healer, mejoradoAta;
     public Casilla cas;
     private bool ini = true;
     private GameManagerE gm;
@@ -48,6 +48,7 @@ public class Personaje : MonoBehaviour
 
     public void subeAtaque(int a){
         ataque += a;
+        mejoradoAta = true;
     }
 
     public void transformaPnj(int t){
@@ -100,6 +101,25 @@ public class Personaje : MonoBehaviour
             }
             if((posAux = pos-8) >= 0 && !gm.tablero[posAux].vacia && !gm.tablero[posAux].pnj.enemigo){
                 gm.tablero[posAux].pnj.danar(-1);
+            }
+        }
+    }
+
+    public void activaEfectoInvocacion(){
+        if(efecto == "Charm"){
+            GameManagerE gm2 = FindObjectOfType<GameManagerE>();
+            List<Personaje> charmeableEnemies = new List<Personaje>();
+            for(int i = 0; i < gm2.listaPnjEnemigosEnTablero.Count; i++){
+                if(gm2.listaPnjEnemigosEnTablero[i].getVida() == 1){
+                    charmeableEnemies.Add(gm2.listaPnjEnemigosEnTablero[i]);
+                }
+            }
+            if(charmeableEnemies.Count > 0){
+                int randOneHP = Random.Range(0,charmeableEnemies.Count);
+                gm2.listaPnj.Add(charmeableEnemies[randOneHP]);
+                charmeableEnemies[randOneHP].enemigo = false;
+                charmeableEnemies[randOneHP].GetComponent<Image>().color = new Color(0, 255, 0, 255);
+                gm2.listaPnjEnemigosEnTablero.Remove(charmeableEnemies[randOneHP]);
             }
         }
     }

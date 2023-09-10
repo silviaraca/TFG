@@ -11,7 +11,7 @@ public class GameManagerE : MonoBehaviour
   public List<Carta> descarte = new List<Carta>();
   public GameObject zonaDescarte;
   public GameObject Canvas, Cards, Personajes;
-  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba, cardAjo, cardCuchillo, cardNosferatu, cardRatonela, cardCarreta, cardLamias; //Objetos de las cartas que existen ya, añadir conforme 
+  public GameObject cardAldeano, cardAgua, cardEstaca, cardMina, cardSangre, cardTumba, cardAjo, cardCuchillo, cardNosferatu, cardRatonela, cardCarreta, cardLamias, cardLogan; //Objetos de las cartas que existen ya, añadir conforme 
   public GameObject characterZombie, characterAbomination, characterWolf, characterVampire; //Lo de arriba pero enemigos 
   public Transform[] espacioMano;
   public Casilla[] tablero;
@@ -59,14 +59,22 @@ public class GameManagerE : MonoBehaviour
       listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
     }
     else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-      listaCartas.Add("Lamias");
-      listaCartas.Add("Lamias");
-      listaCartas.Add("Carreta");
-      listaCartas.Add("Carreta");
+      listaCartas.Add("Logan");
+      listaCartas.Add("Logan");
+      listaCartas.Add("Logan");
+      listaCartas.Add("Logan");
+      listaCartas.Add("Logan");
       listaCartas.Add("Cuchillo");
+      listaCartas.Add("Estaca");
       listaCartas.Add("Estaca");
       listaCartas.Add("Nosferatu");
       listaCartas.Add("Ratonela");
+      listaCartas.Add("Agua");
+      listaCartas.Add("Agua");
+      listaCartas.Add("Tumba");
+      listaCartas.Add("Sangre");
+      listaCartas.Add("Ajo");
+      listaCartas.Add("Ajo");
 
       List<string> inventory = new List<string>();
       if(PlayerPrefs.HasKey("InventoryCards")){
@@ -334,6 +342,17 @@ public class GameManagerE : MonoBehaviour
         listaPnjEnemigosEnTablero[i].setAtaque(countAtaque);
       }
     }
+    countAtaque = 0;
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].gameObject.name == "Wolf(Clone)" || listaPnj[i].gameObject.name == "LoganWolf(Clone)"){
+        countAtaque++;
+      }
+    }
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].gameObject.name == "Wolf(Clone)"){
+        listaPnj[i].setAtaque(countAtaque);
+      }
+    }
   }
   public void reactivarDialogo(){
     if(!zoomed){
@@ -483,6 +502,9 @@ public class GameManagerE : MonoBehaviour
       }
       else if(listaCartas[i] == "Lamias"){
         cartaAnadida = Instantiate(cardLamias);
+      }
+      else if(listaCartas[i] == "Logan"){
+        cartaAnadida = Instantiate(cardLogan);
       }
       cartaAnadida.transform.SetParent(Cards.transform, false);
       mazo.Add(cartaAnadida.gameObject.GetComponent<Carta>());

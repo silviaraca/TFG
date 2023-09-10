@@ -10,6 +10,7 @@ public class DropCard : MonoBehaviour
     private Casilla cas;
     private bool nuevaCas = false;
     public GameObject personajePrefab;
+    public GameObject personajePrefab2;
     private GameManagerE gm;
 
 
@@ -21,7 +22,11 @@ public class DropCard : MonoBehaviour
         if(gm.getFase() == 2 || gm.getFase() == 4){
             if (cas != null && card.esPersonaje() && (cas.esSpawnAli() || cas.esSpawnAliTemp())){ //Cartas de personaje, ahora mismo hace que no funcione porque no hay datos iniciales en cada carta
                 if(sobreCasilla && (cas.vacia && card.enMano) && gm.getCarJugadas() < 2){ 
-                    GameObject personajeCreado = Instantiate(personajePrefab);
+                    GameObject personajeCreado = new GameObject();
+                    if(card.nombreCarta != "Logan" || (card.nombreCarta == "Logan" && gm.getFase() == 2))
+                        personajeCreado = Instantiate(personajePrefab);
+                    else
+                        personajeCreado = Instantiate(personajePrefab2);
                     //Cuando se haga una constructora se tiene que pasar los datos desde la carta al pnj
                     personajeCreado.transform.SetParent(gm.filasPnj[cas.fila].transform, false);
                     personajeCreado.transform.position = new Vector3(cas.transform.position.x, cas.transform.position.y + 35, cas.transform.position.z+10);
@@ -37,6 +42,7 @@ public class DropCard : MonoBehaviour
                         creaSpawn(posArr);
                     }
                     gm.listaPnj.Add(cas.pnj);
+                    cas.pnj.activaEfectoInvocacion();
                     cas.vacia = false;
                     int i = card.handIndex;
                     if(card.enMano){

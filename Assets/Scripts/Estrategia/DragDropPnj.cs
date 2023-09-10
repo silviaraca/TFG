@@ -67,10 +67,18 @@ public class DragDropPnj : MonoBehaviour
                     if(pnj.envenena){
                         pnjAct.envenenarPnj(pnj.turnosMeteVeneno, pnj.danoMeteVeneno);
                     }
-                    if(pnjAct.danar(pnj.getAtaque())){
-                        //Aquí cosas que pasen si se muere el enemigo
-                        cas.vacia = true;
-                        cas.pnj = null;
+                    if(pnj.healer){
+                        pnjAct.danar(-pnj.getAtaque());
+                    }
+                    else{
+                        if(pnjAct.danar(pnj.getAtaque())){
+                            //Aquí cosas que pasen si se muere el enemigo
+                            cas.vacia = true;
+                            cas.pnj = null;
+                            if(pnj.rage){
+                                pnj.setNumAtaAct(pnj.getNumAtaAct()+1);
+                            }
+                        }
                     }
                     pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
                     pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
@@ -109,6 +117,9 @@ public class DragDropPnj : MonoBehaviour
                         //Aquí cosas que pasen si se muere el enemigo
                         cas.vacia = true;
                         cas.pnj = null;
+                        if(pnj.rage){
+                            pnj.setNumAtaAct(pnj.getNumAtaAct()+1);
+                        }
                     }
                     pnj.transform.SetParent(gm.filasPnj[cas.getCasAnt().fila].transform, false);
                     pnj.transform.position = new Vector3(cas.getCasAnt().transform.position.x, cas.getCasAnt().transform.position.y + 40, cas.getCasAnt().transform.position.z+10);
@@ -214,8 +225,13 @@ public class DragDropPnj : MonoBehaviour
     }
 
     private void ejecutaAtacable(int posAux, Casilla cas){
-        if(gm.tablero[posAux].pnj.enemigo){
+        if(gm.tablero[posAux].pnj.enemigo && (!pnj.healer || pnj.mejoradoAta)){
             gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = casAta;
+            gm.tablero[posAux].pintada = true;
+            gm.tablero[posAux].setCasAnt(cas);
+        }
+        else if(!gm.tablero[posAux].pnj.enemigo && pnj.healer && gm.tablero[posAux].pnj != pnj){
+            gm.tablero[posAux].gameObject.GetComponent<Image>().sprite = gm.casMarcada;
             gm.tablero[posAux].pintada = true;
             gm.tablero[posAux].setCasAnt(cas);
         }
