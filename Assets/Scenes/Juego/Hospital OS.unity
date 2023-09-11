@@ -3707,6 +3707,7 @@ GameObject:
   - component: {fileID: 1238960534}
   - component: {fileID: 1238960535}
   - component: {fileID: 1238960536}
+  - component: {fileID: 1238960538}
   m_Layer: 0
   m_Name: Renfield
   m_TagString: Untagged
@@ -3966,6 +3967,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15744591, y: 0.10718851}
   m_EdgeRadius: 0
+--- !u!114 &1238960538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238960530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ec64facef780d4581065144117c7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1588748573}
 --- !u!1 &1290325800
 GameObject:
   m_ObjectHideFlags: 0

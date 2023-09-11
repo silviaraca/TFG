@@ -26,7 +26,6 @@ public class AutoDialogue : MonoBehaviour
     [SerializeField] private Sprite personajeImage = null;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         panel.gameObject.SetActive(false);
@@ -39,9 +38,9 @@ public class AutoDialogue : MonoBehaviour
             personajeImage = npcHablando.GetComponent<Image>().sprite;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Sin necesidad de pulsar la E
         if(activeE){
             move.allowMove = false;
             gameObject.SetActive(true);
@@ -51,6 +50,8 @@ public class AutoDialogue : MonoBehaviour
             activeE = false;
             dialogue = true;
         }
+        
+        //Continuar el texto
         if(dialogue && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.E)))
         {
             if(textComponent.text == lines[index])

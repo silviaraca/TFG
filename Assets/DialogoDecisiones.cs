@@ -102,6 +102,7 @@ public class DialogoDecisiones : MonoBehaviour
         {
             index++;
 
+            //Activar y mostrar botones
             if(listaMomentoDecisiones.Count > 0 && index == listaMomentoDecisiones[indexDecisiones]){
                 BotonDecision1.gameObject.SetActive(true);
                 TextoBotonDecision1.text = listaDecisiones1[indexDecisiones];

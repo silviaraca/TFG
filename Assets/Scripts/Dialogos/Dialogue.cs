@@ -27,7 +27,6 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private Sprite personajeImage = null;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         activeE = false;
@@ -38,17 +37,15 @@ public class Dialogue : MonoBehaviour
         pnj.gameObject.SetActive(false);
         textSpeed = 0.03f;
         dialogue = false;
+
         if(npcHablando.GetComponent<Image>() != null)
             personajeImage = npcHablando.GetComponent<Image>().sprite;
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // if(activeE)textoE.gameObject.SetActive(true);
-        // else textoE.gameObject.SetActive(false);
-
+        //Activar el diálogo
         if((activeE && Input.GetKeyDown(KeyCode.E) && currentScene.name != "EstrategiaTuto") || (activeE && activo)){
             gameObject.SetActive(true);
             textoE.gameObject.SetActive(false);
@@ -60,6 +57,7 @@ public class Dialogue : MonoBehaviour
             dialogue = true;
             activo = false;
         }
+        //Desactivar el diálogo
         else if (currentScene.name == "EstrategiaTuto" && activeE && playerExistente.getActivo().Equals(this.gameObject.name)){
             gameObject.SetActive(true);
             textoE.gameObject.SetActive(false);
@@ -68,6 +66,8 @@ public class Dialogue : MonoBehaviour
             textName.text = names[index];
             activeE = false;
         }
+
+        //Continuar texto
         if(dialogue && Input.GetKeyDown(KeyCode.E) && playerExistente.getActivo().Equals(this.gameObject.name))
         {
             
@@ -77,12 +77,13 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
-                //textName.text = names[index];
                 StopAllCoroutines();
                 pnj.gameObject.SetActive(false);
                 textComponent.text = sentences[index];
             }
         }
+
+        //Sprites
         if(dialogue && textName.text != string.Empty && textName.text != "Me" && personajeImage != null){
             pnj.sprite = personajeImage;
             pnj.gameObject.SetActive(true);
@@ -91,6 +92,37 @@ public class Dialogue : MonoBehaviour
             pnj.gameObject.SetActive(false);
         }
     }
+
+    void NextLine()
+    { 
+        //Continuar con el texto
+        if(index < sentences.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            textName.text = names[index];
+            StartCoroutine(TypeLine());
+        }
+        //Cerrar diálogo
+        else
+        {
+            if(currentScene.name != "EstrategiaTuto"){
+                index++;
+                panel.gameObject.SetActive(false);
+                move.allowMove = true;
+            }
+            else{
+                GameManagerE gm = FindObjectOfType<GameManagerE>();
+                gm.finDialogo();
+            }
+
+            textComponent.text = string.Empty;
+            textName.text = string.Empty;
+            dialogue = false;
+            pnj.gameObject.SetActive(false);
+        }
+    }
+
 
     void StartDialogue()
     {
@@ -107,32 +139,6 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void NextLine()
-    {
-        if(index < sentences.Length - 1)
-        {
-            index++;
-            textComponent.text = string.Empty;
-            textName.text = names[index];
-            StartCoroutine(TypeLine());
-        }
-        else
-        {
-            if(currentScene.name != "EstrategiaTuto"){
-                index++;
-                panel.gameObject.SetActive(false);
-                move.allowMove = true;
-            }
-            else{
-                GameManagerE gm = FindObjectOfType<GameManagerE>();
-                gm.finDialogo();
-            }
-            textComponent.text = string.Empty;
-            textName.text = string.Empty;
-            dialogue = false;
-            pnj.gameObject.SetActive(false);
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

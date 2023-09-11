@@ -30,6 +30,7 @@ public class Inventory : MonoBehaviour
         cargaInventory();
     }
 
+    //Cargar el JSON si existente
     public void cargaInventory(){
         if(PlayerPrefs.HasKey("InventoryCards")){
             string inventoryData = PlayerPrefs.GetString("InventoryCards");
@@ -38,30 +39,6 @@ public class Inventory : MonoBehaviour
         for(int i = 0; i < inventory.Count; i++){
             slots[i].gameObject.GetComponent<Slot>().nombre = inventory[i];
             insertaSprite(slots[i].gameObject.GetComponent<Slot>(), inventory[i]);
-        }
-    }
-
-    private void insertaSprite(Slot s, string nombre){
-        if(nombre == "Agua"){
-            s.icon = Agua;
-        }
-        else if(nombre == "Estaca"){
-            s.icon = Estaca;
-        }
-        else if(nombre == "Sangre"){
-            s.icon = Sangre;
-        }
-        else if(nombre == "Tumba"){
-            s.icon = Tumba;
-        }
-        else if(nombre == "Mina"){
-            s.icon = Mina;
-        }
-        else if(nombre == "Aldeano"){
-            s.icon = Aldeano;
-        }
-        else if(nombre == "Ajo"){
-            s.icon = Ajo;
         }
     }
 
@@ -96,4 +73,30 @@ public class Inventory : MonoBehaviour
 
         return false;
     }
+
+    private void insertaSprite(Slot s, string nombre){
+        if(nombre == "Agua"){
+            s.icon = Agua;
+        }
+        else if(nombre == "Estaca"){
+            s.icon = Estaca;
+        }
+        else if(nombre == "Sangre"){
+            s.icon = Sangre;
+        }
+        else if(nombre == "Tumba"){
+            s.icon = Tumba;
+        }
+        else if(nombre == "Mina"){
+            s.icon = Mina;
+        }
+        else if(nombre == "Aldeano"){
+            s.icon = Aldeano;
+        }
+        else if(nombre == "Ajo"){
+            s.icon = Ajo;
+        }
+    }
+
+    
 }
