@@ -40,7 +40,6 @@ public class Lamias : MonoBehaviour
 
         if(rightAnswers == 3)  
         {
-            //Debug.Log("hecho");
             lamias = "done";
             string lamiasData = JsonUtility.ToJson(lamias);
             PlayerPrefs.SetString("Lamias", lamias);

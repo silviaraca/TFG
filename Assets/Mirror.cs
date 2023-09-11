@@ -18,21 +18,31 @@ public class Mirror : MonoBehaviour
 
     void Start()
     {
-        //PlayerPrefs.DeleteKey("MirrorPlaced");
-        if(PlayerPrefs.HasKey("MirrorPlaced")) mirrorPlaced = PlayerPrefs.GetString("MirrorPlaced");
-        if(mirrorPlaced != "done") //Si ya se ha colocado el espejo
+        PlayerPrefs.DeleteKey("MirrorPlaced");
+        PlayerPrefs.DeleteKey("RatSecretary");
+        if(PlayerPrefs.HasKey("RatSecretary"))
         {
-            done = false;
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.enabled = false;
-            textoE.gameObject.SetActive(false);
-            boxCollider2.enabled = false;
+            if(PlayerPrefs.HasKey("MirrorPlaced")) mirrorPlaced = PlayerPrefs.GetString("MirrorPlaced");
+            if(mirrorPlaced != "done") //Si ya se ha colocado el espejo
+            {
+                done = false;
+                spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.enabled = false;
+                textoE.gameObject.SetActive(false);
+                boxCollider2.enabled = false;
+            }
+            else
+            {
+                boxCollider.enabled = false;
+            }
         }
         else
         {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.enabled = false;
             boxCollider.enabled = false;
-        }
-       
+            boxCollider2.enabled = false;
+        } 
     }
 
     void OnTriggerEnter2D(Collider2D collision)
