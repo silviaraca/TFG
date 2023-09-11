@@ -51,7 +51,7 @@ public class GameManagerE : MonoBehaviour
   public int enemigosVivos;
   public bool tutorial, dracula;
   private static bool dialogo = true, spawnea = true, mata = true, pasa = false, zoomed = false, moviendose = false;
-
+  private GameObject drac;
 
   public void Start(){
     //Tomar las cartas de la lista de cartas que haya en deckData al iniciar la escena
@@ -61,23 +61,12 @@ public class GameManagerE : MonoBehaviour
       listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
     }
     else{ //Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-      listaCartas.Add("Logan");
-      listaCartas.Add("Logan");
-      listaCartas.Add("Logan");
-      listaCartas.Add("Logan");
-      listaCartas.Add("Logan");
-      listaCartas.Add("Cuchillo");
-      listaCartas.Add("Estaca");
-      listaCartas.Add("Estaca");
-      listaCartas.Add("Nosferatu");
-      listaCartas.Add("Ratonela");
-      listaCartas.Add("Agua");
-      listaCartas.Add("Agua");
-      listaCartas.Add("Tumba");
-      listaCartas.Add("Sangre");
       listaCartas.Add("Ajo");
       listaCartas.Add("Ajo");
-
+      listaCartas.Add("Agua");
+      listaCartas.Add("Agua");
+      listaCartas.Add("Estaca");
+      listaCartas.Add("Estaca");
       List<string> inventory = new List<string>();
       if(PlayerPrefs.HasKey("InventoryCards")){
           string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
@@ -98,13 +87,6 @@ public class GameManagerE : MonoBehaviour
         listaEnemigos = JsonConvert.DeserializeObject<List<string>>(enemiesData);
     }
     else{//Si no hubiese data(cargar directamente estrategia para probar cosas o el tuto) hace esto
-      listaEnemigos.Add("Abomination");
-      listaEnemigos.Add("Wolf");
-      listaEnemigos.Add("Wolf");
-      listaEnemigos.Add("Wolf");
-      listaEnemigos.Add("Wolf");
-      listaEnemigos.Add("Vampire");
-      listaEnemigos.Add("Vampire");
       listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
@@ -114,6 +96,18 @@ public class GameManagerE : MonoBehaviour
       listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
       listaEnemigos.Add("Zombie");
+    }
+
+    if (PlayerPrefs.HasKey("DaculaFight") && !tutorial)
+    {
+      drac = Instantiate(Dracula);
+      listaPnjEnemigosEnTablero.Add(drac.gameObject.GetComponent<Personaje>());
+      drac.transform.SetParent(filasPnj[tablero[61].fila].transform, false);
+      drac.transform.position = new Vector3(tablero[61].transform.position.x + 5, tablero[61].transform.position.y + 40, tablero[61].transform.position.z+10);
+      drac.gameObject.GetComponent<Personaje>().setCasAct(tablero[61]);
+      tablero[61].pnj = drac.GetComponent<Personaje>();
+      tablero[61].vacia = false;
+      dracula = true;
     }
 
     textoCartasPorJugar.enabled = false;
@@ -132,7 +126,7 @@ public class GameManagerE : MonoBehaviour
       if(!tutorial){
         if(!win && !loose){
           if(fase == 0){ //fase inicial y efectos de inicio de turno
-            textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
+            textoTurnos.text = "Turns before enemy victory: " + turnosParaPerder;
             if(primerTurno){ //Roba dos cartas inicialmente
               DrawCard();
               DrawCard();
@@ -142,16 +136,16 @@ public class GameManagerE : MonoBehaviour
             nRobadas = 0;
             roba = false;
             fase++; //No pasa hasta que se ejecuten todos
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
           }
           else if(fase == 1 && (nRobadas == 2 || pasaTurno)){ //Fase1 de robo de los mazos finalizada
             fase++; //Suma fase
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
             nRobadas = 0;
             pasaTurno = false;
             textoCartasPorJugar.enabled = true;
             int porJugar = maxJug - nCartasJugadas;
-            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            textoCartasPorJugar.text = "Cards remaining to play: " + porJugar;
             modificaEfectos();
           }
           else if((fase == 2 || fase == 4) && pasaTurno){ //Fase2 de juegar cartas1, Fase4 de jugar cartas2 finalizan
@@ -160,12 +154,12 @@ public class GameManagerE : MonoBehaviour
             if(fase == 4)
               nCartasJugadas = 0;
             fase++;
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
           }
           else if(fase == 3 && (nRobadas == 2 || pasaTurno)){ //Fase3 de mover pnj finaliza
             activaFinTuro(fase);
             fase++;
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
             for(int i = 0; i < listaPnj.Count; i++){
               listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
               listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
@@ -173,7 +167,7 @@ public class GameManagerE : MonoBehaviour
             pasaTurno = false;
             textoCartasPorJugar.enabled = true;
             int porJugar = maxJug - nCartasJugadas;
-            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            textoCartasPorJugar.text = "Cards remaining to play: " + porJugar;
             modificaEfectos(); //Cambia efectos de cartas de segunda fase y cuarta fase
           }
           else if(fase == 5){
@@ -201,7 +195,7 @@ public class GameManagerE : MonoBehaviour
             this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaRPG(); //Carga RPG si pierde el combate
           }
           if(dracula){
-            if(Dracula.GetComponent<Personaje>().getVida() <= 0){
+            if(drac.GetComponent<Personaje>().getVida() <= 0){
               win = true;
               PlayerPrefs.SetString("WinCombate", "win"); //Manda victoria
               PlayerPrefs.Save();
@@ -214,14 +208,14 @@ public class GameManagerE : MonoBehaviour
       else{ //Script del tutorial
         if(!win && !loose && !dialogo){
           if(fase == 0){ //fase inicial y efectos de inicio de turno
-            textoTurnos.text = "Turnos para la victoria enemiga: " + turnosParaPerder;
+            textoTurnos.text = "Turns before enemy victory: " + turnosParaPerder;
             //Aquí primer diálogo explicando lo que es la estrategia
             if(primerTurno){
               primerTurno = false;
               nRobadas = 0;
               roba = false;
               fase++; //No pasa hasta que se ejecuten todos
-              textoFase.text = "Fase Actual: " + fase;
+              textoFase.text = "Phase: " + fase;
               //Roba las dos cartas que estás scripteadas para robar
               drawScripted(3);
               drawScripted(3);
@@ -233,12 +227,12 @@ public class GameManagerE : MonoBehaviour
             //Obliga a robar una carta antes de explicar poder pasar turno
 
             fase++;
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
             nRobadas = 0;
             pasaTurno = false;
             textoCartasPorJugar.enabled = true;
             int porJugar = maxJug - nCartasJugadas;
-            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            textoCartasPorJugar.text = "Cards remaining to play: " + porJugar;
             ds.setReactivable();
             ds.reactivarDialogo();
           }
@@ -257,7 +251,7 @@ public class GameManagerE : MonoBehaviour
             if(fase == 4)
               nCartasJugadas = 0;
             fase++;
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
             spawnea = true;
             ds.setReactivable();
             ds.reactivarDialogo();
@@ -265,7 +259,7 @@ public class GameManagerE : MonoBehaviour
           else if(fase == 3 && (nRobadas == 2 || pasaTurno) && pasa){ //Fase3 de mover pnj
             //Esta fase la explicará en tutorial 2 de personajes
             fase++;
-            textoFase.text = "Fase Actual: " + fase;
+            textoFase.text = "Phase: " + fase;
             for(int i = 0; i < listaPnj.Count; i++){
               listaPnj[i].setMovAct(listaPnj[i].getMaxMov());
               listaPnj[i].setNumAtaAct(listaPnj[i].getNumAta());
@@ -274,7 +268,7 @@ public class GameManagerE : MonoBehaviour
             pasaTurno = false;
             textoCartasPorJugar.enabled = true;
             int porJugar = maxJug - nCartasJugadas;
-            textoCartasPorJugar.text = "Cartas por jugar: " + porJugar;
+            textoCartasPorJugar.text = "Cards remaining to play: " + porJugar;
             ds.setReactivable();
             ds.reactivarDialogo();
             listaPnj[0].danar(1, "");
@@ -456,11 +450,12 @@ public class GameManagerE : MonoBehaviour
     tablero[pos].vacia = false;
   }
   private void spawnAliadoScripted(int pos){
-    listaPnj.Add(aliado.GetComponent<Personaje>());
-    aliado.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
-    aliado.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 40, tablero[pos].transform.position.z+10);
-    aliado.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
-    tablero[pos].pnj = aliado.GetComponent<Personaje>();
+    GameObject ali = Instantiate(aliado);
+    listaPnj.Add(ali.GetComponent<Personaje>());
+    ali.transform.SetParent(filasPnj[tablero[pos].fila].transform, false);
+    ali.transform.position = new Vector3(tablero[pos].transform.position.x + 5, tablero[pos].transform.position.y + 40, tablero[pos].transform.position.z+10);
+    ali.gameObject.GetComponent<Personaje>().setCasAct(tablero[pos]);
+    tablero[pos].pnj = ali.GetComponent<Personaje>();
     tablero[pos].vacia = false;
   }
   private void drawScripted(int index){
@@ -590,6 +585,7 @@ public class GameManagerE : MonoBehaviour
     danaVenenorPnj();
     contadorInmunes();
     if(dracula){
+      curaDraculaTurno();
       if(turnosParaPerder%2 == 1){
         print(turnosParaPerder);
         ataqueAleatorioDracula();
@@ -843,5 +839,8 @@ public class GameManagerE : MonoBehaviour
       tablero[i].setColor(tablero[i].getImagenIni());
       tablero[i].futuroAtaque = false;
     }
+  }
+  private void curaDraculaTurno(){
+    drac.GetComponent<Personaje>().danar(-1, "");
   }
 }

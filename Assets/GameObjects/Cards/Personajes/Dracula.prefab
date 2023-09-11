@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8314872184104838655}
   - component: {fileID: 3010849262858531765}
   m_Layer: 5
-  m_Name: CharacterA
+  m_Name: Dracula
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 551.011, y: 277.397}
+  m_AnchoredPosition: {x: 678.8408, y: 448.26505}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2435221960745580322
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 200535bad05df5541b4feed2bd71c8bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7641dea345ddd444fb9d40db921f6516, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -94,12 +94,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1f95602807d8f46b85e02f43aad324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaMax: 2
-  ataque: 1
+  vidaMax: 10
+  ataque: 2
   movMax: 2
   numAtaques: 1
   rango: 1
-  enemigo: 0
+  enemigo: 1
   enRango: 0
   transformando: 0
   inmune: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   rage: 0
   healer: 0
   mejoradoAta: 0
-  dracula: 0
+  dracula: 1
   cas: {fileID: 0}
   turnoEfectoFin: 0
   turnosInmune: 0
