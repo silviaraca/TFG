@@ -1180,7 +1180,7 @@ MonoBehaviour:
   sentences:
   - Hello... Are you Nosferatu?
   - Indeed, I am. And who might you be, curious traveler?
-  - My name is X. I've heard stories about you, the vampire. You're quite infamous.
+  - My name is Bram. I've heard stories about you, the vampire. You're quite infamous.
   - Ah, the stories, the whispers. They have followed me through time, weaving their
     own dark tales.
   - People say you're a creature of the night lurking in shadows.
@@ -1193,15 +1193,15 @@ MonoBehaviour:
   - The pleasure is mine. Farewell, and remember that the shadows hold secrets that
     even I cannot fully comprehend.
   names:
-  - Me
+  - Bram
   - Nosferatu
-  - Me
+  - Bram
   - Nosferatu
-  - Me
+  - Bram
   - Nosferatu
-  - Me
+  - Bram
   - Nosferatu
-  - Me
+  - Bram
   - Nosferatu
   textSpeed: 0
   personajeImage: {fileID: 0}
@@ -1459,15 +1459,15 @@ MonoBehaviour:
   - Ok... sure.
   names:
   - Ruthven
-  - Me
+  - Bram
   - Ruthven
-  - Me
+  - Bram
   - Ruthven
-  - Me
+  - Bram
   - Ruthven
-  - Me
+  - Bram
   - Ruthven
-  - Me
+  - Bram
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1131370805

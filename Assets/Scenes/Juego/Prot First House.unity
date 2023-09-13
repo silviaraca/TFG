@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'To Mr. X:
+  m_text: 'To Mr. Bram:
 
 
 
@@ -6551,5 +6551,17 @@ PrefabInstance:
       propertyPath: playerExistente
       value: 
       objectReference: {fileID: 2053772858}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[0]
+      value: Bram
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[1]
+      value: Bram
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+      propertyPath: names.Array.data[2]
+      value: Bram
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}

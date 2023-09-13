@@ -445,31 +445,9 @@ MonoBehaviour:
   textComponent: {fileID: 64510945}
   textName: {fileID: 2144706058}
   sentences:
-  - 'Are you the new one? '
-  - Wish you the best
-  - Is it very dangerous?
-  - Dracula is a being far older and more powerful than you could ever imagine. Over
-    the centuries, he has amassed an unparalleled ability to manipulate and seduce
-    those around him.
-  - His agenda is dark and his thirst for power is unquenchable.
-  - Isn't he just a vampire... like you?
-  - ' Dracula goes beyond what any mortal or even vampire can comprehend. He is not
-    just a blood predator; he is a being who has mastered the art of influence and
-    manipulation on a global scale. '
-  - ' His influence reaches to the highest echelons of society, and he has woven
-    a web of twisted allegiances that allow him to move in the shadows undetected.'
-  - I understand the gravity of the situation, Varney. I will not take this assignment
-    lightly.
+  - Thank you so much!!
   names:
   - Varney
-  - Varney
-  - Me
-  - Varney
-  - Varney
-  - Me
-  - Varney
-  - Varney
-  - Me
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!1 &501585686
@@ -3264,18 +3242,18 @@ MonoBehaviour:
   names:
   - Drac
   - Drac
-  - Me
-  - Me
+  - Bram
+  - Bram
   - Drac
-  - Me
+  - Bram
   - Drac
-  - Me
+  - Bram
   - Drac
-  - Me
+  - Bram
   - Drac
-  - Me
+  - Bram
   - Drac
-  - Me
+  - Bram
   - Drac
   textSpeed: 0
   personajeImage: {fileID: 0}

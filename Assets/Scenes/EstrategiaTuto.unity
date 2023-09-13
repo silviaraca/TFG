@@ -175,17 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 8
-  spawnEne: 1
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &14782951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,17 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 7
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &174021743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,7 +991,6 @@ RectTransform:
   - {fileID: 1366732596}
   - {fileID: 512333866}
   - {fileID: 338129627}
-  - {fileID: 864216608}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1034,10 +1011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fdfd6e861db8443b221f4e5f35fc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1055776836}
+  panel: {fileID: 2073100786}
   momentosScript: 02000000040000000600000007000000090000000a0000000d000000
-  textComponent: {fileID: 1186275079}
-  textName: {fileID: 1099791794}
+  textComponent: {fileID: 590601696}
+  textName: {fileID: 900693803}
   sentences:
   - Well... I'm going to explain how it works.
   - Whenever you meet an ally of the "Evil Dracula", they will be willing to attack
@@ -1374,17 +1351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 4
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &386075834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1577,17 +1543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 5
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &459405492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,17 +1779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 6
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &544254152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1940,6 +1884,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &590601696 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3037912675836927232, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 1678129184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &594418425 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2435221960745580320, guid: 300d3b09031164049b481425837f0b37, type: 3}
@@ -2008,17 +1963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 10
-  spawnEne: 1
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 441f8ce845752f04f96a87a9e535e7c1, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &604098712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2351,17 +2295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 7
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &661527611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2684,17 +2617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 9
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &736632354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2815,17 +2737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 3
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &784585336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2894,143 +2805,6 @@ PolygonCollider2D:
       - {x: -35.28067, y: 17.695255}
       - {x: 0.04602003, y: -6.062373}
       - {x: 34.590405, y: 17.611609}
---- !u!1001 &798684996
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 328946604}
-    m_Modifications:
-    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -67.5099
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -725.8757
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -2.8250122
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912675099760093, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -307.66638
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912675836927232, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912675836927232, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 540
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195304, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_Name
-      value: Dialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 3037912676629195304, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
 --- !u!1 &808520282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,17 +2857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 2
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &808520286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3214,17 +2977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 8
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &847573951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3448,11 +3200,6 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2263067416816883838, guid: c86f067a661cb164fa649498a7754be9, type: 3}
   m_PrefabInstance: {fileID: 863709246}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &864216608 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3037912676629195284, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-  m_PrefabInstance: {fileID: 798684996}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &886857686
 PrefabInstance:
@@ -3693,6 +3440,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2263067416816883838, guid: c86f067a661cb164fa649498a7754be9, type: 3}
   m_PrefabInstance: {fileID: 897725656}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &900693803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8913515238798161703, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 1678129184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &943474074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,17 +3500,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1055776836 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3037912675099760091, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-  m_PrefabInstance: {fileID: 798684996}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1060103775
@@ -3925,17 +3672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 3
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &1079719369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4199,17 +3935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1099791794 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8913515238798161703, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-  m_PrefabInstance: {fileID: 798684996}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1107287335 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4975245168731972309, guid: c86f067a661cb164fa649498a7754be9, type: 3}
@@ -4432,17 +4157,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130543458}
   m_CullTransparentMesh: 1
---- !u!114 &1186275079 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3037912675836927232, guid: 1c00a7a29c05bd2439a923b9dc29718a, type: 3}
-  m_PrefabInstance: {fileID: 798684996}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1258506810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4495,17 +4209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 5
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &1258506814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4976,17 +4679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 6
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &1329063357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5902,17 +5594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 4
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &1586454990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6083,6 +5764,111 @@ RectTransform:
   m_AnchoredPosition: {x: 223, y: 20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1678129184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195287, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195304, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_Name
+      value: Dialogue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7a2397f09299ad498873435c37e4872, type: 3}
 --- !u!1 &1690869294
 GameObject:
   m_ObjectHideFlags: 0
@@ -6900,6 +6686,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2073100786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3037912675099760091, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 1678129184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2082158397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7156,17 +6953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 9
-  spawnEne: 1
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 3e12888adc7f5e846970d0529bfa4dc8, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &2121617133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7631,17 +7417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 11
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &320906419052384731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7654,17 +7429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 12
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!224 &442424501618075117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7697,17 +7461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 13
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &854044786872574648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7720,17 +7473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 12
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &933942023374193989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7743,17 +7485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 14
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!1001 &1117614826034218674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9539,17 +9270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 11
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!1001 &2435221961225694681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9691,17 +9411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 11
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &2792702710008070414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9714,17 +9423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 10
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!224 &2810111078097438223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10572,17 +10270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 12
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!224 &3334497979802002556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10802,17 +10489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 10
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4250121732042782965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10825,17 +10501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 8
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!1 &4486826806692594623
 GameObject:
   m_ObjectHideFlags: 0
@@ -10910,17 +10575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 8
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!222 &4816944333954127253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10941,17 +10595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 0
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245166765832418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10964,17 +10607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 6
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245166818769138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10987,17 +10619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 8
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245166865504251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11010,17 +10631,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 7
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245166866229379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11033,17 +10643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 7
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245166997213516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11056,17 +10655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 9
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245167620720284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11079,17 +10667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 5
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245167661453109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11102,17 +10679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 9
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245167813545278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11125,17 +10691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 5
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245167829579310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11148,17 +10703,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 8
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 14bf58764b246f34cb769c0ce0456cea, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245168202746953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11171,17 +10715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 6
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245168300585448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11194,17 +10727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 4
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245168390353158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11217,17 +10739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 6
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245168661184427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11240,17 +10751,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 7
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &4975245168701464620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11263,17 +10763,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 10
-  spawnEne: 0
-  spawnAli: 1
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 641f98e08c21f16438d7b915331a34fa, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!114 &5165291838792909641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11286,17 +10775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 11
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!1 &5166394458766161752
 GameObject:
   m_ObjectHideFlags: 0
@@ -12471,17 +11949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 9
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!60 &6550774257388891175
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12544,17 +12011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 10
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!60 &6647408092394889031
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13239,17 +12695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 9
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!60 &8958667450897391833
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13292,17 +12737,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pnj: {fileID: 0}
-  vacia: 1
-  pintada: 0
-  fila: 13
-  spawnEne: 0
-  spawnAli: 0
-  spawnAliTemp: 0
-  consumeMov: 0
-  imagenIni: {fileID: 21300000, guid: 42ac0c13080c37e47b988480934a74ef, type: 3}
-  futuroAtaque: 0
-  muyPintada: 0
 --- !u!60 &8979084668330425509
 PolygonCollider2D:
   m_ObjectHideFlags: 0

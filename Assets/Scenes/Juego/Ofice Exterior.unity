@@ -68733,7 +68733,7 @@ MonoBehaviour:
   textComponent: {fileID: 1678744967}
   textName: {fileID: 1678744966}
   sentences:
-  - Do you want ice cream?
+  - Do you want some ice cream?
   names:
   - Ice cream man
   textSpeed: 0
