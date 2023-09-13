@@ -30,6 +30,7 @@ public class DialogoDecisiones : MonoBehaviour
     private bool activeE;
     private static bool decision;
     private Player player;
+    private int lam = 0;
 
 
     // Start is called before the first frame update
@@ -281,6 +282,7 @@ public class DialogoDecisiones : MonoBehaviour
             //textName.text = names[index];
             StopAllCoroutines();
         }
+        lam = 0;
     }
 
     public void decisionLamias_Right()
@@ -289,7 +291,24 @@ public class DialogoDecisiones : MonoBehaviour
         BotonDecision1.gameObject.SetActive(false);
         BotonDecision2.gameObject.SetActive(false);
         index += 2;
-
+        lam++;
+        print(lam);
+        if(lam == 3){
+            if(!PlayerPrefs.HasKey("RegaloLamias")){
+                List<string> inventory = new List<string>();
+                if(PlayerPrefs.HasKey("InventoryCards")){
+                    string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+                    inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+                }
+                inventory.Add("Lamias");
+                string inventoryData2 = JsonConvert.SerializeObject(inventory);
+                PlayerPrefs.SetString("InventoryCards", inventoryData2);
+                PlayerPrefs.Save();
+                string lamias = "done";
+                PlayerPrefs.SetString("RegaloLamias", lamias);
+                PlayerPrefs.Save();
+            }
+        }
         if(textComponent.text == sentences[index])
         {
             NextLine();
@@ -339,7 +358,7 @@ public class DialogoDecisiones : MonoBehaviour
         PlayerPrefs.Save();
         playerExistente.inventory.cargaInventory();
     }
-    
+
     public bool indexFin(){
         return index >= names.Length;
     }

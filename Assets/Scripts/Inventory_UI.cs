@@ -62,7 +62,7 @@ public class Inventory_UI : MonoBehaviour
         }
 
         slots.Add(slotPrefab);
-
+        player.inventory.cargaInventory();
         for(int i = 1; i < player.inventory.slots.Count; i++)
         {
             GameObject slotUI = Instantiate(slotPrefab, transform);
