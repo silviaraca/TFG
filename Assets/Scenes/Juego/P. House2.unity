@@ -266,12 +266,12 @@ MonoBehaviour:
     doors between worlds.
   - Try the mirror on the right, you will find me on the other side.
   names:
-  - Van Helsin
-  - Van Helsin
-  - Me
-  - Van Helsin
-  - Van Helsin
-  - Van Helsin
+  - Van Helsing
+  - Van Helsing
+  - Bram
+  - Van Helsing
+  - Van Helsing
+  - Van Helsing
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!61 &99516807

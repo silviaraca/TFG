@@ -5389,17 +5389,17 @@ MonoBehaviour:
   - ' Great, thanks for the information'
   - ' Here, perhaps this will help you stop the madness of this new face of Dracula.'
   names:
-  - Me
+  - Bram
   - Peddler
-  - Me
-  - Peddler
-  - Peddler
-  - Peddler
-  - Me
+  - Bram
   - Peddler
   - Peddler
   - Peddler
-  - Me
+  - Bram
+  - Peddler
+  - Peddler
+  - Peddler
+  - Bram
   - Peddler
   textSpeed: 0
   personajeImage: {fileID: 0}
@@ -47400,14 +47400,14 @@ MonoBehaviour:
   - If you need anything else, let me know.
   names:
   - Mina
-  - Me
+  - Bram
   - Mina
   - Mina
-  - Me
+  - Bram
   - Mina
   - Mina
   - Mina
-  - Me
+  - Bram
   - Mina
   textSpeed: 0
   personajeImage: {fileID: 0}

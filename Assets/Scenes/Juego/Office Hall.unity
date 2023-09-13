@@ -2731,18 +2731,18 @@ MonoBehaviour:
   - No, I want you to bring me a coffee from the machine
   - Oh! Easy
   names:
-  - Me
-  - Secretary
-  - Me
+  - Bram
+  - Recepcionist
+  - Bram
   - Ratonella
-  - Me
-  - Me
+  - Bram
+  - Bram
   - Ratonella
-  - Me
+  - Bram
   - Ratonella
-  - Me
+  - Bram
   - Ratonella
-  - Me
+  - Bram
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1313960587
@@ -7769,7 +7769,7 @@ MonoBehaviour:
   playerPosition: {x: 22.4, y: 39.3, z: 0}
   playerStorage: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
   audioSource: {fileID: 0}
-  escena: Office Exterior
+  escena: Ofice Exterior
 --- !u!114 &1796368978 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5054287904887673338, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}

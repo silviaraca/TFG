@@ -463,13 +463,13 @@ MonoBehaviour:
   names:
   - Varney
   - Varney
-  - Me
+  - Bram
   - Varney
   - Varney
-  - Me
+  - Bram
   - Varney
   - Varney
-  - Me
+  - Bram
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!1 &501585686
@@ -3240,7 +3240,7 @@ MonoBehaviour:
   textComponent: {fileID: 64510945}
   textName: {fileID: 2144706058}
   sentences:
-  - Hello, I'm X, I'm here because I received a job offer.
+  - Hello, I'm Bram, I'm here because I received a job offer.
   - It's good to have you here! I'm Drac, nice to meet you
   - We read your resume and liked it so much. We saw that he has a lot of experience.
   - The job is simple. As you may know, slight connection problems often occur between
@@ -3255,16 +3255,16 @@ MonoBehaviour:
     town where you''ll be staying for the next few weeks. '
   - If you have any questions, please let me know
   names:
-  - Me
+  - Bram
   - Drac
   - Drac
   - Drac
   - Drac
-  - Me
-  - Me
-  - Me
+  - Bram
+  - Bram
+  - Bram
   - Drac
-  - Me
+  - Bram
   - Drac
   - Drac
   textSpeed: 0
