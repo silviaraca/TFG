@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 135677768}
   - component: {fileID: 135677767}
   - component: {fileID: 135677769}
+  - component: {fileID: 135677770}
   m_Layer: 0
   m_Name: Treasure Box 2
   m_TagString: Untagged
@@ -365,6 +366,19 @@ MonoBehaviour:
   - Me
   textSpeed: 0
   personajeImage: {fileID: 0}
+--- !u!114 &135677770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135677766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a7da40a203dbc4686dd6198dfaeb62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 135677769}
 --- !u!1001 &207639982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1205,6 +1219,19 @@ MonoBehaviour:
   - Nosferatu
   textSpeed: 0
   personajeImage: {fileID: 0}
+--- !u!114 &651190210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651190208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eddabd2aa0a24941b7d01fe1e4de6b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 651190209}
 --- !u!1 &746057802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1243,7 @@ GameObject:
   - component: {fileID: 746057804}
   - component: {fileID: 746057803}
   - component: {fileID: 746057805}
+  - component: {fileID: 746057806}
   m_Layer: 0
   m_Name: Treasure Box 1
   m_TagString: Untagged
@@ -1302,6 +1330,19 @@ MonoBehaviour:
   - Me
   textSpeed: 0
   personajeImage: {fileID: 0}
+--- !u!114 &746057806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746057802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8034c1ce0900a42aff1a6ebd618da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 746057805}
 --- !u!1 &945497608
 GameObject:
   m_ObjectHideFlags: 0

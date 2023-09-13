@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class Rat : MonoBehaviour
 {
@@ -39,6 +40,21 @@ public class Rat : MonoBehaviour
         {
             dialogue1.enabled = false;
             dialogue2.enabled = true;
+
+            if(!PlayerPrefs.HasKey("RatCarta") && dialogue2.indexFin()){
+            List<string> inventory = new List<string>();
+            if(PlayerPrefs.HasKey("InventoryCards")){
+                string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+                inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+            }
+            inventory.Add("Ratonela");
+            string inventoryData2 = JsonConvert.SerializeObject(inventory);
+            PlayerPrefs.SetString("InventoryCards", inventoryData2);
+            PlayerPrefs.Save();
+            string mina = "done";
+            PlayerPrefs.SetString("RatCarta", mina);
+            PlayerPrefs.Save();
+        }
         }
 
     }

@@ -22,7 +22,6 @@ public class Lamias : MonoBehaviour
     void Update()
     {
         lamias = PlayerPrefs.GetString("Lamias");
-        //Debug.Log(lamias);
 
         if(lamias == "done")
         {

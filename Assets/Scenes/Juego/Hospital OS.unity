@@ -3925,6 +3925,21 @@ MonoBehaviour:
   cargar: {fileID: 1238960536}
   escena: Estrategia
   enemies:
+  - Abomination
+  - Vampire
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
   - Zombie
   - Zombie
   - Zombie
