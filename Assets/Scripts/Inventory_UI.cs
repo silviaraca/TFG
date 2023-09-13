@@ -21,6 +21,15 @@ public class Inventory_UI : MonoBehaviour
         inventoryPanel.SetActive(false);
     }
 
+    void Update()
+    {
+        if(PauseMenu.isPaused)
+        {
+            inventoryPanel.SetActive(false);
+        }
+    }
+
+    //Abrir el inventario
     public void ToggleInventory()
     {
         if(!inventoryPanel.activeSelf && !PauseMenu.isPaused)
@@ -43,13 +52,17 @@ public class Inventory_UI : MonoBehaviour
     public void Setup()
     {
         List<string> listaCartas= new List<string>();
+       
+        //Extraer info del JSON mazo
         if (PlayerPrefs.HasKey("DeckData"))
         {
             string deckData = PlayerPrefs.GetString("DeckData");
             listaCartas = JsonConvert.DeserializeObject<List<string>>(deckData);
             player.deck = listaCartas;
         }
+
         slots.Add(slotPrefab);
+
         for(int i = 1; i < player.inventory.slots.Count; i++)
         {
             GameObject slotUI = Instantiate(slotPrefab, transform);

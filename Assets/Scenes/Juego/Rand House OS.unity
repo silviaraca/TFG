@@ -2436,6 +2436,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+--- !u!114 &959303323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6486255608185457374, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+  m_PrefabInstance: {fileID: 959303322}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586022074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1076553236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3723,9 +3734,9 @@ MonoBehaviour:
   textName: {fileID: 914177504}
   sentences:
   - Hi, I'm new here and I would like to...
-  - SILENCE! I'm trying to guess the answers to the quiz game Jabs showed me
+  - SILENCE! I'm trying to guess the answers to the quiz game Ruthven showed me
   - What if I help you with that?
-  - Would you?? I need to prove to Jabs that I know more than he does
+  - Would you?? I need to prove to Ruthven that I know more than he does
   - I would do ANYTHING for you if you help me
   - Great! I only need you to...
   - I SAID ANYTHING!!
@@ -3780,13 +3791,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoE: {fileID: 389327143}
-  panel: {fileID: 0}
-  pnj: {fileID: 0}
+  panel: {fileID: 1816608673}
+  pnj: {fileID: 959303323}
   move: {fileID: 2054490357}
   playerExistente: {fileID: 2054490356}
   npcHablando: {fileID: 1586022074}
-  textComponent: {fileID: 0}
-  textName: {fileID: 0}
+  textComponent: {fileID: 1385542490}
+  textName: {fileID: 914177504}
   sentences:
   - Thanks for your help!
   names:

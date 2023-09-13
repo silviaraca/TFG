@@ -16583,6 +16583,52 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+--- !u!1 &313153551 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5654485413541784259, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+  m_PrefabInstance: {fileID: 313153550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &313153552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313153551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 510282645}
+  panel: {fileID: 649401288}
+  pnj: {fileID: 679979142}
+  move: {fileID: 2027063025}
+  playerExistente: {fileID: 510282648}
+  npcHablando: {fileID: 313153551}
+  textComponent: {fileID: 1000908654}
+  textName: {fileID: 1525189661}
+  sentences:
+  - Hey, you seem distant. What's on your mind?
+  - It's the weight of these years. I feel so old, burdened by the ages that have
+    passed.
+  - What makes you say that?
+  - I've been a part of this world for so long, a silent observer in the shadows.
+    Generations have come and gone, and I've watched it all. I sometimes wonder if
+    I've become a relic of a different time.
+  - Your age may be a testament to the passage of time, but it also grants you wisdom
+    and a unique perspective on the world.
+  - Thanks! Your words provide some comfort to this aging soul. Perhaps, with friends
+    like you, the weight of the years won't feel quite as heavy.
+  names:
+  - Bram
+  - Nosfe
+  - Bram
+  - Nosfe
+  - Bram
+  - Nosfe
+  textSpeed: 0.05
+  personajeImage: {fileID: 0}
 --- !u!1 &317980403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3851992231098829371, guid: fc2d8b74676e6f640a086cceffaa3011, type: 3}
@@ -20470,23 +20516,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.x
-      value: 0.5473958
+      value: 0.3124485
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Size.y
-      value: 0.3675414
+      value: 0.58943635
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.x
-      value: 0.11044812
+      value: -0.00702554
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_Offset.y
-      value: 0.004333958
+      value: -0.10661349
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.16
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 7258686197970826356, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
@@ -20547,6 +20593,45 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5654485413541784258, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+--- !u!1 &580718231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5654485413541784259, guid: 083489dc3a133f349b56be5c1d48ba29, type: 3}
+  m_PrefabInstance: {fileID: 580718230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &580718232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580718231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 510282645}
+  panel: {fileID: 649401288}
+  pnj: {fileID: 679979142}
+  move: {fileID: 2027063025}
+  playerExistente: {fileID: 510282648}
+  npcHablando: {fileID: 580718231}
+  textComponent: {fileID: 1000908654}
+  textName: {fileID: 1525189661}
+  sentences:
+  - "\u266A In the dead of night, they take flight, Silent whispers, out of   sight.
+    \u266A"
+  - "\u266A Vampires dance in the pale moon's glow, Their dark desires they never
+    show. \u266A"
+  - "\u266A Oh, the vampires, creatures of the night, With fangs that gleam in the
+    moonlight. \u266A"
+  - "\u266A They thirst for blood, their eternal plight, In the realm of shadows,
+    they take flight.  \u266A"
+  names:
+  - Ruthven
+  - Ruthven
+  textSpeed: 0.05
+  personajeImage: {fileID: 0}
 --- !u!1001 &592106332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20945,7 +21030,7 @@ MonoBehaviour:
   m_Follow: {fileID: 2027063024}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 15
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -27262,7 +27347,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
