@@ -3444,6 +3444,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4878753815502963025, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.982849
+      objectReference: {fileID: 0}
     - target: {fileID: 4878753816372788888, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3925,7 +3929,7 @@ MonoBehaviour:
   cargar: {fileID: 1238960536}
   escena: Estrategia
   enemies:
-  - Abomination
+  - Zombie
   - Vampire
   - Zombie
   - Zombie

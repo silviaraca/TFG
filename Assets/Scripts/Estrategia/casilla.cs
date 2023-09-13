@@ -23,10 +23,13 @@ public class Casilla : MonoBehaviour
     void Start()
     {
         gm = FindObjectOfType<GameManagerE>();
+        imagenIni = this.gameObject.GetComponent<Image>().sprite;
         imagenOriginal = imagenIni;
         string nombreObjeto = this.gameObject.name.Substring(8);
         posY = int.Parse(nombreObjeto.Substring(0,1));
         posX = int.Parse(nombreObjeto.Substring(1,1));
+        fila = int.Parse(this.gameObject.transform.parent.name.ToString().Substring(4));
+
     }
 
     public int getPosX(){

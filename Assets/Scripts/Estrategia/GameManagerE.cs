@@ -50,7 +50,7 @@ public class GameManagerE : MonoBehaviour
   public int turnosParaPerder; //Según el combate se configurará
   public int enemigosVivos;
   public bool tutorial, dracula;
-  private static bool dialogo = true, spawnea = true, mata = true, pasa = false, zoomed = false, moviendose = false;
+  private static bool dialogo = true, spawnea2 = false, spawnea = true, mata = true, pasa = false, zoomed = false, moviendose = false;
   private GameObject drac;
 
   public void Start(){
@@ -252,7 +252,7 @@ public class GameManagerE : MonoBehaviour
               nCartasJugadas = 0;
             fase++;
             textoFase.text = "Phase: " + fase;
-            spawnea = true;
+            spawnea2 = true;
             ds.setReactivable();
             ds.reactivarDialogo();
           }
@@ -312,8 +312,8 @@ public class GameManagerE : MonoBehaviour
             ds.setReactivable(); //permite reactivar el juego
             ds.reactivarDialogo(); //reactiva el dialogo
           }
-          else if (fase == 3 && spawnea){ //Al acabar el dialogo de spawnear lo activa
-            spawnea = false;
+          else if (fase == 3 && spawnea2){ //Al acabar el dialogo de spawnear lo activa
+            spawnea2 = false;
             spawnEnemigoScripted(13); //Aparece un enemigo en la casilla seleccionada
             spawnAliadoScripted(15); //Aparece un aliado en la casilla seleccionada
           }

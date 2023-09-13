@@ -13,6 +13,7 @@ public class Inventory_UI : MonoBehaviour
     public List<GameObject> slots = new List<GameObject>();
     public GameObject slotPrefab;
     public GameObject slotsPanel; 
+    public bool ini = false;
 
 
     void Start()
@@ -59,13 +60,16 @@ public class Inventory_UI : MonoBehaviour
         slotPrefab.GetComponent<Slots_UI>().nombreCarta = player.inventory.slots[0].GetComponent<Slot>().nombre;
         for(int i = 0; i < player.inventory.slots.Count; i++)
         {
-            for(int j = 0; j < listaCartas.Count; j++){
-                if(player.inventory.slots[i].GetComponent<Slot>().nombre == listaCartas[j]){
-                    player.inventory.slots[i].GetComponent<Slot>().Sumar();
+            if(!ini){
+                for(int j = 0; j < listaCartas.Count; j++){
+                    if(player.inventory.slots[i].GetComponent<Slot>().nombre == listaCartas[j]){
+                        player.inventory.slots[i].GetComponent<Slot>().Sumar();
+                    }
                 }
             }
             slots[i].GetComponent<Slots_UI>().Initialize(player.inventory.slots[i].GetComponent<Slot>());
         }
+        ini = true;
     }
 
     public void Open()

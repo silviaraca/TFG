@@ -462,7 +462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132425642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
   m_Name: 
@@ -2310,6 +2310,30 @@ PrefabInstance:
       propertyPath: startingPosition
       value: 
       objectReference: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
+    - target: {fileID: 7628832967240630881, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: Logan
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f049a4383262fc44810f18b7da64ef7, type: 3}
+    - target: {fileID: 7628832967240630881, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: Lamias
+      value: 
+      objectReference: {fileID: 21300000, guid: c84c00807210e104a8d1dfab0ee64568, type: 3}
+    - target: {fileID: 7628832967240630881, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: Carreta
+      value: 
+      objectReference: {fileID: 21300000, guid: 40d6be2bb4e5f0745a0e315ad51ba71c, type: 3}
+    - target: {fileID: 7628832967240630881, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: Cuchillo
+      value: 
+      objectReference: {fileID: 21300000, guid: 722996deaaf54f948a8a049791a8de06, type: 3}
+    - target: {fileID: 7628832967240630881, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: Noferatu
+      value: 
+      objectReference: {fileID: 21300000, guid: 63f55973bce34274daac4ef1b8aea2fc, type: 3}
+    - target: {fileID: 7628832967240630881, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
+      propertyPath: Ratonela
+      value: 
+      objectReference: {fileID: 21300000, guid: a4e58c522354870488a1cc73d0b3699c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
 --- !u!4 &397914024 stripped

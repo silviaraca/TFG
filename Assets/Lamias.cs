@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public class Lamias : MonoBehaviour
 {
@@ -39,10 +40,20 @@ public class Lamias : MonoBehaviour
 
         if(rightAnswers == 3)  
         {
-            lamias = "done";
-            string lamiasData = JsonUtility.ToJson(lamias);
-            PlayerPrefs.SetString("Lamias", lamias);
-            PlayerPrefs.Save();
+            if(!PlayerPrefs.HasKey("Lamias") && dialogoDecisiones.indexFin()){
+                List<string> inventory = new List<string>();
+                if(PlayerPrefs.HasKey("InventoryCards")){
+                    string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+                    inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+                }
+                inventory.Add("Lamias");
+                string inventoryData2 = JsonConvert.SerializeObject(inventory);
+                PlayerPrefs.SetString("InventoryCards", inventoryData2);
+                PlayerPrefs.Save();
+                lamias = "done";
+                PlayerPrefs.SetString("Lamias", lamias);
+                PlayerPrefs.Save();
+            }
         }
         
     }

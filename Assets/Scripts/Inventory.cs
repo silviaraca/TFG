@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     public int count; // Items ahora mismo
     public int maxSlots;
     public int busySlots;
-    public Sprite Agua, Estaca, Sangre, Tumba, Mina, Aldeano, Ajo;
+    public Sprite Agua, Estaca, Sangre, Tumba, Mina, Aldeano, Ajo, Nosferatu, Lamias, Logan, Carreta, Cuchillo, Ratonela;
     private List<string> inventory = new List<string>();
 
     // Inicializar
@@ -95,6 +95,24 @@ public class Inventory : MonoBehaviour
         }
         else if(nombre == "Ajo"){
             s.icon = Ajo;
+        }
+        else if(nombre == "Nosferatu"){
+            s.icon = Nosferatu;
+        }
+        else if(nombre == "Lamias"){
+            s.icon = Lamias;
+        }
+        else if(nombre == "Logan"){
+            s.icon = Logan;
+        }
+        else if(nombre == "Carreta"){
+            s.icon = Carreta;
+        }
+        else if(nombre == "Cuchillo"){
+            s.icon = Cuchillo;
+        }
+        else if(nombre == "Ratonela"){
+            s.icon = Ratonela;
         }
     }
 

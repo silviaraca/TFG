@@ -175,6 +175,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &14782951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +590,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &174021743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,6 +1373,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &386075834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,6 +1576,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &459405492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1779,6 +1823,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &544254152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,6 +2018,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &604098712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2295,6 +2361,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &661527611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,6 +2694,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &736632354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2737,6 +2825,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &784585336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2857,6 +2956,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 2
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &808520286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2977,6 +3087,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &847573951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3672,6 +3793,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &1079719369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,6 +4341,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &1258506814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4679,6 +4822,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &1329063357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5594,6 +5748,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &1586454990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6953,6 +7118,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &2121617133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7417,6 +7593,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &320906419052384731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7429,6 +7616,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!224 &442424501618075117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7461,6 +7659,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &854044786872574648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7473,6 +7682,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &933942023374193989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7485,6 +7705,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!1001 &1117614826034218674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9270,6 +9501,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!1001 &2435221961225694681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9411,6 +9653,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &2792702710008070414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9423,6 +9676,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!224 &2810111078097438223
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10270,6 +10534,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!224 &3334497979802002556
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10489,6 +10764,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4250121732042782965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10501,6 +10787,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!1 &4486826806692594623
 GameObject:
   m_ObjectHideFlags: 0
@@ -10575,6 +10872,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!222 &4816944333954127253
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10595,6 +10903,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245166765832418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10607,6 +10926,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245166818769138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10619,6 +10949,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245166865504251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10631,6 +10972,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245166866229379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10643,6 +10995,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245166997213516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10655,6 +11018,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245167620720284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10667,6 +11041,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245167661453109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10679,6 +11064,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245167813545278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10691,6 +11087,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245167829579310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10703,6 +11110,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245168202746953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10715,6 +11133,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245168300585448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10727,6 +11156,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245168390353158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10739,6 +11179,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245168661184427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10751,6 +11202,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &4975245168701464620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10763,6 +11225,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!114 &5165291838792909641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10775,6 +11248,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!1 &5166394458766161752
 GameObject:
   m_ObjectHideFlags: 0
@@ -11949,6 +12433,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!60 &6550774257388891175
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12011,6 +12506,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!60 &6647408092394889031
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12695,6 +13201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!60 &8958667450897391833
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12737,6 +13254,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764070f31c877984b88246a1344f037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pnj: {fileID: 0}
+  vacia: 1
+  pintada: 0
+  fila: 0
+  spawnEne: 0
+  spawnAli: 0
+  spawnAliTemp: 0
+  consumeMov: 0
+  imagenIni: {fileID: 0}
+  futuroAtaque: 0
+  muyPintada: 0
 --- !u!60 &8979084668330425509
 PolygonCollider2D:
   m_ObjectHideFlags: 0

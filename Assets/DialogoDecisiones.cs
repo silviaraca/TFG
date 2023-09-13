@@ -296,21 +296,10 @@ public class DialogoDecisiones : MonoBehaviour
         }
         else
         {
-            
-            //textName.text = names[index];
             StopAllCoroutines();
             textComponent.text = sentences[index];
           
         }
-        List<string> inventory = new List<string>();
-        if(PlayerPrefs.HasKey("InventoryCards")){
-            string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
-            inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
-        }
-        inventory.Add("Lamias");
-        string inventoryData2 = JsonConvert.SerializeObject(inventory);
-        PlayerPrefs.SetString("InventoryCards", inventoryData2);
-        PlayerPrefs.Save();
     }
 
     public void decision1_Reinfield(){
@@ -349,6 +338,10 @@ public class DialogoDecisiones : MonoBehaviour
         PlayerPrefs.SetString("InventoryCards", inventoryData2);
         PlayerPrefs.Save();
         playerExistente.inventory.cargaInventory();
+    }
+    
+    public bool indexFin(){
+        return index >= names.Length;
     }
 
 }

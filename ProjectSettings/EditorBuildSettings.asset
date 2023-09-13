@@ -39,9 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Juego/Castle Hall.unity
     guid: f84bc36c6985eb94fb8145a96a67b9cd
   - enabled: 1
-    path: Assets/Scenes/Juego/Office Exterior.unity
-    guid: 45d301bee114ece40b46770c51496797
-  - enabled: 1
     path: Assets/Scenes/Juego/Castle Room.unity
     guid: bc2d6a87137b9974fa4e5410683e3417
   - enabled: 1

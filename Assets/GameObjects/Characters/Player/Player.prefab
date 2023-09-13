@@ -662,3 +662,9 @@ MonoBehaviour:
   Mina: {fileID: 21300000, guid: 3a2b3c01bafd5de4983f9725e8a7315d, type: 3}
   Aldeano: {fileID: 21300000, guid: 09077ae54d3efd948bcc5edef5b5907d, type: 3}
   Ajo: {fileID: 21300000, guid: 12976ff042a9dcc43a855927fad90598, type: 3}
+  Nosferatu: {fileID: 21300000, guid: 63f55973bce34274daac4ef1b8aea2fc, type: 3}
+  Lamias: {fileID: 21300000, guid: c84c00807210e104a8d1dfab0ee64568, type: 3}
+  Logan: {fileID: 21300000, guid: 3f049a4383262fc44810f18b7da64ef7, type: 3}
+  Carreta: {fileID: 21300000, guid: 40d6be2bb4e5f0745a0e315ad51ba71c, type: 3}
+  Cuchillo: {fileID: 21300000, guid: 722996deaaf54f948a8a049791a8de06, type: 3}
+  Ratonela: {fileID: 21300000, guid: a4e58c522354870488a1cc73d0b3699c, type: 3}

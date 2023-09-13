@@ -17,12 +17,12 @@ public class VanHelsing : MonoBehaviour
         {
             dialogue1.enabled = false;
             dialogue2.enabled = true;
-            dialogue2.activa();
-
-            string tuto = "done";
-            PlayerPrefs.SetString("Tutorial2", tuto);
-            PlayerPrefs.Save();
-            PlayerPrefs.DeleteKey("Tutorial");
+            if(!PlayerPrefs.HasKey("Tutorial2")){
+                dialogue2.activa();
+                string tuto = "done";
+                PlayerPrefs.SetString("Tutorial2", tuto);
+                PlayerPrefs.Save();
+            }
         }
     }
 
