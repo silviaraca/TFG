@@ -455,6 +455,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue1: {fileID: 132425665}
   dialogue2: {fileID: 132425657}
+--- !u!114 &132425667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132425642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 1842075956}
+  panel: {fileID: 841954441}
+  pnj: {fileID: 1097175964}
+  move: {fileID: 890553943}
+  playerExistente: {fileID: 1814366678}
+  npcHablando: {fileID: 132425642}
+  textComponent: {fileID: 1939888258}
+  textName: {fileID: 2008409679}
+  sentences:
+  - Great! I see that you talked to some villagers.
+  - If you need more information about Dracula you can talk to Renfield.
+  - Renfield? Who is him?
+  - He is some crazy man that knows how to find Dracula. He is living in the hospital,
+    the building in the center of the town.
+  - Be careful.
+  names:
+  - Van Helsing
+  - Van Helsing
+  - Bram
+  - Van Helsing
+  - Van Helsing
+  textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!1001 &132695247
 PrefabInstance:
   m_ObjectHideFlags: 0

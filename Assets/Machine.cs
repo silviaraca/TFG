@@ -11,11 +11,13 @@ public class Machine : MonoBehaviour
     public Player player;
     private bool activeE;
     private bool machine;
+    public BoxCollider2D collider;
     public Dialogue dialogueScript;
 
     void Start()
     {
         dialogueScript.enabled = false;
+        collider.enabled = false;
     }
 
     void Update()
@@ -23,6 +25,7 @@ public class Machine : MonoBehaviour
         if(PlayerPrefs.HasKey("ActivaMachine"))
         {
             dialogueScript.enabled = true;
+            collider.enabled = true;
             if(activeE && Input.GetKeyDown(KeyCode.E))
             {
                 string activa = "done";
