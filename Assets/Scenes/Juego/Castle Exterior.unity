@@ -5403,6 +5403,19 @@ MonoBehaviour:
   - Peddler
   textSpeed: 0
   personajeImage: {fileID: 0}
+--- !u!114 &501621853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 501621851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10c36a1f899f8c949ab844791f09c67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 501621852}
 --- !u!1001 &564258504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5934,7 +5947,18 @@ MonoBehaviour:
   textoE: {fileID: 564258505}
   cargar: {fileID: 1269883595}
   escena: 
-  enemies: []
+  enemies:
+  - Wolf
+  - Wolf
+  - Wolf
+  - Wolf
+  - Wolf
+  - Wolf
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Vampire
 --- !u!114 &1269883595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7326,7 +7350,7 @@ PrefabInstance:
       objectReference: {fileID: 1269883593}
     - target: {fileID: 7609963812012496163, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: decision2
+      value: decision2Logan
       objectReference: {fileID: 0}
     - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7334,7 +7358,7 @@ PrefabInstance:
       objectReference: {fileID: 1269883593}
     - target: {fileID: 7609963812016319114, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: decision1
+      value: decision1Logan
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
@@ -48568,6 +48592,19 @@ MonoBehaviour:
   - Mina
   textSpeed: 0
   personajeImage: {fileID: 0}
+--- !u!114 &1868263777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868263775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6d7e32da038ed489b2ddc10ba3e131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1868263776}
 --- !u!1001 &1881270139
 PrefabInstance:
   m_ObjectHideFlags: 0

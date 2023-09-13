@@ -171,6 +171,86 @@ public class DialogoDecisiones : MonoBehaviour
         }
     }
 
+    public void decision1Logan(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        //Invoca a la estrategia
+        cargar.cargaEstrategia();
+        if(!PlayerPrefs.HasKey("Logan")){
+            List<string> inventory = new List<string>();
+            if(PlayerPrefs.HasKey("InventoryCards")){
+                string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+                inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+            }
+            inventory.Add("Logan");
+            string inventoryData2 = JsonConvert.SerializeObject(inventory);
+            PlayerPrefs.SetString("InventoryCards", inventoryData2);
+            PlayerPrefs.Save();
+            string logan = "done";
+            PlayerPrefs.SetString("Logan", logan);
+            PlayerPrefs.Save();
+        }
+    }
+    public void decision2Logan(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        BotonDecision1.gameObject.SetActive(false);
+        BotonDecision2.gameObject.SetActive(false);
+        //Decisión NO, solo pasa como si hubiese dado a la E
+
+        if(textComponent.text == sentences[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            
+            //textName.text = names[index];
+            StopAllCoroutines();
+            textComponent.text = sentences[index];
+        }
+        if(!PlayerPrefs.HasKey("Logan")){
+            List<string> inventory = new List<string>();
+            if(PlayerPrefs.HasKey("InventoryCards")){
+                string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+                inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+            }
+            inventory.Add("Logan");
+            string inventoryData2 = JsonConvert.SerializeObject(inventory);
+            PlayerPrefs.SetString("InventoryCards", inventoryData2);
+            PlayerPrefs.Save();
+            string logan = "done";
+            PlayerPrefs.SetString("Logan", logan);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public void decision1Dracula(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        //Invoca a la estrategia
+        string drac = "done";
+        PlayerPrefs.SetString("DaculaFight", drac);
+        PlayerPrefs.Save();
+        cargar.cargaEstrategia();
+        
+    }
+    public void decision2Dracula(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
+        decision = false;
+        BotonDecision1.gameObject.SetActive(false);
+        BotonDecision2.gameObject.SetActive(false);
+        //Decisión NO, solo pasa como si hubiese dado a la E
+
+        if(textComponent.text == sentences[index])
+        {
+            NextLine();
+        }
+        else
+        {
+            
+            //textName.text = names[index];
+            StopAllCoroutines();
+            textComponent.text = sentences[index];
+        }
+    }
+
     public void decision1_VH(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
         //Invoca a la estrategia
@@ -222,6 +302,15 @@ public class DialogoDecisiones : MonoBehaviour
             textComponent.text = sentences[index];
           
         }
+        List<string> inventory = new List<string>();
+        if(PlayerPrefs.HasKey("InventoryCards")){
+            string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
+            inventory = JsonConvert.DeserializeObject<List<string>>(inventoryData1);
+        }
+        inventory.Add("Lamias");
+        string inventoryData2 = JsonConvert.SerializeObject(inventory);
+        PlayerPrefs.SetString("InventoryCards", inventoryData2);
+        PlayerPrefs.Save();
     }
 
     public void decision1_Reinfield(){

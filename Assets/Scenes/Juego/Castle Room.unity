@@ -7164,7 +7164,25 @@ MonoBehaviour:
   textoE: {fileID: 872773949}
   cargar: {fileID: 568866899}
   escena: 
-  enemies: []
+  enemies:
+  - Vampire
+  - Vampire
+  - Vampire
+  - Vampire
+  - Vampire
+  - Vampire
+  - Vampire
+  - Wolf
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Zombie
+  - Wolf
+  - Abomination
+  - Wolf
+  - Wolf
 --- !u!114 &568866899
 MonoBehaviour:
   m_ObjectHideFlags: 0
