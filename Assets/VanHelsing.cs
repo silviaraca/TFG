@@ -51,10 +51,17 @@ public class VanHelsing : MonoBehaviour
             dialogue2.enabled = false;
             dialogue3.enabled = false;
         }
+
         if(!PlayerPrefs.HasKey("Renfield") && dialogue3.indexFin()){
             string ren = "done";
             PlayerPrefs.SetString("Renfield", ren);
             PlayerPrefs.Save();
+        }
+
+        if(dialogue2.indexFin())
+        {
+            string vh = "done";
+            if(!PlayerPrefs.HasKey("PHouseOSDoor")) PlayerPrefs.SetString("PHouseOSDoor", vh);
         }
 
     }

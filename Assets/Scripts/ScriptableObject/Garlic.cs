@@ -13,6 +13,7 @@ public class Garlic : MonoBehaviour
     private Player player;
     private bool dejable;
     private bool done;
+    public AutoDialogue auto, auto2;
 
     void Start()
     {
@@ -44,11 +45,12 @@ public class Garlic : MonoBehaviour
     {
         if (dejable && Input.GetKeyDown(KeyCode.E) && !done)
         {
+            auto.delete();
+            auto2.delete();
             spriteRenderer.enabled = true;
             textoE.gameObject.SetActive(false);
             done = true;
             boxCollider.enabled = false;
-
         }
     }
 }

@@ -9,7 +9,7 @@ public class CambioEscena : MonoBehaviour
 {
    public TextMeshProUGUI textoE;
    private bool usable;
-   private static bool apagado;
+   public static bool apagado;
    private Player player;
    public Cargar cargar;
    public Vector3 playerPosition;

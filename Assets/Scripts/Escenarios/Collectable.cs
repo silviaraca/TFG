@@ -11,24 +11,20 @@ public class Collectable : MonoBehaviour
 {
    
     public TextMeshProUGUI textoE;
-    private bool recogible;
-    private Player player;
     public CollectableType type;
     public Sprite icon;
+    public AutoDialogue auto;
+    private bool recogible;
+    private Player player;
 
     private void Start(){
         textoE.gameObject.SetActive(false);
-        //type = CollectableType.CARD;
    }
 
    private void Update(){
         if(recogible && Input.GetKeyDown(KeyCode.E))
         {
-
-            if(type == CollectableType.CARD)
-            {
-                player.inventory.Add(this);
-            }
+            auto.delete();
             Destroy(this.gameObject);
         }
        
@@ -41,7 +37,6 @@ public class Collectable : MonoBehaviour
         if(player){
             textoE.gameObject.SetActive(true);
             recogible = true; 
-           //player.inventory.Add(this);
         }                   
     }
 
