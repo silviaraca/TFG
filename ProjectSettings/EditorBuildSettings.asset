@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Juego/Ofice Exterior.unity
     guid: 0815c890e14fb564cbe5e37e822bfe64
   - enabled: 1
-    path: Assets/Scenes/Juego/P. House OS 2.unity
-    guid: 88ebda541d492a547a42190a8d69a7fa
-  - enabled: 1
     path: Assets/Scenes/Juego/Office Aisle.unity
     guid: 3e11fa5b2901c2d41800d1679ddf1e92
   - enabled: 1

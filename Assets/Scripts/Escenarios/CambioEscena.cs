@@ -9,6 +9,7 @@ public class CambioEscena : MonoBehaviour
 {
    public TextMeshProUGUI textoE;
    private bool usable;
+   private static bool apagado;
    private Player player;
    public Cargar cargar;
    public Vector3 playerPosition;
@@ -35,7 +36,7 @@ public class CambioEscena : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if(collision.gameObject.name.Equals("Player")){
+        if(collision.gameObject.name.Equals("Player") && !apagado){
             
             //Guardar el inventario
             string inventoryData = JsonUtility.ToJson(player.inventory);
@@ -57,5 +58,10 @@ public class CambioEscena : MonoBehaviour
             textoE.gameObject.SetActive(false);
             usable = false;
         }            
+    }
+
+    public void desactivaPuerta(){
+        apagado = true;
+        this.enabled = false;
     }
 }

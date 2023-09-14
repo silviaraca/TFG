@@ -392,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 207639983}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: P. House OS 2
+      value: P. House OS
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE
@@ -1414,7 +1414,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

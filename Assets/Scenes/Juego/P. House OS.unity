@@ -340,7 +340,7 @@ MonoBehaviour:
   textComponent: {fileID: 1939888258}
   textName: {fileID: 2008409679}
   sentences:
-  - And now that you know how to fight, you need more cards.
+  - And now that you know how to fight, you need at least 3 more cards.
   - Talk to the villagers and explore the area a bit. If you are lucky, they will
     give you some cards
   - Also, as the letters are materialised memories, they don't need to give you things
@@ -455,6 +455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue1: {fileID: 132425665}
   dialogue2: {fileID: 132425657}
+  dialogue3: {fileID: 132425667}
 --- !u!114 &132425667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +591,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4878753815502963025, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.98291
+      objectReference: {fileID: 0}
     - target: {fileID: 4878753816372788888, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2432,7 +2437,7 @@ PrefabInstance:
       objectReference: {fileID: 714868347}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: escena
-      value: P. House No Garlic
+      value: P. House2
       objectReference: {fileID: 0}
     - target: {fileID: -1783394921222752544, guid: 99ecd77482c0e354dbb956837d577be1, type: 3}
       propertyPath: textoE
