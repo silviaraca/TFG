@@ -2024,6 +2024,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2435221960745580321, guid: f0e6f13cb2da2be47bb7a306c5d685a6, type: 3}
     - target: {fileID: 7971790335998678133, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
+      propertyPath: dracula
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971790335998678133, guid: cb7a6cfdc580e9e49b9c3dfc3bd494a0, type: 3}
       propertyPath: puntero
       value: 
       objectReference: {fileID: 1366732595}

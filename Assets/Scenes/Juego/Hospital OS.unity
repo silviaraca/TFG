@@ -3446,7 +3446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4878753815502963025, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -14.982849
+      value: -14.98291
       objectReference: {fileID: 0}
     - target: {fileID: 4878753816372788888, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
       propertyPath: m_Pivot.x
@@ -3709,6 +3709,7 @@ GameObject:
   - component: {fileID: 1238960537}
   - component: {fileID: 1238960531}
   - component: {fileID: 1238960534}
+  - component: {fileID: 1238960539}
   - component: {fileID: 1238960535}
   - component: {fileID: 1238960536}
   - component: {fileID: 1238960538}
@@ -3866,25 +3867,7 @@ MonoBehaviour:
     But fear not, dear guest, I promise to keep things entertaining.
   - Ready or not, the game is set. The master will be pleased with this little diversion.
   - Are you ready?
-  - ' I won, Renfield. Now, as you promised, tell me what I need to know about Dracula''s
-    whereabouts.'
-  - Impressive, my dear guest. You've proven yourself worthy. Very well, listen carefully.
-    To reach the master's castle, you must navigate through the labyrinth.
-  - The labyrinth? That sounds like a challenge. How do I find my way through it?
-  - A challenge, indeed. The labyrinth is a reflection of the master's mind, twisted
-    and complex. To enter, you'll need to locate a specific entrance hidden within
-    the forest near the village.
-  - How will I recognize this entrance? Is there some kind of marker?
-  - You can distinguish it by the red sign
-  - ' Thank you, Renfield. Your information is invaluable. I''ll do whatever it takes
-    to stop Dracula and prevent more harm.'
-  - Remember, you tread where few dare to go. The labyrinth may challenge your very
-    perception of reality. But I have a feeling you're no ordinary guest, X. May
-    the fates be ever in your favor.
-  - I appreciate your help, Renfield. I'll face whatever challenges come my way.
-    Farewell.
-  - Farewell, brave soul. May your path be guided by the stars, and may this town
-    reveal its secrets to you.
+  - Coward...
   names:
   - Bram
   - Reinfield
@@ -3904,13 +3887,6 @@ MonoBehaviour:
   - Reinfield
   - Bram
   - Reinfield
-  - Bram
-  - Reinfield
-  - Bram
-  - Reinfield
-  - Bram
-  - Reinfield
-  - Bram
   - Reinfield
   textSpeed: 0
 --- !u!114 &1238960535
@@ -3929,23 +3905,6 @@ MonoBehaviour:
   cargar: {fileID: 1238960536}
   escena: Estrategia
   enemies:
-  - Zombie
-  - Vampire
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
-  - Zombie
   - Zombie
 --- !u!114 &1238960536
 MonoBehaviour:
@@ -3999,6 +3958,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1588748573}
+  dialogue1: {fileID: 1238960534}
+  dialogue2: {fileID: 1238960539}
+--- !u!114 &1238960539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238960530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef5431830635fe74fbea7f9c3ca9495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoE: {fileID: 1588748574}
+  panel: {fileID: 360869366}
+  pnj: {fileID: 360869367}
+  move: {fileID: 1588748575}
+  playerExistente: {fileID: 1588748573}
+  npcHablando: {fileID: 1238960530}
+  textComponent: {fileID: 360869365}
+  textName: {fileID: 360869364}
+  sentences:
+  - ' I won, Renfield. Now, as you promised, tell me what I need to know about Dracula''s
+    whereabouts.'
+  - Impressive, my dear guest. You've proven yourself worthy. Very well, listen carefully.
+    To reach the master's castle, you must navigate through the labyrinth.
+  - How will I recognize this entrance? Is there some kind of marker?
+  - You can distinguish it by the red sign
+  - ' Thank you, Renfield. Your information is invaluable. I''ll do whatever it takes
+    to stop Dracula and prevent more harm.'
+  - Remember, you tread where few dare to go. The labyrinth may challenge your very
+    perception of reality. But I have a feeling you're no ordinary guest, Bram. May
+    the fates be ever in your favor.
+  - I appreciate your help, Renfield. I'll face whatever challenges come my way.
+    Farewell. May the fates be ever in your favor.
+  - Farewell, brave soul. May your path be guided by the stars, and may this town
+    reveal its secrets to you.
+  names:
+  - Bram
+  - Reinfield
+  - Bram
+  - Reinfield
+  - Bram
+  - Reinfield
+  - Bram
+  - Reinfield
+  textSpeed: 0
+  personajeImage: {fileID: 0}
 --- !u!1 &1290325800
 GameObject:
   m_ObjectHideFlags: 0

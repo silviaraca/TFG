@@ -8,12 +8,15 @@ public class Treasure2 : MonoBehaviour
     public Dialogue dialogue;
     void Start()
     {
-        
+        if(PlayerPrefs.HasKey("Sangre")){
+            dialogue.desactivaDialogo();
+        }
     }
 
     void Update()
     {
         if(!PlayerPrefs.HasKey("Sangre") && dialogue.indexFin()){
+            dialogue.desactivaDialogo();
             List<string> inventory = new List<string>();
             if(PlayerPrefs.HasKey("InventoryCards")){
                 string inventoryData1 = PlayerPrefs.GetString("InventoryCards");

@@ -182,6 +182,8 @@ public class GameManagerE : MonoBehaviour
           }
           if(listaPnjEnemigos.Count == 0 && listaPnjEnemigosEnTablero.Count == 0){
             win = true;
+            if(dracula)
+              this.gameObject.GetComponent<CambioEscenaEstrategia>().cargaFin();
             PlayerPrefs.SetString("WinCombate", "win"); //Manda victoria
             PlayerPrefs.Save();
             //Salir de escena ganando
