@@ -46,6 +46,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        PlayerPrefs.DeleteAll();
        SceneManager.LoadScene("Title Menu"); 
     }
 
