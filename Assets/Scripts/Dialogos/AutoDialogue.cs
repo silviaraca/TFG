@@ -107,10 +107,13 @@ public class AutoDialogue : MonoBehaviour
             TimelineActivator.play = true;
             pnj.gameObject.SetActive(false);
             dialogue = false;
-            Destroy(this.gameObject);
+           
         }
     }
 
+public bool indexFin(){
+    return index >= names.Length;
+}
   
 private void OnTriggerEnter2D(Collider2D collision)
 {
@@ -130,5 +133,10 @@ private void OnTriggerExit2D(Collider2D collision)
         activeE = false;
         move.allowMove = true;
     }
+}
+
+public void delete()
+{
+    Destroy(this.gameObject);
 }
 }
