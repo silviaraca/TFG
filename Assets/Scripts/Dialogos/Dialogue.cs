@@ -22,7 +22,7 @@ public class Dialogue : MonoBehaviour
     private Scene currentScene;
     private int index;
     private bool activeE, dialogue = false;
-    private static bool activo = false;
+    private static bool activo = false, apagado = false;
     private Player player;
     [SerializeField] private Sprite personajeImage = null;
 
@@ -143,7 +143,7 @@ public class Dialogue : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         player = collision.GetComponent<Player>();
-        if(collision.gameObject.name.Equals("Player")){
+        if(collision.gameObject.name.Equals("Player") && !apagado){
             textoE.gameObject.SetActive(true);
             activeE = true; 
         }                   
@@ -168,5 +168,10 @@ public class Dialogue : MonoBehaviour
 
     public Player getPlayerExistente(){
         return playerExistente;
+    }
+
+    public void desactivaDialogo(){
+        apagado = true;
+        this.enabled = false;
     }
 }

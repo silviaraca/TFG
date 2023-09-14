@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
+using TMPro;
 
 public class Treasure1 : MonoBehaviour
 {
     public Dialogue dialogue;
     void Start()
     {
-        
+        if(PlayerPrefs.HasKey("Tumba")){
+            dialogue.desactivaDialogo();
+        }
     }
 
     void Update()
     {
         if(!PlayerPrefs.HasKey("Tumba") && dialogue.indexFin()){
+            dialogue.desactivaDialogo();
             List<string> inventory = new List<string>();
             if(PlayerPrefs.HasKey("InventoryCards")){
                 string inventoryData1 = PlayerPrefs.GetString("InventoryCards");
