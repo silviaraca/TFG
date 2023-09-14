@@ -17,7 +17,7 @@ public class OfficeRoomDoor : MonoBehaviour
         else
         { 
             cambioEsc.enabled = true;
-            CambioEscena.apagado = false;
+            cambioEsc.apagado = false;
         }
     }
 }

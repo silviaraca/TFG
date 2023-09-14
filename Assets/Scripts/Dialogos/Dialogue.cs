@@ -22,7 +22,8 @@ public class Dialogue : MonoBehaviour
     private Scene currentScene;
     private int index;
     private bool activeE, dialogue = false;
-    private static bool activo = false, apagado = false;
+    private static bool activo = false;
+    public bool apagado = false;
     private Player player;
     [SerializeField] private Sprite personajeImage = null;
 

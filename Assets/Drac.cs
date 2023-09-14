@@ -18,7 +18,10 @@ public class Drac : MonoBehaviour
     {
         if(dialogue.indexFin())
         {
-            if(!PlayerPrefs.HasKey("OfficeDoor")) PlayerPrefs.SetString("OfficeDoor", drac);
+            if(!PlayerPrefs.HasKey("OfficeDoor")) {
+                PlayerPrefs.SetString("OfficeDoor", drac);
+                PlayerPrefs.Save();
+            }
         }
     }
 }

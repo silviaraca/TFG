@@ -3825,6 +3825,7 @@ MonoBehaviour:
   names:
   - Lamias
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1586022088
 MonoBehaviour:
@@ -3847,6 +3848,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2915002882866093972, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912675099760092, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3037912676629195284, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3934,6 +3943,10 @@ PrefabInstance:
     - target: {fileID: 3037912676629195304, guid: b7a2397f09299ad498873435c37e4872, type: 3}
       propertyPath: m_Name
       value: Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037912676629195304, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a2397f09299ad498873435c37e4872, type: 3}

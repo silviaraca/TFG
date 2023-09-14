@@ -8,16 +8,18 @@ public class PHouseOSDoor : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        PlayerPrefs.DeleteKey("PHouseOSDoor");
+
     }
     void Update()
     {
         
-        if(!PlayerPrefs.HasKey("PHouseOSDoor")) cambioEsc.desactivaPuerta();
+        if(!PlayerPrefs.HasKey("PHouseOSDoor")) {
+            cambioEsc.desactivaPuerta();
+        }
         else
         { 
             cambioEsc.enabled = true;
-            CambioEscena.apagado = false;
+            cambioEsc.apagado = false;
         }
     }
 }

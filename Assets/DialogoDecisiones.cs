@@ -27,7 +27,7 @@ public class DialogoDecisiones : MonoBehaviour
     public float textSpeed;
 
     private int index, indexDecisiones;
-    private bool activeE;
+    private bool activeE, fin = false;
     private static bool decision;
     private Player player;
     private int lam = 0;
@@ -145,7 +145,7 @@ public class DialogoDecisiones : MonoBehaviour
         move.allowMove = true;
         textComponent.text = string.Empty;
         textName.text = string.Empty;
-
+        fin = true;
     }
     public void decision1(){ //De alguna forma scriptear para que las decisiones sea dinámicas, de momento estática
         decision = false;
@@ -261,10 +261,6 @@ public class DialogoDecisiones : MonoBehaviour
         cargar.cargaEstrategia();
         
     }
-
-
-                
-
     public void decisionLamias_Wrong()
     {
         decision = false;
@@ -279,8 +275,8 @@ public class DialogoDecisiones : MonoBehaviour
         else
         {
             
-            //textName.text = names[index];
             StopAllCoroutines();
+            EndDialogue();
         }
         lam = 0;
     }
@@ -332,7 +328,6 @@ public class DialogoDecisiones : MonoBehaviour
         else
         {
             
-            //textName.text = names[index];
             StopAllCoroutines();
             textComponent.text = sentences[index];
         }
@@ -362,4 +357,7 @@ public class DialogoDecisiones : MonoBehaviour
         return index >= names.Length;
     }
 
+    public bool getFin(){
+        return fin;
+    }
 }
