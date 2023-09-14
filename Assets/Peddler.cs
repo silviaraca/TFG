@@ -8,7 +8,9 @@ public class Peddler : MonoBehaviour
     public Dialogue dialogue;
     void Start()
     {
-        
+        if(!PlayerPrefs.HasKey("RatCarta")){
+            dialogue.desactivaDialogo();
+        }
     }
 
     void Update()
