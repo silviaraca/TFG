@@ -14,7 +14,7 @@ public class CastleExteriorDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerPrefs.HasKey("ReinfieldDoor"))
+        if(PlayerPrefs.HasKey("RenfieldDoor"))
         {
             collider.enabled = true;
         }
