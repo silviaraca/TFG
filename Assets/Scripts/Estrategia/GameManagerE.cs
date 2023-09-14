@@ -387,19 +387,19 @@ public class GameManagerE : MonoBehaviour
     }
   }
   private void danaVenenorPnj(){
-    for(int i = 0; i < listaPnj.Count; i++){
-      if(listaPnj[i].turnosVeneno > 0){
-        listaPnj[i].turnosVeneno--;
-        listaPnj[i].danar(listaPnj[i].danoVeneno, "");
-      }
-      if(listaPnj[i].turnosVeneno == 0) listaPnj[i].danoVeneno = 0;
-    }
     for(int i = 0; i < listaPnjEnemigosEnTablero.Count; i++){
       if(listaPnjEnemigosEnTablero[i].turnosVeneno > 0){
         listaPnjEnemigosEnTablero[i].turnosVeneno--;
         listaPnjEnemigosEnTablero[i].danar(listaPnjEnemigosEnTablero[i].danoVeneno, "");
       }
       if(listaPnjEnemigosEnTablero[i].turnosVeneno == 0) listaPnjEnemigosEnTablero[i].danoVeneno = 0;
+    }
+    for(int i = 0; i < listaPnj.Count; i++){
+      if(listaPnj[i].turnosVeneno > 0){
+        listaPnj[i].turnosVeneno--;
+        listaPnj[i].danar(listaPnj[i].danoVeneno, "");
+      }
+      if(listaPnj[i].turnosVeneno == 0) listaPnj[i].danoVeneno = 0;
     }
   }
   private void contadorInmunes(){

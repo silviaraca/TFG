@@ -4643,14 +4643,13 @@ MonoBehaviour:
   - He wants us to join him and gain strength against the other world to become as
     powerful again as Dracula once was.
   - And how can I stop him?
-  - 'In his diary, he mentions that he was formerly attacked with a wooden stake
-    and that it almost killed him. '
-  - Maybe you can try to get one, I think you can find one in the trees outside the
-    castle.
+  - 'In his diary, he mentions that he was formerly attacked with Jonathan''s knife
+    and that killed him. '
+  - Maybe you can try to get one, I think Mina may have it.
   - Great, anything else?
-  - He also talks about a horse cart, maybe Van Helsin can give you more information
-    about that.
-  - Thank you! I'll ask him
+  - He also talks about a horse cart, I think i saw a cart somewhere outside the
+    castle.
+  - Thank you! I'll look for it
   - One more thing! There is a mirror in a room near Dracula's place.
   - Maybe if you find somewhere in the real world where you can place a mirror, you
     could pass thorugh.
@@ -4738,6 +4737,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7432411898152120804, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432411898152120804, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432411898152120804, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432411898152120804, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432411898152120804, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432411898152120804, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7432411899398019018, guid: 8d2a82a6a3414f94c84b923d9e55cfa8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
