@@ -102,6 +102,7 @@ public class Inventory_UI : MonoBehaviour
         PlayerPrefs.SetString("DeckData", deckData);
         PlayerPrefs.Save(); 
         deckSelectorPanel.SetActive(true);
+        DeckBuilderActivator.okey = true;
     }
 
 }
