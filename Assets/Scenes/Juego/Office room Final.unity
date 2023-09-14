@@ -438,7 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1830551375}
   panel: {fileID: 1103873160}
-  pnj: {fileID: 0}
+  pnj: {fileID: 1757930989}
   move: {fileID: 1860496283}
   playerExistente: {fileID: 1860496285}
   npcHablando: {fileID: 426824758}
@@ -3211,7 +3211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textoE: {fileID: 1830551375}
   panel: {fileID: 1103873160}
-  pnj: {fileID: 0}
+  pnj: {fileID: 1757930989}
   move: {fileID: 1860496283}
   playerExistente: {fileID: 1860496285}
   npcHablando: {fileID: 1047335765}
@@ -5072,6 +5072,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+--- !u!114 &1757930989 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1273672901742786483, guid: b7a2397f09299ad498873435c37e4872, type: 3}
+  m_PrefabInstance: {fileID: 1757930988}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797291683
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,4 +49,13 @@ public class CambioEscenaEstrategia : MonoBehaviour
             }
             cargar.load(escena2);
      }
+
+     public void cargaFin(){
+          Vector3 vectorPos = new Vector3(-45, -23, 0);
+          string posRPG = JsonUtility.ToJson(vectorPos);
+          PlayerPrefs.SetString("PosicionPlayer", posRPG);
+          PlayerPrefs.Save();
+
+          cargar.load("Office room Final");
+     }
 }    

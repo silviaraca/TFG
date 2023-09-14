@@ -292,7 +292,6 @@ public class DialogoDecisiones : MonoBehaviour
         BotonDecision2.gameObject.SetActive(false);
         index += 2;
         lam++;
-        print(lam);
         if(lam == 3){
             if(!PlayerPrefs.HasKey("RegaloLamias")){
                 List<string> inventory = new List<string>();

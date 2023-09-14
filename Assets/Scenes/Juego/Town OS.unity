@@ -360,10 +360,10 @@ MonoBehaviour:
     In the right hands, it can be a valuable resource, but also a disturbing reminder
     of the secrets and evil that lurk in the shadows."'
   names:
-  - Me
-  - Me
-  - Me
-  - Me
+  - Bram
+  - Bram
+  - Bram
+  - Bram
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!114 &135677770
@@ -832,9 +832,9 @@ MonoBehaviour:
   - Maybe I can use the mirror trick that Van Helsin taught me and see if there is
     a mirror in the the real world's hospital.
   names:
-  - Me
-  - Me
-  - Me
+  - Bram
+  - Bram
+  - Bram
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!4 &525909824
@@ -1324,10 +1324,10 @@ MonoBehaviour:
     Use this card wisely and always keep an eye on the shadows, as his machinations
     can be unpredictable and dangerous. shadows."'
   names:
-  - Me
-  - Me
-  - Me
-  - Me
+  - Bram
+  - Bram
+  - Bram
+  - Bram
   textSpeed: 0
   personajeImage: {fileID: 0}
 --- !u!114 &746057806
