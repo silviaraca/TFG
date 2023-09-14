@@ -311,11 +311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.0401
+      value: -6.8
       objectReference: {fileID: 0}
     - target: {fileID: 5054287906517754318, guid: 3a189272dee086444bc5c1c4f7af2e90, type: 3}
       propertyPath: m_LocalPosition.z
@@ -405,6 +405,7 @@ MonoBehaviour:
   - Machine
   - Me
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &253639035
 MonoBehaviour:
@@ -525,7 +526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264009860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 10.0401, z: -10}
+  m_LocalPosition: {x: -2.5, y: -6.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -672,7 +673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370492363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 10.0401, z: -10}
+  m_LocalPosition: {x: -2.5, y: -6.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2757,6 +2758,7 @@ MonoBehaviour:
   - Receptionist
   - Receptionist
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1313960586
 MonoBehaviour:
@@ -2806,6 +2808,7 @@ MonoBehaviour:
   - Ratonella
   - Bram
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1313960587
 MonoBehaviour:
@@ -2851,6 +2854,7 @@ MonoBehaviour:
   - Ratonella
   - Ratonella
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!1 &1409284520
 GameObject:
@@ -7827,6 +7831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
+  apagado: 0
   cargar: {fileID: 1723149433}
   playerPosition: {x: 22.4, y: 39.3, z: 0}
   playerStorage: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}
@@ -7999,6 +8004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textoE: {fileID: 1796368978}
+  apagado: 0
   cargar: {fileID: 1797016858}
   playerPosition: {x: -11.7, y: 5.69, z: 0}
   playerStorage: {fileID: 11400000, guid: fb9828e310ea89e458d04172ce693fcd, type: 2}

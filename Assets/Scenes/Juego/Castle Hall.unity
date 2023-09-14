@@ -4557,7 +4557,7 @@ MonoBehaviour:
   - AAARRGG A BIG UGLY RAT!!
   - Relax! I have not insulted you
   - Who are you and what are you doing here?
-  - I'm X, and... I'm working
+  - I'm Bram, and... I'm working
   - Don't tell me you're one of those rat exterminators
   - I'm not, don't worry
   - 'I''m here to stop Dracula, he has been trying to disassociate himself from his
@@ -4577,26 +4577,27 @@ MonoBehaviour:
   - Probably in the castle... or the equivalent there...
   - See you there, then
   names:
-  - Ratonella
+  - Ratonela
   - Bram
-  - Ratonella
-  - Ratonella
+  - Ratonela
+  - Ratonela
   - Bram
-  - Ratonella
+  - Ratonela
   - Bram
   - Bram
-  - Ratonella
-  - Ratonella
-  - Ratonella
-  - Ratonella
+  - Ratonela
+  - Ratonela
+  - Ratonela
+  - Ratonela
   - Bram
-  - Ratonella
+  - Ratonela
   - Bram
-  - Ratonella
+  - Ratonela
   - Bram
-  - Ratonella
+  - Ratonela
   - Bram
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1143210933
 MonoBehaviour:
@@ -4656,20 +4657,21 @@ MonoBehaviour:
   - Good luck
   names:
   - Bram
-  - Ratonella
-  - Ratonella
-  - Ratonella
-  - Ratonella
+  - Ratonela
+  - Ratonela
+  - Ratonela
+  - Ratonela
   - Bram
-  - Ratonella
-  - Ratonella
+  - Ratonela
+  - Ratonela
   - Bram
-  - Ratonella
+  - Ratonela
   - Bram
-  - Ratonella
-  - Ratonella
-  - Ratonella
+  - Ratonela
+  - Ratonela
+  - Ratonela
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &1145870969 stripped
 MonoBehaviour:

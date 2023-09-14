@@ -18,14 +18,13 @@ public class Ratonella : MonoBehaviour
 
     void Start()
     {
-        ratData = "";
-        if(PlayerPrefs.HasKey("RatSecretary")) ratData = PlayerPrefs.GetString("RatSecretary");
+
     }
 
     void Update()
     {
         //Si aún no ha cogido el café pero has hablado con la rata
-        if(ratData == "done" && !machine)
+        if(PlayerPrefs.HasKey("RatSecretary") && !PlayerPrefs.HasKey("Machine"))
         {
             dialogueScript1.enabled = false;
             dialogueScript2.enabled = true;
@@ -40,7 +39,7 @@ public class Ratonella : MonoBehaviour
         }
 
         //Si ha cogido el café
-        if(ratData == "done" && machine)
+        if(PlayerPrefs.HasKey("RatSecretary") && PlayerPrefs.HasKey("Machine"))
         {
             dialogueScript1.enabled = false;
             dialogueScript2.enabled = false;
@@ -55,13 +54,12 @@ public class Ratonella : MonoBehaviour
         }
 
         //Inicio
-        if(ratData != "done")
+        if(!PlayerPrefs.HasKey("RatSecretary"))
         {
             dialogueScript1.enabled = true;
             dialogueScript2.enabled = false;
             dialogueScript3.enabled = false;
         }
-        if(PlayerPrefs.HasKey("Machine")) machine = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

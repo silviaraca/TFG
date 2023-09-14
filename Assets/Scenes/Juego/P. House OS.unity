@@ -379,6 +379,7 @@ MonoBehaviour:
   - Van Helsing
   - Van Helsing
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!114 &132425663
 MonoBehaviour:
@@ -519,6 +520,7 @@ MonoBehaviour:
   - Van Helsing
   - Van Helsing
   textSpeed: 0
+  apagado: 0
   personajeImage: {fileID: 0}
 --- !u!1001 &132695247
 PrefabInstance:
@@ -852,6 +854,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7335622464036899416, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
   m_PrefabInstance: {fileID: 260424354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &260424357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7335622464036899419, guid: 92c096e9cd1c6ef48bb85773dd5a9712, type: 3}
+  m_PrefabInstance: {fileID: 260424354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260424355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b82466c23756e747adf7193aa2a476f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &292020501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4878753815502963031, guid: 375c8ee18abddf9409c4fd20757a29ef, type: 3}
@@ -6944,3 +6957,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84016580c6269894288df9ef356f2878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cambioEsc: {fileID: 124776189}
+  auto: {fileID: 260424357}
