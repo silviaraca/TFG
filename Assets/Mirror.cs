@@ -18,8 +18,6 @@ public class Mirror : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteKey("MirrorPlaced");
-        PlayerPrefs.DeleteKey("RatSecretary");
         if(PlayerPrefs.HasKey("RatSecretary"))
         {
             if(PlayerPrefs.HasKey("MirrorPlaced")) mirrorPlaced = PlayerPrefs.GetString("MirrorPlaced");

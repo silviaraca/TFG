@@ -18,7 +18,9 @@ public class Ratonella : MonoBehaviour
 
     void Start()
     {
-
+        string activa = "done";
+        PlayerPrefs.SetString("ActivaMachine", activa);
+        PlayerPrefs.Save();
     }
 
     void Update()
